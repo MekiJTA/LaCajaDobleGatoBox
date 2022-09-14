@@ -10,9 +10,9 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
-IF Nappi THEN
+IF IO.BOX_IN[1] THEN
  Numero := Numero +1;
-
+ IO.BOX_OUT[1] := TRUE;
 END_IF
 
 ]]></ST>
