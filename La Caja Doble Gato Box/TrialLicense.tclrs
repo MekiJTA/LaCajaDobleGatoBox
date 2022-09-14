@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<TcLicenseInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2011/11/TcLicenseInfo">
+	<LicenseInfo>
+		<SystemId>{B85B63B7-8D2A-D81F-03F1-997766E43C83}</SystemId>
+		<IssueTime>2022-09-14T05:40:00</IssueTime>
+		<ExpireTime>2022-09-22T00:00:00</ExpireTime>
+		<LicenseKey>c6ca19aab8496f3db3098baa870b42bd86c11def41e5f0d6b22ddc1e9bd1bf3df9b0977f22f5a2bfd936f1c8862952cddb1b7c9366644774473f22507ac1948dabccab1a60a3acbe37dc3907312315aec3f1f19ff7919d49118826a301a7c99197a8671799a4f6202736e7153adabad97a29755bd8a86c42245b96e1aaabb4df303d5a7bd3a56c87608f2b03a228a41d2741ae369212ffda5069c6458a6503b6e20b28869fa8d4b465751e6701a271f8e1a0468d6d660b74e902bc04157bdddb2b045d9bb0ed50948e05e63c771d10f42fe823bdc369323ccd944ce9fbb9884ad25f024ac513bc5a106c36ebf0100b19dca344d40c24a2de655e6cfe46f3bd0c</LicenseKey>
+		<License>
+			<LicenseId>{103F30C9-DF25-439E-837B-9DF80CB9356C}</LicenseId>
+			<Name>TC3 EtherCAT Redundancy 250</Name>
+			<OrderNo>TF6220</OrderNo>
+			<Instances>250</Instances>
+		</License>
+	</LicenseInfo>
+</TcLicenseInfo>
