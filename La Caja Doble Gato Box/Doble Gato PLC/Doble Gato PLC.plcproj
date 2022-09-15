@@ -20,13 +20,13 @@
     <Compile Include="10_Feeding\F\F_Sample.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="10_Feeding\POUs\etc\FB_BlockPad.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="10_Feeding\POUs\etc\P_BlockPad.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="10_Feeding\POUs\FBD_Assign_IO.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="10_Feeding\POUs\FB_BlockPad.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="10_Feeding\POUs\P_Controls_MAIN.TcPOU">

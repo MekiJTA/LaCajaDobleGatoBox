@@ -4,34 +4,72 @@
     <Declaration><![CDATA[PROGRAM P_Controls_MAIN
 VAR
 	bDoors : BOOL;
-	bManual: BOOL;
 	
 	State: INT;
+	
+	
+//================	
+	// Blink timer
+	TIME_ON 			: TIME := T#1S;
+	TIME_OFF 			: TIME := T#1S;	
+	TIME_FAST_ON 		: TIME := T#250MS;
+	TIME_FAST_OFF 		: TIME := T#250MS;
+	TIME_SPECIAL_ON 	: TIME := T#50MS;
+	TIME_SPECIAL_OFF 	: TIME := T#50MS;	
+	
+	BlinkTimer_ON: TON;
+	BlinkTimer_OFF: TON;
+	BlinkTimer_FAST_ON: TON;
+	BlinkTimer_FAST_OFF: TON;
+	BlinkTimer_SPEC_ON: TON;
+	BlinkTimer_SPEC_OFF: TON;
+	T_ON : BOOL;
+	T_OFF : BOOL := TRUE;	
+	T_FAST_ON : BOOL;
+	T_FAST_OFF : BOOL := TRUE;	
+	T_SPEC_ON : BOOL;
+	T_SPEC_OFF : BOOL := TRUE;
+//==================
+
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[//Aliohjelmiesn kutsuja läjä tänne
-
-CASE State OF 
-0: //Idle state
-
-1: 	
+      <ST><![CDATA[
 FBD_Assign_IO();
 	A_Locks();
 	A_Permissions();
-
-END_CASE
-]]></ST>
+	A_FeedButton();
+	Blink();
+	Blink_Faster();
+	Blink_Special();
+	
+	]]></ST>
     </Implementation>
+    <Folder Name="Blinkers" Id="{5c25f4da-2386-4bfa-a3e5-3fe24506dcb7}" />
+    <Action Name="A_FeedButton" Id="{fd10e9fd-470d-417b-922d-3e15328c9f03}">
+      <Implementation>
+        <ST><![CDATA[
+IF 	IN.BOX_IN[1]AND
+	(General.BlinkOn AND
+	General.ReadyForAction AND 
+	SAFETY.Safety_OK )
+THEN
+	OUT.BOX_OUT[1] := TRUE;	
+END_IF
+]]></ST>
+      </Implementation>
+    </Action>
     <Action Name="A_Locks" Id="{223db38c-ab74-4269-818b-d4d0b7d3de82}">
       <Implementation>
         <ST><![CDATA[
 //"Ovisensori" hyppää outputista inputtiin, jos on päällä niin ohjelma saa käydä
-
 OUT.BOX_OUT[8] := TRUE;
 
-bDoors := IN.BOX_IN[8];
-]]></ST>
+SAFETY.Doors_OK := IN.BOX_IN[8];
+
+//Virtuaaliset kytkimet
+SAFETY.Safety_to_robot 	:= TRUE;
+General.Manual 			:= TRUE;]]></ST>
       </Implementation>
     </Action>
     <Action Name="A_Permissions" Id="{8a21b514-31fb-4c74-a1e6-3800d886b191}">
@@ -43,6 +81,137 @@ bDoors := IN.BOX_IN[8];
                 <v n="NetworkListComment">""</v>
                 <v n="DefaultViewMode">"Fbd"</v>
                 <l2 n="NetworkList" cet="Network">
+                  <o>
+                    <v n="ILActive">false</v>
+                    <v n="FBDValid">false</v>
+                    <v n="ILValid">false</v>
+                    <l2 n="ILLines" />
+                    <v n="Comment">""</v>
+                    <v n="Title">""</v>
+                    <v n="Label">""</v>
+                    <v n="OutCommented">false</v>
+                    <l2 n="NetworkItems" cet="BoxTreeAssign">
+                      <o>
+                        <o n="OutputItems" t="OutputItemList">
+                          <l2 n="OutputItems" cet="Operand">
+                            <o>
+                              <v n="Operand">"SAFETY.Safety_OK"</v>
+                              <v n="Type">"BOOL"</v>
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">true</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">24L</v>
+                            </o>
+                          </l2>
+                        </o>
+                        <o n="Flags" t="Flags">
+                          <v n="Flags">0</v>
+                          <v n="Fixed">false</v>
+                          <v n="Extensible">false</v>
+                        </o>
+                        <o n="RValue" t="BoxTreeBox">
+                          <v n="BoxType">"AND"</v>
+                          <o n="Instance" t="Operand">
+                            <n n="Operand" />
+                            <v n="Type">""</v>
+                            <v n="Comment">""</v>
+                            <v n="SymbolComment">""</v>
+                            <v n="Address">""</v>
+                            <o n="Flags" t="Flags">
+                              <v n="Flags">0</v>
+                              <v n="Fixed">false</v>
+                              <v n="Extensible">false</v>
+                            </o>
+                            <v n="LValue">false</v>
+                            <v n="Boolean">false</v>
+                            <v n="IsInstance">true</v>
+                            <v n="Id">18L</v>
+                          </o>
+                          <o n="OutputItems" t="OutputItemList">
+                            <l2 n="OutputItems">
+                              <n />
+                            </l2>
+                          </o>
+                          <o n="Flags" t="Flags">
+                            <v n="Flags">0</v>
+                            <v n="Fixed">false</v>
+                            <v n="Extensible">false</v>
+                          </o>
+                          <n n="InputFlags" />
+                          <l2 n="InputItems" cet="BoxTreeOperand">
+                            <o>
+                              <o n="Operand" t="Operand">
+                                <v n="Operand">"SAFETY.Doors_OK"</v>
+                                <v n="Type">"BOOL"</v>
+                                <v n="Comment">""</v>
+                                <v n="SymbolComment">""</v>
+                                <v n="Address">""</v>
+                                <o n="Flags" t="Flags">
+                                  <v n="Flags">0</v>
+                                  <v n="Fixed">false</v>
+                                  <v n="Extensible">false</v>
+                                </o>
+                                <v n="LValue">false</v>
+                                <v n="Boolean">false</v>
+                                <v n="IsInstance">false</v>
+                                <v n="Id">21L</v>
+                              </o>
+                              <v n="Id">20L</v>
+                            </o>
+                            <o>
+                              <o n="Operand" t="Operand">
+                                <v n="Operand">"SAFETY.Safety_to_robot"</v>
+                                <v n="Type">"BOOL"</v>
+                                <v n="Comment">""</v>
+                                <v n="SymbolComment">""</v>
+                                <v n="Address">""</v>
+                                <o n="Flags" t="Flags">
+                                  <v n="Flags">0</v>
+                                  <v n="Fixed">false</v>
+                                  <v n="Extensible">false</v>
+                                </o>
+                                <v n="LValue">false</v>
+                                <v n="Boolean">false</v>
+                                <v n="IsInstance">false</v>
+                                <v n="Id">23L</v>
+                              </o>
+                              <v n="Id">22L</v>
+                            </o>
+                          </l2>
+                          <o n="InputParam" t="ParamList">
+                            <l2 n="Names" />
+                            <l2 n="Types" />
+                          </o>
+                          <o n="OutputParam" t="ParamList">
+                            <l2 n="Names" cet="String">
+                              <v></v>
+                            </l2>
+                            <l2 n="Types" cet="String">
+                              <v>BOOL</v>
+                            </l2>
+                          </o>
+                          <v n="CallType" t="Operator">And</v>
+                          <v n="EN">false</v>
+                          <v n="ENO">false</v>
+                          <n n="STSnippet" />
+                          <v n="ContainsExtensibleInputs">false</v>
+                          <v n="ProvidesSTSnippet">false</v>
+                          <v n="Id">19L</v>
+                        </o>
+                        <v n="Id">25L</v>
+                      </o>
+                    </l2>
+                    <l2 n="Connectors" />
+                    <v n="Id">17L</v>
+                  </o>
                   <o>
                     <v n="ILActive">false</v>
                     <v n="FBDValid">false</v>
@@ -111,7 +280,7 @@ bDoors := IN.BOX_IN[8];
                           <l2 n="InputItems" cet="BoxTreeOperand">
                             <o>
                               <o n="Operand" t="Operand">
-                                <v n="Operand">"SAFETY.Doors_OK"</v>
+                                <v n="Operand">"SAFETY.Safety_OK"</v>
                                 <v n="Type">"BOOL"</v>
                                 <v n="Comment">""</v>
                                 <v n="SymbolComment">""</v>
@@ -130,7 +299,7 @@ bDoors := IN.BOX_IN[8];
                             </o>
                             <o>
                               <o n="Operand" t="Operand">
-                                <v n="Operand">"bManual"</v>
+                                <v n="Operand">"General.Manual"</v>
                                 <v n="Type">"BOOL"</v>
                                 <v n="Comment">""</v>
                                 <v n="SymbolComment">""</v>
@@ -199,27 +368,103 @@ bDoors := IN.BOX_IN[8];
         </NWL>
       </Implementation>
     </Action>
+    <Action Name="Blink" Id="{cf892607-1afc-45ec-8503-4003e9a74f1f}" FolderPath="Blinkers\">
+      <Implementation>
+        <ST><![CDATA[
+BlinkTimer_ON(IN:= T_ON , PT:= TIME_ON , Q=> , ET=> );
+IF BlinkTimer_ON.Q THEN
+	T_ON 	:= General.BlinkOn:= FALSE;
+	T_OFF 	:= TRUE;	
+END_IF
+
+BlinkTimer_OFF(IN:= T_OFF , PT:= TIME_OFF , Q=> , ET=> );
+IF BlinkTimer_OFF.Q THEN
+	T_ON 	:= General.BlinkOn := TRUE;
+	T_OFF	:= FALSE;
+END_IF
+]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="Blink_Faster" Id="{4c379a4c-fd1e-485d-be50-2df9c3314d57}" FolderPath="Blinkers\">
+      <Implementation>
+        <ST><![CDATA[
+
+BlinkTimer_FAST_ON(IN:= T_FAST_ON , PT:= TIME_FAST_ON , Q=> , ET=> );
+IF BlinkTimer_FAST_ON.Q THEN
+	T_FAST_ON	:= General.FastBlinkOn:= FALSE;
+	T_FAST_OFF 	:= TRUE;	
+END_IF
+
+BlinkTimer_FAST_OFF(IN:= T_FAST_OFF , PT:= TIME_FAST_OFF , Q=> , ET=> );
+IF BlinkTimer_FAST_OFF.Q THEN
+	T_FAST_ON 	:= General.FastBlinkOn := TRUE;
+	T_FAST_OFF	:= FALSE;
+END_IF
+
+]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="Blink_Special" Id="{ba255915-c92f-459f-ac44-5943878c9a83}" FolderPath="Blinkers\">
+      <Implementation>
+        <ST><![CDATA[
+BlinkTimer_SPEC_ON(IN:= T_ON , PT:= TIME_ON , Q=> , ET=> );
+IF BlinkTimer_ON.Q THEN
+	T_ON 	:= General.BlinkOn:= FALSE;
+	T_OFF 	:= TRUE;	
+END_IF
+
+BlinkTimer_SPEC_OFF(IN:= T_OFF , PT:= TIME_OFF , Q=> , ET=> );
+IF BlinkTimer_OFF.Q THEN
+	T_ON 	:= General.BlinkOn := TRUE;
+	T_OFF	:= FALSE;
+END_IF
+]]></ST>
+      </Implementation>
+    </Action>
     <LineIds Name="P_Controls_MAIN">
-      <LineId Id="15" Count="0" />
-      <LineId Id="34" Count="0" />
-      <LineId Id="33" Count="0" />
-      <LineId Id="39" Count="1" />
       <LineId Id="35" Count="0" />
       <LineId Id="16" Count="0" />
       <LineId Id="30" Count="0" />
       <LineId Id="29" Count="0" />
-      <LineId Id="18" Count="0" />
-      <LineId Id="38" Count="0" />
+      <LineId Id="75" Count="0" />
       <LineId Id="12" Count="0" />
+      <LineId Id="72" Count="2" />
+      <LineId Id="55" Count="0" />
+    </LineIds>
+    <LineIds Name="P_Controls_MAIN.A_FeedButton">
+      <LineId Id="28" Count="0" />
+      <LineId Id="30" Count="0" />
+      <LineId Id="33" Count="1" />
+      <LineId Id="57" Count="2" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="P_Controls_MAIN.A_Locks">
       <LineId Id="2" Count="0" />
       <LineId Id="1" Count="0" />
-      <LineId Id="4" Count="0" />
       <LineId Id="3" Count="0" />
-      <LineId Id="8" Count="0" />
+      <LineId Id="12" Count="0" />
       <LineId Id="7" Count="0" />
-      <LineId Id="9" Count="0" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="9" Count="1" />
+    </LineIds>
+    <LineIds Name="P_Controls_MAIN.Blink">
+      <LineId Id="16" Count="0" />
+      <LineId Id="4" Count="10" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="P_Controls_MAIN.Blink_Faster">
+      <LineId Id="19" Count="0" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="4" Count="10" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="P_Controls_MAIN.Blink_Special">
+      <LineId Id="16" Count="0" />
+      <LineId Id="4" Count="10" />
+      <LineId Id="1" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

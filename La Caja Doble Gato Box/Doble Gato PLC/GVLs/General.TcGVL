@@ -4,6 +4,13 @@
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
 	ReadyForAction		: BOOL;
+	BlinkOn				: BOOL;
+	FastBlinkOn			: BOOL;
+	SpecialBlinkOn		: BOOL;
+	
+	Manual				: BOOL;
+	Auto				: BOOL;
+	
 
 	EthercatDevState 	AT%I*: UINT;
 	Term2DevState 		AT%I*: UINT;
