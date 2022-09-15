@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
-  <POU Name="Overview" Id="{63430e5d-51c3-4feb-89f9-4d9fcb588425}" SpecialFunc="None">
-    <Declaration><![CDATA[PROGRAM Overview
+  <POU Name="FBD_Overview" Id="{63430e5d-51c3-4feb-89f9-4d9fcb588425}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM FBD_Overview
 VAR
 END_VAR
 ]]></Declaration>

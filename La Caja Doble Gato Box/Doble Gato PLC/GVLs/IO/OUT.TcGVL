@@ -6,7 +6,7 @@ VAR_GLOBAL
 	
 	BOX_OUT 	AT%Q*:		ARRAY[1..8] OF BOOL;
 	
-	EthercatDevCtrl 	AT%Q*: UINT;
+
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

@@ -44,27 +44,35 @@
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
 						<Var>
-							<Name>IO.BOX_IN</Name>
+							<Name>General.EthercatDevState</Name>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>General.Term2DevState</Name>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>General.EthercatDev1</Name>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>General.EthercatDev3</Name>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>IN.BOX_IN</Name>
 							<Type GUID="{71B58F72-0E49-50EB-B8E4-1CCD027538EC}">ARRAY [1..8] OF BOOL</Type>
-						</Var>
-						<Var>
-							<Name>IO.EthercatDevState</Name>
-							<Type>UINT</Type>
-						</Var>
-						<Var>
-							<Name>IO.Term2DevState</Name>
-							<Type>UINT</Type>
 						</Var>
 					</Vars>
 					<Vars VarGrpType="2" AreaNo="1">
 						<Name>PlcTask Outputs</Name>
 						<Var>
-							<Name>IO.BOX_OUT</Name>
-							<Type GUID="{71B58F72-0E49-50EB-B8E4-1CCD027538EC}">ARRAY [1..8] OF BOOL</Type>
+							<Name>General.EthercatDevCtrl</Name>
+							<Type>UINT</Type>
 						</Var>
 						<Var>
-							<Name>IO.EthercatDevCtrl</Name>
-							<Type>UINT</Type>
+							<Name>OUT.BOX_OUT</Name>
+							<Type GUID="{71B58F72-0E49-50EB-B8E4-1CCD027538EC}">ARRAY [1..8] OF BOOL</Type>
 						</Var>
 					</Vars>
 					<Contexts>
@@ -657,34 +665,34 @@
 		</Io>
 	</Project>
 	<Mappings>
-		<MappingInfo Identifier="{00000000-2041-0850-4020-500810000403}" Id="#x02030010"/>
-		<MappingInfo Identifier="{00000000-2041-0850-4020-500821000403}" Id="#x02030030"/>
-		<MappingInfo Identifier="{00000000-2041-0850-4020-500840000403}" Id="#x02030020"/>
+		<MappingInfo Identifier="{00000000-2041-0850-4020-500810000403}" Id="#x02030020"/>
+		<MappingInfo Identifier="{00000000-2041-0850-4020-500840000403}" Id="#x02030010"/>
 		<OwnerA Name="TIPC^Doble Gato PLC^Doble Gato PLC Instance">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)">
+				<Link VarA="PlcTask Inputs^General.EthercatDev1" VarB="Inputs^DevState"/>
+			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 3 (EL1008)">
-				<Link VarA="PlcTask Inputs^IO.BOX_IN[1]" VarB="Channel 1^Input"/>
-				<Link VarA="PlcTask Inputs^IO.BOX_IN[2]" VarB="Channel 2^Input"/>
-				<Link VarA="PlcTask Inputs^IO.BOX_IN[3]" VarB="Channel 3^Input"/>
-				<Link VarA="PlcTask Inputs^IO.BOX_IN[4]" VarB="Channel 4^Input"/>
-				<Link VarA="PlcTask Inputs^IO.BOX_IN[5]" VarB="Channel 5^Input"/>
-				<Link VarA="PlcTask Inputs^IO.BOX_IN[6]" VarB="Channel 6^Input"/>
-				<Link VarA="PlcTask Inputs^IO.BOX_IN[7]" VarB="Channel 7^Input"/>
-				<Link VarA="PlcTask Inputs^IO.BOX_IN[8]" VarB="Channel 8^Input"/>
-				<Link VarA="PlcTask Inputs^IO.Term2DevState" VarB="InfoData^State"/>
+				<Link VarA="PlcTask Inputs^IN.BOX_IN[1]" VarB="Channel 1^Input"/>
+				<Link VarA="PlcTask Inputs^IN.BOX_IN[2]" VarB="Channel 2^Input"/>
+				<Link VarA="PlcTask Inputs^IN.BOX_IN[3]" VarB="Channel 3^Input"/>
+				<Link VarA="PlcTask Inputs^IN.BOX_IN[4]" VarB="Channel 4^Input"/>
+				<Link VarA="PlcTask Inputs^IN.BOX_IN[5]" VarB="Channel 5^Input"/>
+				<Link VarA="PlcTask Inputs^IN.BOX_IN[6]" VarB="Channel 6^Input"/>
+				<Link VarA="PlcTask Inputs^IN.BOX_IN[7]" VarB="Channel 7^Input"/>
+				<Link VarA="PlcTask Inputs^IN.BOX_IN[8]" VarB="Channel 8^Input"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 4 (EL2008)">
-				<Link VarA="PlcTask Outputs^IO.BOX_OUT[1]" VarB="Channel 1^Output"/>
-				<Link VarA="PlcTask Outputs^IO.BOX_OUT[2]" VarB="Channel 2^Output"/>
-				<Link VarA="PlcTask Outputs^IO.BOX_OUT[3]" VarB="Channel 3^Output"/>
-				<Link VarA="PlcTask Outputs^IO.BOX_OUT[4]" VarB="Channel 4^Output"/>
-				<Link VarA="PlcTask Outputs^IO.BOX_OUT[5]" VarB="Channel 5^Output"/>
-				<Link VarA="PlcTask Outputs^IO.BOX_OUT[6]" VarB="Channel 6^Output"/>
-				<Link VarA="PlcTask Outputs^IO.BOX_OUT[7]" VarB="Channel 7^Output"/>
-				<Link VarA="PlcTask Outputs^IO.BOX_OUT[8]" VarB="Channel 8^Output"/>
+				<Link VarA="PlcTask Outputs^OUT.BOX_OUT[1]" VarB="Channel 1^Output"/>
+				<Link VarA="PlcTask Outputs^OUT.BOX_OUT[2]" VarB="Channel 2^Output"/>
+				<Link VarA="PlcTask Outputs^OUT.BOX_OUT[3]" VarB="Channel 3^Output"/>
+				<Link VarA="PlcTask Outputs^OUT.BOX_OUT[4]" VarB="Channel 4^Output"/>
+				<Link VarA="PlcTask Outputs^OUT.BOX_OUT[5]" VarB="Channel 5^Output"/>
+				<Link VarA="PlcTask Outputs^OUT.BOX_OUT[6]" VarB="Channel 6^Output"/>
+				<Link VarA="PlcTask Outputs^OUT.BOX_OUT[7]" VarB="Channel 7^Output"/>
+				<Link VarA="PlcTask Outputs^OUT.BOX_OUT[8]" VarB="Channel 8^Output"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 3 (EtherCAT Automation Protocol)">
-				<Link VarA="PlcTask Inputs^IO.EthercatDevState" VarB="Inputs^DevState"/>
-				<Link VarA="PlcTask Outputs^IO.EthercatDevCtrl" VarB="Outputs^DevCtrl"/>
+				<Link VarA="PlcTask Inputs^General.EthercatDev3" VarB="Inputs^DevState"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
-  <POU Name="BlockPad" Id="{8a1efacf-3fcd-461c-b49b-df5e51cc6e16}" SpecialFunc="None">
-    <Declaration><![CDATA[PROGRAM BlockPad
+  <POU Name="P_BlockPad" Id="{8a1efacf-3fcd-461c-b49b-df5e51cc6e16}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM P_BlockPad
 VAR_INPUT
 	NappiNumero: INT;
 END_VAR
@@ -25,6 +25,8 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
+
+
 Numero := NappiNumero;
 n1 := 44; 
 n2 := 4;
@@ -49,7 +51,8 @@ IF IO.BOX_IN[1] THEN
 END_IF
 *)]]></ST>
     </Implementation>
-    <LineIds Name="BlockPad">
+    <LineIds Name="P_BlockPad">
+      <LineId Id="148" Count="1" />
       <LineId Id="105" Count="0" />
       <LineId Id="50" Count="3" />
       <LineId Id="55" Count="2" />

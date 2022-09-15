@@ -3,6 +3,14 @@
   <GVL Name="General" Id="{0e0fd3b6-c327-4461-9f96-883d01dd86e0}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
+	ReadyForAction		: BOOL;
+
+	EthercatDevState 	AT%I*: UINT;
+	Term2DevState 		AT%I*: UINT;
+	EthercatDevCtrl 	AT%Q*: UINT;
+	EthercatDev1		AT%I*: UINT;
+	EthercatDev3		AT%I*: UINT;
+	
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>
