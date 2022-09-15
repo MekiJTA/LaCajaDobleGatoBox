@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
-  <POU Name="FB_Block" Id="{718ab21c-a86f-42b1-ad84-7eea86241524}" SpecialFunc="None">
-    <Declaration><![CDATA[FUNCTION_BLOCK FB_Block
+  <POU Name="FB_BlockPad" Id="{718ab21c-a86f-42b1-ad84-7eea86241524}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_BlockPad
 VAR_INPUT
 	iInput1 : BOOL;
 	iInput2 : BOOL;
@@ -25,7 +25,7 @@ oLight1;
 
 ]]></ST>
     </Implementation>
-    <LineIds Name="FB_Block">
+    <LineIds Name="FB_BlockPad">
       <LineId Id="15" Count="0" />
       <LineId Id="9" Count="0" />
       <LineId Id="16" Count="1" />

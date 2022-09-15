@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
+  <GVL Name="OUT" Id="{9e393b40-1de7-49b3-9092-6de105c0fc74}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	
+	BOX_OUT 	AT%Q*:		ARRAY[1..8] OF BOOL;
+	
+	EthercatDevCtrl 	AT%Q*: UINT;
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

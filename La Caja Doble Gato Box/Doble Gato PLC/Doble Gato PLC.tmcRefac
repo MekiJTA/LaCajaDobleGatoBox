@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Refactors>
+  <Renames>
+    <RenamedType>
+      <Type guid="718ab21c-a86f-42b1-ad84-7eea86241524">FB_BLOCK</Type>
+      <From>FB_Block</From>
+      <To>FB_BlockPad</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="5015793d-548e-4713-ad62-be76714ca000">CONTROLS_FBD</Type>
+      <From>GeneralControlsMAIN</From>
+      <To>FBD_Controls_Overview</To>
+    </RenamedType>
+  </Renames>
+</Refactors>

@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
+  <POU Name="BlockPad" Id="{8a1efacf-3fcd-461c-b49b-df5e51cc6e16}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM BlockPad
+VAR_INPUT
+	NappiNumero: INT;
+END_VAR
+VAR
+	Numero: INT;
+	nRes: INT;
+	n1: INT;
+	n2: INT;
+	n3: INT;
+	
+	eNappi : E_NappienNumerointi;
+	(*
+	r2 : E_Nappinumerot.Vipu1;
+	r3 : E_Nappinumerot.Vipu2; *)
+	
+	Numero2: INT;
+	fbBlock: FB_BlockPad;
+	FB_Block_0: FB_BlockPad;
+	fbBlock_0: FB_BlockPad;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+Numero := NappiNumero;
+n1 := 44; 
+n2 := 4;
+n3 := 83;
+nRes := F_Sample(n1,n2,n3);
+eNappi := E_NappienNumerointi.Vipu2;
+// Numero2 := r1 + r2 + r3;
+(*
+fbBlock(
+iInput1:= IO.BOX_IN[1] ,
+iInput2:= IO.BOX_IN[2], 
+iInput3:= IO.BOX_IN[3], 
+oLight1=> IO.BOX_OUT[1]
+);
+
+*)
+
+(*
+IF IO.BOX_IN[1] THEN
+ Numero := Numero +1;
+ IO.BOX_OUT[1] := TRUE;
+END_IF
+*)]]></ST>
+    </Implementation>
+    <LineIds Name="BlockPad">
+      <LineId Id="105" Count="0" />
+      <LineId Id="50" Count="3" />
+      <LineId Id="55" Count="2" />
+      <LineId Id="76" Count="0" />
+      <LineId Id="71" Count="0" />
+      <LineId Id="81" Count="0" />
+      <LineId Id="78" Count="0" />
+      <LineId Id="82" Count="0" />
+      <LineId Id="80" Count="0" />
+      <LineId Id="79" Count="0" />
+      <LineId Id="58" Count="7" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

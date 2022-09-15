@@ -17,6 +17,12 @@
     <LibraryReferences>{3f3e6834-53fc-41ad-9188-2785eed20540}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="CopyPastedExamples\General_Control.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CopyPastedExamples\WritePersistentData_1.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\E_NappienNumerointi.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -27,17 +33,30 @@
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
-    <Compile Include="GVLs\IO.TcGVL">
+    <Compile Include="GVLs\IO\IN.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="GVLs\IO\OUT.TcGVL">
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\BlockPad.TcPOU">
+    <Compile Include="POUs\GENERAL\BlockPad.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\FB_Block.TcPOU">
+    <Compile Include="POUs\GENERAL\FBD_Controls_Overview.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\GENERAL\Controls_MAIN.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\GENERAL\FB_BlockPad.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\GENERAL\WritePersistentData.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
@@ -51,6 +70,10 @@
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
     <Folder Include="F" />
+    <Folder Include="CopyPastedExamples" />
+    <Folder Include="GVLs\IO" />
+    <Folder Include="POUs\GENERAL" />
+    <Folder Include="POUs\MAIN PROGRAMS" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>
