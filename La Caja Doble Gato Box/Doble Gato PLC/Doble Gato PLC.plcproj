@@ -17,6 +17,12 @@
     <LibraryReferences>{3f3e6834-53fc-41ad-9188-2785eed20540}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DUTs\E_NappienNumerointi.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="F\F_Sample.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="GVLs\General.TcGVL">
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
@@ -28,13 +34,23 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\BlockPad.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\FB_Block.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\MAIN.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Overview.TcPOU">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
+    <Folder Include="F" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>

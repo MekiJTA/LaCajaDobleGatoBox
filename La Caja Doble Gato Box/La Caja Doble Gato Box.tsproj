@@ -52,7 +52,7 @@
 							<Type>UINT</Type>
 						</Var>
 						<Var>
-							<Name>IO.Term1DevState</Name>
+							<Name>IO.Term2DevState</Name>
 							<Type>UINT</Type>
 						</Var>
 					</Vars>
@@ -85,25 +85,6 @@
 			</Project>
 		</Plc>
 		<Io>
-			<Device Id="2" DevType="121">
-				<Name>Device 2 (NOV-DP-RAM)</Name>
-				<AddressInfo>
-					<Isa>
-						<Address>-267386880</Address>
-						<Size>131072</Size>
-					</Isa>
-				</AddressInfo>
-				<Vars VarGrpType="1" InsertType="1">
-					<Name>Inputs</Name>
-				</Vars>
-				<Vars VarGrpType="2" InsertType="1">
-					<Name>Outputs</Name>
-				</Vars>
-				<Image Id="3" ImageFlags="#x00000042" AddrType="12" ImageType="5">
-					<Name>Image</Name>
-				</Image>
-				<DpRam/>
-			</Device>
 			<Device Id="1" DevType="111" DevFlags="#x0003" AmsPort="28673" AmsNetId="5.62.144.216.2.1" RemoteName="Device 1 (EtherCAT)" InfoImageId="2">
 				<Name>Device 1 (EtherCAT)</Name>
 				<AddressInfo>
@@ -677,6 +658,7 @@
 	</Project>
 	<Mappings>
 		<MappingInfo Identifier="{00000000-2041-0850-4020-500810000403}" Id="#x02030010"/>
+		<MappingInfo Identifier="{00000000-2041-0850-4020-500821000403}" Id="#x02030030"/>
 		<MappingInfo Identifier="{00000000-2041-0850-4020-500840000403}" Id="#x02030020"/>
 		<OwnerA Name="TIPC^Doble Gato PLC^Doble Gato PLC Instance">
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 3 (EL1008)">
@@ -688,6 +670,7 @@
 				<Link VarA="PlcTask Inputs^IO.BOX_IN[6]" VarB="Channel 6^Input"/>
 				<Link VarA="PlcTask Inputs^IO.BOX_IN[7]" VarB="Channel 7^Input"/>
 				<Link VarA="PlcTask Inputs^IO.BOX_IN[8]" VarB="Channel 8^Input"/>
+				<Link VarA="PlcTask Inputs^IO.Term2DevState" VarB="InfoData^State"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 4 (EL2008)">
 				<Link VarA="PlcTask Outputs^IO.BOX_OUT[1]" VarB="Channel 1^Output"/>

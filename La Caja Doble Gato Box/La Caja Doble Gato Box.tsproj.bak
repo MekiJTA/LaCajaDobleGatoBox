@@ -52,7 +52,7 @@
 							<Type>UINT</Type>
 						</Var>
 						<Var>
-							<Name>IO.Term1DevState</Name>
+							<Name>IO.Term2DevState</Name>
 							<Type>UINT</Type>
 						</Var>
 					</Vars>
@@ -677,6 +677,8 @@
 	</Project>
 	<Mappings>
 		<MappingInfo Identifier="{00000000-2041-0850-4020-500810000403}" Id="#x02030010"/>
+		<MappingInfo Identifier="{00000000-2041-0850-4020-500821000403}" Id="#x02030030"/>
+		<MappingInfo Identifier="{00000000-2041-0850-4020-500840000403}" Id="#x02030020"/>
 		<OwnerA Name="TIPC^Doble Gato PLC^Doble Gato PLC Instance">
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 3 (EL1008)">
 				<Link VarA="PlcTask Inputs^IO.BOX_IN[1]" VarB="Channel 1^Input"/>
@@ -687,6 +689,7 @@
 				<Link VarA="PlcTask Inputs^IO.BOX_IN[6]" VarB="Channel 6^Input"/>
 				<Link VarA="PlcTask Inputs^IO.BOX_IN[7]" VarB="Channel 7^Input"/>
 				<Link VarA="PlcTask Inputs^IO.BOX_IN[8]" VarB="Channel 8^Input"/>
+				<Link VarA="PlcTask Inputs^IO.Term2DevState" VarB="InfoData^State"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 4 (EL2008)">
 				<Link VarA="PlcTask Outputs^IO.BOX_OUT[1]" VarB="Channel 1^Output"/>

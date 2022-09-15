@@ -4,27 +4,35 @@
     <Declaration><![CDATA[PROGRAM MAIN
 VAR
 	Nappi: BOOL;
+	Vipu1: BOOL;
+	Vipu2: BOOL;
+	NappiOhje: INT;
+	
 	Numero: INT;
 	
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
-IF IO.BOX_IN[1] THEN
- Numero := Numero +1;
- IO.BOX_OUT[1] := TRUE;
-END_IF
 
+//F_Sample(nVar1:=1,nVar2:=44,nVar3:=3);
+Numero := F_Sample(1,1,44);
+BlockPad(NappiNumero:= Numero);
+
+
+
+BlockPad(NappiNumero := NappiOhje);
 ]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
-      <LineId Id="6" Count="0" />
-      <LineId Id="2" Count="0" />
-      <LineId Id="7" Count="0" />
-      <LineId Id="17" Count="0" />
-      <LineId Id="13" Count="0" />
       <LineId Id="16" Count="0" />
       <LineId Id="14" Count="0" />
+      <LineId Id="25" Count="2" />
+      <LineId Id="48" Count="0" />
+      <LineId Id="44" Count="0" />
+      <LineId Id="46" Count="0" />
+      <LineId Id="45" Count="0" />
+      <LineId Id="47" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

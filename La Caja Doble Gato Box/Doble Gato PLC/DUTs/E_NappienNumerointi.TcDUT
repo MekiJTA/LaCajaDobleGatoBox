@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
+  <DUT Name="E_NappienNumerointi" Id="{317754fe-34bc-4148-abf0-4f663ed440cf}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'strict'}
+TYPE E_NappienNumerointi :
+(
+	Vapaa := 0,
+	Nappi1 := 1,
+	Vipu1,
+	Vipu2
+);
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>
