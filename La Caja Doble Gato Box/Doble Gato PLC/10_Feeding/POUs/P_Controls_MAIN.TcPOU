@@ -31,12 +31,15 @@ VAR
 	T_SPEC_OFF : BOOL := TRUE;
 //==================
 
+	StateSpecial: INT;
+	i: INT;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[
+      <ST><![CDATA[OUT.BOX_OUT[7] := General.SpecialBlinkOn;
+
 FBD_Assign_IO();
-	A_Locks();
+	A_Doors();
 	A_Permissions();
 	A_FeedButton();
 	Blink();
@@ -46,6 +49,19 @@ FBD_Assign_IO();
 	]]></ST>
     </Implementation>
     <Folder Name="Blinkers" Id="{5c25f4da-2386-4bfa-a3e5-3fe24506dcb7}" />
+    <Action Name="A_Doors" Id="{223db38c-ab74-4269-818b-d4d0b7d3de82}">
+      <Implementation>
+        <ST><![CDATA[
+//"Ovisensori" hyppää outputista inputtiin, jos on päällä niin ohjelma saa käydä
+OUT.BOX_OUT[8] := TRUE;
+
+SAFETY.Doors_OK := IN.BOX_IN[8];
+
+//Virtuaaliset kytkimet
+SAFETY.Safety_to_robot 	:= TRUE;
+General.Manual 			:= TRUE;]]></ST>
+      </Implementation>
+    </Action>
     <Action Name="A_FeedButton" Id="{fd10e9fd-470d-417b-922d-3e15328c9f03}">
       <Implementation>
         <ST><![CDATA[
@@ -57,19 +73,6 @@ THEN
 	OUT.BOX_OUT[1] := TRUE;	
 END_IF
 ]]></ST>
-      </Implementation>
-    </Action>
-    <Action Name="A_Locks" Id="{223db38c-ab74-4269-818b-d4d0b7d3de82}">
-      <Implementation>
-        <ST><![CDATA[
-//"Ovisensori" hyppää outputista inputtiin, jos on päällä niin ohjelma saa käydä
-OUT.BOX_OUT[8] := TRUE;
-
-SAFETY.Doors_OK := IN.BOX_IN[8];
-
-//Virtuaaliset kytkimet
-SAFETY.Safety_to_robot 	:= TRUE;
-General.Manual 			:= TRUE;]]></ST>
       </Implementation>
     </Action>
     <Action Name="A_Permissions" Id="{8a21b514-31fb-4c74-a1e6-3800d886b191}">
@@ -407,39 +410,56 @@ END_IF
     <Action Name="Blink_Special" Id="{ba255915-c92f-459f-ac44-5943878c9a83}" FolderPath="Blinkers\">
       <Implementation>
         <ST><![CDATA[
-BlinkTimer_SPEC_ON(IN:= T_ON , PT:= TIME_ON , Q=> , ET=> );
-IF BlinkTimer_ON.Q THEN
-	T_ON 	:= General.BlinkOn:= FALSE;
-	T_OFF 	:= TRUE;	
-END_IF
+CASE StateSpecial OF
+0:
 
-BlinkTimer_SPEC_OFF(IN:= T_OFF , PT:= TIME_OFF , Q=> , ET=> );
-IF BlinkTimer_OFF.Q THEN
-	T_ON 	:= General.BlinkOn := TRUE;
-	T_OFF	:= FALSE;
-END_IF
+	IF i > 5 THEN
+		StateSpecial := 1;
+		i := 0;
+		ELSE
+		BlinkTimer_SPEC_ON(IN:= T_SPEC_ON , PT:= (TIME_SPECIAL_ON*5) , Q=> , ET=> );
+		IF BlinkTimer_SPEC_ON.Q THEN
+			T_SPEC_ON 	:= General.SpecialBlinkOn:= FALSE;
+			T_SPEC_OFF 	:= TRUE;	
+		END_IF
+		
+		BlinkTimer_SPEC_OFF(IN:= T_SPEC_OFF , PT:= (TIME_SPECIAL_OFF*5) , Q=> , ET=> );
+		IF BlinkTimer_SPEC_OFF.Q THEN
+			T_SPEC_ON 	:= General.SpecialBlinkOn := TRUE;
+			T_SPEC_OFF	:= FALSE;
+		i:= i+1;
+		END_IF
+	END_IF
+
+	1: 
+
+	IF i > 1 THEN
+		StateSpecial := 0;
+		i := 0;
+		ELSE
+		BlinkTimer_SPEC_ON(IN:= T_SPEC_ON , PT:= (TIME_SPECIAL_ON*10) , Q=> , ET=> );
+		IF BlinkTimer_SPEC_ON.Q THEN
+			T_SPEC_ON 	:= General.SpecialBlinkOn:= FALSE;
+			T_SPEC_OFF 	:= TRUE;	
+		END_IF
+		
+		BlinkTimer_SPEC_OFF(IN:= T_SPEC_OFF , PT:= (TIME_SPECIAL_OFF*10) , Q=> , ET=> );
+		IF BlinkTimer_SPEC_OFF.Q THEN
+			T_SPEC_ON 	:= General.SpecialBlinkOn := TRUE;
+			T_SPEC_OFF	:= FALSE;
+			i:= i+1;
+		END_IF
+	END_IF
+END_CASE
 ]]></ST>
       </Implementation>
     </Action>
     <LineIds Name="P_Controls_MAIN">
-      <LineId Id="35" Count="0" />
-      <LineId Id="16" Count="0" />
-      <LineId Id="30" Count="0" />
-      <LineId Id="29" Count="0" />
-      <LineId Id="75" Count="0" />
-      <LineId Id="12" Count="0" />
-      <LineId Id="72" Count="2" />
+      <LineId Id="88" Count="1" />
+      <LineId Id="76" Count="7" />
       <LineId Id="55" Count="0" />
     </LineIds>
-    <LineIds Name="P_Controls_MAIN.A_FeedButton">
-      <LineId Id="28" Count="0" />
-      <LineId Id="30" Count="0" />
-      <LineId Id="33" Count="1" />
-      <LineId Id="57" Count="2" />
-      <LineId Id="23" Count="0" />
-      <LineId Id="1" Count="0" />
-    </LineIds>
-    <LineIds Name="P_Controls_MAIN.A_Locks">
+    <LineIds Name="P_Controls_MAIN.A_Doors">
       <LineId Id="2" Count="0" />
       <LineId Id="1" Count="0" />
       <LineId Id="3" Count="0" />
@@ -448,6 +468,14 @@ END_IF
       <LineId Id="15" Count="0" />
       <LineId Id="14" Count="0" />
       <LineId Id="9" Count="1" />
+    </LineIds>
+    <LineIds Name="P_Controls_MAIN.A_FeedButton">
+      <LineId Id="28" Count="0" />
+      <LineId Id="30" Count="0" />
+      <LineId Id="33" Count="1" />
+      <LineId Id="57" Count="2" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="P_Controls_MAIN.Blink">
       <LineId Id="16" Count="0" />
@@ -462,9 +490,29 @@ END_IF
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="P_Controls_MAIN.Blink_Special">
+      <LineId Id="19" Count="0" />
       <LineId Id="16" Count="0" />
-      <LineId Id="4" Count="10" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="105" Count="0" />
+      <LineId Id="101" Count="1" />
+      <LineId Id="106" Count="0" />
+      <LineId Id="99" Count="0" />
+      <LineId Id="4" Count="9" />
+      <LineId Id="52" Count="0" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="100" Count="0" />
+      <LineId Id="30" Count="0" />
       <LineId Id="1" Count="0" />
+      <LineId Id="50" Count="0" />
+      <LineId Id="103" Count="1" />
+      <LineId Id="107" Count="0" />
+      <LineId Id="32" Count="0" />
+      <LineId Id="34" Count="9" />
+      <LineId Id="54" Count="0" />
+      <LineId Id="44" Count="0" />
+      <LineId Id="47" Count="0" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="55" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
