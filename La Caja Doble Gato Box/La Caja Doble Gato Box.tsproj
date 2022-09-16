@@ -44,6 +44,10 @@
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
 						<Var>
+							<Name>SAFETY.Safety_OK</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
 							<Name>General.EthercatDevState</Name>
 							<Type>UINT</Type>
 						</Var>
@@ -62,10 +66,6 @@
 						<Var>
 							<Name>IN.BOX_IN</Name>
 							<Type GUID="{71B58F72-0E49-50EB-B8E4-1CCD027538EC}">ARRAY [1..8] OF BOOL</Type>
-						</Var>
-						<Var>
-							<Name>SAFETY.Safety_OK</Name>
-							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>SAFETY.Doors_OK</Name>

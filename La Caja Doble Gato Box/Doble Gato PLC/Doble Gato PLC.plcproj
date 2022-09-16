@@ -51,16 +51,19 @@
     <Compile Include="POUs\Feeding\F\F_Sample.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Feeding\POUs\etc\FB_BlockPad.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="POUs\Feeding\POUs\etc\P_BlockPad.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Feeding\POUs\FBD_Assign_IO.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Feeding\POUs\FB_ButtonBox.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\Feeding\POUs\P_General_Control.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Feeding\POUs\P_Safety.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\GENERAL\P_WritePersistentData.TcPOU">

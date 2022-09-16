@@ -3,8 +3,8 @@
   <POU Name="FBD_Assign_IO" Id="{5015793d-548e-4713-ad62-be76714ca000}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM FBD_Assign_IO
 VAR
-	fbBlock_1: FB_BlockPad;
-	fbBlock_2: FB_BlockPad;
+	fbBlock_1: FB_ButtonBox;
+	fbBlock_2: FB_ButtonBox;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -26,7 +26,7 @@ END_VAR
                   <v n="OutCommented">false</v>
                   <l2 n="NetworkItems" cet="BoxTreeBox">
                     <o>
-                      <v n="BoxType">"FB_BlockPad"</v>
+                      <v n="BoxType">"FB_ButtonBox"</v>
                       <o n="Instance" t="Operand">
                         <v n="Operand">"fbBlock_1"</v>
                         <v n="Type">"FB_BlockPad"</v>
@@ -174,7 +174,7 @@ END_VAR
                   <v n="OutCommented">false</v>
                   <l2 n="NetworkItems" cet="BoxTreeBox">
                     <o>
-                      <v n="BoxType">"FB_BlockPad"</v>
+                      <v n="BoxType">"FB_ButtonBox"</v>
                       <o n="Instance" t="Operand">
                         <v n="Operand">"fbBlock_2"</v>
                         <v n="Type">"FB_BlockPad"</v>

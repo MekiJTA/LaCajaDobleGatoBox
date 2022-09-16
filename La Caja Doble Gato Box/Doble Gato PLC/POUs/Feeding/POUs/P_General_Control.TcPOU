@@ -32,15 +32,22 @@ VAR
 
 	StateSpecial: INT;
 	i: INT;
+	Input1_RTRIG: R_TRIG;
+	Input2_RTRIG: R_TRIG;
+	tempCounter: INT;
+	tempCounter2: INT;
+	bSwitchToggle: BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[// OUT.BOX_OUT[7] := General.SpecialBlinkOn;
 
 FBD_Assign_IO();
+	FBD_Assign_IO();
 	A_Doors();
 	A_Permissions();
-	A_FeedButton();
+//	A_ButtonBoxes();
+//	A_FeedButton();
 	Blink();
 	Blink_Faster();
 	Blink_Special();
@@ -48,6 +55,7 @@ FBD_Assign_IO();
 	]]></ST>
     </Implementation>
     <Folder Name="Blinkers" Id="{5c25f4da-2386-4bfa-a3e5-3fe24506dcb7}" />
+    <Folder Name="Buttons" Id="{71ed4705-df05-4341-9724-6438c1a3eb09}" />
     <Action Name="A_Beacons" Id="{9f0f4f38-0331-4251-b759-68adeace686f}">
       <Implementation>
         <ST><![CDATA[]]></ST>
@@ -55,7 +63,19 @@ FBD_Assign_IO();
     </Action>
     <Action Name="A_ButtonBoxes" Id="{78e610f5-06f1-42f9-a722-0082c1dc1f14}">
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[
+
+Input1_RTRIG(CLK:= IN.BOX_IN[1]);
+IF Input1_RTRIG.Q THEN
+	A_FeedButton(); 	
+END_IF
+	
+Input2_RTRIG(CLK:= (IN.BOX_IN[2] OR IN.BOX_IN[3]), Q=> );
+IF Input2_RTRIG.Q THEN
+	A_Switch();
+END_IF
+
+]]></ST>
       </Implementation>
     </Action>
     <Action Name="A_DoorLocks" Id="{b70c1c85-1e32-47fe-a80f-a4fd648c58be}">
@@ -76,9 +96,13 @@ SAFETY.Safety_to_robot 	:= TRUE;
 General.Manual 			:= TRUE;]]></ST>
       </Implementation>
     </Action>
-    <Action Name="A_FeedButton" Id="{fd10e9fd-470d-417b-922d-3e15328c9f03}">
+    <Action Name="A_FeedButton" Id="{fd10e9fd-470d-417b-922d-3e15328c9f03}" FolderPath="Buttons\">
       <Implementation>
         <ST><![CDATA[
+OUT.BOX_OUT[1] := TRUE;	
+tempCounter := tempCounter+1;
+
+(*
 IF 	IN.BOX_IN[1]AND
 	(General.BlinkOn AND
 	General.ReadyForAction AND 
@@ -86,6 +110,7 @@ IF 	IN.BOX_IN[1]AND
 THEN
 	OUT.BOX_OUT[1] := TRUE;	
 END_IF
+*)
 ]]></ST>
       </Implementation>
     </Action>
@@ -385,6 +410,22 @@ END_IF
         </NWL>
       </Implementation>
     </Action>
+    <Action Name="A_Switch" Id="{474615ab-9ca6-406f-b563-0fddc5938d75}" FolderPath="Buttons\">
+      <Implementation>
+        <ST><![CDATA[tempCounter2 := tempCounter2+1;
+
+IF IN.BOX_IN[2] THEN
+bSwitchToggle := TRUE;
+END_IF
+ 
+IF IN.BOX_IN[3] THEN
+bSwitchToggle := FALSE;
+END_IF
+
+OUT.BOX_OUT[1] := bSwitchToggle;
+]]></ST>
+      </Implementation>
+    </Action>
     <Action Name="Blink" Id="{cf892607-1afc-45ec-8503-4003e9a74f1f}" FolderPath="Blinkers\">
       <Implementation>
         <ST><![CDATA[
@@ -470,7 +511,11 @@ END_CASE
     </Action>
     <LineIds Name="P_General_Control">
       <LineId Id="88" Count="1" />
-      <LineId Id="76" Count="3" />
+      <LineId Id="76" Count="0" />
+      <LineId Id="274" Count="0" />
+      <LineId Id="77" Count="1" />
+      <LineId Id="191" Count="0" />
+      <LineId Id="79" Count="0" />
       <LineId Id="156" Count="2" />
       <LineId Id="83" Count="0" />
       <LineId Id="55" Count="0" />
@@ -479,7 +524,13 @@ END_CASE
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="P_General_Control.A_ButtonBoxes">
+      <LineId Id="25" Count="1" />
+      <LineId Id="21" Count="3" />
+      <LineId Id="3" Count="0" />
       <LineId Id="1" Count="0" />
+      <LineId Id="18" Count="2" />
+      <LineId Id="8" Count="0" />
+      <LineId Id="13" Count="0" />
     </LineIds>
     <LineIds Name="P_General_Control.A_DoorLocks">
       <LineId Id="1" Count="0" />
@@ -495,12 +546,26 @@ END_CASE
       <LineId Id="9" Count="1" />
     </LineIds>
     <LineIds Name="P_General_Control.A_FeedButton">
+      <LineId Id="69" Count="0" />
+      <LineId Id="65" Count="0" />
+      <LineId Id="67" Count="1" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="61" Count="3" />
+      <LineId Id="58" Count="2" />
+      <LineId Id="1" Count="0" />
+      <LineId Id="66" Count="0" />
+    </LineIds>
+    <LineIds Name="P_General_Control.A_Switch">
+      <LineId Id="19" Count="0" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="5" Count="0" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="16" Count="2" />
       <LineId Id="28" Count="0" />
       <LineId Id="30" Count="0" />
-      <LineId Id="33" Count="1" />
-      <LineId Id="57" Count="2" />
-      <LineId Id="23" Count="0" />
-      <LineId Id="1" Count="0" />
+      <LineId Id="37" Count="0" />
     </LineIds>
     <LineIds Name="P_General_Control.Blink">
       <LineId Id="16" Count="0" />

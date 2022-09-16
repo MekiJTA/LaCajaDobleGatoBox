@@ -18,9 +18,9 @@ VAR
 	r3 : E_Nappinumerot.Vipu2; *)
 	
 	Numero2: INT;
-	fbBlock: FB_BlockPad;
-	FB_Block_0: FB_BlockPad;
-	fbBlock_0: FB_BlockPad;
+	fbBlock: FB_ButtonBox;
+	FB_Block_0: FB_ButtonBox;
+	fbBlock_0: FB_ButtonBox;
 	NappiOhje: INT;
 END_VAR
 ]]></Declaration>
