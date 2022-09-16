@@ -40,6 +40,7 @@ n2 := 4;
 n3 := 83;
 nRes := F_Sample(n1,n2,n3);
 eNappi := E_NappienNumerointi.Vipu2;
+
 // Numero2 := r1 + r2 + r3;
 (*
 fbBlock(
@@ -63,7 +64,9 @@ END_IF
       <LineId Id="148" Count="1" />
       <LineId Id="105" Count="0" />
       <LineId Id="50" Count="3" />
-      <LineId Id="55" Count="2" />
+      <LineId Id="55" Count="1" />
+      <LineId Id="200" Count="0" />
+      <LineId Id="57" Count="0" />
       <LineId Id="76" Count="0" />
       <LineId Id="71" Count="0" />
       <LineId Id="81" Count="0" />

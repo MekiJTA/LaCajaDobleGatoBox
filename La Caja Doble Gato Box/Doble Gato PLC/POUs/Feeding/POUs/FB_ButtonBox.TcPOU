@@ -12,32 +12,39 @@ VAR_OUTPUT
 	oLight1 : BOOL;	
 END_VAR
 VAR
-	iState: INT;
-	rtButton1: R_TRIG;
-	rtButton2: R_TRIG;
-	rtButton3: R_TRIG;
+	nState: eFeed;
+	eTextWriteState : (OPEN_FILE, WRITE_TO_FILE, CLOSE_FILE, ERROR);
+	Button1_trig: R_TRIG;
+	Switch1_trig: R_TRIG;
+	Switch2_trig: R_TRIG;
 	tempCount1: INT;
 	tempCount2: INT;
 	tempCount3: INT;
 	tempCount0: INT;
+	
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[
-A_ButtonPressHandling();
-A_StateChange();
+      <ST><![CDATA[A_ButtonPressHandling();
+A_Switch();
 
-CASE iState OF
-	0: 
-	//tempCount0 := tempCount0+1;
-	1:
-	//tempCount1 := tempCount1+1;
-	2:
-	//tempCount2 := tempCount2+1;	
-	3:
-	//tempCount3 := tempCount3+1;
 
-END_CASE]]></ST>
+CASE nState OF
+eFeed.Auto: 
+		oLight1 := General.FastBlinkOn;
+		
+eFeed.Manual:
+	IF Button1_trig.Q THEN
+		nState := 2;
+	END_IF
+	
+2:
+		oLight1 := General.BlinkOn;
+//	CLOSE_FILE:
+		oLight1 := General.BlinkOn;		
+
+END_CASE
+]]></ST>
     </Implementation>
     <Action Name="A_ButtonPressHandling" Id="{3b6590fa-f99a-41e5-8828-c964d473a0f6}">
       <Implementation>
@@ -61,7 +68,7 @@ END_CASE]]></ST>
                       <o>
                         <v n="BoxType">"R_TRIG"</v>
                         <o n="Instance" t="Operand">
-                          <v n="Operand">"rtButton1"</v>
+                          <v n="Operand">"Button1_trig"</v>
                           <v n="Type">"R_TRIG"</v>
                           <v n="Comment">""</v>
                           <v n="SymbolComment">""</v>
@@ -90,7 +97,7 @@ END_CASE]]></ST>
                         <l2 n="InputItems" cet="BoxTreeOperand">
                           <o>
                             <o n="Operand" t="Operand">
-                              <v n="Operand">"IN.BOX_IN[1]"</v>
+                              <v n="Operand">"iInput1"</v>
                               <v n="Type">"BOOL"</v>
                               <v n="Comment">""</v>
                               <v n="SymbolComment">""</v>
@@ -149,7 +156,7 @@ END_CASE]]></ST>
                       <o>
                         <v n="BoxType">"R_TRIG"</v>
                         <o n="Instance" t="Operand">
-                          <v n="Operand">"rtButton2"</v>
+                          <v n="Operand">"Switch1_trig"</v>
                           <v n="Type">"R_TRIG"</v>
                           <v n="Comment">""</v>
                           <v n="SymbolComment">""</v>
@@ -178,7 +185,7 @@ END_CASE]]></ST>
                         <l2 n="InputItems" cet="BoxTreeOperand">
                           <o>
                             <o n="Operand" t="Operand">
-                              <v n="Operand">"IN.BOX_IN[2]"</v>
+                              <v n="Operand">"iInput2"</v>
                               <v n="Type">"BOOL"</v>
                               <v n="Comment">""</v>
                               <v n="SymbolComment">""</v>
@@ -237,7 +244,7 @@ END_CASE]]></ST>
                       <o>
                         <v n="BoxType">"R_TRIG"</v>
                         <o n="Instance" t="Operand">
-                          <v n="Operand">"rtButton3"</v>
+                          <v n="Operand">"Switch2_trig"</v>
                           <v n="Type">"R_TRIG"</v>
                           <v n="Comment">""</v>
                           <v n="SymbolComment">""</v>
@@ -266,7 +273,7 @@ END_CASE]]></ST>
                         <l2 n="InputItems" cet="BoxTreeOperand">
                           <o>
                             <o n="Operand" t="Operand">
-                              <v n="Operand">"IN.BOX_IN[3]"</v>
+                              <v n="Operand">"iInput3"</v>
                               <v n="Type">"BOOL"</v>
                               <v n="Comment">""</v>
                               <v n="SymbolComment">""</v>
@@ -341,58 +348,41 @@ END_CASE]]></ST>
         <ST><![CDATA[]]></ST>
       </Implementation>
     </Action>
-    <Action Name="A_StateChange" Id="{ab8781ab-cba4-40f4-9111-ef8f6611efbe}">
+    <Action Name="A_Switch" Id="{ab8781ab-cba4-40f4-9111-ef8f6611efbe}">
       <Implementation>
         <ST><![CDATA[IF General.ReadyForAction THEN
-	(*IF rtButton1.Q THEN
-	iState := 2;
-	tempCount1 := tempCount1+1;
-	END_IF *)
-	IF rtButton2.Q THEN
-	iState := 0;
+	IF Switch1_trig.Q THEN
+	nState := 0;
 	tempCount2 := tempCount2+1;
 	END_IF
-	IF rtButton3.Q THEN
-	iState := 1;
+	IF Switch2_trig.Q THEN
+	nState := 1;
 	tempCount3 := tempCount3+1;
 	END_IF
 END_IF]]></ST>
       </Implementation>
     </Action>
-    <Action Name="A_Switch" Id="{9b067bd9-9db9-401d-aac4-281fc454414c}">
-      <Implementation>
-        <ST><![CDATA[]]></ST>
-      </Implementation>
-    </Action>
     <LineIds Name="FB_ButtonBox">
-      <LineId Id="67" Count="0" />
-      <LineId Id="69" Count="0" />
-      <LineId Id="112" Count="0" />
-      <LineId Id="59" Count="0" />
-      <LineId Id="43" Count="0" />
-      <LineId Id="106" Count="1" />
-      <LineId Id="60" Count="0" />
-      <LineId Id="63" Count="1" />
-      <LineId Id="99" Count="0" />
-      <LineId Id="97" Count="0" />
-      <LineId Id="101" Count="0" />
-      <LineId Id="100" Count="0" />
+      <LineId Id="255" Count="1" />
+      <LineId Id="277" Count="0" />
+      <LineId Id="257" Count="3" />
+      <LineId Id="278" Count="0" />
+      <LineId Id="261" Count="3" />
+      <LineId Id="279" Count="0" />
+      <LineId Id="265" Count="4" />
       <LineId Id="61" Count="0" />
+      <LineId Id="280" Count="0" />
     </LineIds>
     <LineIds Name="FB_ButtonBox.A_FeedButton">
       <LineId Id="1" Count="0" />
     </LineIds>
-    <LineIds Name="FB_ButtonBox.A_StateChange">
-      <LineId Id="2" Count="2" />
-      <LineId Id="13" Count="0" />
-      <LineId Id="5" Count="2" />
+    <LineIds Name="FB_ButtonBox.A_Switch">
+      <LineId Id="2" Count="0" />
+      <LineId Id="6" Count="1" />
       <LineId Id="15" Count="0" />
       <LineId Id="8" Count="2" />
       <LineId Id="17" Count="0" />
       <LineId Id="11" Count="0" />
-      <LineId Id="1" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_ButtonBox.A_Switch">
       <LineId Id="1" Count="0" />
     </LineIds>
   </POU>

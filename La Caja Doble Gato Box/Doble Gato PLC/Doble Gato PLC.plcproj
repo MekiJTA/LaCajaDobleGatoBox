@@ -48,6 +48,9 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Feeding\DUT\eFeed.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\Feeding\F\F_Sample.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -84,6 +87,7 @@
     <Folder Include="GVLs\SAFETY" />
     <Folder Include="POUs\Feeding" />
     <Folder Include="POUs\Feeding\F" />
+    <Folder Include="POUs\Feeding\DUT" />
     <Folder Include="POUs\Feeding\POUs" />
     <Folder Include="POUs\Feeding\POUs\etc" />
     <Folder Include="POUs\GENERAL" />
