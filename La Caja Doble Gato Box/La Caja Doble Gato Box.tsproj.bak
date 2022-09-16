@@ -44,24 +44,8 @@
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
 						<Var>
-							<Name>IN.BOX_IN</Name>
-							<Type GUID="{71B58F72-0E49-50EB-B8E4-1CCD027538EC}">ARRAY [1..8] OF BOOL</Type>
-						</Var>
-						<Var>
-							<Name>SAFETY.Safety_OK</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>SAFETY.Doors_OK</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
 							<Name>General.EthercatDevState</Name>
 							<Type>UINT</Type>
-						</Var>
-						<Var>
-							<Name>SAFETY.Safety_to_robot</Name>
-							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>General.Term2DevState</Name>
@@ -75,16 +59,32 @@
 							<Name>General.EthercatDev3</Name>
 							<Type>UINT</Type>
 						</Var>
+						<Var>
+							<Name>IN.BOX_IN</Name>
+							<Type GUID="{71B58F72-0E49-50EB-B8E4-1CCD027538EC}">ARRAY [1..8] OF BOOL</Type>
+						</Var>
+						<Var>
+							<Name>SAFETY.Safety_OK</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>SAFETY.Doors_OK</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>SAFETY.Safety_to_robot</Name>
+							<Type>BOOL</Type>
+						</Var>
 					</Vars>
 					<Vars VarGrpType="2" AreaNo="1">
 						<Name>PlcTask Outputs</Name>
 						<Var>
-							<Name>OUT.BOX_OUT</Name>
-							<Type GUID="{71B58F72-0E49-50EB-B8E4-1CCD027538EC}">ARRAY [1..8] OF BOOL</Type>
-						</Var>
-						<Var>
 							<Name>General.EthercatDevCtrl</Name>
 							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>OUT.BOX_OUT</Name>
+							<Type GUID="{71B58F72-0E49-50EB-B8E4-1CCD027538EC}">ARRAY [1..8] OF BOOL</Type>
 						</Var>
 					</Vars>
 					<Contexts>

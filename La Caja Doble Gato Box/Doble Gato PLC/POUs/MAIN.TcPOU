@@ -14,25 +14,15 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
-P_Controls_MAIN();
-
-
-//F_Sample(nVar1:=1,nVar2:=44,nVar3:=3);
-Numero := F_Sample(1,1,44);
-P_BlockPad(NappiNumero:= Numero);
-
-P_BlockPad(NappiNumero := NappiOhje);
+P_General_Control();
+P_WritePersistentData();
 ]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
       <LineId Id="59" Count="0" />
       <LineId Id="16" Count="0" />
-      <LineId Id="60" Count="0" />
-      <LineId Id="14" Count="0" />
-      <LineId Id="25" Count="2" />
-      <LineId Id="46" Count="0" />
-      <LineId Id="45" Count="0" />
       <LineId Id="47" Count="0" />
+      <LineId Id="79" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

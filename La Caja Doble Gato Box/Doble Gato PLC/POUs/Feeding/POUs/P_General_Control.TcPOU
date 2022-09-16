@@ -1,10 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
-  <POU Name="P_Controls_MAIN" Id="{27560784-429a-4cb9-b530-4b903427c533}" SpecialFunc="None">
-    <Declaration><![CDATA[PROGRAM P_Controls_MAIN
+  <POU Name="P_General_Control" Id="{27560784-429a-4cb9-b530-4b903427c533}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM P_General_Control
 VAR
 	bDoors : BOOL;
-	
 	State: INT;
 	
 	
@@ -36,7 +35,7 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[OUT.BOX_OUT[7] := General.SpecialBlinkOn;
+      <ST><![CDATA[// OUT.BOX_OUT[7] := General.SpecialBlinkOn;
 
 FBD_Assign_IO();
 	A_Doors();
@@ -49,6 +48,21 @@ FBD_Assign_IO();
 	]]></ST>
     </Implementation>
     <Folder Name="Blinkers" Id="{5c25f4da-2386-4bfa-a3e5-3fe24506dcb7}" />
+    <Action Name="A_Beacons" Id="{9f0f4f38-0331-4251-b759-68adeace686f}">
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="A_ButtonBoxes" Id="{78e610f5-06f1-42f9-a722-0082c1dc1f14}">
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Action>
+    <Action Name="A_DoorLocks" Id="{b70c1c85-1e32-47fe-a80f-a4fd648c58be}">
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Action>
     <Action Name="A_Doors" Id="{223db38c-ab74-4269-818b-d4d0b7d3de82}">
       <Implementation>
         <ST><![CDATA[
@@ -454,12 +468,23 @@ END_CASE
 ]]></ST>
       </Implementation>
     </Action>
-    <LineIds Name="P_Controls_MAIN">
+    <LineIds Name="P_General_Control">
       <LineId Id="88" Count="1" />
-      <LineId Id="76" Count="7" />
+      <LineId Id="76" Count="3" />
+      <LineId Id="156" Count="2" />
+      <LineId Id="83" Count="0" />
       <LineId Id="55" Count="0" />
     </LineIds>
-    <LineIds Name="P_Controls_MAIN.A_Doors">
+    <LineIds Name="P_General_Control.A_Beacons">
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="P_General_Control.A_ButtonBoxes">
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="P_General_Control.A_DoorLocks">
+      <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="P_General_Control.A_Doors">
       <LineId Id="2" Count="0" />
       <LineId Id="1" Count="0" />
       <LineId Id="3" Count="0" />
@@ -469,7 +494,7 @@ END_CASE
       <LineId Id="14" Count="0" />
       <LineId Id="9" Count="1" />
     </LineIds>
-    <LineIds Name="P_Controls_MAIN.A_FeedButton">
+    <LineIds Name="P_General_Control.A_FeedButton">
       <LineId Id="28" Count="0" />
       <LineId Id="30" Count="0" />
       <LineId Id="33" Count="1" />
@@ -477,19 +502,19 @@ END_CASE
       <LineId Id="23" Count="0" />
       <LineId Id="1" Count="0" />
     </LineIds>
-    <LineIds Name="P_Controls_MAIN.Blink">
+    <LineIds Name="P_General_Control.Blink">
       <LineId Id="16" Count="0" />
       <LineId Id="4" Count="10" />
       <LineId Id="1" Count="0" />
     </LineIds>
-    <LineIds Name="P_Controls_MAIN.Blink_Faster">
+    <LineIds Name="P_General_Control.Blink_Faster">
       <LineId Id="19" Count="0" />
       <LineId Id="16" Count="0" />
       <LineId Id="4" Count="10" />
       <LineId Id="18" Count="0" />
       <LineId Id="1" Count="0" />
     </LineIds>
-    <LineIds Name="P_Controls_MAIN.Blink_Special">
+    <LineIds Name="P_General_Control.Blink_Special">
       <LineId Id="19" Count="0" />
       <LineId Id="16" Count="0" />
       <LineId Id="20" Count="0" />

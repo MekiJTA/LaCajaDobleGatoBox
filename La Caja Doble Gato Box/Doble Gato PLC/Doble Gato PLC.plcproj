@@ -17,21 +17,6 @@
     <LibraryReferences>{3f3e6834-53fc-41ad-9188-2785eed20540}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="10_Feeding\F\F_Sample.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="10_Feeding\POUs\etc\FB_BlockPad.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="10_Feeding\POUs\etc\P_BlockPad.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="10_Feeding\POUs\FBD_Assign_IO.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="10_Feeding\POUs\P_Controls_MAIN.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="CopyPastedExamples\General_Control.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -63,6 +48,21 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Feeding\F\F_Sample.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Feeding\POUs\etc\FB_BlockPad.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Feeding\POUs\etc\P_BlockPad.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Feeding\POUs\FBD_Assign_IO.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Feeding\POUs\P_General_Control.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\GENERAL\P_WritePersistentData.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -74,15 +74,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="10_Feeding\F" />
-    <Folder Include="10_Feeding\POUs" />
-    <Folder Include="10_Feeding\POUs\etc" />
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
     <Folder Include="CopyPastedExamples" />
     <Folder Include="GVLs\IO" />
-    <Folder Include="10_Feeding" />
     <Folder Include="GVLs\SAFETY" />
+    <Folder Include="POUs\Feeding" />
+    <Folder Include="POUs\Feeding\F" />
+    <Folder Include="POUs\Feeding\POUs" />
+    <Folder Include="POUs\Feeding\POUs\etc" />
     <Folder Include="POUs\GENERAL" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
@@ -95,6 +95,10 @@
     <PlaceholderReference Include="Tc2_System">
       <DefaultResolution>Tc2_System, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc2_System</Namespace>
+    </PlaceholderReference>
+    <PlaceholderReference Include="Tc2_Utilities">
+      <DefaultResolution>Tc2_Utilities, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_Utilities</Namespace>
     </PlaceholderReference>
     <PlaceholderReference Include="Tc3_Module">
       <DefaultResolution>Tc3_Module, * (Beckhoff Automation GmbH)</DefaultResolution>
@@ -115,8 +119,8 @@
   <ProjectExtensions>
     <PlcProjectOptions>
       <XmlArchive>
-  <Data>
-    <o xml:space="preserve" t="OptionKey">
+        <Data>
+          <o xml:space="preserve" t="OptionKey">
       <v n="Name">"&lt;ProjectRoot&gt;"</v>
       <d n="SubKeys" t="Hashtable" ckt="String" cvt="OptionKey">
         <v>{192FAD59-8248-4824-A8DE-9177C94C195A}</v>
@@ -165,13 +169,13 @@
       </d>
       <d n="Values" t="Hashtable" />
     </o>
-  </Data>
-  <TypeList>
-    <Type n="Hashtable">System.Collections.Hashtable</Type>
-    <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
-    <Type n="String">System.String</Type>
-  </TypeList>
-</XmlArchive>
+        </Data>
+        <TypeList>
+          <Type n="Hashtable">System.Collections.Hashtable</Type>
+          <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
+          <Type n="String">System.String</Type>
+        </TypeList>
+      </XmlArchive>
     </PlcProjectOptions>
   </ProjectExtensions>
 </Project>
