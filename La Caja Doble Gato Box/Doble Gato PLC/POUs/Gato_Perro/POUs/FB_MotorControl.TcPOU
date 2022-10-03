@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
+  <POU Name="FB_MotorControl" Id="{da1577ed-8fa5-451c-b384-ecb49194f3dd}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_MotorControl
+VAR_INPUT
+	Run : BOOL;
+	Fast 	: BOOL;
+	Faster	: BOOL;
+	
+END_VAR
+VAR_OUTPUT
+	Q : BOOL;
+	Ready 		: BOOL;
+	Running 	: BOOL;
+	iRounds 	: INT;
+	iRoundsMinute : INT;
+	Gato 		: BOOL;
+	Perro 		: BOOL;
+	GatoCount 	: INT;
+	PerroCount 	: INT;
+END_VAR
+VAR
+
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+// Rough outline:
+// INPUT 24V: DIB 4 5 6 eli paikat 14 15 16
+// 4 käy/seis, 5 vakionopeus 1, 6 vakionopeus 2
+
+// OUTPUT: 20, 24 25 26
+// 20 = DO1, VALMIS-signaali
+// 24-26 = rele, 25 vaihtaa paikkaa
+
+// Kaukosäätimellä napilla käynnistyy ja pysähtyy (valo syttyy tai sammuu)
+// Kytkimellä nopeus 1 tai 2 (vilkuttaa myös nopeammin tai hitaammin)
+
+// Yksi anturi olisi pyörässä kiinni laskemassa kierroksia
+// Valoanturi seuraamassa kun kissa tai koira menee ohi
+
+// Valmius ja moottori käy/ei käy keskustelu taajarin kanssa joko digitaalilähdön kautta (valmius ehkä?) ja relelähdön kautta (miten toimikaan? Pitiköhän syöttää virtaa keskelle)
+]]></ST>
+    </Implementation>
+    <LineIds Name="FB_MotorControl">
+      <LineId Id="10" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="11" Count="0" />
+      <LineId Id="16" Count="1" />
+      <LineId Id="12" Count="2" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="24" Count="0" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="25" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

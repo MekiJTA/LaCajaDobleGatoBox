@@ -48,25 +48,28 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Feeding\DUT\eFeed.TcDUT">
+    <Compile Include="POUs\Gato_Perro\DUT\eFeed.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Feeding\F\F_Sample.TcPOU">
+    <Compile Include="POUs\Gato_Perro\F\F_Sample.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Feeding\POUs\etc\P_BlockPad.TcPOU">
+    <Compile Include="POUs\Gato_Perro\POUs\etc\P_BlockPad.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Feeding\POUs\FBD_Assign_IO.TcPOU">
+    <Compile Include="POUs\Gato_Perro\POUs\FBD_Assign_IO.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Feeding\POUs\FB_ButtonBox.TcPOU">
+    <Compile Include="POUs\Gato_Perro\POUs\FB_ButtonBox.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Feeding\POUs\P_General_Control.TcPOU">
+    <Compile Include="POUs\Gato_Perro\POUs\FB_MotorControl.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Feeding\POUs\P_Safety.TcPOU">
+    <Compile Include="POUs\Gato_Perro\POUs\P_General_Control.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\Gato_Perro\POUs\P_Safety.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\GENERAL\P_WritePersistentData.TcPOU">
@@ -85,11 +88,11 @@
     <Folder Include="CopyPastedExamples" />
     <Folder Include="GVLs\IO" />
     <Folder Include="GVLs\SAFETY" />
-    <Folder Include="POUs\Feeding" />
-    <Folder Include="POUs\Feeding\F" />
-    <Folder Include="POUs\Feeding\DUT" />
-    <Folder Include="POUs\Feeding\POUs" />
-    <Folder Include="POUs\Feeding\POUs\etc" />
+    <Folder Include="POUs\Gato_Perro" />
+    <Folder Include="POUs\Gato_Perro\F" />
+    <Folder Include="POUs\Gato_Perro\DUT" />
+    <Folder Include="POUs\Gato_Perro\POUs" />
+    <Folder Include="POUs\Gato_Perro\POUs\etc" />
     <Folder Include="POUs\GENERAL" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
