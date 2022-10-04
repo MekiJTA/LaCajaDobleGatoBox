@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Refactors>
+  <Renames>
+    <RenamedSymbol>
+      <Type guid="5015793d-548e-4713-ad62-be76714ca000">FBD_Assign_IO</Type>
+      <From>fbBlock_1</From>
+      <To>fbButtonBox</To>
+    </RenamedSymbol>
+  </Renames>
+</Refactors>

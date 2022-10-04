@@ -3,14 +3,15 @@
   <POU Name="FB_MotorControl" Id="{da1577ed-8fa5-451c-b384-ecb49194f3dd}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_MotorControl
 VAR_INPUT
-	Run : BOOL;
-	Fast 	: BOOL;
-	Faster	: BOOL;
+	Run 			: BOOL; // Order to start running
+	Ready			: BOOL; // Safety ok, system ok, doors ok
+	Fast 			: BOOL;
+	Faster			: BOOL;
 	
 END_VAR
 VAR_OUTPUT
 	Q : BOOL;
-	Ready 		: BOOL;
+//	ReadyToRun	: BOOL;
 	Running 	: BOOL;
 	iRounds 	: INT;
 	iRoundsMinute : INT;
@@ -18,6 +19,8 @@ VAR_OUTPUT
 	Perro 		: BOOL;
 	GatoCount 	: INT;
 	PerroCount 	: INT;
+	iStatus		: INT;
+	iFault		: INT;
 END_VAR
 VAR
 

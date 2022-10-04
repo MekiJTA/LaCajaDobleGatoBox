@@ -5,10 +5,10 @@
 {attribute 'to_string'}
 TYPE eFeed :
 (
-	Auto := 0,
-	Manual,
-	State2,
-	State3,
+	Stop := 0,
+	Ready,
+	Running,
+	Fault,
 	State4
 );
 END_TYPE
