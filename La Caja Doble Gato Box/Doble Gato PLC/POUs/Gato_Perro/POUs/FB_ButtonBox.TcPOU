@@ -6,6 +6,8 @@ VAR_INPUT
 	iInput1 : BOOL;
 	iInput2 : BOOL;
 	iInput3 : BOOL;
+	nState 	: INT;
+	
 END_VAR
 VAR_OUTPUT
 	Q 		: BOOL;
@@ -14,7 +16,7 @@ VAR_OUTPUT
 	Faster 	: BOOL;
 END_VAR
 VAR
-	nState: eFeed;
+//	nState: eFeed;
 	eTextWriteState : (OPEN_FILE, WRITE_TO_FILE, CLOSE_FILE, ERROR);
 	Button1_trig: R_TRIG;
 	Switch1_trig: R_TRIG;
@@ -25,6 +27,7 @@ VAR
 	tempCount0: INT;
 	
 	nLightsState: INT;
+	Switch_RS: RS;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -32,25 +35,25 @@ END_VAR
 A_Switch();
 
 // FB_MotorControl hoitais itse statet ja varmistukset, täällä ohjattais vain valojen vilkuttelua ja nappien kontrollointia
-// 
+
+Q := Button1_trig.Q;
+
 
 CASE nState OF
 		
-eFeed.Ready:
-
-	IF Button1_trig.Q THEN
-		Q 		:= TRUE;
-		nState	:= eFeed.Running;
-	END_IF
+	0:
+		oLight1 := FALSE;
 	
-eFeed.Running:
+	1:
 		oLight1 := General.BlinkOn;
 
-eFeed.Fault:
-		oLight1 := General.BlinkOn;		
+	2:
+		oLight1 := TRUE;		
 
-END_CASE
-]]></ST>
+	3:
+		oLight1 := General.BlinkFAST_On;
+
+END_CASE]]></ST>
     </Implementation>
     <Action Name="A_ButtonPressHandling" Id="{3b6590fa-f99a-41e5-8828-c964d473a0f6}">
       <Implementation>
@@ -160,10 +163,10 @@ END_CASE
                     <v n="OutCommented">false</v>
                     <l2 n="NetworkItems" cet="BoxTreeBox">
                       <o>
-                        <v n="BoxType">"R_TRIG"</v>
+                        <v n="BoxType">"RS"</v>
                         <o n="Instance" t="Operand">
-                          <v n="Operand">"Switch1_trig"</v>
-                          <v n="Type">"R_TRIG"</v>
+                          <v n="Operand">"Switch_RS"</v>
+                          <v n="Type">"RS"</v>
                           <v n="Comment">""</v>
                           <v n="SymbolComment">""</v>
                           <v n="Address">""</v>
@@ -175,7 +178,7 @@ END_CASE
                           <v n="LValue">false</v>
                           <v n="Boolean">false</v>
                           <v n="IsInstance">true</v>
-                          <v n="Id">7L</v>
+                          <v n="Id">16L</v>
                         </o>
                         <o n="OutputItems" t="OutputItemList">
                           <l2 n="OutputItems">
@@ -188,11 +191,12 @@ END_CASE
                           <v n="Extensible">false</v>
                         </o>
                         <n n="InputFlags" />
-                        <l2 n="InputItems" cet="BoxTreeOperand">
+                        <l2 n="InputItems" cet="BoxTreeBox">
                           <o>
-                            <o n="Operand" t="Operand">
-                              <v n="Operand">"iInput2"</v>
-                              <v n="Type">"BOOL"</v>
+                            <v n="BoxType">"R_TRIG"</v>
+                            <o n="Instance" t="Operand">
+                              <v n="Operand">"Switch1_trig"</v>
+                              <v n="Type">"R_TRIG"</v>
                               <v n="Comment">""</v>
                               <v n="SymbolComment">""</v>
                               <v n="Address">""</v>
@@ -203,23 +207,153 @@ END_CASE
                               </o>
                               <v n="LValue">false</v>
                               <v n="Boolean">false</v>
-                              <v n="IsInstance">false</v>
-                              <v n="Id">10L</v>
+                              <v n="IsInstance">true</v>
+                              <v n="Id">7L</v>
                             </o>
-                            <v n="Id">9L</v>
+                            <o n="OutputItems" t="OutputItemList">
+                              <l2 n="OutputItems">
+                                <n />
+                              </l2>
+                            </o>
+                            <o n="Flags" t="Flags">
+                              <v n="Flags">0</v>
+                              <v n="Fixed">false</v>
+                              <v n="Extensible">false</v>
+                            </o>
+                            <n n="InputFlags" />
+                            <l2 n="InputItems" cet="BoxTreeOperand">
+                              <o>
+                                <o n="Operand" t="Operand">
+                                  <v n="Operand">"iInput2"</v>
+                                  <v n="Type">"BOOL"</v>
+                                  <v n="Comment">""</v>
+                                  <v n="SymbolComment">""</v>
+                                  <v n="Address">""</v>
+                                  <o n="Flags" t="Flags">
+                                    <v n="Flags">0</v>
+                                    <v n="Fixed">false</v>
+                                    <v n="Extensible">false</v>
+                                  </o>
+                                  <v n="LValue">false</v>
+                                  <v n="Boolean">false</v>
+                                  <v n="IsInstance">false</v>
+                                  <v n="Id">10L</v>
+                                </o>
+                                <v n="Id">9L</v>
+                              </o>
+                            </l2>
+                            <o n="InputParam" t="ParamList">
+                              <l2 n="Names" cet="String">
+                                <v>CLK</v>
+                              </l2>
+                              <l2 n="Types" cet="String">
+                                <v>BOOL</v>
+                              </l2>
+                            </o>
+                            <o n="OutputParam" t="ParamList">
+                              <l2 n="Names" cet="String">
+                                <v>Q</v>
+                              </l2>
+                              <l2 n="Types" cet="String">
+                                <v>BOOL</v>
+                              </l2>
+                            </o>
+                            <v n="CallType" t="Operator">FunctionBlock</v>
+                            <v n="EN">false</v>
+                            <v n="ENO">false</v>
+                            <n n="STSnippet" />
+                            <v n="ContainsExtensibleInputs">false</v>
+                            <v n="ProvidesSTSnippet">false</v>
+                            <v n="Id">8L</v>
+                          </o>
+                          <o>
+                            <v n="BoxType">"R_TRIG"</v>
+                            <o n="Instance" t="Operand">
+                              <v n="Operand">"Switch2_trig"</v>
+                              <v n="Type">"R_TRIG"</v>
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">false</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">true</v>
+                              <v n="Id">20L</v>
+                            </o>
+                            <o n="OutputItems" t="OutputItemList">
+                              <l2 n="OutputItems">
+                                <n />
+                              </l2>
+                            </o>
+                            <o n="Flags" t="Flags">
+                              <v n="Flags">0</v>
+                              <v n="Fixed">false</v>
+                              <v n="Extensible">false</v>
+                            </o>
+                            <n n="InputFlags" />
+                            <l2 n="InputItems" cet="BoxTreeOperand">
+                              <o>
+                                <o n="Operand" t="Operand">
+                                  <v n="Operand">"iInput3"</v>
+                                  <v n="Type">"BOOL"</v>
+                                  <v n="Comment">""</v>
+                                  <v n="SymbolComment">""</v>
+                                  <v n="Address">""</v>
+                                  <o n="Flags" t="Flags">
+                                    <v n="Flags">0</v>
+                                    <v n="Fixed">false</v>
+                                    <v n="Extensible">false</v>
+                                  </o>
+                                  <v n="LValue">false</v>
+                                  <v n="Boolean">false</v>
+                                  <v n="IsInstance">false</v>
+                                  <v n="Id">23L</v>
+                                </o>
+                                <v n="Id">22L</v>
+                              </o>
+                            </l2>
+                            <o n="InputParam" t="ParamList">
+                              <l2 n="Names" cet="String">
+                                <v>CLK</v>
+                              </l2>
+                              <l2 n="Types" cet="String">
+                                <v>BOOL</v>
+                              </l2>
+                            </o>
+                            <o n="OutputParam" t="ParamList">
+                              <l2 n="Names" cet="String">
+                                <v>Q</v>
+                              </l2>
+                              <l2 n="Types" cet="String">
+                                <v>BOOL</v>
+                              </l2>
+                            </o>
+                            <v n="CallType" t="Operator">FunctionBlock</v>
+                            <v n="EN">false</v>
+                            <v n="ENO">false</v>
+                            <n n="STSnippet" />
+                            <v n="ContainsExtensibleInputs">false</v>
+                            <v n="ProvidesSTSnippet">false</v>
+                            <v n="Id">21L</v>
                           </o>
                         </l2>
                         <o n="InputParam" t="ParamList">
                           <l2 n="Names" cet="String">
-                            <v>CLK</v>
+                            <v>SET</v>
+                            <v>RESET1</v>
                           </l2>
                           <l2 n="Types" cet="String">
+                            <v>BOOL</v>
                             <v>BOOL</v>
                           </l2>
                         </o>
                         <o n="OutputParam" t="ParamList">
                           <l2 n="Names" cet="String">
-                            <v>Q</v>
+                            <v>Q1</v>
                           </l2>
                           <l2 n="Types" cet="String">
                             <v>BOOL</v>
@@ -231,7 +365,7 @@ END_CASE
                         <n n="STSnippet" />
                         <v n="ContainsExtensibleInputs">false</v>
                         <v n="ProvidesSTSnippet">false</v>
-                        <v n="Id">8L</v>
+                        <v n="Id">17L</v>
                       </o>
                     </l2>
                     <l2 n="Connectors" />
@@ -248,10 +382,10 @@ END_CASE
                     <v n="OutCommented">false</v>
                     <l2 n="NetworkItems" cet="BoxTreeBox">
                       <o>
-                        <v n="BoxType">"R_TRIG"</v>
+                        <v n="BoxType">"EXECUTE"</v>
                         <o n="Instance" t="Operand">
-                          <v n="Operand">"Switch2_trig"</v>
-                          <v n="Type">"R_TRIG"</v>
+                          <n n="Operand" />
+                          <v n="Type">""</v>
                           <v n="Comment">""</v>
                           <v n="SymbolComment">""</v>
                           <v n="Address">""</v>
@@ -263,7 +397,7 @@ END_CASE
                           <v n="LValue">false</v>
                           <v n="Boolean">false</v>
                           <v n="IsInstance">true</v>
-                          <v n="Id">2L</v>
+                          <v n="Id">53L</v>
                         </o>
                         <o n="OutputItems" t="OutputItemList">
                           <l2 n="OutputItems">
@@ -272,14 +406,14 @@ END_CASE
                         </o>
                         <o n="Flags" t="Flags">
                           <v n="Flags">0</v>
-                          <v n="Fixed">false</v>
+                          <v n="Fixed">true</v>
                           <v n="Extensible">false</v>
                         </o>
                         <n n="InputFlags" />
                         <l2 n="InputItems" cet="BoxTreeOperand">
                           <o>
                             <o n="Operand" t="Operand">
-                              <v n="Operand">"iInput3"</v>
+                              <v n="Operand">"TRUE"</v>
                               <v n="Type">"BOOL"</v>
                               <v n="Comment">""</v>
                               <v n="SymbolComment">""</v>
@@ -292,14 +426,14 @@ END_CASE
                               <v n="LValue">false</v>
                               <v n="Boolean">false</v>
                               <v n="IsInstance">false</v>
-                              <v n="Id">5L</v>
+                              <v n="Id">49L</v>
                             </o>
-                            <v n="Id">4L</v>
+                            <v n="Id">48L</v>
                           </o>
                         </l2>
                         <o n="InputParam" t="ParamList">
                           <l2 n="Names" cet="String">
-                            <v>CLK</v>
+                            <v>EN</v>
                           </l2>
                           <l2 n="Types" cet="String">
                             <v>BOOL</v>
@@ -307,23 +441,54 @@ END_CASE
                         </o>
                         <o n="OutputParam" t="ParamList">
                           <l2 n="Names" cet="String">
-                            <v>Q</v>
+                            <v>ENO</v>
                           </l2>
                           <l2 n="Types" cet="String">
                             <v>BOOL</v>
                           </l2>
                         </o>
-                        <v n="CallType" t="Operator">FunctionBlock</v>
-                        <v n="EN">false</v>
-                        <v n="ENO">false</v>
-                        <n n="STSnippet" />
+                        <v n="CallType" t="Operator">None</v>
+                        <v n="EN">true</v>
+                        <v n="ENO">true</v>
+                        <o n="STSnippet" t="STSnippet">
+                          <o n="STSnippet" t="STImplementationObject">
+                            <o n="TextDocument" t="TextDocument">
+                              <a n="TextLines" cet="TextLine">
+                                <o>
+                                  <v n="Id">54L</v>
+                                  <n n="Tag" />
+                                  <v n="Text">"Faster	:= Switch_RS.Q1;"</v>
+                                </o>
+                                <o>
+                                  <v n="Id">51L</v>
+                                  <n n="Tag" />
+                                  <v n="Text">"Fast	:= NOT Switch_RS.Q1;"</v>
+                                </o>
+                              </a>
+                            </o>
+                          </o>
+                          <v n="Id">55L</v>
+                        </o>
                         <v n="ContainsExtensibleInputs">false</v>
-                        <v n="ProvidesSTSnippet">false</v>
-                        <v n="Id">3L</v>
+                        <v n="ProvidesSTSnippet">true</v>
+                        <v n="Id">56L</v>
                       </o>
                     </l2>
                     <l2 n="Connectors" />
                     <v n="Id">1L</v>
+                  </o>
+                  <o>
+                    <v n="ILActive">false</v>
+                    <v n="FBDValid">false</v>
+                    <v n="ILValid">false</v>
+                    <l2 n="ILLines" />
+                    <v n="Comment">""</v>
+                    <v n="Title">""</v>
+                    <v n="Label">""</v>
+                    <v n="OutCommented">false</v>
+                    <l2 n="NetworkItems" />
+                    <l2 n="Connectors" />
+                    <v n="Id">50L</v>
                   </o>
                 </l2>
                 <v n="BranchCounter">0</v>
@@ -343,7 +508,11 @@ END_CASE
               <Type n="Operator">{bffb3c53-f105-4e85-aba2-e30df579d75f}</Type>
               <Type n="OutputItemList">{f40d3e09-c02c-4522-a88c-dac23558cfc4}</Type>
               <Type n="ParamList">{71496971-9e0c-4677-a832-b9583b571130}</Type>
+              <Type n="STImplementationObject">{3b83b776-fb25-43b8-99f2-3c507c9143fc}</Type>
               <Type n="String">System.String</Type>
+              <Type n="STSnippet">{b2131366-6917-4304-87a9-64c0585560a8}</Type>
+              <Type n="TextDocument">{f3878285-8e4f-490b-bb1b-9acbb7eb04db}</Type>
+              <Type n="TextLine">{a5de0b0b-1cb5-4913-ac21-9d70293ec00d}</Type>
             </TypeList>
           </XmlArchive>
         </NWL>
@@ -356,17 +525,18 @@ END_CASE
     </Action>
     <Action Name="A_LightsControl" Id="{ecf7e6c8-58fa-467f-969c-76164dc251f4}">
       <Implementation>
-        <ST><![CDATA[
+        <ST><![CDATA[(*
 CASE nLightsState OF
 	1: 
 		oLight1 := General.BlinkOn;
 		Fast 	:= TRUE;		// elegantimpi ratkaisu tähän olisi hyvä, jokin missä ei käydä kaikkia muita muuttujia ehkä läpi
 		Faster 	:= FALSE;
 	2:
-		oLight1 := General.FastBlinkOn;
+		oLight1 := General.BlinkFAST_On;
 		Fast 	:= FALSE;
 		Faster 	:= TRUE;
-END_CASE]]></ST>
+END_CASE 
+*)]]></ST>
       </Implementation>
     </Action>
     <Action Name="A_Switch" Id="{ab8781ab-cba4-40f4-9111-ef8f6611efbe}">
@@ -387,22 +557,17 @@ END_IF]]></ST>
       <LineId Id="255" Count="1" />
       <LineId Id="352" Count="0" />
       <LineId Id="277" Count="0" />
-      <LineId Id="353" Count="0" />
-      <LineId Id="257" Count="1" />
-      <LineId Id="340" Count="0" />
-      <LineId Id="261" Count="0" />
-      <LineId Id="336" Count="0" />
-      <LineId Id="262" Count="1" />
-      <LineId Id="341" Count="0" />
+      <LineId Id="368" Count="0" />
+      <LineId Id="367" Count="0" />
+      <LineId Id="369" Count="0" />
+      <LineId Id="356" Count="3" />
       <LineId Id="264" Count="0" />
-      <LineId Id="279" Count="0" />
-      <LineId Id="305" Count="1" />
-      <LineId Id="269" Count="0" />
-      <LineId Id="303" Count="0" />
-      <LineId Id="308" Count="0" />
-      <LineId Id="307" Count="0" />
-      <LineId Id="61" Count="0" />
-      <LineId Id="280" Count="0" />
+      <LineId Id="360" Count="5" />
+      <LineId Id="373" Count="0" />
+      <LineId Id="376" Count="0" />
+      <LineId Id="380" Count="0" />
+      <LineId Id="379" Count="0" />
+      <LineId Id="355" Count="0" />
     </LineIds>
     <LineIds Name="FB_ButtonBox.A_FeedButton">
       <LineId Id="1" Count="0" />
@@ -418,6 +583,7 @@ END_IF]]></ST>
       <LineId Id="11" Count="0" />
       <LineId Id="8" Count="1" />
       <LineId Id="4" Count="0" />
+      <LineId Id="12" Count="0" />
     </LineIds>
     <LineIds Name="FB_ButtonBox.A_Switch">
       <LineId Id="2" Count="0" />

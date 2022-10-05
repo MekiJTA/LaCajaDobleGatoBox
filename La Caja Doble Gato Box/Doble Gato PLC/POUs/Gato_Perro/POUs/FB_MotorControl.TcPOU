@@ -7,12 +7,13 @@ VAR_INPUT
 	Ready			: BOOL; // Safety ok, system ok, doors ok
 	Fast 			: BOOL;
 	Faster			: BOOL;
-	
+	VFD_Running		: BOOL;
+	VFD_Ready		: BOOL;
 END_VAR
 VAR_OUTPUT
 	Q : BOOL;
 //	ReadyToRun	: BOOL;
-	Running 	: BOOL;
+//	Running 	: BOOL;
 	iRounds 	: INT;
 	iRoundsMinute : INT;
 	Gato 		: BOOL;
@@ -23,14 +24,19 @@ VAR_OUTPUT
 	iFault		: INT;
 END_VAR
 VAR
-
+	
+	Run_TRIG: R_TRIG;
+	nMotorState: (NOT_READY, ALL_READY, RUNNING, STOP, ERROR);
+	SwitchLeft_TRIG: R_TRIG;
+	SwitchRight_TRIG: R_TRIG;
+	Stopping_TON: TON;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[
-// Rough outline:
+      <ST><![CDATA[// Rough outline:
 // INPUT 24V: DIB 4 5 6 eli paikat 14 15 16
 // 4 käy/seis, 5 vakionopeus 1, 6 vakionopeus 2
+// Taajarilta viestiä että joko on käynnissä tai valmis, ei tiedä vielä
 
 // OUTPUT: 20, 24 25 26
 // 20 = DO1, VALMIS-signaali
@@ -43,23 +49,197 @@ END_VAR
 // Valoanturi seuraamassa kun kissa tai koira menee ohi
 
 // Valmius ja moottori käy/ei käy keskustelu taajarin kanssa joko digitaalilähdön kautta (valmius ehkä?) ja relelähdön kautta (miten toimikaan? Pitiköhän syöttää virtaa keskelle)
+
+//Inputit vois Triguina yhä käsitellä, vaikka Buttonboxistakin tulee triguja. Mikäli jostain muusta lähteestä tulee käskyjä niin onpahan triguja yhä
+A_ButtonHandling();
+
+CASE nMotorState OF
+	NOT_READY:	
+		Q := FALSE;
+		IF Ready THEN
+		nMotorState := 1;
+		END_IF
+
+	ALL_READY:
+		IF NOT Ready THEN
+			nMotorState := 0;
+		END_IF 
+
+		IF Run_TRIG.Q THEN
+			Q := TRUE;
+			nMotorState := 2;		
+		END_IF
+		
+	RUNNING:
+		IF NOT Ready THEN
+			nMotorState := 0;
+		END_IF 
+		
+		IF Run_TRIG.Q THEN
+			Q := FALSE;
+			nMotorState := 3;
+		END_IF
+	STOP:
+		Stopping_TON(IN:=TRUE , PT:=T#1S , Q=> , ET=> );
+		IF Stopping_TON.Q THEN
+			Stopping_TON(IN:=FALSE);
+				nMotorState := 0;
+		END_IF
+	
+	ERROR:
+	
+		
+END_CASE
+
+iStatus 	:= nMotorState;
+iFault 		:= 0;
 ]]></ST>
     </Implementation>
+    <Action Name="A_ButtonHandling" Id="{42611ca4-32ab-4a2e-879d-1b2734acb427}">
+      <Implementation>
+        <NWL>
+          <XmlArchive>
+            <Data>
+              <o xml:space="preserve" t="NWLImplementationObject">
+                <v n="NetworkListComment">""</v>
+                <v n="DefaultViewMode">"Fbd"</v>
+                <l2 n="NetworkList" cet="Network">
+                  <o>
+                    <v n="ILActive">false</v>
+                    <v n="FBDValid">false</v>
+                    <v n="ILValid">false</v>
+                    <l2 n="ILLines" />
+                    <v n="Comment">""</v>
+                    <v n="Title">""</v>
+                    <v n="Label">""</v>
+                    <v n="OutCommented">false</v>
+                    <l2 n="NetworkItems" cet="BoxTreeBox">
+                      <o>
+                        <v n="BoxType">"R_TRIG"</v>
+                        <o n="Instance" t="Operand">
+                          <v n="Operand">"Run_TRIG"</v>
+                          <v n="Type">"R_TRIG"</v>
+                          <v n="Comment">""</v>
+                          <v n="SymbolComment">""</v>
+                          <v n="Address">""</v>
+                          <o n="Flags" t="Flags">
+                            <v n="Flags">0</v>
+                            <v n="Fixed">false</v>
+                            <v n="Extensible">false</v>
+                          </o>
+                          <v n="LValue">false</v>
+                          <v n="Boolean">false</v>
+                          <v n="IsInstance">true</v>
+                          <v n="Id">2L</v>
+                        </o>
+                        <o n="OutputItems" t="OutputItemList">
+                          <l2 n="OutputItems">
+                            <n />
+                          </l2>
+                        </o>
+                        <o n="Flags" t="Flags">
+                          <v n="Flags">0</v>
+                          <v n="Fixed">false</v>
+                          <v n="Extensible">false</v>
+                        </o>
+                        <n n="InputFlags" />
+                        <l2 n="InputItems" cet="BoxTreeOperand">
+                          <o>
+                            <o n="Operand" t="Operand">
+                              <v n="Operand">"Run"</v>
+                              <v n="Type">"BOOL"</v>
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">false</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">5L</v>
+                            </o>
+                            <v n="Id">4L</v>
+                          </o>
+                        </l2>
+                        <o n="InputParam" t="ParamList">
+                          <l2 n="Names" cet="String">
+                            <v>CLK</v>
+                          </l2>
+                          <l2 n="Types" cet="String">
+                            <v>BOOL</v>
+                          </l2>
+                        </o>
+                        <o n="OutputParam" t="ParamList">
+                          <l2 n="Names" cet="String">
+                            <v>Q</v>
+                          </l2>
+                          <l2 n="Types" cet="String">
+                            <v>BOOL</v>
+                          </l2>
+                        </o>
+                        <v n="CallType" t="Operator">FunctionBlock</v>
+                        <v n="EN">false</v>
+                        <v n="ENO">false</v>
+                        <n n="STSnippet" />
+                        <v n="ContainsExtensibleInputs">false</v>
+                        <v n="ProvidesSTSnippet">false</v>
+                        <v n="Id">3L</v>
+                      </o>
+                    </l2>
+                    <l2 n="Connectors" />
+                    <v n="Id">1L</v>
+                  </o>
+                </l2>
+                <v n="BranchCounter">0</v>
+                <v n="ValidIds">true</v>
+              </o>
+            </Data>
+            <TypeList>
+              <Type n="Boolean">System.Boolean</Type>
+              <Type n="BoxTreeBox">{acfc6f68-8e3a-4af5-bf81-3dd512095a46}</Type>
+              <Type n="BoxTreeOperand">{9de7f100-1b87-424c-a62e-45b0cfc85ed2}</Type>
+              <Type n="Flags">{668066f2-6069-46b3-8962-8db8d13d7db2}</Type>
+              <Type n="Int32">System.Int32</Type>
+              <Type n="Int64">System.Int64</Type>
+              <Type n="Network">{d9a99d73-b633-47db-b876-a752acb25871}</Type>
+              <Type n="NWLImplementationObject">{25e509de-33d4-4447-93f8-c9e4ea381c8b}</Type>
+              <Type n="Operand">{c9b2f165-48a2-4a45-8326-3952d8a3d708}</Type>
+              <Type n="Operator">{bffb3c53-f105-4e85-aba2-e30df579d75f}</Type>
+              <Type n="OutputItemList">{f40d3e09-c02c-4522-a88c-dac23558cfc4}</Type>
+              <Type n="ParamList">{71496971-9e0c-4677-a832-b9583b571130}</Type>
+              <Type n="String">System.String</Type>
+            </TypeList>
+          </XmlArchive>
+        </NWL>
+      </Implementation>
+    </Action>
     <LineIds Name="FB_MotorControl">
-      <LineId Id="10" Count="0" />
-      <LineId Id="9" Count="0" />
-      <LineId Id="11" Count="0" />
-      <LineId Id="16" Count="1" />
-      <LineId Id="12" Count="2" />
-      <LineId Id="18" Count="0" />
-      <LineId Id="15" Count="0" />
-      <LineId Id="19" Count="0" />
-      <LineId Id="21" Count="0" />
-      <LineId Id="20" Count="0" />
-      <LineId Id="22" Count="0" />
-      <LineId Id="24" Count="0" />
-      <LineId Id="23" Count="0" />
-      <LineId Id="25" Count="0" />
+      <LineId Id="159" Count="18" />
+      <LineId Id="208" Count="0" />
+      <LineId Id="178" Count="1" />
+      <LineId Id="212" Count="0" />
+      <LineId Id="180" Count="7" />
+      <LineId Id="189" Count="4" />
+      <LineId Id="207" Count="0" />
+      <LineId Id="194" Count="0" />
+      <LineId Id="213" Count="1" />
+      <LineId Id="204" Count="0" />
+      <LineId Id="215" Count="2" />
+      <LineId Id="219" Count="0" />
+      <LineId Id="218" Count="0" />
+      <LineId Id="201" Count="0" />
+      <LineId Id="220" Count="0" />
+      <LineId Id="222" Count="1" />
+      <LineId Id="227" Count="0" />
+      <LineId Id="224" Count="0" />
+      <LineId Id="206" Count="0" />
+      <LineId Id="203" Count="0" />
+      <LineId Id="202" Count="0" />
+      <LineId Id="195" Count="4" />
+      <LineId Id="120" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

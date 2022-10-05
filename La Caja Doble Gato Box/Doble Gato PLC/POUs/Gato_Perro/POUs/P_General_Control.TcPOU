@@ -449,13 +449,13 @@ END_IF
 
 BlinkTimer_FAST_ON(IN:= T_FAST_ON , PT:= TIME_FAST_ON , Q=> , ET=> );
 IF BlinkTimer_FAST_ON.Q THEN
-	T_FAST_ON	:= General.FastBlinkOn:= FALSE;
+	T_FAST_ON	:= General.BlinkFAST_On:= FALSE;
 	T_FAST_OFF 	:= TRUE;	
 END_IF
 
 BlinkTimer_FAST_OFF(IN:= T_FAST_OFF , PT:= TIME_FAST_OFF , Q=> , ET=> );
 IF BlinkTimer_FAST_OFF.Q THEN
-	T_FAST_ON 	:= General.FastBlinkOn := TRUE;
+	T_FAST_ON 	:= General.BlinkFAST_On := TRUE;
 	T_FAST_OFF	:= FALSE;
 END_IF
 
@@ -474,13 +474,13 @@ CASE StateSpecial OF
 		ELSE
 		BlinkTimer_SPEC_ON(IN:= T_SPEC_ON , PT:= (TIME_SPECIAL_ON*5) , Q=> , ET=> );
 		IF BlinkTimer_SPEC_ON.Q THEN
-			T_SPEC_ON 	:= General.SpecialBlinkOn:= FALSE;
+			T_SPEC_ON 	:= General.BlinkSpecial_ON:= FALSE;
 			T_SPEC_OFF 	:= TRUE;	
 		END_IF
 		
 		BlinkTimer_SPEC_OFF(IN:= T_SPEC_OFF , PT:= (TIME_SPECIAL_OFF*5) , Q=> , ET=> );
 		IF BlinkTimer_SPEC_OFF.Q THEN
-			T_SPEC_ON 	:= General.SpecialBlinkOn := TRUE;
+			T_SPEC_ON 	:= General.BlinkSpecial_ON := TRUE;
 			T_SPEC_OFF	:= FALSE;
 		i:= i+1;
 		END_IF
@@ -494,13 +494,13 @@ CASE StateSpecial OF
 		ELSE
 		BlinkTimer_SPEC_ON(IN:= T_SPEC_ON , PT:= (TIME_SPECIAL_ON*10) , Q=> , ET=> );
 		IF BlinkTimer_SPEC_ON.Q THEN
-			T_SPEC_ON 	:= General.SpecialBlinkOn:= FALSE;
+			T_SPEC_ON 	:= General.BlinkSpecial_ON:= FALSE;
 			T_SPEC_OFF 	:= TRUE;	
 		END_IF
 		
 		BlinkTimer_SPEC_OFF(IN:= T_SPEC_OFF , PT:= (TIME_SPECIAL_OFF*10) , Q=> , ET=> );
 		IF BlinkTimer_SPEC_OFF.Q THEN
-			T_SPEC_ON 	:= General.SpecialBlinkOn := TRUE;
+			T_SPEC_ON 	:= General.BlinkSpecial_ON := TRUE;
 			T_SPEC_OFF	:= FALSE;
 			i:= i+1;
 		END_IF

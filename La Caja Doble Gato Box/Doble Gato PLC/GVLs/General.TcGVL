@@ -5,8 +5,8 @@
 VAR_GLOBAL
 	ReadyForAction		: BOOL;
 	BlinkOn				: BOOL;
-	FastBlinkOn			: BOOL;
-	SpecialBlinkOn		: BOOL;
+	BlinkFAST_On			: BOOL;
+	BlinkSpecial_On		: BOOL;
 	
 	Manual				: BOOL;
 	Auto				: BOOL;
