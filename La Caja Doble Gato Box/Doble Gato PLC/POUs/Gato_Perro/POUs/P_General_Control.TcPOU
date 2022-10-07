@@ -42,8 +42,8 @@ END_VAR
     <Implementation>
       <ST><![CDATA[// OUT.BOX_OUT[7] := General.SpecialBlinkOn;
 
-FBD_Assign_IO();
-	FBD_Assign_IO();
+FBD_Devices();
+	FBD_Devices();
 	A_Doors();
 	A_Permissions();
 //	A_ButtonBoxes();

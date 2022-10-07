@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
-  <POU Name="FBD_Assign_IO" Id="{5015793d-548e-4713-ad62-be76714ca000}" SpecialFunc="None">
-    <Declaration><![CDATA[PROGRAM FBD_Assign_IO
+  <POU Name="FBD_Devices" Id="{5015793d-548e-4713-ad62-be76714ca000}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM FBD_Devices
 VAR
 	fbButtonBox: FB_ButtonBox;
 	fbMotorControl: FB_MotorControl;
@@ -41,11 +41,59 @@ END_VAR
                         <v n="LValue">false</v>
                         <v n="Boolean">false</v>
                         <v n="IsInstance">true</v>
-                        <v n="Id">147L</v>
+                        <v n="Id">178L</v>
                       </o>
                       <o n="OutputItems" t="OutputItemList">
                         <l2 n="OutputItems" cet="Operand">
                           <n />
+                          <o>
+                            <v n="Operand">"OUT.EK_OUT[1]"</v>
+                            <v n="Type">"BOOL"</v>
+                            <v n="Comment">""</v>
+                            <v n="SymbolComment">""</v>
+                            <v n="Address">""</v>
+                            <o n="Flags" t="Flags">
+                              <v n="Flags">0</v>
+                              <v n="Fixed">false</v>
+                              <v n="Extensible">false</v>
+                            </o>
+                            <v n="LValue">true</v>
+                            <v n="Boolean">false</v>
+                            <v n="IsInstance">false</v>
+                            <v n="Id">180L</v>
+                          </o>
+                          <o>
+                            <v n="Operand">"OUT.EK_OUT[3]"</v>
+                            <v n="Type">"BOOL"</v>
+                            <v n="Comment">""</v>
+                            <v n="SymbolComment">""</v>
+                            <v n="Address">""</v>
+                            <o n="Flags" t="Flags">
+                              <v n="Flags">0</v>
+                              <v n="Fixed">false</v>
+                              <v n="Extensible">false</v>
+                            </o>
+                            <v n="LValue">true</v>
+                            <v n="Boolean">false</v>
+                            <v n="IsInstance">false</v>
+                            <v n="Id">181L</v>
+                          </o>
+                          <o>
+                            <v n="Operand">"OUT.EK_OUT[4]"</v>
+                            <v n="Type">"BOOL"</v>
+                            <v n="Comment">""</v>
+                            <v n="SymbolComment">""</v>
+                            <v n="Address">""</v>
+                            <o n="Flags" t="Flags">
+                              <v n="Flags">0</v>
+                              <v n="Fixed">false</v>
+                              <v n="Extensible">false</v>
+                            </o>
+                            <v n="LValue">true</v>
+                            <v n="Boolean">false</v>
+                            <v n="IsInstance">false</v>
+                            <v n="Id">182L</v>
+                          </o>
                           <o>
                             <v n="Operand">""</v>
                             <n n="Type" />
@@ -491,6 +539,9 @@ END_VAR
                       <o n="OutputParam" t="ParamList">
                         <l2 n="Names" cet="String">
                           <v>Q</v>
+                          <v>RUN_Order_VFD</v>
+                          <v>Fast_VFD</v>
+                          <v>Faster_VFD</v>
                           <v>iRounds</v>
                           <v>iRoundsMinute</v>
                           <v>Gato</v>
@@ -501,6 +552,9 @@ END_VAR
                           <v>iFault</v>
                         </l2>
                         <l2 n="Types" cet="String">
+                          <v>BOOL</v>
+                          <v>BOOL</v>
+                          <v>BOOL</v>
                           <v>BOOL</v>
                           <v>INT</v>
                           <v>INT</v>
@@ -518,7 +572,7 @@ END_VAR
                       <n n="STSnippet" />
                       <v n="ContainsExtensibleInputs">false</v>
                       <v n="ProvidesSTSnippet">false</v>
-                      <v n="Id">148L</v>
+                      <v n="Id">179L</v>
                     </o>
                   </l2>
                   <l2 n="Connectors" />

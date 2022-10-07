@@ -11,6 +11,24 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
+			<Name GUID="{46C950DA-5D6E-6516-D69B-F24F38546D38}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..16] OF BOOL</Name>
+			<BitSize>128</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+			<ArrayInfo>
+				<LBound>1</LBound>
+				<Elements>16</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{27309956-790C-165B-9452-FE8C4B2C982E}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..4] OF UINT</Name>
+			<BitSize>64</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+			<ArrayInfo>
+				<LBound>1</LBound>
+				<Elements>4</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
 			<Name GUID="{18071995-0000-0000-0000-002000000007}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..6] OF BIT</Name>
 			<BitSize>7</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
@@ -64,16 +82,28 @@
 							<Type>UINT</Type>
 						</Var>
 						<Var>
-							<Name>IN.BOX_IN</Name>
-							<Type GUID="{71B58F72-0E49-50EB-B8E4-1CCD027538EC}">ARRAY [1..8] OF BOOL</Type>
-						</Var>
-						<Var>
 							<Name>SAFETY.Doors_OK</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>SAFETY.Safety_to_robot</Name>
 							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>IN.BOX_IN</Name>
+							<Type GUID="{71B58F72-0E49-50EB-B8E4-1CCD027538EC}">ARRAY [1..8] OF BOOL</Type>
+						</Var>
+						<Var>
+							<Name>IN.BOX_1809_IN</Name>
+							<Type GUID="{46C950DA-5D6E-6516-D69B-F24F38546D38}">ARRAY [1..16] OF BOOL</Type>
+						</Var>
+						<Var>
+							<Name>IN.BOX_ANALOG_IN</Name>
+							<Type GUID="{27309956-790C-165B-9452-FE8C4B2C982E}">ARRAY [1..4] OF UINT</Type>
+						</Var>
+						<Var>
+							<Name>IN.EK_IN</Name>
+							<Type GUID="{71B58F72-0E49-50EB-B8E4-1CCD027538EC}">ARRAY [1..8] OF BOOL</Type>
 						</Var>
 					</Vars>
 					<Vars VarGrpType="2" AreaNo="1">
@@ -85,6 +115,18 @@
 						<Var>
 							<Name>OUT.BOX_OUT</Name>
 							<Type GUID="{71B58F72-0E49-50EB-B8E4-1CCD027538EC}">ARRAY [1..8] OF BOOL</Type>
+						</Var>
+						<Var>
+							<Name>OUT.BOX_2809_OUT</Name>
+							<Type GUID="{71B58F72-0E49-50EB-B8E4-1CCD027538EC}">ARRAY [1..8] OF BOOL</Type>
+						</Var>
+						<Var>
+							<Name>OUT.EK_OUT</Name>
+							<Type GUID="{71B58F72-0E49-50EB-B8E4-1CCD027538EC}">ARRAY [1..8] OF BOOL</Type>
+						</Var>
+						<Var>
+							<Name>OUT.BOX_ANALOG_OUT</Name>
+							<Type GUID="{27309956-790C-165B-9452-FE8C4B2C982E}">ARRAY [1..4] OF UINT</Type>
 						</Var>
 					</Vars>
 					<Contexts>
@@ -160,7 +202,7 @@
 								<Entry Name="Status__TxPDO Toggle" Index="#x1800" Sub="#x09">
 									<Type>BIT</Type>
 								</Entry>
-								<Entry Name="Value" Index="#x6000" Sub="#x11" Flags="#x00050000">
+								<Entry Name="IN.BOX_ANALOG_IN[1]" Index="#x6000" Sub="#x11" Flags="#x00050000">
 									<Type>INT</Type>
 								</Entry>
 							</Pdo>
@@ -189,7 +231,7 @@
 								<Entry Name="Status__TxPDO Toggle" Index="#x1801" Sub="#x09">
 									<Type>BIT</Type>
 								</Entry>
-								<Entry Name="Value" Index="#x6010" Sub="#x11" Flags="#x00050000">
+								<Entry Name="IN.BOX_ANALOG_IN[2]" Index="#x6010" Sub="#x11" Flags="#x00050000">
 									<Type>INT</Type>
 								</Entry>
 							</Pdo>
@@ -218,7 +260,7 @@
 								<Entry Name="Status__TxPDO Toggle" Index="#x1802" Sub="#x09">
 									<Type>BIT</Type>
 								</Entry>
-								<Entry Name="Value" Index="#x6020" Sub="#x11" Flags="#x00050000">
+								<Entry Name="IN.BOX_ANALOG_IN[3]" Index="#x6020" Sub="#x11" Flags="#x00050000">
 									<Type>INT</Type>
 								</Entry>
 							</Pdo>
@@ -247,7 +289,7 @@
 								<Entry Name="Status__TxPDO Toggle" Index="#x1803" Sub="#x09">
 									<Type>BIT</Type>
 								</Entry>
-								<Entry Name="Value" Index="#x6030" Sub="#x11" Flags="#x00050000">
+								<Entry Name="IN.BOX_ANALOG_IN[4]" Index="#x6030" Sub="#x11" Flags="#x00050000">
 									<Type>INT</Type>
 								</Entry>
 							</Pdo>
@@ -360,82 +402,82 @@
 							<SyncMan>001002000000010004000000000000000200001000010000</SyncMan>
 							<Fmmu>0000000000000000001000010100000002000000000000000000000000000000</Fmmu>
 							<Pdo Name="Channel 1" Index="#x1a00" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x6000" Sub="#x01">
+								<Entry Name="IN.BOX_1809_IN[1]" Index="#x6000" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 2" Index="#x1a01" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x6010" Sub="#x01">
+								<Entry Name="IN.BOX_1809_IN[2]" Index="#x6010" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 3" Index="#x1a02" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x6020" Sub="#x01">
+								<Entry Name="IN.BOX_1809_IN[3]" Index="#x6020" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 4" Index="#x1a03" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x6030" Sub="#x01">
+								<Entry Name="IN.BOX_1809_IN[4]" Index="#x6030" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 5" Index="#x1a04" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x6040" Sub="#x01">
+								<Entry Name="IN.BOX_1809_IN[5]" Index="#x6040" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 6" Index="#x1a05" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x6050" Sub="#x01">
+								<Entry Name="IN.BOX_1809_IN[6]" Index="#x6050" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 7" Index="#x1a06" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x6060" Sub="#x01">
+								<Entry Name="IN.BOX_1809_IN[7]" Index="#x6060" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 8" Index="#x1a07" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x6070" Sub="#x01">
+								<Entry Name="IN.BOX_1809_IN[8]" Index="#x6070" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 9" Index="#x1a08" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x6080" Sub="#x01">
+								<Entry Name="IN.BOX_1809_IN[9]" Index="#x6080" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 10" Index="#x1a09" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x6090" Sub="#x01">
+								<Entry Name="IN.BOX_1809_IN[10]" Index="#x6090" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 11" Index="#x1a0a" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x60a0" Sub="#x01">
+								<Entry Name="IN.BOX_1809_IN[11]" Index="#x60a0" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 12" Index="#x1a0b" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x60b0" Sub="#x01">
+								<Entry Name="IN.BOX_1809_IN[12]" Index="#x60b0" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 13" Index="#x1a0c" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x60c0" Sub="#x01">
+								<Entry Name="IN.BOX_1809_IN[13]" Index="#x60c0" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 14" Index="#x1a0d" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x60d0" Sub="#x01">
+								<Entry Name="IN.BOX_1809_IN[14]" Index="#x60d0" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 15" Index="#x1a0e" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x60e0" Sub="#x01">
+								<Entry Name="IN.BOX_1809_IN[15]" Index="#x60e0" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 16" Index="#x1a0f" Flags="#x0011" SyncMan="0">
-								<Entry Name="Input" Index="#x60f0" Sub="#x01">
+								<Entry Name="IN.BOX_1809_IN[16]" Index="#x60f0" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
@@ -449,22 +491,22 @@
 							<SyncMan>010f01004400010003000000000000000100010f44090000</SyncMan>
 							<Fmmu>0000000000000000000f00020100000001000000000000000000000000000000</Fmmu>
 							<Pdo Name="Channel 1" Index="#x1600" InOut="1" Flags="#x0011" SyncMan="0">
-								<Entry Name="Output" Index="#x7000" Sub="#x01">
+								<Entry Name="OUT.BOX_2809_OUT[1]" Index="#x7000" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 2" Index="#x1601" InOut="1" Flags="#x0011" SyncMan="0">
-								<Entry Name="Output" Index="#x7010" Sub="#x01">
+								<Entry Name="OUT.BOX_2809_OUT[2]" Index="#x7010" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 3" Index="#x1602" InOut="1" Flags="#x0011" SyncMan="0">
-								<Entry Name="Output" Index="#x7020" Sub="#x01">
+								<Entry Name="OUT.BOX_2809_OUT[3]" Index="#x7020" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
 							<Pdo Name="Channel 4" Index="#x1603" InOut="1" Flags="#x0011" SyncMan="0">
-								<Entry Name="Output" Index="#x7030" Sub="#x01">
+								<Entry Name="OUT.BOX_2809_OUT[4]" Index="#x7030" Sub="#x01">
 									<Type>BIT</Type>
 								</Entry>
 							</Pdo>
@@ -593,42 +635,42 @@
 									<SyncMan>000f01004400010003000000000000000000000f44090000</SyncMan>
 									<Fmmu>0000000000000000000f00020100000001000000000000000000000000000000</Fmmu>
 									<Pdo Name="Channel 1" Index="#x1600" InOut="1" Flags="#x0011" SyncMan="0">
-										<Entry Name="Output" Index="#x7000" Sub="#x01">
+										<Entry Name="OUT.EK_OUT[1]" Index="#x7000" Sub="#x01">
 											<Type>BIT</Type>
 										</Entry>
 									</Pdo>
 									<Pdo Name="Channel 2" Index="#x1601" InOut="1" Flags="#x0011" SyncMan="0">
-										<Entry Name="Output" Index="#x7010" Sub="#x01">
+										<Entry Name="OUT.EK_OUT[2]" Index="#x7010" Sub="#x01">
 											<Type>BIT</Type>
 										</Entry>
 									</Pdo>
 									<Pdo Name="Channel 3" Index="#x1602" InOut="1" Flags="#x0011" SyncMan="0">
-										<Entry Name="Output" Index="#x7020" Sub="#x01">
+										<Entry Name="OUT.EK_OUT[3]" Index="#x7020" Sub="#x01">
 											<Type>BIT</Type>
 										</Entry>
 									</Pdo>
 									<Pdo Name="Channel 4" Index="#x1603" InOut="1" Flags="#x0011" SyncMan="0">
-										<Entry Name="Output" Index="#x7030" Sub="#x01">
+										<Entry Name="OUT.EK_OUT[4]" Index="#x7030" Sub="#x01">
 											<Type>BIT</Type>
 										</Entry>
 									</Pdo>
 									<Pdo Name="Channel 5" Index="#x1604" InOut="1" Flags="#x0011" SyncMan="0">
-										<Entry Name="Output" Index="#x7040" Sub="#x01">
+										<Entry Name="OUT.EK_OUT[5]" Index="#x7040" Sub="#x01">
 											<Type>BIT</Type>
 										</Entry>
 									</Pdo>
 									<Pdo Name="Channel 6" Index="#x1605" InOut="1" Flags="#x0011" SyncMan="0">
-										<Entry Name="Output" Index="#x7050" Sub="#x01">
+										<Entry Name="OUT.EK_OUT[6]" Index="#x7050" Sub="#x01">
 											<Type>BIT</Type>
 										</Entry>
 									</Pdo>
 									<Pdo Name="Channel 7" Index="#x1606" InOut="1" Flags="#x0011" SyncMan="0">
-										<Entry Name="Output" Index="#x7060" Sub="#x01">
+										<Entry Name="OUT.EK_OUT[7]" Index="#x7060" Sub="#x01">
 											<Type>BIT</Type>
 										</Entry>
 									</Pdo>
 									<Pdo Name="Channel 8" Index="#x1607" InOut="1" Flags="#x0011" SyncMan="0">
-										<Entry Name="Output" Index="#x7070" Sub="#x01">
+										<Entry Name="OUT.EK_OUT[8]" Index="#x7070" Sub="#x01">
 											<Type>BIT</Type>
 										</Entry>
 									</Pdo>
@@ -683,6 +725,12 @@
 			<OwnerB Name="TIID^Device 1 (EtherCAT)">
 				<Link VarA="PlcTask Inputs^General.EthercatDev1" VarB="Inputs^DevState"/>
 			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 2 (EL3204)">
+				<Link VarA="PlcTask Inputs^IN.BOX_ANALOG_IN[1]" VarB="RTD Inputs Channel 1^IN.BOX_ANALOG_IN[1]"/>
+				<Link VarA="PlcTask Inputs^IN.BOX_ANALOG_IN[2]" VarB="RTD Inputs Channel 2^IN.BOX_ANALOG_IN[2]"/>
+				<Link VarA="PlcTask Inputs^IN.BOX_ANALOG_IN[3]" VarB="RTD Inputs Channel 3^IN.BOX_ANALOG_IN[3]"/>
+				<Link VarA="PlcTask Inputs^IN.BOX_ANALOG_IN[4]" VarB="RTD Inputs Channel 4^IN.BOX_ANALOG_IN[4]"/>
+			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 3 (EL1008)">
 				<Link VarA="PlcTask Inputs^IN.BOX_IN[1]" VarB="Channel 1^Input"/>
 				<Link VarA="PlcTask Inputs^IN.BOX_IN[2]" VarB="Channel 2^Input"/>
@@ -702,6 +750,50 @@
 				<Link VarA="PlcTask Outputs^OUT.BOX_OUT[6]" VarB="Channel 6^Output"/>
 				<Link VarA="PlcTask Outputs^OUT.BOX_OUT[7]" VarB="Channel 7^Output"/>
 				<Link VarA="PlcTask Outputs^OUT.BOX_OUT[8]" VarB="Channel 8^Output"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EL1809)">
+				<Link VarA="PlcTask Inputs^IN.BOX_1809_IN[10]" VarB="Channel 10^IN.BOX_1809_IN[10]"/>
+				<Link VarA="PlcTask Inputs^IN.BOX_1809_IN[11]" VarB="Channel 11^IN.BOX_1809_IN[11]"/>
+				<Link VarA="PlcTask Inputs^IN.BOX_1809_IN[12]" VarB="Channel 12^IN.BOX_1809_IN[12]"/>
+				<Link VarA="PlcTask Inputs^IN.BOX_1809_IN[13]" VarB="Channel 13^IN.BOX_1809_IN[13]"/>
+				<Link VarA="PlcTask Inputs^IN.BOX_1809_IN[14]" VarB="Channel 14^IN.BOX_1809_IN[14]"/>
+				<Link VarA="PlcTask Inputs^IN.BOX_1809_IN[15]" VarB="Channel 15^IN.BOX_1809_IN[15]"/>
+				<Link VarA="PlcTask Inputs^IN.BOX_1809_IN[16]" VarB="Channel 16^IN.BOX_1809_IN[16]"/>
+				<Link VarA="PlcTask Inputs^IN.BOX_1809_IN[1]" VarB="Channel 1^IN.BOX_1809_IN[1]"/>
+				<Link VarA="PlcTask Inputs^IN.BOX_1809_IN[2]" VarB="Channel 2^IN.BOX_1809_IN[2]"/>
+				<Link VarA="PlcTask Inputs^IN.BOX_1809_IN[3]" VarB="Channel 3^IN.BOX_1809_IN[3]"/>
+				<Link VarA="PlcTask Inputs^IN.BOX_1809_IN[4]" VarB="Channel 4^IN.BOX_1809_IN[4]"/>
+				<Link VarA="PlcTask Inputs^IN.BOX_1809_IN[5]" VarB="Channel 5^IN.BOX_1809_IN[5]"/>
+				<Link VarA="PlcTask Inputs^IN.BOX_1809_IN[6]" VarB="Channel 6^IN.BOX_1809_IN[6]"/>
+				<Link VarA="PlcTask Inputs^IN.BOX_1809_IN[7]" VarB="Channel 7^IN.BOX_1809_IN[7]"/>
+				<Link VarA="PlcTask Inputs^IN.BOX_1809_IN[8]" VarB="Channel 8^IN.BOX_1809_IN[8]"/>
+				<Link VarA="PlcTask Inputs^IN.BOX_1809_IN[9]" VarB="Channel 9^IN.BOX_1809_IN[9]"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 6 (EL2809)">
+				<Link VarA="PlcTask Outputs^OUT.BOX_2809_OUT[1]" VarB="Channel 1^OUT.BOX_2809_OUT[1]"/>
+				<Link VarA="PlcTask Outputs^OUT.BOX_2809_OUT[2]" VarB="Channel 2^OUT.BOX_2809_OUT[2]"/>
+				<Link VarA="PlcTask Outputs^OUT.BOX_2809_OUT[3]" VarB="Channel 3^OUT.BOX_2809_OUT[3]"/>
+				<Link VarA="PlcTask Outputs^OUT.BOX_2809_OUT[4]" VarB="Channel 4^OUT.BOX_2809_OUT[4]"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 7 (EK1122)^Term 8 (EK1100)^Term 10 (EL2008)">
+				<Link VarA="PlcTask Outputs^OUT.EK_OUT[1]" VarB="Channel 1^OUT.EK_OUT[1]"/>
+				<Link VarA="PlcTask Outputs^OUT.EK_OUT[2]" VarB="Channel 2^OUT.EK_OUT[2]"/>
+				<Link VarA="PlcTask Outputs^OUT.EK_OUT[3]" VarB="Channel 3^OUT.EK_OUT[3]"/>
+				<Link VarA="PlcTask Outputs^OUT.EK_OUT[4]" VarB="Channel 4^OUT.EK_OUT[4]"/>
+				<Link VarA="PlcTask Outputs^OUT.EK_OUT[5]" VarB="Channel 5^OUT.EK_OUT[5]"/>
+				<Link VarA="PlcTask Outputs^OUT.EK_OUT[6]" VarB="Channel 6^OUT.EK_OUT[6]"/>
+				<Link VarA="PlcTask Outputs^OUT.EK_OUT[7]" VarB="Channel 7^OUT.EK_OUT[7]"/>
+				<Link VarA="PlcTask Outputs^OUT.EK_OUT[8]" VarB="Channel 8^OUT.EK_OUT[8]"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 7 (EK1122)^Term 8 (EK1100)^Term 9 (EL1008)">
+				<Link VarA="PlcTask Inputs^IN.EK_IN[1]" VarB="Channel 1^Input"/>
+				<Link VarA="PlcTask Inputs^IN.EK_IN[2]" VarB="Channel 2^Input"/>
+				<Link VarA="PlcTask Inputs^IN.EK_IN[3]" VarB="Channel 3^Input"/>
+				<Link VarA="PlcTask Inputs^IN.EK_IN[4]" VarB="Channel 4^Input"/>
+				<Link VarA="PlcTask Inputs^IN.EK_IN[5]" VarB="Channel 5^Input"/>
+				<Link VarA="PlcTask Inputs^IN.EK_IN[6]" VarB="Channel 6^Input"/>
+				<Link VarA="PlcTask Inputs^IN.EK_IN[7]" VarB="Channel 7^Input"/>
+				<Link VarA="PlcTask Inputs^IN.EK_IN[8]" VarB="Channel 8^Input"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 3 (EtherCAT Automation Protocol)">
 				<Link VarA="PlcTask Inputs^General.EthercatDev3" VarB="Inputs^DevState"/>

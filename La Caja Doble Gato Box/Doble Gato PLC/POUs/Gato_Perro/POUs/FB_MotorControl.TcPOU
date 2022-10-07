@@ -12,8 +12,9 @@ VAR_INPUT
 END_VAR
 VAR_OUTPUT
 	Q : BOOL;
-//	ReadyToRun	: BOOL;
-//	Running 	: BOOL;
+	RUN_Order_VFD 	: BOOL;
+	Fast_VFD		: BOOL;
+	Faster_VFD		: BOOL;
 	iRounds 	: INT;
 	iRoundsMinute : INT;
 	Gato 		: BOOL;
@@ -51,6 +52,14 @@ END_VAR
 // Valmius ja moottori käy/ei käy keskustelu taajarin kanssa joko digitaalilähdön kautta (valmius ehkä?) ja relelähdön kautta (miten toimikaan? Pitiköhän syöttää virtaa keskelle)
 
 //Inputit vois Triguina yhä käsitellä, vaikka Buttonboxistakin tulee triguja. Mikäli jostain muusta lähteestä tulee käskyjä niin onpahan triguja yhä
+
+//==================
+// 7.10.22
+// Moottori pyörii, käskyjä liikkuu. nyt erikoiskäyttö -profiili taajarissa, mutta EEPROM vika unohtaa kaikki asetukset.
+// IN 1,2 on käy/suunta nyt, ei jaksa vaihtaa paremmaksi. 3 on Fast, mutta IN 4 ei ole taajarissa kytketty (sitten olisi Faster)
+// OUT (taajarista) ei nopeasti katsoen rekisteröidy PLC:ssä. Relelähtö varmaan vääri kytketty
+
+
 A_ButtonHandling();
 
 CASE nMotorState OF
@@ -91,6 +100,9 @@ CASE nMotorState OF
 		
 END_CASE
 
+RUN_Order_VFD := Q;
+Fast_VFD := Fast;
+Faster_VFD := Faster;
 iStatus 	:= nMotorState;
 iFault 		:= 0;
 ]]></ST>
@@ -217,28 +229,16 @@ iFault 		:= 0;
       </Implementation>
     </Action>
     <LineIds Name="FB_MotorControl">
-      <LineId Id="159" Count="18" />
-      <LineId Id="208" Count="0" />
-      <LineId Id="178" Count="1" />
-      <LineId Id="212" Count="0" />
-      <LineId Id="180" Count="7" />
-      <LineId Id="189" Count="4" />
-      <LineId Id="207" Count="0" />
-      <LineId Id="194" Count="0" />
-      <LineId Id="213" Count="1" />
-      <LineId Id="204" Count="0" />
-      <LineId Id="215" Count="2" />
-      <LineId Id="219" Count="0" />
-      <LineId Id="218" Count="0" />
-      <LineId Id="201" Count="0" />
-      <LineId Id="220" Count="0" />
-      <LineId Id="222" Count="1" />
-      <LineId Id="227" Count="0" />
-      <LineId Id="224" Count="0" />
-      <LineId Id="206" Count="0" />
-      <LineId Id="203" Count="0" />
-      <LineId Id="202" Count="0" />
-      <LineId Id="195" Count="4" />
+      <LineId Id="287" Count="17" />
+      <LineId Id="384" Count="0" />
+      <LineId Id="382" Count="0" />
+      <LineId Id="385" Count="4" />
+      <LineId Id="383" Count="0" />
+      <LineId Id="305" Count="38" />
+      <LineId Id="347" Count="0" />
+      <LineId Id="344" Count="0" />
+      <LineId Id="380" Count="1" />
+      <LineId Id="345" Count="1" />
       <LineId Id="120" Count="0" />
     </LineIds>
   </POU>

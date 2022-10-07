@@ -57,7 +57,7 @@
     <Compile Include="POUs\Gato_Perro\POUs\etc\P_BlockPad.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Gato_Perro\POUs\FBD_Assign_IO.TcPOU">
+    <Compile Include="POUs\Gato_Perro\POUs\FBD_Devices.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\Gato_Perro\POUs\FB_ButtonBox.TcPOU">
