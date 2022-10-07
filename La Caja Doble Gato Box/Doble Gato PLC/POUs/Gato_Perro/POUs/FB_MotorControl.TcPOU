@@ -50,7 +50,6 @@ END_VAR
 // Valoanturi seuraamassa kun kissa tai koira menee ohi
 
 // Valmius ja moottori käy/ei käy keskustelu taajarin kanssa joko digitaalilähdön kautta (valmius ehkä?) ja relelähdön kautta (miten toimikaan? Pitiköhän syöttää virtaa keskelle)
-
 //Inputit vois Triguina yhä käsitellä, vaikka Buttonboxistakin tulee triguja. Mikäli jostain muusta lähteestä tulee käskyjä niin onpahan triguja yhä
 
 //==================
@@ -240,7 +239,8 @@ iFault 		:= 0;
       </Implementation>
     </Method>
     <LineIds Name="FB_MotorControl">
-      <LineId Id="287" Count="17" />
+      <LineId Id="287" Count="15" />
+      <LineId Id="304" Count="0" />
       <LineId Id="384" Count="0" />
       <LineId Id="382" Count="0" />
       <LineId Id="385" Count="4" />
