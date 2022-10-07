@@ -100,11 +100,7 @@ CASE nMotorState OF
 		
 END_CASE
 
-RUN_Order_VFD := Q;
-Fast_VFD := Fast;
-Faster_VFD := Faster;
-iStatus 	:= nMotorState;
-iFault 		:= 0;
+M_VariableChanges();
 ]]></ST>
     </Implementation>
     <Action Name="A_ButtonHandling" Id="{42611ca4-32ab-4a2e-879d-1b2734acb427}">
@@ -228,6 +224,21 @@ iFault 		:= 0;
         </NWL>
       </Implementation>
     </Action>
+    <Method Name="M_VariableChanges" Id="{25e58fda-e379-4634-b5e8-87a1ef140024}">
+      <Declaration><![CDATA[METHOD M_VariableChanges : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[
+RUN_Order_VFD := Q;
+Fast_VFD 	:= Fast;
+Faster_VFD 	:= Faster;
+iStatus 	:= nMotorState;
+iFault 		:= 0;
+]]></ST>
+      </Implementation>
+    </Method>
     <LineIds Name="FB_MotorControl">
       <LineId Id="287" Count="17" />
       <LineId Id="384" Count="0" />
@@ -235,11 +246,13 @@ iFault 		:= 0;
       <LineId Id="385" Count="4" />
       <LineId Id="383" Count="0" />
       <LineId Id="305" Count="38" />
-      <LineId Id="347" Count="0" />
-      <LineId Id="344" Count="0" />
-      <LineId Id="380" Count="1" />
-      <LineId Id="345" Count="1" />
+      <LineId Id="390" Count="0" />
       <LineId Id="120" Count="0" />
+      <LineId Id="391" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_MotorControl.M_VariableChanges">
+      <LineId Id="6" Count="5" />
+      <LineId Id="5" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
