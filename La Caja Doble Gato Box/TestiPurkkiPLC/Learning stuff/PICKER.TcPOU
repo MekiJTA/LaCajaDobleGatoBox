@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <POU Name="PICKER" Id="{02cfcc68-f3e7-4301-a5c7-ca51bf33dccb}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK Picker
+VAR_INPUT
+    MoveX AT %I* : BOOL;
+    MoveY AT %I* : BOOL;
+    Rotate AT %I* : BOOL;
+    GripRotate AT %I* : BOOL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[]]></ST>
+    </Implementation>
+    <LineIds Name="PICKER">
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

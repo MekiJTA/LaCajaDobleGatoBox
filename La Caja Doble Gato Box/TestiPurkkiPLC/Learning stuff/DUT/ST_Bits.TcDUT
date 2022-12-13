@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <DUT Name="ST_Bits" Id="{ffec60ea-6a8a-4445-b908-22b9abdb9a6a}">
+    <Declaration><![CDATA[TYPE ST_Bits :
+STRUCT
+	TWI0	: BIT;
+	TWI1	: BIT;
+	TWI2	: BIT;
+	TWI3	: BIT;
+	TWI4	: BIT;
+	TWI5	: BIT;
+	TWI6	: BIT;
+	TWI7	: BIT;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <DUT Name="U_2Byte" Id="{412249c2-d7b7-4556-966d-38aad3f764b9}">
+    <Declaration><![CDATA[TYPE U_2Byte :
+UNION
+	nUINT			: UINT;
+	a2Byte			: ARRAY[1..2] OF BYTE;
+	aBits			: ARRAY[1..2] OF ST_Bits;
+END_UNION
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

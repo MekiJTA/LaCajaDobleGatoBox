@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <POU Name="Nappivalot" Id="{869e099f-69a8-43b1-a3d1-a06029cff49e}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Nappivalot
+VAR
+first_cycle : BOOL := TRUE;
+nappilasku : INT;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF io.out_punainenvalo AND io.in_nappi_punainen THEN
+	io.out_punainenvalo:=FALSE; 
+	io.out_sininenvalo:=TRUE;
+END_IF
+
+IF io.out_sininenvalo AND io.in_nappi_sininen THEN
+	io.out_sininenvalo:=FALSE;
+	io.out_valkoinenvalo:=TRUE;
+END_IF
+
+IF io.out_valkoinenvalo AND io.in_nappi_valkoinen THEN
+	io.out_valkoinenvalo:=FALSE;
+	io.out_punainenvalo:=TRUE;
+END_IF
+
+
+
+IF first_cycle THEN
+	io.out_punainenvalo:=TRUE;
+	first_cycle:=FALSE;
+END_IF
+
+]]></ST>
+    </Implementation>
+    <LineIds Name="Nappivalot">
+      <LineId Id="6" Count="12" />
+      <LineId Id="5" Count="0" />
+      <LineId Id="33" Count="0" />
+      <LineId Id="22" Count="5" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="36" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

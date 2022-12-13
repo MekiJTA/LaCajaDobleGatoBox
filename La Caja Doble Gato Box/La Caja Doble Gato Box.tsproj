@@ -29,6 +29,3289 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
+			<Name GUID="{D5BC0143-DA49-1C95-CB38-8372110790EE}" AutoDeleteType="true">S_NAMES_IN</Name>
+			<BitSize>264</BitSize>
+			<SubItem>
+				<Name>iInput0</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	0		]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput1</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>1</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput2</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>2</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput3</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>3</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput4</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>4</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput5</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>5</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iSensor6</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>6</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput7</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>7</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput8</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	1	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput9</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>9</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput10</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>10</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput11</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>11</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput12</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>12</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iRetroSensor1</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>13</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iRetroSensor2</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>14</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput15</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>15</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iSortLimit0</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	2	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iSortLimit90</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>17</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iSortBackLimit</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>18</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iSortFrontLimit</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>19</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iPickPlace_Climit</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>20</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iPickPlace_Z_Moving</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>21</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iPickPlace_XY_Moving</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>22</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iPickPlace_BoxDetected</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>23</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput24</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	3	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>24</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput25</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>25</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput26</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>26</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput27</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>27</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput28</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>28</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput29</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>29</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iPusherBackLimit</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>30</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iPusherFrontLimit</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>31</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput32</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	4	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput33</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>33</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput34</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>34</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iSensor5</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>35</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput36</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>36</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput37</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>37</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput38</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>38</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput39</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>39</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iCNC1_Opened</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	5	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>40</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iCNC1_Busy</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>41</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iCNC1_Error</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>42</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iCNC2_Opened</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>43</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iCNC2_Busy</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>44</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iCNC2_Error</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>45</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iCNC3_Opened</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>46</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iCNC3_Busy</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>47</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iCNC3_Error</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	6	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>48</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput49</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>49</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput50</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>50</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput51</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>51</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput52</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>52</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput53</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>53</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iTwoAxisPick1_ItemDetected</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>54</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iSensor10</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>55</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iClamp1_Limit</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	7	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>56</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iClamp1_Clamped</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>57</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput58</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>58</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput59</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>59</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput60</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>60</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput61</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>61</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Sensor11</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>62</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Stacker1_LeftLimit</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>63</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Stacker1_RightLimit</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	8	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Stacker1_MiddleLimit</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>65</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput66</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>66</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput67</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>67</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput68</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>68</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput69</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>69</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput70</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>70</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput71</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>71</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput72</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	9	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>72</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput73</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>73</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput74</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>74</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput75</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>75</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput76</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>76</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput77</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>77</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput78</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>78</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput79</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>79</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput80</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	10	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>80</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput81</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>81</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput82</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>82</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput83</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>83</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput84</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>84</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput85</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>85</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput86</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>86</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput87</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>87</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput88</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	11	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>88</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput89</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>89</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput90</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>90</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput91</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>91</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput92</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>92</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput93</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>93</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput94</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>94</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput95</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>95</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput96</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	12	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>96</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput97</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>97</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput98</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>98</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput99</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>99</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput100</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>100</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput101</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>101</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput102</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>102</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput103</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>103</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput104</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	13	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>104</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput105</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>105</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput106</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>106</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput107</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>107</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput108</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>108</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput109</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>109</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput110</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>110</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput111</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>111</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput112</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	14	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>112</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput113</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>113</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput114</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>114</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput115</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>115</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput116</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>116</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput117</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>117</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput118</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>118</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput119</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>119</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput120</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	15	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>120</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput121</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>121</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput122</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>122</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput123</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>123</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput124</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>124</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput125</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>125</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput126</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>126</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput127</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>127</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput128</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	16	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>128</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput129</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>129</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput130</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>130</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput131</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>131</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput132</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>132</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput133</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>133</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput134</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>134</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput135</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>135</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput136</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	17	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>136</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput137</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>137</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput138</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>138</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput139</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>139</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput140</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>140</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput141</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>141</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput142</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>142</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput143</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>143</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput144</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	18	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>144</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput145</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>145</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput146</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>146</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput147</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>147</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput148</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>148</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput149</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>149</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput150</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>150</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput151</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>151</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput152</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	19	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>152</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput153</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>153</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput154</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>154</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput155</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>155</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput156</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>156</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput157</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>157</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput158</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>158</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput159</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>159</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput160</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	20	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>160</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput161</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>161</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput162</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>162</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput163</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>163</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput164</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>164</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput165</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>165</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput166</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>166</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput167</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>167</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput168</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	21	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>168</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput169</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>169</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput170</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>170</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput171</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>171</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput172</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>172</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput173</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>173</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput174</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>174</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput175</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>175</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput176</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	22	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>176</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput177</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>177</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput178</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>178</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput179</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>179</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput180</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>180</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput181</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>181</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput182</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>182</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput183</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>183</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput184</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	23	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>184</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput185</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>185</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput186</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>186</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput187</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>187</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput188</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>188</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput189</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>189</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput190</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>190</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput191</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>191</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput192</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	24	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>192</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput193</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>193</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput194</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>194</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput195</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>195</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput196</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>196</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput197</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>197</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput198</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>198</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput199</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>199</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput200</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	25	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>200</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput201</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>201</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput202</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>202</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput203</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>203</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput204</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>204</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput205</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>205</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput206</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>206</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput207</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>207</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput208</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	26	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>208</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput209</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>209</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput210</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>210</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput211</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>211</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput212</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>212</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput213</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>213</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput214</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>214</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput215</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>215</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput216</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	27	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>216</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput217</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>217</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput218</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>218</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput219</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>219</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput220</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>220</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput221</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>221</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput222</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>222</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput223</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>223</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput224</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	28	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>224</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput225</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>225</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput226</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>226</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput227</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>227</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput228</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>228</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput229</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>229</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput230</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>230</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput231</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>231</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput232</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	29	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>232</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput233</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>233</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput234</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>234</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput235</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>235</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput236</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>236</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput237</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>237</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput238</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>238</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput239</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>239</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput240</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	30	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>240</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput241</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>241</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput242</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>242</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput243</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>243</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput244</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>244</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput245</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>245</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput246</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>246</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput247</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>247</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput248</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	31	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>248</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput249</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>249</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput250</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>250</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput251</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>251</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput252</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>252</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput253</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>253</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput254</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>254</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput255</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>255</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput256</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	32	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>256</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput257</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>257</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput258</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>258</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput259</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>259</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput260</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>260</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput261</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>261</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput262</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>262</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>iInput263</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>263</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{C6020C0A-1BF4-B02E-2662-E1CBC3A91357}" AutoDeleteType="true">U_TRANSLATE_IN</Name>
+			<BitSize>264</BitSize>
+			<SubItem>
+				<Name>nArray</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000001}">BYTE</Type>
+				<ArrayInfo>
+					<LBound>0</LBound>
+					<Elements>16</Elements>
+				</ArrayInfo>
+				<BitSize>128</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Label</Name>
+				<Type GUID="{D5BC0143-DA49-1C95-CB38-8372110790EE}">S_NAMES_IN</Type>
+				<BitSize>264</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{F8A2947E-5E12-52E6-D2AD-27BA5DBACAE2}" AutoDeleteType="true">S_NAMES_OUT</Name>
+			<BitSize>264</BitSize>
+			<SubItem>
+				<Name>oCoil0</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	0	
+Kaheksan ekaa outputtia, GRANDES LUCES]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil1</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>1</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil2</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>2</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil3</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>3</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil4</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>4</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil5</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>5</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil6</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>6</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil7</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>7</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oEmitter1</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	1	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oEmitter2</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>9</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oRoller1</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>10</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oRoller2</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>11</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oRollerPick1</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>12</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oRollerSort1</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>13</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oRoller3</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>14</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oRemover2</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>15</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil16</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	2	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil17</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>17</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil18</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>18</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil19</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>19</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oPickPlaceCplus</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>20</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oPickPlaceGrab</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>21</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oBelt1</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>22</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oBelt2</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>23</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oBelt3</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	3	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>24</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oBelt4</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>25</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oBelt5</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>26</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oBelt6</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>27</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oScale1Plus</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>28</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oScale1Minus</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>29</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oPusher1</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>30</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oBelt7</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>31</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oBelt8</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	4	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oStopBlade2</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>33</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oBelt9</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>34</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oWheelSort1Plus</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>35</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oWheelSort1Left</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>36</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oWheelSort1Right</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>37</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil38</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>38</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil39</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>39</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCNC1_Start</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	5	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>40</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCNC2_Start</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>41</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCNC3_Start</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>42</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCNC1_Lids</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>43</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCNC2_Lids</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>44</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCNC3_Lids</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>45</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oBelt12</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>46</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oBelt13</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>47</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oBelt14</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	6	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>48</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oBelt15</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>49</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oRoller10</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>50</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oRoller11</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>51</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oRoller12</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>52</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oRoller13</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>53</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oStopBlade1</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>54</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oTwoAxisPick1_Grab</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>55</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oRightPosit1_Clamp</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	7	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>56</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oRightPosit1_Raise</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>57</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oStackLight3_Red</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>58</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oStackLight3_Yellow</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>59</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oStackLight3_Green</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>60</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oEmitter4</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>61</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil62</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>62</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Stacker1_Left</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>63</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Stacker1_Right</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	8	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>LoadingConveyor1</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>65</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil66</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>66</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil67</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>67</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil68</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>68</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil69</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>69</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil70</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>70</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil71</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>71</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil72</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	9	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>72</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil73</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>73</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil74</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>74</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil75</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>75</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil76</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>76</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil77</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>77</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil78</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>78</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil79</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>79</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil80</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	10	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>80</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil81</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>81</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil82</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>82</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil83</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>83</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil84</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>84</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil85</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>85</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil86</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>86</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil87</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>87</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil88</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	11	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>88</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil89</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>89</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil90</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>90</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil91</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>91</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil92</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>92</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil93</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>93</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil94</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>94</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil95</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>95</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil96</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	12	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>96</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil97</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>97</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil98</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>98</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil99</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>99</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil100</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>100</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil101</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>101</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil102</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>102</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil103</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>103</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil104</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	13	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>104</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil105</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>105</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil106</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>106</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil107</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>107</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil108</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>108</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil109</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>109</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil110</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>110</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil111</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>111</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil112</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	14	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>112</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil113</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>113</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil114</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>114</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil115</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>115</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil116</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>116</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil117</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>117</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil118</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>118</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil119</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>119</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil120</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	15	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>120</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil121</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>121</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil122</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>122</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil123</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>123</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil124</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>124</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil125</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>125</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil126</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>126</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil127</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>127</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil128</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	16	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>128</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil129</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>129</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil130</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>130</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil131</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>131</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil132</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>132</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil133</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>133</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil134</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>134</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil135</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>135</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil136</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	17	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>136</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil137</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>137</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil138</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>138</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil139</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>139</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil140</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>140</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil141</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>141</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil142</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>142</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil143</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>143</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil144</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	18	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>144</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil145</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>145</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil146</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>146</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil147</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>147</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil148</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>148</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil149</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>149</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil150</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>150</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil151</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>151</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil152</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	19	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>152</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil153</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>153</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil154</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>154</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil155</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>155</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil156</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>156</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil157</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>157</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil158</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>158</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil159</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>159</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil160</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	20	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>160</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil161</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>161</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil162</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>162</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil163</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>163</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil164</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>164</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil165</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>165</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil166</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>166</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil167</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>167</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil168</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	21	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>168</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil169</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>169</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil170</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>170</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil171</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>171</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil172</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>172</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil173</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>173</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil174</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>174</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil175</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>175</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil176</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	22	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>176</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil177</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>177</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil178</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>178</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil179</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>179</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil180</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>180</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil181</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>181</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil182</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>182</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil183</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>183</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil184</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	23	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>184</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil185</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>185</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil186</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>186</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil187</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>187</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil188</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>188</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil189</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>189</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil190</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>190</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil191</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>191</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil192</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	24	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>192</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil193</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>193</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil194</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>194</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil195</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>195</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil196</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>196</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil197</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>197</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil198</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>198</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil199</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>199</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil200</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	25	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>200</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil201</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>201</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil202</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>202</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil203</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>203</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil204</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>204</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil205</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>205</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil206</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>206</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil207</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>207</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil208</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	26	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>208</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil209</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>209</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil210</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>210</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil211</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>211</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil212</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>212</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil213</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>213</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil214</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>214</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil215</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>215</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil216</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	27	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>216</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil217</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>217</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil218</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>218</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil219</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>219</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil220</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>220</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil221</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>221</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil222</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>222</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil223</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>223</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil224</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	28	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>224</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil225</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>225</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil226</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>226</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil227</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>227</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil228</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>228</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil229</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>229</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil230</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>230</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil231</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>231</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil232</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	29	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>232</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil233</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>233</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil234</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>234</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil235</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>235</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil236</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>236</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil237</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>237</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil238</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>238</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil239</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>239</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil240</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	30	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>240</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil241</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>241</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil242</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>242</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil243</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>243</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil244</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>244</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil245</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>245</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil246</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>246</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil247</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>247</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil248</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	31	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>248</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil249</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>249</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil250</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>250</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil251</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>251</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil252</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>252</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil253</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>253</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil254</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>254</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil255</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>255</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil256</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[===== 	BYTE	32	]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>256</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil257</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>257</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil258</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>258</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil259</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>259</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil260</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>260</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil261</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>261</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil262</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>262</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>oCoil263</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>263</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{0440AAD3-E364-376D-BAF3-FC6FC6ECC968}" AutoDeleteType="true">U_TRANSLATE_OUT</Name>
+			<BitSize>264</BitSize>
+			<SubItem>
+				<Name>nArray</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000001}">BYTE</Type>
+				<ArrayInfo>
+					<LBound>0</LBound>
+					<Elements>16</Elements>
+				</ArrayInfo>
+				<BitSize>128</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Label</Name>
+				<Type GUID="{F8A2947E-5E12-52E6-D2AD-27BA5DBACAE2}">S_NAMES_OUT</Type>
+				<BitSize>264</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
 			<Name GUID="{18071995-0000-0000-0000-002000000007}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..6] OF BIT</Name>
 			<BitSize>7</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
@@ -82,14 +3365,6 @@
 							<Type>UINT</Type>
 						</Var>
 						<Var>
-							<Name>SAFETY.Doors_OK</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>SAFETY.Safety_to_robot</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
 							<Name>IN.BOX_IN</Name>
 							<Type GUID="{71B58F72-0E49-50EB-B8E4-1CCD027538EC}">ARRAY [1..8] OF BOOL</Type>
 						</Var>
@@ -104,6 +3379,14 @@
 						<Var>
 							<Name>IN.EK_IN</Name>
 							<Type GUID="{71B58F72-0E49-50EB-B8E4-1CCD027538EC}">ARRAY [1..8] OF BOOL</Type>
+						</Var>
+						<Var>
+							<Name>SAFETY.Doors_OK</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>SAFETY.Safety_to_robot</Name>
+							<Type>BOOL</Type>
 						</Var>
 					</Vars>
 					<Vars VarGrpType="2" AreaNo="1">
@@ -143,6 +3426,84 @@
 					<TaskPouOids>
 						<TaskPouOid Prio="20" OTCID="#x08502041"/>
 					</TaskPouOids>
+				</Instance>
+			</Project>
+			<Project GUID="{073A024C-5F04-41BE-B79E-3859353619FE}" Name="TestiPurkkiPLC" PrjFilePath="TestiPurkkiPLC\TestiPurkkiPLC.plcproj" TmcFilePath="TestiPurkkiPLC\TestiPurkkiPLC.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="TestiPurkkiPLC\TestiPurkkiPLC.tmc">
+					<Name>TestiPurkkiPLC Instance</Name>
+					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<Vars VarGrpType="1">
+						<Name>PlcTask Inputs</Name>
+						<Var>
+							<Name>IO.in_vipu_vasen</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>IO.in_vipu_oikea</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>IO.in_nappi_punainen</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>IO.in_nappi_sininen</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>IO.in_nappi_valkoinen</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>IO.lampotila</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
+							<Name>IO.in_Busy_nappi_Kulta</Name>
+							<Comment><![CDATA[Busyboardin nippelit]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>TIO.FIN</Name>
+							<Comment><![CDATA[Inputit 0-15 Factory IO]]></Comment>
+							<Type GUID="{C6020C0A-1BF4-B02E-2662-E1CBC3A91357}">U_TRANSLATE_IN</Type>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="2" AreaNo="1">
+						<Name>PlcTask Outputs</Name>
+						<Var>
+							<Name>IO.out_punainenvalo</Name>
+							<Comment><![CDATA[Ohjain]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>IO.out_sininenvalo</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>IO.out_valkoinenvalo</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>IO.out_Busy_Tuuletin</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>IO.out_Busy_Moottori</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>TIO.FOUT</Name>
+							<Comment><![CDATA[Outputit 0-15 Factory IO]]></Comment>
+							<Type GUID="{0440AAD3-E364-376D-BAF3-FC6FC6ECC968}">U_TRANSLATE_OUT</Type>
+						</Var>
+					</Vars>
+					<Contexts>
+						<Context>
+							<Id NeedCalleeCall="true">0</Id>
+							<Name>PlcTask</Name>
+						</Context>
+					</Contexts>
 				</Instance>
 			</Project>
 		</Plc>

@@ -43,7 +43,6 @@ END_VAR
       <ST><![CDATA[// OUT.BOX_OUT[7] := General.SpecialBlinkOn;
 
 FBD_Devices();
-	FBD_Devices();
 	A_Doors();
 	A_Permissions();
 //	A_ButtonBoxes();
@@ -51,7 +50,6 @@ FBD_Devices();
 	Blink();
 	Blink_Faster();
 	Blink_Special();
-	
 	]]></ST>
     </Implementation>
     <Folder Name="Blinkers" Id="{5c25f4da-2386-4bfa-a3e5-3fe24506dcb7}" />
@@ -511,14 +509,11 @@ END_CASE
     </Action>
     <LineIds Name="P_General_Control">
       <LineId Id="88" Count="1" />
-      <LineId Id="76" Count="0" />
-      <LineId Id="274" Count="0" />
-      <LineId Id="77" Count="1" />
-      <LineId Id="191" Count="0" />
-      <LineId Id="79" Count="0" />
+      <LineId Id="76" Count="2" />
+      <LineId Id="313" Count="0" />
+      <LineId Id="312" Count="0" />
       <LineId Id="156" Count="2" />
       <LineId Id="83" Count="0" />
-      <LineId Id="55" Count="0" />
     </LineIds>
     <LineIds Name="P_General_Control.A_Beacons">
       <LineId Id="1" Count="0" />

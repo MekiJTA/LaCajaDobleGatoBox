@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <DUT Name="ST_PIZZA" Id="{d42175d4-af30-4e9d-b905-2f0c786dc1e4}">
+    <Declaration><![CDATA[TYPE ST_PIZZA :
+STRUCT
+	bExist :				BOOL;
+	dtTimerEnteredOven : 	DT;
+	dtTimeExitedOven : 		DT;
+	tTimeInOven :			TIME;
+	eType :					E_PIZZA_TYPES;	//viitataan selkokieliseen DUT Enum: E_pizzatypes
+//eTypellä korvataan iType tyyli	
+//	iType :					DINT; //0 = Cheese, 1 = Pep, 2 = potat. 
+	
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

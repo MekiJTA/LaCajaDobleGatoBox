@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <POU Name="Lampotilailu" Id="{12e6f8bb-0246-45f9-8784-65b0bc16f383}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Lampotilailu
+
+VAR CONSTANT
+	cMin : INT :=0;
+	cMax : INT :=5;
+END_VAR
+
+VAR
+TEMP_HI_DECIMAL	: REAL;
+TEMP_LO_DECIMAL : REAL;
+lampotila_decimaalit : REAL;
+
+	Array1: ARRAY[1..1000] OF REAL;
+	Array2: ARRAY[1..5] OF REAL := [10,20,25,30,25];
+	nLocalVar: REAL;
+	Array3 : ARRAY [cMin..cMax] OF BOOL;
+	aObjects : ARRAY[1..4] OF FB_Object;	
+	Array4 : ARRAY [1..1000] OF INT;
+	Sum : 		REAL;		
+	Lampo :		INT := io.lampotila;
+	i :			INT;
+	
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// Luetaan lämpötila
+lampotila_decimaalit:=INT_TO_REAL(io.lampotila) / 10;
+TEMP_HI_DECIMAL:= INT_TO_REAL(UI.TEMP_HI_LIMIT)/10;
+TEMP_LO_DECIMAL:= INT_TO_REAL(UI.TEMP_LO_LIMIT)/10;
+
+//	nLocalVar := Array2[3];		//kutsutaan Array2:n kolmas luku, joka on initoitu alus
+//	aObjects[2]();				//kutsutaan erillinen Function Block
+//	Array4[i] := io.lampotila;			//annetaan Array4:n i-kohdalle (mita vain 1-1000 valilla) io.lampotilan raportti
+	]]></ST>
+    </Implementation>
+    <LineIds Name="Lampotilailu">
+      <LineId Id="6" Count="7" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

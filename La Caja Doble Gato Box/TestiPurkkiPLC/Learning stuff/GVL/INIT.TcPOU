@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <POU Name="INIT" Id="{a3d81faf-2651-4fb2-9e0e-ce84b37b7a3c}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM INIT
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IO.iStartComienzo	:=	IO.FIN[0].0;
+IO.Sensori1	:=	IO.FIN[0].1;
+IO.Sensori2	:=	IO.FIN[0].2;
+IO.Sensori3	:=	IO.FIN[0].3;
+IO.Sensori4	:=	IO.FIN[0].4;
+IO.Nappi5	:=	IO.FIN[0].5;
+IO.Nappi6	:=	IO.FIN[0].6;
+IO.Nappi7	:=	IO.FIN[0].7;
+IO.Nappi8	:=	IO.FIN[1].0;
+IO.Nappi9	:=	IO.FIN[1].1;
+IO.Nappi10	:=	IO.FIN[1].2;
+IO.iSensor1_HEAVY	:=	IO.FIN[1].3;
+IO.iSensor2_HEAVY	:=	IO.FIN[1].4;
+IO.iSensor7_Retro	:=	IO.FIN[1].5;
+IO.iSensor8_Retro	:=	IO.FIN[1].6;
+IO.Nappi15	:=	IO.FIN[1].7;
+IO.Nappi16	:=	IO.FIN[2].0;
+IO.Nappi17	:=	IO.FIN[2].1;
+IO.Nappi18	:=	IO.FIN[2].2;
+IO.Nappi19	:=	IO.FIN[2].3;
+IO.Nappi20	:=	IO.FIN[2].4;
+IO.Nappi21	:=	IO.FIN[2].5;
+IO.iTurntable1_0_LIMIT	:=	IO.FIN[2].6;
+IO.iTurntable1_90_LIMIT	:=	IO.FIN[2].7;
+IO.iTurntable1_BACK_LIMIT	:=	IO.FIN[3].0;
+IO.iTurntable1_FRONT_LIMIT	:=	IO.FIN[3].1;
+IO.iPP_UP	:=	IO.FIN[3].2;
+IO.iPP_DOWN	:=	IO.FIN[3].3;
+IO.iPP_LEFT	:=	IO.FIN[3].4;
+IO.iPP_RIGHT	:=	IO.FIN[3].5;
+IO.iPick_CLimit	:=	IO.FIN[3].6;
+IO.iPick_Z	:=	IO.FIN[3].7;
+IO.iPick_XY	:=	IO.FIN[4].0;
+IO.iPick_BoxDetected	:=	IO.FIN[4].1;
+IO.Nappi34	:=	IO.FIN[4].2;
+IO.Nappi35	:=	IO.FIN[4].3;
+IO.iPusher1BackLimit	:=	IO.FIN[4].4;
+IO.iPusher1FrontLimit	:=	IO.FIN[4].5;
+IO.Nappi38	:=	IO.FIN[4].6;
+IO.Nappi39	:=	IO.FIN[4].7;
+IO.Nappi40	:=	IO.FIN[5].0;
+IO.Nappi41	:=	IO.FIN[5].1;
+IO.Nappi42	:=	IO.FIN[5].2;
+IO.Nappi43	:=	IO.FIN[5].3;
+IO.Nappi44	:=	IO.FIN[5].4;
+IO.Nappi45	:=	IO.FIN[5].5;
+IO.Nappi46	:=	IO.FIN[5].6;
+IO.iCNC1_OPEN	:=	IO.FIN[5].7;
+IO.iCNC1_BUSY	:=	IO.FIN[6].0;
+IO.iCNC1_ERR	:=	IO.FIN[6].1;
+IO.iCNC2_OPEN	:=	IO.FIN[6].2;
+IO.iCNC2_BUSY	:=	IO.FIN[6].3;
+IO.iCNC2_ERR	:=	IO.FIN[6].4;
+IO.iCNC3_OPEN	:=	IO.FIN[6].5;
+IO.iCNC3_BUSY	:=	IO.FIN[6].6;
+IO.iCNC3_ERR	:=	IO.FIN[6].7;
+IO.Nappi56	:=	IO.FIN[7].0;
+IO.Nappi57	:=	IO.FIN[7].1;
+IO.Nappi58	:=	IO.FIN[7].2;
+IO.iSensor10_Capa	:=	IO.FIN[7].3;
+IO.iSensor9_Capa	:=	IO.FIN[7].4;
+IO.iPositioner_Limit	:=	IO.FIN[7].5;
+IO.iPositioner_Clamped	:=	IO.FIN[7].6;
+IO.iPick2_Detected	:=	IO.FIN[7].7;
+IO.iPick2_MovX	:=	IO.FIN[8].0;
+IO.iPick2_MovZ	:=	IO.FIN[8].1;
+IO.iPick2_Rot	:=	IO.FIN[8].2;
+IO.iPick2_GripRot	:=	IO.FIN[8].3;
+IO.Nappi68	:=	IO.FIN[8].4;
+IO.Nappi69	:=	IO.FIN[8].5;
+IO.Nappi70	:=	IO.FIN[8].6;
+IO.Nappi71	:=	IO.FIN[8].7;
+IO.Nappi72	:=	IO.FIN[9].0;
+IO.Nappi73	:=	IO.FIN[9].1;
+IO.Nappi74	:=	IO.FIN[9].2;
+IO.Nappi75	:=	IO.FIN[9].3;
+IO.Nappi76	:=	IO.FIN[9].4;
+IO.Nappi77	:=	IO.FIN[9].5;
+IO.Nappi78	:=	IO.FIN[9].6;
+IO.Nappi79	:=	IO.FIN[9].7;
+IO.Nappi80	:=	IO.FIN[10].0;
+IO.Nappi81	:=	IO.FIN[10].1;
+IO.Nappi82	:=	IO.FIN[10].2;
+IO.iSensor11	:=	IO.FIN[10].3;
+IO.iStacker_XMoving	:=	IO.FIN[10].4;
+IO.iStacker_ZMoving	:=	IO.FIN[10].5;
+IO.iStacker_LeftLimit	:=	IO.FIN[10].6;
+IO.iStacker_RightLimit	:=	IO.FIN[10].7;
+IO.iStacker_MiddleLimit	:=	IO.FIN[11].0;
+IO.Nappi89	:=	IO.FIN[11].1;
+IO.Nappi90	:=	IO.FIN[11].2;
+IO.Nappi91	:=	IO.FIN[11].3;
+IO.Nappi92	:=	IO.FIN[11].4;
+IO.Nappi93	:=	IO.FIN[11].5;
+IO.Nappi94	:=	IO.FIN[11].6;
+IO.Nappi95	:=	IO.FIN[11].7;
+IO.Nappi96	:=	IO.FIN[12].0;
+IO.Nappi97	:=	IO.FIN[12].1;
+IO.Nappi98	:=	IO.FIN[12].2;
+IO.Nappi99	:=	IO.FIN[12].3;
+IO.Nappi100	:=	IO.FIN[12].4;
+IO.Nappi101	:=	IO.FIN[12].5;
+IO.Nappi102	:=	IO.FIN[12].6;
+IO.Nappi103	:=	IO.FIN[12].7;
+IO.Nappi104	:=	IO.FIN[13].0;
+IO.Nappi105	:=	IO.FIN[13].1;
+IO.Nappi106	:=	IO.FIN[13].2;
+IO.Nappi107	:=	IO.FIN[13].3;
+IO.Nappi108	:=	IO.FIN[13].4;
+IO.Nappi109	:=	IO.FIN[13].5;
+IO.Nappi110	:=	IO.FIN[13].6;
+IO.Nappi111	:=	IO.FIN[13].7;
+IO.Nappi112	:=	IO.FIN[14].0;
+IO.Nappi113	:=	IO.FIN[14].1;
+IO.Nappi114	:=	IO.FIN[14].2;
+IO.Nappi115	:=	IO.FIN[14].3;
+IO.Nappi116	:=	IO.FIN[14].4;
+IO.Nappi117	:=	IO.FIN[14].5;
+IO.Nappi118	:=	IO.FIN[14].6;
+IO.Nappi119	:=	IO.FIN[14].7;
+IO.Nappi120	:=	IO.FIN[15].0;
+
+
+
+		
+IO.FOUT[0].0	:=	IO.Valo0;
+IO.FOUT[0].1	:=	IO.Valo1;
+IO.FOUT[0].2	:=	IO.Valo2;
+IO.FOUT[0].3	:=	IO.Valo3;
+IO.FOUT[0].4	:=	IO.Valo4;
+IO.FOUT[0].5	:=	IO.Valo5;
+IO.FOUT[0].6	:=	IO.Valo6;
+IO.FOUT[0].7	:=	IO.Valo7;
+IO.FOUT[1].0	:=	IO.Valo8;
+IO.FOUT[1].1	:=	IO.Valo9;
+IO.FOUT[1].2	:=	IO.Valo10;
+IO.FOUT[1].3	:=	IO.Valo11;
+IO.FOUT[1].4	:=	IO.Valo12;
+IO.FOUT[1].5	:=	IO.Valo13;
+IO.FOUT[1].6	:=	IO.Valo14;
+IO.FOUT[1].7	:=	IO.Valo15;
+IO.FOUT[2].0	:=	IO.oRoller3;
+IO.FOUT[2].1	:=	IO.oRoller4_Curv;
+IO.FOUT[2].2	:=	IO.Valo18_VIH;
+IO.FOUT[2].3	:=	IO.Valo19_KEL;
+IO.FOUT[2].4	:=	IO.Valo20;
+IO.FOUT[2].5	:=	IO.Valo21;
+IO.FOUT[2].6	:=	IO.oEmitter1;
+IO.FOUT[2].7	:=	IO.oEmitter2;
+IO.FOUT[3].0	:=	IO.oEmitter3;
+IO.FOUT[3].1	:=	IO.oRoller1;
+IO.FOUT[3].2	:=	IO.oTurntable1_Roll_PLUS;
+IO.FOUT[3].3	:=	IO.oTurntable1_Roll_MINUS;
+IO.FOUT[3].4	:=	IO.oTurntable1_Turn;
+IO.FOUT[3].5	:=	IO.oRoller2;
+IO.FOUT[3].6	:=	IO.oPick_CPlus;
+IO.FOUT[3].7	:=	IO.oPick_Grab;
+IO.FOUT[4].0	:=	IO.oOut32;
+IO.FOUT[4].1	:=	IO.oBeltCurved2;
+IO.FOUT[4].2	:=	IO.oScale1PLUS;
+IO.FOUT[4].3	:=	IO.oScale1MINUS;
+IO.FOUT[4].4	:=	IO.oPusher1;
+IO.FOUT[4].5	:=	IO.oPivotSorter1;
+IO.FOUT[4].6	:=	IO.oPivotSorter2;
+IO.FOUT[4].7	:=	IO.oBelt1;
+IO.FOUT[5].0	:=	IO.oBelt2;
+IO.FOUT[5].1	:=	IO.oBelt3;
+IO.FOUT[5].2	:=	IO.oBelt4;
+IO.FOUT[5].3	:=	IO.oBelt5;
+IO.FOUT[5].4	:=	IO.oBelt6;
+IO.FOUT[5].5	:=	IO.oStraightConveyor1;
+IO.FOUT[5].6	:=	IO.oPivotSorterPLUS;
+IO.FOUT[5].7	:=	IO.oCNC1_START;
+IO.FOUT[6].0	:=	IO.oCNC1_LIDS;
+IO.FOUT[6].1	:=	IO.oBelt15;
+IO.FOUT[6].2	:=	IO.oBelt7;
+IO.FOUT[6].3	:=	IO.oBelt8;
+IO.FOUT[6].4	:=	IO.oBelt9;
+IO.FOUT[6].5	:=	IO.oBelt10;
+IO.FOUT[6].6	:=	IO.oBelt11_Curv;
+IO.FOUT[6].7	:=	IO.oCNC2_START;
+IO.FOUT[7].0	:=	IO.oCNC2_LIDS;
+IO.FOUT[7].1	:=	IO.oCNC3_START;
+IO.FOUT[7].2	:=	IO.oCNC3_LIDS;
+IO.FOUT[7].3	:=	IO.oPop1PLUS;
+IO.FOUT[7].4	:=	IO.oPop1LEFT;
+IO.FOUT[7].5	:=	IO.oPop1RIGHT;
+IO.FOUT[7].6	:=	IO.oStopBlade;
+IO.FOUT[7].7	:=	IO.oBelt11;
+IO.FOUT[8].0	:=	IO.oBelt12; 
+IO.FOUT[8].1	:=	IO.oBelt13;
+IO.FOUT[8].2	:=	IO.oBelt14;
+IO.FOUT[8].3	:=	IO.oBelt15;
+IO.FOUT[8].4	:=	IO.oPositioner1_Clamp;
+IO.FOUT[8].5	:=	IO.oPositioner1_Raise;
+IO.FOUT[8].6	:=	IO.oRoller10;
+IO.FOUT[8].7	:=	IO.oRoller11;
+IO.FOUT[9].0	:=	IO.oRoller12;
+IO.FOUT[9].1	:=	IO.oStackLight3_Red;
+IO.FOUT[9].2	:=	IO.oStackLight3_Green;
+IO.FOUT[9].3	:=	IO.oStackLight3_Yellow;
+IO.FOUT[9].4	:=	IO.oRFID1_Exec;
+IO.FOUT[9].5	:=	IO.oRFID2_ExecuteCommand;
+IO.FOUT[9].6	:=	IO.oPick2_X;
+IO.FOUT[9].7	:=	IO.oPick2_Z;
+IO.FOUT[10].0	:=	IO.oPick2_Grab;
+IO.FOUT[10].1	:=	IO.oRoller13;
+IO.FOUT[10].2	:=	IO.oStack_LoadingConveyor;
+IO.FOUT[10].3	:=	IO.oStackerLight;
+IO.FOUT[10].4	:=	IO.oStacker_Lift;
+IO.FOUT[10].5	:=	IO.oStacker_Left;
+IO.FOUT[10].6	:=	IO.oStacker_Right;
+IO.FOUT[10].7	:=	IO.Valo87;
+IO.FOUT[11].0	:=	IO.Valo88;
+IO.FOUT[11].1	:=	IO.Valo89;
+IO.FOUT[11].2	:=	IO.Valo90;
+IO.FOUT[11].3	:=	IO.Valo91;
+IO.FOUT[11].4	:=	IO.Valo92;
+IO.FOUT[11].5	:=	IO.Valo93;
+IO.FOUT[11].6	:=	IO.Valo94;
+IO.FOUT[11].7	:=	IO.Valo95;
+IO.FOUT[12].0	:=	IO.Valo96;
+IO.FOUT[12].1	:=	IO.Valo97;
+IO.FOUT[12].2	:=	IO.Valo98;
+IO.FOUT[12].3	:=	IO.Valo99;
+IO.FOUT[12].4	:=	IO.Valo100;
+IO.FOUT[12].5	:=	IO.Valo101;
+IO.FOUT[12].6	:=	IO.Valo102;
+IO.FOUT[12].7	:=	IO.Valo103;
+IO.FOUT[13].0	:=	IO.Valo104;
+IO.FOUT[13].1	:=	IO.Valo105;
+IO.FOUT[13].2	:=	IO.Valo106;
+IO.FOUT[13].3	:=	IO.Valo107;
+IO.FOUT[13].4	:=	IO.Valo108;
+IO.FOUT[13].5	:=	IO.Valo109;
+IO.FOUT[13].6	:=	IO.Valo110;
+IO.FOUT[13].7	:=	IO.Valo111;
+IO.FOUT[14].0	:=	IO.Valo112;
+IO.FOUT[14].1	:=	IO.Valo113;
+IO.FOUT[14].2	:=	IO.Valo114;
+IO.FOUT[14].3	:=	IO.Valo115;
+IO.FOUT[14].4	:=	IO.Valo116;
+IO.FOUT[14].5	:=	IO.Valo117;
+IO.FOUT[14].6	:=	IO.Valo118;
+IO.FOUT[14].7	:=	IO.Valo119;
+IO.FOUT[15].0	:=	IO.Valo120;
+
+
+
+IO.iPICK_POS_X := IO.FMIN[0] ;
+IO.iPICK_POS_Y := IO.FMIN[1] ;
+IO.iPICK_POS_Z := IO.FMIN[2] ;
+IO.iScale1 := IO.FMIN[3] ;
+IO.iLightArray1 := IO.FMIN[4] ;
+IO.imRFID1_Status := IO.FMIN[5] ;
+IO.imRFID1_Read := IO.FMIN[6] ;
+IO.imRFID1_CommID := IO.FMIN[7] ;
+IO.imRFID2_Status := IO.FMIN[8] ;
+IO.imRFID2_Read := IO.FMIN[9] ;
+IO.imRFID2_CommID := IO.FMIN[10] ;
+IO.imVisionSensor1 := IO.FMIN[11] ;
+IO.iStacker_PosX := IO.FMIN[12] ;
+IO.iStacker_PosZ := IO.FMIN[13] ;
+//IO.iScale1 := IO.GAB_FactoryIO_RegsIN[14] ;
+//IO.iScale1 := IO.GAB_FactoryIO_RegsIN[15] ;
+//IO.iScale1 := IO.GAB_FactoryIO_RegsIN[16] ;
+//IO.iScale1 := IO.GAB_FactoryIO_RegsIN[17] ;
+//IO.iScale1 := IO.GAB_FactoryIO_RegsIN[18] ;
+//IO.iScale1 := IO.GAB_FactoryIO_RegsIN[19] ;
+//IO.iScale1 := IO.GAB_FactoryIO_RegsIN[20] ;
+//IO.iScale1 := IO.GAB_FactoryIO_RegsIN[21] ;
+//IO.iScale1 := IO.GAB_FactoryIO_RegsIN[22] ;
+//IO.iScale1 := IO.GAB_FactoryIO_RegsIN[23] ;
+//IO.iScale1 := IO.GAB_FactoryIO_RegsIN[24] ;
+
+
+IO.FMOUT[0] := IO.oPICK_MOVE_X;
+IO.FMOUT[1] := IO.oPICK_MOVE_Y;
+IO.FMOUT[2] := IO.oPICK_MOVE_Z;
+IO.FMOUT[3] := IO.omRFID_ASSIGN;
+IO.FMOUT[4] := IO.omRFID1_Command;
+IO.FMOUT[5] := IO.omRFID1_Write;
+IO.FMOUT[6] := IO.omRFID1_MemIndex;
+IO.FMOUT[7] := IO.oRFID2_Command;
+IO.FMOUT[8] := IO.oRFID2_Write;
+IO.FMOUT[9] := IO.oRFID2_MemIndex;
+IO.FMOUT[10] := IO.oStacker_SetX;
+IO.FMOUT[11] := IO.oStacker_SetZ;
+//IO.GAB_FactoryIO_RegsOUT[12] := IO.oStacker_SetX;
+//IO.GAB_FactoryIO_RegsOUT[13] := IO.oStacker_SetX;
+//IO.GAB_FactoryIO_RegsOUT[14] := IO.oStacker_SetX;
+//IO.GAB_FactoryIO_RegsOUT[15] := IO.oStacker_SetX;
+//IO.GAB_FactoryIO_RegsOUT[16] := IO.oStacker_SetX;
+//IO.GAB_FactoryIO_RegsOUT[17] := IO.oStacker_SetX;
+//IO.GAB_FactoryIO_RegsOUT[18] := IO.oStacker_SetX;
+//IO.GAB_FactoryIO_RegsOUT[19] := IO.oStacker_SetX;
+//IO.GAB_FactoryIO_RegsOUT[20] := IO.oStacker_SetX;
+//IO.GAB_FactoryIO_RegsOUT[21] := IO.oStacker_SetX;
+//IO.GAB_FactoryIO_RegsOUT[22] := IO.oStacker_SetX;
+//IO.GAB_FactoryIO_RegsOUT[23] := IO.oStacker_SetX;
+//IO.GAB_FactoryIO_RegsOUT[24] := IO.oStacker_SetX;
+
+
+
+]]></ST>
+    </Implementation>
+    <LineIds Name="INIT">
+      <LineId Id="38437" Count="260" />
+      <LineId Id="38714" Count="12" />
+      <LineId Id="38713" Count="0" />
+      <LineId Id="38698" Count="12" />
+      <LineId Id="38727" Count="13" />
+      <LineId Id="38711" Count="1" />
+      <LineId Id="6136" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

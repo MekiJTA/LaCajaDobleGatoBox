@@ -27,7 +27,7 @@ END_VAR
 VAR
 	
 	Run_TRIG: R_TRIG;
-	nMotorState: (NOT_READY, ALL_READY, RUNNING, STOP, ERROR);
+	nMotorState: (NOT_READY, ALL_READY, RUNNING, STOP, ERROR);	//Local ENUM
 	SwitchLeft_TRIG: R_TRIG;
 	SwitchRight_TRIG: R_TRIG;
 	Stopping_TON: TON;

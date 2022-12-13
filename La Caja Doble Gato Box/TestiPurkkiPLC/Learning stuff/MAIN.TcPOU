@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <POU Name="MAIN" Id="{44c959f8-a3ee-4249-ba7d-63d0439c89f3}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	fbGetCurTaskIndex 	: GETCURTASKINDEX;
+	f 					: INT := 0;
+	g					: INT;
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+//Cycle count ja task-index kokeilu. alltwincat.com
+//fbGetCurTaskIndex();
+//	IF _TaskInfo[fbGetCurTaskIndex.index].FirstCycle THEN
+//    // The code that you want to be executed at the first cycle
+//	f :=1;				//first cycle kun on tosi, muutetaan ykköseksi. alustettu 0
+//	g := g+1;			//ei alustettu lainkaan, lisätään g+1 tässä if-silmukassa (oletettavasti lisäisi 1ms välein +1 jos ei olis tätä silmukkaa)
+//	GVL.h := GVL.h+1;	//GVL.h on persistent variable, lisää +1 jokasen restartin myötä
+//	END_IF
+	
+//Liikennevalo
+//MODE_SELECT();
+//MODE_AUTO();
+//MODE_MAN();
+//VAIHE1();
+//VAIHE2();
+//VAIHE3();
+//VAIHE4();
+//VALO();
+
+//extrat
+//Lampotilailu();
+]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="329" Count="0" />
+      <LineId Id="322" Count="0" />
+      <LineId Id="330" Count="0" />
+      <LineId Id="332" Count="1" />
+      <LineId Id="336" Count="2" />
+      <LineId Id="377" Count="0" />
+      <LineId Id="339" Count="0" />
+      <LineId Id="297" Count="0" />
+      <LineId Id="292" Count="0" />
+      <LineId Id="302" Count="2" />
+      <LineId Id="306" Count="0" />
+      <LineId Id="313" Count="1" />
+      <LineId Id="307" Count="0" />
+      <LineId Id="369" Count="0" />
+      <LineId Id="362" Count="0" />
+      <LineId Id="342" Count="0" />
+      <LineId Id="323" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

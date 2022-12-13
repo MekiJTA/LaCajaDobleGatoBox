@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+  <GVL Name="IO" Id="{07388f12-c7df-446b-b81e-15fb749d38e7}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+
+//Ohjain
+	out_punainenvalo AT %Q* : 	BOOL;
+	out_sininenvalo AT %Q* : 	BOOL;
+	out_valkoinenvalo AT %Q* : 	BOOL;
+
+	in_vipu_vasen AT %I* : 		BOOL;
+	in_vipu_oikea AT %I* : 		BOOL;
+	
+	in_nappi_punainen AT %I* : 	BOOL;
+	in_nappi_sininen AT %I* : 	BOOL;
+	in_nappi_valkoinen AT %I* :	BOOL;
+
+	lampotila AT %I* : 			INT;
+	i:							INT;
+
+//Busyboardin nippelit
+	in_Busy_nappi_Kulta AT %I*:	BOOL;
+	
+	out_Busy_Tuuletin AT %Q* :	BOOL;
+	out_Busy_Moottori AT %Q* :	BOOL;
+
+	
+	
+	
+	
+
+
+
+
+	
+//	============================================
+	//siirretty Tuttitehtaan omaan GVL F alle
+////Factory IO
+//	GAB_FactoryIO_Inputs 	AT %I* 		: 	ARRAY [0..15] OF BYTE;  //Inputit 0-15 Factory IO
+//	GAB_FactoryIO_Outputs 	AT %Q*		: 	ARRAY [0..15] OF BYTE;	//Outputit 0-15 Factory IO
+//	GAB_FactoryIO_RegsIN 	AT %MB0 	: 	ARRAY [0..15] OF WORD;  //Register In 0-15 Factory IO
+//	GAB_FactoryIO_RegsOUT 	AT %MB64	: 	ARRAY [0..15] OF WORD;	//Register Out 0-15 Factory IO
+	
+	
+//	RUN : BOOL; //yleinen Ajossa-komento. Lähtee päälle iStartComienzo-napista
+	
+//	iStartComienzo	:	BOOL; //Eka nappi kojetaulussa, käynnistää valot ja Belterin
+//	Sensori1	:	BOOL;
+//	Sensori2	:	BOOL;
+//	Sensori3	:	BOOL;
+//	Sensori4	:	BOOL;
+//	Nappi5	:	BOOL;
+//	Nappi6	:	BOOL;
+//	Nappi7	:	BOOL;
+//	Nappi8	:	BOOL;
+//	Nappi9	:	BOOL;
+//	Nappi10	:	BOOL;
+//	iSensor1_HEAVY	:	BOOL;
+//	iSensor2_HEAVY	:	BOOL;
+//	iSensor7_Retro	:	BOOL;
+//	iSensor8_Retro	:	BOOL;
+//	Nappi15	:	BOOL;
+//	Nappi16	:	BOOL;
+//	Nappi17	:	BOOL;
+//	Nappi18	:	BOOL;
+//	Nappi19	:	BOOL;
+//	Nappi20	:	BOOL;
+//	Nappi21	:	BOOL;
+//	iTurntable1_0_LIMIT	:	BOOL;
+//	iTurntable1_90_LIMIT	:	BOOL;
+//	iTurntable1_BACK_LIMIT	:	BOOL;
+//	iTurntable1_FRONT_LIMIT	:	BOOL;
+//	iPP_UP	:	BOOL;
+//	iPP_DOWN	:	BOOL;
+//	iPP_LEFT	:	BOOL;
+//	iPP_RIGHT	:	BOOL;
+//	iPick_CLimit	:	BOOL;
+//	iPick_Z	:	BOOL;
+//	iPick_XY	:	BOOL;
+//	iPick_BoxDetected	:	BOOL;
+//	Nappi34	:	BOOL;
+//	Nappi35	:	BOOL;
+//	iPusher1BackLimit	:	BOOL;
+//	iPusher1FrontLimit	:	BOOL;
+//	Nappi38	:	BOOL;
+//	Nappi39	:	BOOL;
+//	Nappi40	:	BOOL;
+//	Nappi41	:	BOOL;
+//	Nappi42	:	BOOL;
+//	Nappi43	:	BOOL;
+//	Nappi44	:	BOOL;
+//	Nappi45	:	BOOL;
+//	Nappi46	:	BOOL;
+//	iCNC1_OPEN	:	BOOL;
+//	iCNC1_BUSY	:	BOOL;
+//	iCNC1_ERR	:	BOOL;
+//	iCNC2_OPEN	:	BOOL;
+//	iCNC2_BUSY	:	BOOL;
+//	iCNC2_ERR	:	BOOL;
+//	iCNC3_OPEN	:	BOOL;
+//	iCNC3_BUSY	:	BOOL;
+//	iCNC3_ERR	:	BOOL;
+//	Nappi56	:	BOOL;
+//	Nappi57	:	BOOL;
+//	Nappi58	:	BOOL;
+//	iSensor10_Capa	:	BOOL;
+//	iSensor9_Capa	:	BOOL;
+//	iPositioner_Limit	:	BOOL;
+//	iPositioner_Clamped	:	BOOL;
+//	iPick2_Detected	:	BOOL;
+//	iPick2_MovX	:	BOOL;
+//	iPick2_MovZ	:	BOOL;	
+//	iPick2_Rot	:	BOOL;	
+//	iPick2_GripRot	:	BOOL;	
+//	Nappi68	:	BOOL;	
+//	Nappi69	:	BOOL;	
+//	Nappi70	:	BOOL;	
+//	Nappi71	:	BOOL;	
+//	Nappi72	:	BOOL;	
+//	Nappi73	:	BOOL;	
+//	Nappi74	:	BOOL;	
+//	Nappi75	:	BOOL;	
+//	Nappi76	:	BOOL;	
+//	Nappi77	:	BOOL;	
+//	Nappi78	:	BOOL;	
+//	Nappi79	:	BOOL;	
+//	Nappi80	:	BOOL;	
+//	Nappi81	:	BOOL;	
+//	Nappi82	:	BOOL;	
+//	iSensor11	:	BOOL;	
+//	iStacker_XMoving	:	BOOL;	
+//	iStacker_ZMoving	:	BOOL;	
+//	iStacker_LeftLimit	:	BOOL;	
+//	iStacker_RightLimit	:	BOOL;	
+//	iStacker_MiddleLimit	:	BOOL;	
+//	Nappi89	:	BOOL;	
+//	Nappi90	:	BOOL;	
+//	Nappi91	:	BOOL;	
+//	Nappi92	:	BOOL;	
+//	Nappi93	:	BOOL;	
+//	Nappi94	:	BOOL;	
+//	Nappi95	:	BOOL;	
+//	Nappi96	:	BOOL;	
+//	Nappi97	:	BOOL;	
+//	Nappi98	:	BOOL;	
+//	Nappi99	:	BOOL;	
+//	Nappi100	:	BOOL;	
+//	Nappi101	:	BOOL;	
+//	Nappi102	:	BOOL;	
+//	Nappi103	:	BOOL;	
+//	Nappi104	:	BOOL;	
+//	Nappi105	:	BOOL;	
+//	Nappi106	:	BOOL;	
+//	Nappi107	:	BOOL;	
+//	Nappi108	:	BOOL;	
+//	Nappi109	:	BOOL;	
+//	Nappi110	:	BOOL;	
+//	Nappi111	:	BOOL;	
+//	Nappi112	:	BOOL;	
+//	Nappi113	:	BOOL;	
+//	Nappi114	:	BOOL;	
+//	Nappi115	:	BOOL;	
+//	Nappi116	:	BOOL;	
+//	Nappi117	:	BOOL;	
+//	Nappi118	:	BOOL;	
+//	Nappi119	:	BOOL;	
+//	Nappi120	:	BOOL;	
+
+			
+//	Valo0	:	BOOL;
+//	Valo1	:	BOOL;
+//	Valo2	:	BOOL;
+//	Valo3	:	BOOL;
+//	Valo4	:	BOOL;
+//	Valo5	:	BOOL;
+//	Valo6	:	BOOL;
+//	Valo7	:	BOOL;
+//	Valo8	:	BOOL;
+//	Valo9	:	BOOL;
+//	Valo10	:	BOOL;
+//	Valo11	:	BOOL;
+//	Valo12	:	BOOL;
+//	Valo13	:	BOOL;
+//	Valo14	:	BOOL;
+//	Valo15	:	BOOL;
+//	oRoller3	:	BOOL;
+//	oRoller4_Curv	:	BOOL;  //BELTER-linjaston kolme valoa
+//	Valo18_VIH	:	BOOL;  //BELTER-linjaston kolme valoa
+//	Valo19_KEL	:	BOOL;  //BELTER-linjaston kolme valoa
+//	Valo20	:	BOOL;
+//	Valo21	:	BOOL;
+//	oEmitter1	:	BOOL;
+//	oEmitter2	:	BOOL;
+//	oEmitter3	:	BOOL;
+//	oRoller1	:	BOOL;
+//	oTurntable1_Roll_PLUS	:	BOOL;
+//	oTurntable1_Roll_MINUS	:	BOOL;
+//	oTurntable1_Turn	:	BOOL;
+//	oRoller2	:	BOOL;
+//	oPick_CPlus	:	BOOL;
+//	oPick_Grab	:	BOOL;
+//	oOut32	:	BOOL;
+//	oBeltCurved2	:	BOOL;
+//	oScale1PLUS	:	BOOL;
+//	oScale1MINUS	:	BOOL;
+//	oPusher1	:	BOOL;
+//	oPivotSorter1	:	BOOL;
+//	oPivotSorter2:	BOOL;
+//	oBelt1	:	BOOL;
+//	oBelt2	:	BOOL;
+//	oBelt3	:	BOOL;
+//	oBelt4	:	BOOL;
+//	oBelt5	:	BOOL;
+//	oBelt6	:	BOOL;
+//	oStraightConveyor1	:	BOOL;
+//	oPivotSorterPLUS	:	BOOL;
+//	oCNC1_START	:	BOOL;
+//	oCNC1_LIDS	:	BOOL;
+//	oBelt15	:	BOOL;
+//	oBelt7	:	BOOL;
+//	oBelt8	:	BOOL;
+//	oBelt9	:	BOOL;
+//	oBelt10	:	BOOL;
+//	oBelt11_Curv	:	BOOL;
+//	oCNC2_START	:	BOOL;
+//	oCNC2_LIDS	:	BOOL;
+//	oCNC3_START	:	BOOL;
+//	oCNC3_LIDS	:	BOOL;
+//	oPop1PLUS	:	BOOL;
+//	oPop1LEFT	:	BOOL;
+//	oPop1RIGHT	:	BOOL;
+//	oStopBlade	:	BOOL;
+//	oBelt11	:	BOOL;
+//	oBelt12	:	BOOL;
+//	oBelt13	:	BOOL;
+//	oBelt14	:	BOOL;
+//	oBelt16	:	BOOL;
+//	oPositioner1_Clamp	:	BOOL;
+//	oPositioner1_Raise	:	BOOL;
+//	oRoller10	:	BOOL;
+//	oRoller11	:	BOOL;
+//	oRoller12	:	BOOL;
+//	oStackLight3_Red	:	BOOL;
+//	oStackLight3_Green	:	BOOL;
+//	oStackLight3_Yellow	:	BOOL;
+//	oRFID1_Exec	:	BOOL;
+//	oRFID2_ExecuteCommand	:	BOOL;
+//	oPick2_X	:	BOOL;
+//	oPick2_Z	:	BOOL;
+//	oPick2_Grab	:	BOOL;
+//	oRoller13	:	BOOL;
+//	oStack_LoadingConveyor	:	BOOL;
+//	oStackerLight	:	BOOL;
+//	oStacker_Lift	:	BOOL;
+//	oStacker_Left	:	BOOL;
+//	oStacker_Right	:	BOOL;
+//	Valo87	:	BOOL;
+//	Valo88	:	BOOL;
+//	Valo89	:	BOOL;
+//	Valo90	:	BOOL;
+//	Valo91	:	BOOL;
+//	Valo92	:	BOOL;
+//	Valo93	:	BOOL;
+//	Valo94	:	BOOL;
+//	Valo95	:	BOOL;
+//	Valo96	:	BOOL;
+//	Valo97	:	BOOL;
+//	Valo98	:	BOOL;
+//	Valo99	:	BOOL;
+//	Valo100	:	BOOL;
+//	Valo101	:	BOOL;
+//	Valo102	:	BOOL;
+//	Valo103	:	BOOL;
+//	Valo104	:	BOOL;
+//	Valo105	:	BOOL;
+//	Valo106	:	BOOL;
+//	Valo107	:	BOOL;
+//	Valo108	:	BOOL;
+//	Valo109	:	BOOL;
+//	Valo110	:	BOOL;
+//	Valo111	:	BOOL;
+//	Valo112	:	BOOL;
+//	Valo113	:	BOOL;
+//	Valo114	:	BOOL;
+//	Valo115	:	BOOL;
+//	Valo116	:	BOOL;
+//	Valo117	:	BOOL;
+//	Valo118	:	BOOL;
+//	Valo119	:	BOOL;
+//	Valo120	:	BOOL;
+
+	
+	
+	
+//	iPICK_POS_X	:	WORD;
+//	iPICK_POS_Y	:	WORD;
+//	iPICK_POS_Z	:	WORD;
+//	iScale1		:	WORD;
+//	iLightArray1	:	WORD;
+//	imRFID1_Status	:	WORD;
+//	imRFID1_Read	:	WORD;
+//	imRFID1_CommID	:	WORD;
+//	imRFID2_Status	:	WORD;
+//	imRFID2_Read	:	WORD;
+//	imRFID2_CommID	:	WORD;
+//	imVisionSensor1	:	WORD;
+//	iStacker_PosX	:	WORD;
+//	iStacker_PosZ	:	WORD;
+	
+
+	
+
+//	oPICK_MOVE_X	:	WORD;
+//	oPICK_MOVE_Y	:	WORD;
+//	oPICK_MOVE_Z	:	WORD;
+//	omRFID_ASSIGN	:	WORD;
+//	omRFID1_Command	:	WORD;
+//	omRFID1_Write	:	WORD;
+//	omRFID1_MemIndex	:	WORD;
+//	oRFID2_Command	:	WORD;
+//	oRFID2_Write	:	WORD;
+//	oRFID2_MemIndex	:	WORD;
+//	oStacker_SetX	:	WORD;
+//	oStacker_SetZ	:	WORD;
+
+	
+	
+	
+//erillisen juotetun boxin napit pois tielta valiaikaisesti
+	//in_musta AT %I* : 		BOOL;
+	//in_keltanen AT %I* :		BOOL;
+	//in_sininen AT %I* : 		BOOL;
+	//out_tuuletin AT %Q* : 	BOOL;
+	//out_keltanen AT %Q* : 	BOOL;
+	//out_sininen AT %Q* : 		BOOL;
+
+END_VAR
+]]></Declaration>
+  </GVL>
+</TcPlcObject>
