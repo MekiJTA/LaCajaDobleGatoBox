@@ -26,7 +26,13 @@
     <Compile Include="CopyPastedExamples\WritePersistentData_1.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DUTs\eFeed.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\E_NappienNumerointi.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="F\F_Sample.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="GVLs\General.TcGVL">
@@ -48,28 +54,19 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Gato_Perro\DUT\eFeed.TcDUT">
+    <Compile Include="POUs\etc\P_BlockPad.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Gato_Perro\F\F_Sample.TcPOU">
+    <Compile Include="POUs\OVERVIEW_FBD.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Gato_Perro\POUs\etc\P_BlockPad.TcPOU">
+    <Compile Include="POUs\FB_ButtonBox.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Gato_Perro\POUs\FBD_Devices.TcPOU">
+    <Compile Include="POUs\FB_MotorControl.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\Gato_Perro\POUs\FB_ButtonBox.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Gato_Perro\POUs\FB_MotorControl.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Gato_Perro\POUs\P_General_Control.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\Gato_Perro\POUs\P_Safety.TcPOU">
+    <Compile Include="POUs\FB_Temperature.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\GENERAL\P_WritePersistentData.TcPOU">
@@ -78,23 +75,22 @@
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\FBD_Overview.TcPOU">
+    <Compile Include="POUs\P_General_Control.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\P_Safety.TcPOU">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DUTs" />
+    <Folder Include="F" />
     <Folder Include="GVLs" />
     <Folder Include="CopyPastedExamples" />
     <Folder Include="GVLs\IO" />
     <Folder Include="GVLs\SAFETY" />
-    <Folder Include="POUs\Gato_Perro" />
-    <Folder Include="POUs\Gato_Perro\F" />
-    <Folder Include="POUs\Gato_Perro\DUT" />
-    <Folder Include="POUs\Gato_Perro\POUs" />
-    <Folder Include="POUs\Gato_Perro\POUs\etc" />
+    <Folder Include="POUs\etc" />
     <Folder Include="POUs\GENERAL" />
-    <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>
   <ItemGroup>
@@ -129,8 +125,8 @@
   <ProjectExtensions>
     <PlcProjectOptions>
       <XmlArchive>
-  <Data>
-    <o xml:space="preserve" t="OptionKey">
+        <Data>
+          <o xml:space="preserve" t="OptionKey">
       <v n="Name">"&lt;ProjectRoot&gt;"</v>
       <d n="SubKeys" t="Hashtable" ckt="String" cvt="OptionKey">
         <v>{8F99A816-E488-41E4-9FA3-846536012284}</v>
@@ -188,14 +184,14 @@
       </d>
       <d n="Values" t="Hashtable" />
     </o>
-  </Data>
-  <TypeList>
-    <Type n="Boolean">System.Boolean</Type>
-    <Type n="Hashtable">System.Collections.Hashtable</Type>
-    <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
-    <Type n="String">System.String</Type>
-  </TypeList>
-</XmlArchive>
+        </Data>
+        <TypeList>
+          <Type n="Boolean">System.Boolean</Type>
+          <Type n="Hashtable">System.Collections.Hashtable</Type>
+          <Type n="OptionKey">{54dd0eac-a6d8-46f2-8c27-2f43c7e49861}</Type>
+          <Type n="String">System.String</Type>
+        </TypeList>
+      </XmlArchive>
     </PlcProjectOptions>
   </ProjectExtensions>
 </Project>

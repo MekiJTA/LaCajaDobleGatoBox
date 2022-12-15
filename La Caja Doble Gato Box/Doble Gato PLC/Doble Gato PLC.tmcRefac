@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Refactors>
+  <Renames>
+    <RenamedType>
+      <Type guid="5015793d-548e-4713-ad62-be76714ca000">FBD_DEVICES</Type>
+      <From>FBD_Devices</From>
+      <To>OVERVIEW_FBD</To>
+    </RenamedType>
+  </Renames>
+</Refactors>

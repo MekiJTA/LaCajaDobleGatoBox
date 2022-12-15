@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
-  <POU Name="FBD_Devices" Id="{5015793d-548e-4713-ad62-be76714ca000}" SpecialFunc="None">
-    <Declaration><![CDATA[PROGRAM FBD_Devices
+  <POU Name="OVERVIEW_FBD" Id="{5015793d-548e-4713-ad62-be76714ca000}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM OVERVIEW_FBD
 VAR
 	fbButtonBox: FB_ButtonBox;
 	fbMotorControl: FB_MotorControl;
