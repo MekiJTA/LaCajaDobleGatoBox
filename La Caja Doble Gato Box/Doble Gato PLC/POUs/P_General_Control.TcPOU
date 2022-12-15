@@ -44,7 +44,6 @@ END_VAR
 
 OVERVIEW_FBD();
 	A_Doors();
-	A_Permissions();
 //	A_ButtonBoxes();
 //	A_FeedButton();
 	Blink();
@@ -213,7 +212,7 @@ END_CASE
     </Action>
     <LineIds Name="P_General_Control">
       <LineId Id="88" Count="1" />
-      <LineId Id="76" Count="2" />
+      <LineId Id="76" Count="1" />
       <LineId Id="313" Count="0" />
       <LineId Id="312" Count="0" />
       <LineId Id="156" Count="2" />

@@ -48,9 +48,6 @@
 	</ImageDatas>
 	<Project ProjectGUID="{3BF0EBC3-147B-4B53-A6F0-B3CF83AE9995}" TargetNetId="5.62.144.216.1.1" ShowHideConfigurations="#x106">
 		<System>
-			<Settings MaxCpus="8" NonWinCpus="1">
-				<Cpu CpuId="7"/>
-			</Settings>
 			<Licenses>
 				<Target>
 					<ManualSelect>{648F394E-7DD1-499C-8112-7C38E161A94C}</ManualSelect>
@@ -73,12 +70,12 @@
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
 						<Var>
-							<Name>SAFETY.Safety_OK</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
 							<Name>IN.BOX_IN</Name>
 							<Type GUID="{71B58F72-0E49-50EB-B8E4-1CCD027538EC}">ARRAY [1..8] OF BOOL</Type>
+						</Var>
+						<Var>
+							<Name>SAFETY.Safety_OK</Name>
+							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>SAFETY.Doors_OK</Name>
