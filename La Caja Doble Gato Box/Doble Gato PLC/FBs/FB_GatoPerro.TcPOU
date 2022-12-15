@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
+  <POU Name="FB_GatoPerro" Id="{907c9889-847a-48a2-b378-14a1b7bf9287}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_GatoPerro
+VAR_INPUT
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	SM_BeltMagnetSensor: BOOL;
+	SM_WheelRotationSensor : BOOL;
+	SL_BeltLightSensor: BOOL;
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[A_SensorHandling();
+
+// Kierroslaskuri
+
+// Magneettisensori näkee Gaton
+
+// Valosensori näkee kumman vain
+
+// Kumpi on kyseessä
+
+]]></ST>
+    </Implementation>
+    <Action Name="A_SensorHandling" Id="{386bec3c-e6c8-43fa-a72f-e87306b77bbe}">
+      <Implementation>
+        <ST><![CDATA[
+SM_BeltMagnetSensor := IN.EK_IN[1];
+SL_BeltLightSensor := IN.EK_IN[2];
+SM_WheelRotationSensor := IN.EK_IN[3];
+
+]]></ST>
+      </Implementation>
+    </Action>
+    <LineIds Name="FB_GatoPerro">
+      <LineId Id="11" Count="0" />
+      <LineId Id="49" Count="0" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="18" Count="0" />
+      <LineId Id="17" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_GatoPerro.A_SensorHandling">
+      <LineId Id="2" Count="0" />
+      <LineId Id="1" Count="0" />
+      <LineId Id="3" Count="1" />
+      <LineId Id="6" Count="0" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

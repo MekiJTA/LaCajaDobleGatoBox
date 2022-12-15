@@ -16,8 +16,7 @@ F_TemperatureMethod(
 InputTemperature:= SA_BoxTemperature, 
 Celsius=> , 
 Fahrenheit=> , 
-Kelvin=> )
-
+Kelvin=> );
 ]]></ST>
     </Implementation>
     <Action Name="A_SensorHandling" Id="{2493585f-fa30-4f12-8084-d829e573cb1d}">
@@ -33,8 +32,7 @@ Kelvin=> )
       <LineId Id="20" Count="0" />
       <LineId Id="5" Count="0" />
       <LineId Id="14" Count="3" />
-      <LineId Id="22" Count="0" />
-      <LineId Id="18" Count="0" />
+      <LineId Id="27" Count="0" />
     </LineIds>
     <LineIds Name="P_Temperature_Obs.A_SensorHandling">
       <LineId Id="2" Count="0" />

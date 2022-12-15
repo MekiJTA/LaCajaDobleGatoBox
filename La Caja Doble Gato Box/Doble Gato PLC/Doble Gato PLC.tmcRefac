@@ -11,5 +11,15 @@
       <From>Door_Box</From>
       <To>Door1_Box</To>
     </RenamedSymbol>
+    <RenamedSymbol>
+      <Type guid="907c9889-847a-48a2-b378-14a1b7bf9287">FB_GatoPerro</Type>
+      <From>SM_Sensor1</From>
+      <To>SM_BeltMagnetSensor</To>
+    </RenamedSymbol>
+    <RenamedSymbol>
+      <Type guid="907c9889-847a-48a2-b378-14a1b7bf9287">FB_GatoPerro</Type>
+      <From>SL_BeltObject</From>
+      <To>SL_BeltLightSensor</To>
+    </RenamedSymbol>
   </Renames>
 </Refactors>

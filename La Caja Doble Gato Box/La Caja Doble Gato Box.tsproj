@@ -51,6 +51,11 @@
 			<Settings MaxCpus="8" NonWinCpus="1">
 				<Cpu CpuId="7"/>
 			</Settings>
+			<Licenses>
+				<Target>
+					<ManualSelect>{648F394E-7DD1-499C-8112-7C38E161A94C}</ManualSelect>
+				</Target>
+			</Licenses>
 			<Tasks>
 				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
 					<Name>PlcTask</Name>

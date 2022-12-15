@@ -41,6 +41,9 @@
     <Compile Include="FBs\FB_ButtonBox.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="FBs\FB_GatoPerro.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="FBs\FB_MotorControl.TcPOU">
       <SubType>Code</SubType>
     </Compile>
