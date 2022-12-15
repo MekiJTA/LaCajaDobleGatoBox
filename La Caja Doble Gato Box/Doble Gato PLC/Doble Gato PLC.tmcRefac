@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Refactors>
+  <Renames>
+    <RenamedType>
+      <Type guid="62b7f54b-59f2-4e90-8e41-9f44922b00b4">P_ENVIRONMENT_CONTROL</Type>
+      <From>P_Environment_Checks</From>
+      <To>P_Temperature_Obs</To>
+    </RenamedType>
+  </Renames>
+</Refactors>

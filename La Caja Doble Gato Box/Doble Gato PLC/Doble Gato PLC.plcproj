@@ -75,10 +75,16 @@
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\P_Temperature_Obs.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\P_General_Control.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\P_Safety.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SlowTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
