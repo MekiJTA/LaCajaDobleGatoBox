@@ -42,7 +42,6 @@ END_VAR
     <Implementation>
       <ST><![CDATA[// OUT.BOX_OUT[7] := General.SpecialBlinkOn;
 
-OVERVIEW_FBD();
 	A_Doors();
 	A_Permissions();
 //	A_ButtonBoxes();
@@ -508,7 +507,7 @@ END_CASE
       </Implementation>
     </Action>
     <LineIds Name="P_General_Control">
-      <LineId Id="88" Count="1" />
+      <LineId Id="88" Count="0" />
       <LineId Id="76" Count="2" />
       <LineId Id="313" Count="0" />
       <LineId Id="312" Count="0" />

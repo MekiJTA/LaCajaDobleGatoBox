@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
+  <POU Name="P_Sensor_Handling" Id="{ff981f03-5d81-4652-8271-95efea1a58f8}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM P_Sensor_Handling
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+// Magneettisensorit: SM
+//		Kierrosluku, gato/perron ohitus
+//		Luukku/ovi johonkin ja varmistamaan että se on kiinni
+
+// Lämpösensori
+//		Boxin sisällä, mittaa ympäristön lämpötilaa
+//		Derivoidaan ja analogitulosta luodaan ihmelukuja ja graafeja HMI:hin
+
+// Valosensori
+//		Gato/perron ohitus maaliviivalla
+ ]]></ST>
+    </Implementation>
+    <LineIds Name="P_Sensor_Handling">
+      <LineId Id="6" Count="0" />
+      <LineId Id="5" Count="0" />
+      <LineId Id="7" Count="1" />
+      <LineId Id="10" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="11" Count="1" />
+      <LineId Id="14" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="15" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
