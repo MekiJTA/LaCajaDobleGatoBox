@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
   <POU Name="PICKER" Id="{02cfcc68-f3e7-4301-a5c7-ca51bf33dccb}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK Picker
 VAR_INPUT

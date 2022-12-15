@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
   <POU Name="Kytkin" Id="{e3635ed3-b249-48d8-b741-451a8aa85b97}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM Kytkin
 VAR

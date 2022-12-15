@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
   <POU Name="Nappivalot" Id="{869e099f-69a8-43b1-a3d1-a06029cff49e}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM Nappivalot
 VAR

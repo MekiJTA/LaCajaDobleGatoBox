@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
   <POU Name="Step" Id="{82d3a960-5bfd-4606-a664-5fe9bc8eb5cc}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM Step
 VAR

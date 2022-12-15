@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
   <POU Name="Debounce" Id="{6fd6a7d6-41c1-430f-916c-6e29cfc5862d}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM Debounce
 VAR

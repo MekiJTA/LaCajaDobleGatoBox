@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
   <POU Name="SealedIn" Id="{e70ef259-7506-4c59-83c7-fa25a2ade694}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM SealedIn
 VAR

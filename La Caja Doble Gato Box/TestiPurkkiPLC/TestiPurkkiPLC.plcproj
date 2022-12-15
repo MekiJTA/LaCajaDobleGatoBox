@@ -184,7 +184,7 @@
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>
-    <Compile Include="PlcTask.TcTTO">
+    <Compile Include="TestiPurkkiTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Visualization Manager.TcVMO">
@@ -218,6 +218,7 @@
     <Folder Include="Learning stuff\DUT" />
     <Folder Include="Learning stuff\GVL" />
     <Folder Include="Learning stuff\Patterns Of Ladder logic" />
+    <Folder Include="TC2 Examples" />
     <Folder Include="VISUs" />
   </ItemGroup>
   <ItemGroup>

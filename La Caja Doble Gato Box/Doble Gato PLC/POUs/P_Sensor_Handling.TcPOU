@@ -17,7 +17,8 @@ END_VAR
 
 // Valosensori
 //		Gato/perron ohitus maaliviivalla
- ]]></ST>
+
+]]></ST>
     </Implementation>
     <LineIds Name="P_Sensor_Handling">
       <LineId Id="6" Count="0" />
@@ -28,7 +29,9 @@ END_VAR
       <LineId Id="11" Count="1" />
       <LineId Id="14" Count="0" />
       <LineId Id="13" Count="0" />
-      <LineId Id="15" Count="1" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="16" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

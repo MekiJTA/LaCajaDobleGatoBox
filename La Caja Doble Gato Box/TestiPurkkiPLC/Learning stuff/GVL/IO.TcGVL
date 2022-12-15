@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
   <GVL Name="IO" Id="{07388f12-c7df-446b-b81e-15fb749d38e7}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
   <DUT Name="S_CONVEYORS" Id="{5886a415-cfbb-4166-8d8c-73f8b14a00f3}">
     <Declaration><![CDATA[TYPE S_CONVEYORS :
 STRUCT

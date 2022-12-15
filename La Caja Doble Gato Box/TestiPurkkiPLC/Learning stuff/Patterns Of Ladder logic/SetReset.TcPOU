@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
   <POU Name="SetReset" Id="{2e8131a0-91ab-440a-9946-2469cdbe8c3b}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM SetReset
 VAR

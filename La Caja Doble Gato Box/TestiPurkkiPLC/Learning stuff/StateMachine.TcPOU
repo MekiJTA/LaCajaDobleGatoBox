@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.6">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
   <POU Name="StateMachine" Id="{963f2670-b1fa-404a-9599-e89587cf9076}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM StateMachine
 VAR

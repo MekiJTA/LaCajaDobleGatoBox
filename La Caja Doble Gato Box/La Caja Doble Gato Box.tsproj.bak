@@ -2,33 +2,6 @@
 <TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.25">
 	<DataTypes>
 		<DataType>
-			<Name GUID="{71B58F72-0E49-50EB-B8E4-1CCD027538EC}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..8] OF BOOL</Name>
-			<BitSize>64</BitSize>
-			<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
-			<ArrayInfo>
-				<LBound>1</LBound>
-				<Elements>8</Elements>
-			</ArrayInfo>
-		</DataType>
-		<DataType>
-			<Name GUID="{46C950DA-5D6E-6516-D69B-F24F38546D38}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..16] OF BOOL</Name>
-			<BitSize>128</BitSize>
-			<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
-			<ArrayInfo>
-				<LBound>1</LBound>
-				<Elements>16</Elements>
-			</ArrayInfo>
-		</DataType>
-		<DataType>
-			<Name GUID="{27309956-790C-165B-9452-FE8C4B2C982E}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..4] OF UINT</Name>
-			<BitSize>64</BitSize>
-			<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
-			<ArrayInfo>
-				<LBound>1</LBound>
-				<Elements>4</Elements>
-			</ArrayInfo>
-		</DataType>
-		<DataType>
 			<Name GUID="{D5BC0143-DA49-1C95-CB38-8372110790EE}" AutoDeleteType="true">S_NAMES_IN</Name>
 			<BitSize>264</BitSize>
 			<SubItem>
@@ -3335,6 +3308,9 @@ Kaheksan ekaa outputtia, GRANDES LUCES]]></Comment>
 				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
 					<Name>PlcTask</Name>
 				</Task>
+				<Task Id="4" Disabled="true" Priority="30" CycleTime="500000" AmsPort="351" AdtTasks="true">
+					<Name>SlowTask</Name>
+				</Task>
 			</Tasks>
 		</System>
 		<Plc>
@@ -3342,89 +3318,96 @@ Kaheksan ekaa outputtia, GRANDES LUCES]]></Comment>
 				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Doble Gato PLC\Doble Gato PLC.tmc">
 					<Name>Doble Gato PLC Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
-					<Vars VarGrpType="1">
-						<Name>PlcTask Inputs</Name>
-						<Var>
-							<Name>SAFETY.Safety_OK</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>General.EthercatDevState</Name>
-							<Type>UINT</Type>
-						</Var>
-						<Var>
-							<Name>General.Term2DevState</Name>
-							<Type>UINT</Type>
-						</Var>
-						<Var>
-							<Name>General.EthercatDev1</Name>
-							<Type>UINT</Type>
-						</Var>
-						<Var>
-							<Name>General.EthercatDev3</Name>
-							<Type>UINT</Type>
-						</Var>
-						<Var>
-							<Name>IN.BOX_IN</Name>
-							<Type GUID="{71B58F72-0E49-50EB-B8E4-1CCD027538EC}">ARRAY [1..8] OF BOOL</Type>
-						</Var>
-						<Var>
-							<Name>IN.BOX_1809_IN</Name>
-							<Type GUID="{46C950DA-5D6E-6516-D69B-F24F38546D38}">ARRAY [1..16] OF BOOL</Type>
-						</Var>
-						<Var>
-							<Name>IN.BOX_ANALOG_IN</Name>
-							<Type GUID="{27309956-790C-165B-9452-FE8C4B2C982E}">ARRAY [1..4] OF UINT</Type>
-						</Var>
-						<Var>
-							<Name>IN.EK_IN</Name>
-							<Type GUID="{71B58F72-0E49-50EB-B8E4-1CCD027538EC}">ARRAY [1..8] OF BOOL</Type>
-						</Var>
-						<Var>
-							<Name>SAFETY.Doors_OK</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>SAFETY.Safety_to_robot</Name>
-							<Type>BOOL</Type>
-						</Var>
-					</Vars>
-					<Vars VarGrpType="2" AreaNo="1">
-						<Name>PlcTask Outputs</Name>
-						<Var>
-							<Name>General.EthercatDevCtrl</Name>
-							<Type>UINT</Type>
-						</Var>
-						<Var>
-							<Name>OUT.BOX_OUT</Name>
-							<Type GUID="{71B58F72-0E49-50EB-B8E4-1CCD027538EC}">ARRAY [1..8] OF BOOL</Type>
-						</Var>
-						<Var>
-							<Name>OUT.BOX_2809_OUT</Name>
-							<Type GUID="{71B58F72-0E49-50EB-B8E4-1CCD027538EC}">ARRAY [1..8] OF BOOL</Type>
-						</Var>
-						<Var>
-							<Name>OUT.EK_OUT</Name>
-							<Type GUID="{71B58F72-0E49-50EB-B8E4-1CCD027538EC}">ARRAY [1..8] OF BOOL</Type>
-						</Var>
-						<Var>
-							<Name>OUT.BOX_ANALOG_OUT</Name>
-							<Type GUID="{27309956-790C-165B-9452-FE8C4B2C982E}">ARRAY [1..4] OF UINT</Type>
-						</Var>
-					</Vars>
+					<UnrestoredVarLinks ImportTime="2022-12-15T13:19:58">
+						<OwnerA Name="InputDst" Prefix="TIPC^Doble Gato PLC^Doble Gato PLC Instance" Type="1">
+							<OwnerB Name="TIID^Device 1 (EtherCAT)">
+								<Link VarA="General.EthercatDev1" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Inputs^DevState" RestoreInfo="ANotFound"/>
+							</OwnerB>
+							<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 2 (EL3204)">
+								<Link VarA="IN.BOX_ANALOG_IN[1]" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="RTD Inputs Channel 1^IN.BOX_ANALOG_IN[1]" RestoreInfo="ANotFound"/>
+								<Link VarA="IN.BOX_ANALOG_IN[2]" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="RTD Inputs Channel 2^IN.BOX_ANALOG_IN[2]" RestoreInfo="ANotFound"/>
+								<Link VarA="IN.BOX_ANALOG_IN[3]" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="RTD Inputs Channel 3^IN.BOX_ANALOG_IN[3]" RestoreInfo="ANotFound"/>
+								<Link VarA="IN.BOX_ANALOG_IN[4]" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="RTD Inputs Channel 4^IN.BOX_ANALOG_IN[4]" RestoreInfo="ANotFound"/>
+							</OwnerB>
+							<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 3 (EL1008)">
+								<Link VarA="IN.BOX_IN[1]" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="IN.BOX_IN[2]" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="IN.BOX_IN[3]" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 3^Input" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="IN.BOX_IN[4]" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 4^Input" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="IN.BOX_IN[5]" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 5^Input" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="IN.BOX_IN[6]" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 6^Input" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="IN.BOX_IN[7]" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 7^Input" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="IN.BOX_IN[8]" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 8^Input" Size="1" RestoreInfo="ANotFound"/>
+							</OwnerB>
+							<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EL1809)">
+								<Link VarA="IN.BOX_1809_IN[10]" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 10^IN.BOX_1809_IN[10]" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="IN.BOX_1809_IN[11]" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 11^IN.BOX_1809_IN[11]" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="IN.BOX_1809_IN[12]" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 12^IN.BOX_1809_IN[12]" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="IN.BOX_1809_IN[13]" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 13^IN.BOX_1809_IN[13]" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="IN.BOX_1809_IN[14]" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 14^IN.BOX_1809_IN[14]" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="IN.BOX_1809_IN[15]" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 15^IN.BOX_1809_IN[15]" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="IN.BOX_1809_IN[16]" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 16^IN.BOX_1809_IN[16]" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="IN.BOX_1809_IN[1]" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^IN.BOX_1809_IN[1]" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="IN.BOX_1809_IN[2]" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^IN.BOX_1809_IN[2]" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="IN.BOX_1809_IN[3]" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 3^IN.BOX_1809_IN[3]" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="IN.BOX_1809_IN[4]" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 4^IN.BOX_1809_IN[4]" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="IN.BOX_1809_IN[5]" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 5^IN.BOX_1809_IN[5]" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="IN.BOX_1809_IN[6]" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 6^IN.BOX_1809_IN[6]" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="IN.BOX_1809_IN[7]" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 7^IN.BOX_1809_IN[7]" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="IN.BOX_1809_IN[8]" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 8^IN.BOX_1809_IN[8]" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="IN.BOX_1809_IN[9]" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 9^IN.BOX_1809_IN[9]" Size="1" RestoreInfo="ANotFound"/>
+							</OwnerB>
+							<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 7 (EK1122)^Term 8 (EK1100)^Term 9 (EL1008)">
+								<Link VarA="IN.EK_IN[1]" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Input" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="IN.EK_IN[2]" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Input" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="IN.EK_IN[3]" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 3^Input" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="IN.EK_IN[4]" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 4^Input" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="IN.EK_IN[5]" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 5^Input" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="IN.EK_IN[6]" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 6^Input" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="IN.EK_IN[7]" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 7^Input" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="IN.EK_IN[8]" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 8^Input" Size="1" RestoreInfo="ANotFound"/>
+							</OwnerB>
+							<OwnerB Name="TIID^Device 3 (EtherCAT Automation Protocol)">
+								<Link VarA="General.EthercatDev3" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Inputs^DevState" RestoreInfo="ANotFound"/>
+							</OwnerB>
+						</OwnerA>
+						<OwnerA Name="OutputSrc" Prefix="TIPC^Doble Gato PLC^Doble Gato PLC Instance" Type="2">
+							<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 4 (EL2008)">
+								<Link VarA="OUT.BOX_OUT[1]" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^Output" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="OUT.BOX_OUT[2]" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^Output" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="OUT.BOX_OUT[3]" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 3^Output" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="OUT.BOX_OUT[4]" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 4^Output" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="OUT.BOX_OUT[5]" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 5^Output" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="OUT.BOX_OUT[6]" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 6^Output" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="OUT.BOX_OUT[7]" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 7^Output" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="OUT.BOX_OUT[8]" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 8^Output" Size="1" RestoreInfo="ANotFound"/>
+							</OwnerB>
+							<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 6 (EL2809)">
+								<Link VarA="OUT.BOX_2809_OUT[1]" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^OUT.BOX_2809_OUT[1]" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="OUT.BOX_2809_OUT[2]" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^OUT.BOX_2809_OUT[2]" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="OUT.BOX_2809_OUT[3]" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 3^OUT.BOX_2809_OUT[3]" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="OUT.BOX_2809_OUT[4]" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 4^OUT.BOX_2809_OUT[4]" Size="1" RestoreInfo="ANotFound"/>
+							</OwnerB>
+							<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 7 (EK1122)^Term 8 (EK1100)^Term 10 (EL2008)">
+								<Link VarA="OUT.EK_OUT[1]" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 1^OUT.EK_OUT[1]" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="OUT.EK_OUT[2]" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 2^OUT.EK_OUT[2]" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="OUT.EK_OUT[3]" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 3^OUT.EK_OUT[3]" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="OUT.EK_OUT[4]" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 4^OUT.EK_OUT[4]" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="OUT.EK_OUT[5]" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 5^OUT.EK_OUT[5]" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="OUT.EK_OUT[6]" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 6^OUT.EK_OUT[6]" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="OUT.EK_OUT[7]" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 7^OUT.EK_OUT[7]" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="OUT.EK_OUT[8]" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Channel 8^OUT.EK_OUT[8]" Size="1" RestoreInfo="ANotFound"/>
+							</OwnerB>
+						</OwnerA>
+					</UnrestoredVarLinks>
 					<Contexts>
 						<Context>
-							<Id NeedCalleeCall="true">0</Id>
-							<Name>PlcTask</Name>
-							<ManualConfig>
-								<OTCID>#x02010030</OTCID>
-							</ManualConfig>
-							<Priority>20</Priority>
-							<CycleTime>10000000</CycleTime>
+							<Id>1</Id>
+							<Name>Default</Name>
 						</Context>
 					</Contexts>
 					<TaskPouOids>
-						<TaskPouOid Prio="20" OTCID="#x08502041"/>
+						<TaskPouOid Prio="0" OTCID="#x08502042"/>
 					</TaskPouOids>
 				</Instance>
 			</Project>
@@ -3433,10 +3416,15 @@ Kaheksan ekaa outputtia, GRANDES LUCES]]></Comment>
 					<Name>TestiPurkkiPLC Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
-						<Name>PlcTask Inputs</Name>
+						<Name>TestiPurkkiTask Inputs</Name>
 						<Var>
 							<Name>IO.in_vipu_vasen</Name>
 							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>TIO.FIN</Name>
+							<Comment><![CDATA[Inputit 0-15 Factory IO]]></Comment>
+							<Type GUID="{C6020C0A-1BF4-B02E-2662-E1CBC3A91357}">U_TRANSLATE_IN</Type>
 						</Var>
 						<Var>
 							<Name>IO.in_vipu_oikea</Name>
@@ -3463,14 +3451,9 @@ Kaheksan ekaa outputtia, GRANDES LUCES]]></Comment>
 							<Comment><![CDATA[Busyboardin nippelit]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
-						<Var>
-							<Name>TIO.FIN</Name>
-							<Comment><![CDATA[Inputit 0-15 Factory IO]]></Comment>
-							<Type GUID="{C6020C0A-1BF4-B02E-2662-E1CBC3A91357}">U_TRANSLATE_IN</Type>
-						</Var>
 					</Vars>
 					<Vars VarGrpType="2" AreaNo="1">
-						<Name>PlcTask Outputs</Name>
+						<Name>TestiPurkkiTask Outputs</Name>
 						<Var>
 							<Name>IO.out_punainenvalo</Name>
 							<Comment><![CDATA[Ohjain]]></Comment>
@@ -3485,6 +3468,11 @@ Kaheksan ekaa outputtia, GRANDES LUCES]]></Comment>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
+							<Name>TIO.FOUT</Name>
+							<Comment><![CDATA[Outputit 0-15 Factory IO]]></Comment>
+							<Type GUID="{0440AAD3-E364-376D-BAF3-FC6FC6ECC968}">U_TRANSLATE_OUT</Type>
+						</Var>
+						<Var>
 							<Name>IO.out_Busy_Tuuletin</Name>
 							<Type>BOOL</Type>
 						</Var>
@@ -3492,18 +3480,21 @@ Kaheksan ekaa outputtia, GRANDES LUCES]]></Comment>
 							<Name>IO.out_Busy_Moottori</Name>
 							<Type>BOOL</Type>
 						</Var>
-						<Var>
-							<Name>TIO.FOUT</Name>
-							<Comment><![CDATA[Outputit 0-15 Factory IO]]></Comment>
-							<Type GUID="{0440AAD3-E364-376D-BAF3-FC6FC6ECC968}">U_TRANSLATE_OUT</Type>
-						</Var>
 					</Vars>
 					<Contexts>
 						<Context>
 							<Id NeedCalleeCall="true">0</Id>
-							<Name>PlcTask</Name>
+							<Name>TestiPurkkiTask</Name>
+							<ManualConfig>
+								<OTCID>#x02010040</OTCID>
+							</ManualConfig>
+							<Priority>30</Priority>
+							<CycleTime>50000000</CycleTime>
 						</Context>
 					</Contexts>
+					<TaskPouOids>
+						<TaskPouOid Prio="30" OTCID="#x08502002"/>
+					</TaskPouOids>
 				</Instance>
 			</Project>
 		</Plc>
@@ -3539,25 +3530,25 @@ Kaheksan ekaa outputtia, GRANDES LUCES]]></Comment>
 							<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
 							<BootStrapData>0010f400f410f400</BootStrapData>
 							<Pdo Name="RTD Inputs Channel 1" Index="#x1a00" Flags="#x0011" SyncMan="3">
-								<Entry Name="Status__Underrange" Index="#x6000" Sub="#x01">
+								<Entry Name="Status__Underrange" Index="#x6000" Sub="#x01" Flags="#x00008020">
 									<Type>BIT</Type>
 								</Entry>
-								<Entry Name="Status__Overrange" Index="#x6000" Sub="#x02">
+								<Entry Name="Status__Overrange" Index="#x6000" Sub="#x02" Flags="#x00008020">
 									<Type>BIT</Type>
 								</Entry>
-								<Entry Name="Status__Limit 1" Index="#x6000" Sub="#x03">
+								<Entry Name="Status__Limit 1" Index="#x6000" Sub="#x03" Flags="#x00008020">
 									<Type>BIT2</Type>
 								</Entry>
-								<Entry Name="Status__Limit 2" Index="#x6000" Sub="#x05">
+								<Entry Name="Status__Limit 2" Index="#x6000" Sub="#x05" Flags="#x00008020">
 									<Type>BIT2</Type>
 								</Entry>
-								<Entry Name="Status__Error" Index="#x6000" Sub="#x07">
+								<Entry Name="Status__Error" Index="#x6000" Sub="#x07" Flags="#x00008020">
 									<Type>BIT</Type>
 								</Entry>
 								<Entry>
 									<Type GUID="{18071995-0000-0000-0000-002000000007}">ARRAY [0..6] OF BIT</Type>
 								</Entry>
-								<Entry Name="Status__TxPDO State" Index="#x1800" Sub="#x07">
+								<Entry Name="Status__TxPDO State" Index="#x1800" Sub="#x07" Flags="#x00008020">
 									<Type>BIT</Type>
 								</Entry>
 								<Entry Name="Status__TxPDO Toggle" Index="#x1800" Sub="#x09">
@@ -4037,25 +4028,10 @@ Kaheksan ekaa outputtia, GRANDES LUCES]]></Comment>
 									</Pdo>
 								</EtherCAT>
 							</Box>
-							<Box Id="11" BoxType="9107" BoxFlags="#x00000020">
-								<Name>Term 11 (EL6631-0010)</Name>
-								<ImageId>124</ImageId>
-								<EtherCAT SlaveType="5" AdsServerAddress="053e90d8020c0000" PdiType="#x0c08" ExecIo="true" MboxDataLinkLayer="true" StateMBoxPolling="true" CycleMBoxPollingTime="0" CoeType="47" FoeType="1" VendorId="#x00000002" ProductCode="#x19e73052" RevisionNo="#x0012000a" InfoDataAddr="true" InfoDataNetId="true" TimeoutStateChange1="10000" TimeoutStateChange3="20000" GenerateOwnNetId="true" InitializeOwnNetId="true" PortPhys="51" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL6631-0010 PROFINET IO Device" Desc="EL6631-0010" PortABoxInfo="#x0100000a">
-									<SyncMan>001000042600010001000000400000040004001026010000</SyncMan>
-									<SyncMan>001400042200010002000000400000040004001422010000</SyncMan>
-									<SyncMan>001800006400000003000000000000000000001864010000</SyncMan>
-									<SyncMan>002400002000000004000000000000000000002420010000</SyncMan>
-									<Fmmu>0000000000000000000000020000000001000000000000000000000000000000</Fmmu>
-									<Fmmu>0000000000000000000000010000000002000000000000000000000000000000</Fmmu>
-									<Fmmu>00000000000000000d0800010100000003000000000000000000000000000000</Fmmu>
-									<BootStrapData>0010000400140004</BootStrapData>
-									<CoeProfile ProfileNo="5001"/>
-								</EtherCAT>
-							</Box>
 							<Box Id="12" BoxType="9099">
 								<Name>Term 12 (EL9011)</Name>
 								<ImageId>1005</ImageId>
-								<EtherCAT CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x23333050" InfoDataState="false" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL9011 End Terminal" Desc="EL9011" PortABoxInfo="#x0100000b"/>
+								<EtherCAT CycleMBoxPollingTime="0" VendorId="#x00000002" ProductCode="#x23333050" InfoDataState="false" MaxSlotCount="256" MaxSlotGroupCount="1" SlotPdoIncrement="1" SlotIndexIncrement="16" Type="EL9011 End Terminal" Desc="EL9011" PortABoxInfo="#x0100000a"/>
 							</Box>
 						</Box>
 					</Box>
@@ -4079,86 +4055,4 @@ Kaheksan ekaa outputtia, GRANDES LUCES]]></Comment>
 			</Device>
 		</Io>
 	</Project>
-	<Mappings>
-		<MappingInfo Identifier="{00000000-2041-0850-4020-500810000403}" Id="#x02030020"/>
-		<MappingInfo Identifier="{00000000-2041-0850-4020-500840000403}" Id="#x02030010"/>
-		<OwnerA Name="TIPC^Doble Gato PLC^Doble Gato PLC Instance">
-			<OwnerB Name="TIID^Device 1 (EtherCAT)">
-				<Link VarA="PlcTask Inputs^General.EthercatDev1" VarB="Inputs^DevState"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 2 (EL3204)">
-				<Link VarA="PlcTask Inputs^IN.BOX_ANALOG_IN[1]" VarB="RTD Inputs Channel 1^IN.BOX_ANALOG_IN[1]"/>
-				<Link VarA="PlcTask Inputs^IN.BOX_ANALOG_IN[2]" VarB="RTD Inputs Channel 2^IN.BOX_ANALOG_IN[2]"/>
-				<Link VarA="PlcTask Inputs^IN.BOX_ANALOG_IN[3]" VarB="RTD Inputs Channel 3^IN.BOX_ANALOG_IN[3]"/>
-				<Link VarA="PlcTask Inputs^IN.BOX_ANALOG_IN[4]" VarB="RTD Inputs Channel 4^IN.BOX_ANALOG_IN[4]"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 3 (EL1008)">
-				<Link VarA="PlcTask Inputs^IN.BOX_IN[1]" VarB="Channel 1^Input"/>
-				<Link VarA="PlcTask Inputs^IN.BOX_IN[2]" VarB="Channel 2^Input"/>
-				<Link VarA="PlcTask Inputs^IN.BOX_IN[3]" VarB="Channel 3^Input"/>
-				<Link VarA="PlcTask Inputs^IN.BOX_IN[4]" VarB="Channel 4^Input"/>
-				<Link VarA="PlcTask Inputs^IN.BOX_IN[5]" VarB="Channel 5^Input"/>
-				<Link VarA="PlcTask Inputs^IN.BOX_IN[6]" VarB="Channel 6^Input"/>
-				<Link VarA="PlcTask Inputs^IN.BOX_IN[7]" VarB="Channel 7^Input"/>
-				<Link VarA="PlcTask Inputs^IN.BOX_IN[8]" VarB="Channel 8^Input"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 4 (EL2008)">
-				<Link VarA="PlcTask Outputs^OUT.BOX_OUT[1]" VarB="Channel 1^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.BOX_OUT[2]" VarB="Channel 2^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.BOX_OUT[3]" VarB="Channel 3^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.BOX_OUT[4]" VarB="Channel 4^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.BOX_OUT[5]" VarB="Channel 5^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.BOX_OUT[6]" VarB="Channel 6^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.BOX_OUT[7]" VarB="Channel 7^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.BOX_OUT[8]" VarB="Channel 8^Output"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EL1809)">
-				<Link VarA="PlcTask Inputs^IN.BOX_1809_IN[10]" VarB="Channel 10^IN.BOX_1809_IN[10]"/>
-				<Link VarA="PlcTask Inputs^IN.BOX_1809_IN[11]" VarB="Channel 11^IN.BOX_1809_IN[11]"/>
-				<Link VarA="PlcTask Inputs^IN.BOX_1809_IN[12]" VarB="Channel 12^IN.BOX_1809_IN[12]"/>
-				<Link VarA="PlcTask Inputs^IN.BOX_1809_IN[13]" VarB="Channel 13^IN.BOX_1809_IN[13]"/>
-				<Link VarA="PlcTask Inputs^IN.BOX_1809_IN[14]" VarB="Channel 14^IN.BOX_1809_IN[14]"/>
-				<Link VarA="PlcTask Inputs^IN.BOX_1809_IN[15]" VarB="Channel 15^IN.BOX_1809_IN[15]"/>
-				<Link VarA="PlcTask Inputs^IN.BOX_1809_IN[16]" VarB="Channel 16^IN.BOX_1809_IN[16]"/>
-				<Link VarA="PlcTask Inputs^IN.BOX_1809_IN[1]" VarB="Channel 1^IN.BOX_1809_IN[1]"/>
-				<Link VarA="PlcTask Inputs^IN.BOX_1809_IN[2]" VarB="Channel 2^IN.BOX_1809_IN[2]"/>
-				<Link VarA="PlcTask Inputs^IN.BOX_1809_IN[3]" VarB="Channel 3^IN.BOX_1809_IN[3]"/>
-				<Link VarA="PlcTask Inputs^IN.BOX_1809_IN[4]" VarB="Channel 4^IN.BOX_1809_IN[4]"/>
-				<Link VarA="PlcTask Inputs^IN.BOX_1809_IN[5]" VarB="Channel 5^IN.BOX_1809_IN[5]"/>
-				<Link VarA="PlcTask Inputs^IN.BOX_1809_IN[6]" VarB="Channel 6^IN.BOX_1809_IN[6]"/>
-				<Link VarA="PlcTask Inputs^IN.BOX_1809_IN[7]" VarB="Channel 7^IN.BOX_1809_IN[7]"/>
-				<Link VarA="PlcTask Inputs^IN.BOX_1809_IN[8]" VarB="Channel 8^IN.BOX_1809_IN[8]"/>
-				<Link VarA="PlcTask Inputs^IN.BOX_1809_IN[9]" VarB="Channel 9^IN.BOX_1809_IN[9]"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 6 (EL2809)">
-				<Link VarA="PlcTask Outputs^OUT.BOX_2809_OUT[1]" VarB="Channel 1^OUT.BOX_2809_OUT[1]"/>
-				<Link VarA="PlcTask Outputs^OUT.BOX_2809_OUT[2]" VarB="Channel 2^OUT.BOX_2809_OUT[2]"/>
-				<Link VarA="PlcTask Outputs^OUT.BOX_2809_OUT[3]" VarB="Channel 3^OUT.BOX_2809_OUT[3]"/>
-				<Link VarA="PlcTask Outputs^OUT.BOX_2809_OUT[4]" VarB="Channel 4^OUT.BOX_2809_OUT[4]"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 7 (EK1122)^Term 8 (EK1100)^Term 10 (EL2008)">
-				<Link VarA="PlcTask Outputs^OUT.EK_OUT[1]" VarB="Channel 1^OUT.EK_OUT[1]"/>
-				<Link VarA="PlcTask Outputs^OUT.EK_OUT[2]" VarB="Channel 2^OUT.EK_OUT[2]"/>
-				<Link VarA="PlcTask Outputs^OUT.EK_OUT[3]" VarB="Channel 3^OUT.EK_OUT[3]"/>
-				<Link VarA="PlcTask Outputs^OUT.EK_OUT[4]" VarB="Channel 4^OUT.EK_OUT[4]"/>
-				<Link VarA="PlcTask Outputs^OUT.EK_OUT[5]" VarB="Channel 5^OUT.EK_OUT[5]"/>
-				<Link VarA="PlcTask Outputs^OUT.EK_OUT[6]" VarB="Channel 6^OUT.EK_OUT[6]"/>
-				<Link VarA="PlcTask Outputs^OUT.EK_OUT[7]" VarB="Channel 7^OUT.EK_OUT[7]"/>
-				<Link VarA="PlcTask Outputs^OUT.EK_OUT[8]" VarB="Channel 8^OUT.EK_OUT[8]"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 7 (EK1122)^Term 8 (EK1100)^Term 9 (EL1008)">
-				<Link VarA="PlcTask Inputs^IN.EK_IN[1]" VarB="Channel 1^Input"/>
-				<Link VarA="PlcTask Inputs^IN.EK_IN[2]" VarB="Channel 2^Input"/>
-				<Link VarA="PlcTask Inputs^IN.EK_IN[3]" VarB="Channel 3^Input"/>
-				<Link VarA="PlcTask Inputs^IN.EK_IN[4]" VarB="Channel 4^Input"/>
-				<Link VarA="PlcTask Inputs^IN.EK_IN[5]" VarB="Channel 5^Input"/>
-				<Link VarA="PlcTask Inputs^IN.EK_IN[6]" VarB="Channel 6^Input"/>
-				<Link VarA="PlcTask Inputs^IN.EK_IN[7]" VarB="Channel 7^Input"/>
-				<Link VarA="PlcTask Inputs^IN.EK_IN[8]" VarB="Channel 8^Input"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 3 (EtherCAT Automation Protocol)">
-				<Link VarA="PlcTask Inputs^General.EthercatDev3" VarB="Inputs^DevState"/>
-			</OwnerB>
-		</OwnerA>
-	</Mappings>
 </TcSmProject>
