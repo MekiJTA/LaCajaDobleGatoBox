@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
+  <DUT Name="E_CONTROL_MODE" Id="{f83aebdd-112c-48ca-a8cf-cd36b2fd8cd7}">
+    <Declaration><![CDATA[TYPE E_CONTROL_MODE :
+(
+	E_REF_MODE,
+	E_JOG_MODE,
+	E_AUTO_MODE
+);
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

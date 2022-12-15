@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
+  <POU Name="FB_ChannelStartStop" Id="{8dc68761-b461-4c9d-8318-dc2eadc66a8d}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_ChannelStartStop
+VAR_INPUT
+	i_Start:BOOL;
+	i_Stop:BOOL;
+	i_Reset:BOOL;
+	i_GroupID:UDINT;
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	bStopped:BOOL;
+
+	fbItpStepOnAfterEStop: ItpStepOnAfterEStop;
+	fbItpEStop: ItpEStop;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbItpStepOnAfterEStop(
+	bExecute:= i_Start AND bStopped,
+	nGrpId:=i_GroupID ,
+	tTimeOut:= t#1S,
+	bBusy=> ,
+	bErr=> ,
+	nErrId=> );
+
+fbItpEStop(
+	bExecute:=i_Stop ,
+	nGrpId:= i_GroupID,
+	fDec:= 10000,
+	fJerk:= 1000000,
+	tTimeOut:= T#1S,
+	bBusy=> ,
+	bErr=> ,
+	nErrId=> );
+
+IF i_Stop THEN
+	bStopped:=TRUE;
+END_IF
+
+IF i_Reset THEN
+	bStopped := FALSE;
+END_IF]]></ST>
+    </Implementation>
+    <LineIds Name="FB_ChannelStartStop">
+      <LineId Id="15" Count="24" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

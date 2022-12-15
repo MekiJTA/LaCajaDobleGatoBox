@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
+  <DUT Name="ST_PROGRAM" Id="{bbd90809-fec3-4b68-8a82-90d2f17b65d4}">
+    <Declaration><![CDATA[TYPE ST_PROGRAM :
+STRUCT
+	Name:STRING;
+	Comment:STRING;
+	ExecutionTable:ARRAY[1..MAX_NUMBER_OF_TABLE_LINES] OF ST_EXECUTION_TABLE;
+END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

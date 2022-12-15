@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
+  <POU Name="FB_ChannelReset" Id="{48ca0b5c-dde0-460d-a003-088c45c13a7a}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_ChannelReset
+
+VAR_INPUT
+	i_Reset:BOOL;
+	i_ChannelID: UDINT;
+
+END_VAR
+VAR_OUTPUT
+END_VAR
+VAR
+	fbReset: ItpReset;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[fbReset(
+	bExecute:= i_Reset,
+	nChnId:= i_ChannelID,
+	tTimeOut:= T#1S,
+	bBusy=> ,
+	bErr=> ,
+	nErrId=> );]]></ST>
+    </Implementation>
+    <LineIds Name="FB_ChannelReset">
+      <LineId Id="12" Count="6" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

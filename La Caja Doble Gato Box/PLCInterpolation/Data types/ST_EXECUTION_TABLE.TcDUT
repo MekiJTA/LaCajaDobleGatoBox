@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
+  <DUT Name="ST_EXECUTION_TABLE" Id="{c6c0cd99-40c6-4175-b75f-46fdd51d7e37}">
+    <Declaration><![CDATA[TYPE ST_EXECUTION_TABLE :
+STRUCT
+	ActionType:E_ACTIONTYPE;
+	X:LREAL;
+	Y:LREAL;
+	I:LREAL;
+	J:LREAL;
+	Clockwise:BOOL;
+END_STRUCT
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

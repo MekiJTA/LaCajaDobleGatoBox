@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
+  <POU Name="FB_Execute" Id="{db665fd0-ae8e-4ca4-b21c-9121e74dc04c}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Execute
+VAR_INPUT
+	i_Start:BOOL;
+	i_Stop:BOOL;
+	i_Reset:BOOL;
+	i_Velocity: UINT;
+END_VAR
+VAR_OUTPUT
+	o_Ready:BOOL;
+	o_Running:BOOL;
+	o_Stopped:BOOL;
+	o_Resetted:BOOL;
+	o_Error:BOOL;
+	o_ErrorID:DINT;
+END_VAR
+VAR
+	(* test feeding 10 lines at time *)
+	bFeedMore:BOOL;
+
+	iProgramLine:UINT:=1;
+	oldStart: BOOL;
+
+	stNciFeedGroupTable:	ST_NciFeedGroupTable;
+	fbFeedTablePrep:FB_NciFeedTablePreparation;
+	stGeoStart:ST_NciGeoStart;
+	stGeoLine:ST_NciGeoLine;
+	stGeoCirclePlane:	ST_NciGeoCirclePlane;
+	stEndOfTables:	ST_NciEndOfTables;
+	stMFuncHsk:ST_NciMFuncHsk;
+	nFilledRows:	UDINT	:= 0;
+	bError:	BOOL	:= FALSE;
+	nErrorId:	UDINT := 0;
+	fbFeedTable:FB_NciFeedTable;
+
+
+	bFeed: BOOL;
+	lPreviousX:LREAL;
+	lPreviousY:LREAL;
+	bEnd: BOOL;
+	nEndStep: INT;
+	tmrProgramTime: TON;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF i_Start AND NOT oldStart AND ((gProgramState=E_PROGRAMSTATE_RESETTED) OR (gProgramState=E_PROGRAMSTATE_READY) OR (gProgramState=E_PROGRAMSTATE_NONE)) THEN
+	iProgramLine:=1;
+	gProgramState:=E_PROGRAMSTATE_RUNNING;
+	bEnd:=FALSE;
+	nEndStep:=0;
+	o_Ready:=FALSE;
+
+	(* GeoStart is required if the first geo entry is a circle is first used movement *)
+	(* Take current position as start position *)
+	stGeoStart.fPosX:= lPreviousX:=in_stXNcToPlc.ActPos;
+	stGeoStart.fPosY:= lPreviousY:=in_stYNcToPlc.ActPos;
+
+	fbFeedTablePrep(
+		nEntryType:= E_NciEntryTypeGeoStart,
+		pEntry:= ADR(stGeoStart) ,
+		bResetTable:= FALSE,
+		bResetAll:=FALSE,
+		stFeedGroupTable:= stNciFeedGroupTable,
+		nFilledRows=>nFilledRows,
+		bError=>bError,
+		nErrorId=> nErrorId);
+END_IF
+
+oldStart:=i_Start;
+
+IF (gProgramState=E_PROGRAMSTATE_RUNNING) AND i_Stop THEN
+	gProgramState:=E_PROGRAMSTATE_STOPPED;
+END_IF
+IF (gProgramState=E_PROGRAMSTATE_STOPPED) AND i_Start THEN
+	gProgramState:=E_PROGRAMSTATE_RUNNING;
+END_IF
+
+
+IF i_Reset THEN
+	bEnd:=FALSE;
+	nEndStep:=0;
+	bFeed:=FALSE;
+	o_Error:=FALSE;
+	o_ErrorID:=0;
+	o_Ready:=FALSE;
+	gProgramState:=E_PROGRAMSTATE_RESETTED;
+	iProgramLine:=1;
+	fbFeedTablePrep(
+		bResetAll:= TRUE,
+		stFeedGroupTable:= stNciFeedGroupTable);
+	fbFeedTable.bExecute := FALSE;
+END_IF
+
+IF gProgramState=E_PROGRAMSTATE_RUNNING AND (NOT bEnd) THEN
+	CASE gCurrentProgram.ExecutionTable[iProgramLine].ActionType OF
+		MOVE_X:
+			stGeoLine.nDisplayIndex	:= iProgramLine;
+			stGeoLine.fEndPosX	:=lPreviousX:=gCurrentProgram.ExecutionTable[iProgramLine].X;
+			stGeoLine.fEndPosY:= lPreviousY;
+			stGeoLine.fVelo		:= i_Velocity; (*mm per sec*)
+
+			fbFeedTablePrep(
+				nEntryType:= E_NciEntryTypeGeoLine,
+				pEntry:= ADR(stGeoLine),
+				bResetTable:= FALSE,
+				stFeedGroupTable:= stNciFeedGroupTable,
+				nFilledRows=>nFilledRows,
+				bError=>bError,
+				nErrorId=> nErrorId);
+
+			iProgramLine:=iProgramLine+1;
+
+		MOVE_Y:
+			stGeoLine.nDisplayIndex	:= iProgramLine;
+			stGeoLine.fEndPosX	:= lPreviousX;
+			stGeoLine.fEndPosY:=lPreviousY:=gCurrentProgram.ExecutionTable[iProgramLine].Y;
+			stGeoLine.fVelo		:= i_Velocity; (*mm per sec*)
+
+			fbFeedTablePrep(
+				nEntryType:= E_NciEntryTypeGeoLine,
+				pEntry:= ADR(stGeoLine),
+				bResetTable:= FALSE,
+				stFeedGroupTable:= stNciFeedGroupTable,
+				nFilledRows=>nFilledRows,
+				bError=>bError,
+				nErrorId=> nErrorId);
+
+			iProgramLine:=iProgramLine+1;
+
+		MOVE_XY:
+			stGeoLine.nDisplayIndex	:= iProgramLine;
+			stGeoLine.fEndPosX	:=lPreviousX:=gCurrentProgram.ExecutionTable[iProgramLine].X;
+			stGeoLine.fEndPosY:= lPreviousY:=gCurrentProgram.ExecutionTable[iProgramLine].Y;
+			stGeoLine.fVelo		:= i_Velocity; (*mm per sec*)
+
+			fbFeedTablePrep(
+				nEntryType:= E_NciEntryTypeGeoLine,
+				pEntry:= ADR(stGeoLine),
+				bResetTable:= FALSE,
+				stFeedGroupTable:= stNciFeedGroupTable,
+				nFilledRows=>nFilledRows,
+				bError=>bError,
+				nErrorId=> nErrorId);
+
+			iProgramLine:=iProgramLine+1;
+
+		MOVE_CIRCULAR:
+			stGeoCirclePlane.nDisplayIndex	:= iProgramLine;
+			stGeoCirclePlane.fEndPosX	:= lPreviousX:=gCurrentProgram.ExecutionTable[iProgramLine].X;
+			stGeoCirclePlane.fEndPosY	:= lPreviousY:=gCurrentProgram.ExecutionTable[iProgramLine].Y;
+			stGeoCirclePlane.fCenterX	:= gCurrentProgram.ExecutionTable[iProgramLine].I;
+			stGeoCirclePlane.fCenterY	:= gCurrentProgram.ExecutionTable[iProgramLine].J;
+			stGeoCirclePlane.fVelo	:= i_Velocity; (*mm per sec*)
+			stGeoCirclePlane.bClockwise	:= gCurrentProgram.ExecutionTable[iProgramLine].Clockwise;
+
+			fbFeedTablePrep(
+				nEntryType:= E_NciEntryTypeGeoCirclePlane,
+				pEntry:= ADR(stGeoCirclePlane),
+				bResetTable:= FALSE,
+				stFeedGroupTable:= stNciFeedGroupTable,
+				nFilledRows=>nFilledRows,
+				bError=>bError,
+				nErrorId=> nErrorId);
+
+			iProgramLine:=iProgramLine+1;
+
+		HOME:
+			(* X Axis to home position *)
+			stGeoLine.nDisplayIndex	:= iProgramLine;
+			stGeoLine.fEndPosX	:=lPreviousX:=X_Home;
+			stGeoLine.fEndPosY:= lPreviousY;
+			stGeoLine.fVelo		:= i_Velocity; (*mm per sec*)
+
+			fbFeedTablePrep(
+				nEntryType:= E_NciEntryTypeGeoLine,
+				pEntry:= ADR(stGeoLine),
+				bResetTable:= FALSE,
+				stFeedGroupTable:= stNciFeedGroupTable,
+				nFilledRows=>nFilledRows,
+				bError=>bError,
+				nErrorId=> nErrorId);
+
+			(* Y Axis to home position *)
+			stGeoLine.nDisplayIndex	:= iProgramLine;
+			stGeoLine.fEndPosX	:= lPreviousX;
+			stGeoLine.fEndPosY:=Y_Home;
+			stGeoLine.fVelo		:= i_Velocity; (*mm per sec*)
+
+			fbFeedTablePrep(
+				nEntryType:= E_NciEntryTypeGeoLine,
+				pEntry:= ADR(stGeoLine),
+				bResetTable:= FALSE,
+				stFeedGroupTable:= stNciFeedGroupTable,
+				nFilledRows=>nFilledRows,
+				bError=>bError,
+				nErrorId=> nErrorId);
+
+			iProgramLine:=iProgramLine+1;
+
+		END:
+			bEnd:=TRUE;
+			(* End of movements *)
+			fbFeedTablePrep(
+				nEntryType:= E_NciEntryTypeEndOfTables,
+				pEntry:= ADR(stEndOfTables),
+				bResetTable:= FALSE,
+				stFeedGroupTable:= stNciFeedGroupTable,
+				nFilledRows=>nFilledRows,
+				bError=>bError,
+				nErrorId=> nErrorId);
+			nEndStep:=10;
+
+	END_CASE
+END_IF
+
+IF bEnd THEN
+	CASE nEndStep OF
+		10:
+			(* write data down to NC kernel *)
+			fbFeedTable.bExecute:= TRUE;
+			nEndStep:=20;
+
+		20:
+			IF fbFeedTable.bFeedingDone THEN
+				fbFeedTablePrep(
+					bResetAll:= TRUE,
+					stFeedGroupTable:= stNciFeedGroupTable);
+
+				fbFeedTable.bExecute:= FALSE;
+				nEndStep:=30;
+			END_IF
+		30:	(* Wait for program ready *)
+
+			IF fbFeedTable.bChannelDone THEN
+				nEndStep:=40;
+			END_IF
+
+		40:
+
+				o_Ready:=TRUE;
+				o_Running:=FALSE;
+				gProgramState:=E_PROGRAMSTATE_READY;
+				gStatistics_LastProgramTime:=TIME_TO_REAL( tmrProgramTime.ET)/100;
+				nEndStep:=0;
+	END_CASE
+END_IF
+
+fbFeedTable(
+	stFeedGroupTable:= stNciFeedGroupTable,
+	stNciToPlc:=  in_stItpToPlc);
+
+
+tmrProgramTime(IN:=(gProgramState=E_PROGRAMSTATE_RUNNING),PT:=T#100S);
+]]></ST>
+    </Implementation>
+    <LineIds Name="FB_Execute">
+      <LineId Id="42" Count="208" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
+  <POU Name="FB_SelectProgram" Id="{56d07d86-a03f-4c90-a6da-7a0bed0d1744}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_SelectProgram
+VAR_INPUT
+	i_ProgramNumber:UINT;
+	i_Execute:BOOL;
+END_VAR
+VAR
+	oldExecute: BOOL;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(* Check that program number is within valid range *)
+IF i_Execute AND NOT oldExecute THEN
+	gCurrentProgram := gPrograms[i_ProgramNumber];
+	giProgramNumber:=i_ProgramNumber;
+END_IF
+oldExecute:=i_Execute;]]></ST>
+    </Implementation>
+    <LineIds Name="FB_SelectProgram">
+      <LineId Id="8" Count="5" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

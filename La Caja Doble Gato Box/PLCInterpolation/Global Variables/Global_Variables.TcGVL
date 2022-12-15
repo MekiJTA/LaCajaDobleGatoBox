@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
+  <GVL Name="Global_Variables" Id="{485a1b48-1437-4c22-b811-4aa2606dd1f3}">
+    <Declaration><![CDATA[{attribute 'Tc2GvlVarNames'}
+VAR_GLOBAL
+	in_stXNcToPlc		AT %I*:	NCTOPLC_AXIS_REF;
+	in_stYNcToPlc		AT %I*:	NCTOPLC_AXIS_REF;
+	in_stZNcToPlc		AT %I*:	NCTOPLC_AXIS_REF;
+
+	in_stItpToPlc		AT %I*:	NCTOPLC_NCICHANNEL_REF;
+
+
+	out_stXPlcToNc		AT	%Q*:	PLCTONC_AXIS_REF;
+	out_stYPlcToNc		AT	%Q*:	PLCTONC_AXIS_REF;
+	out_stZPlcToNc		AT	%Q*:	PLCTONC_AXIS_REF;
+
+	out_stPlcToItp		AT	%Q*:	PLCTONC_NCICHANNEL_REF;
+
+
+	gGlobalEnable: BOOL:=TRUE;
+	gFeedOverride:	LREAL	:= 100.0;
+	gVelocity: UINT:=1000;
+
+	gControlMode:E_CONTROL_MODE:=E_AUTO_MODE;			(* Defines is control in REF, JOG or AUTO mode *)
+	gProgramState: E_PROGRAM_STATE;		(* Defines status of the current program *)
+	gStatistics_LastProgramTime:REAL; (* Last program time in seconds *)
+
+
+	(* Visualization variables *)
+	gVisuStart:BOOL;
+	gVisuStop:BOOL;
+	gVisuReset:BOOL;
+
+	gVisuPrgNumber: INT;
+	gVisuSelectPrg: BOOL;
+
+END_VAR
+
+VAR_GLOBAL CONSTANT
+	ItpChnId:	UDINT := 2;
+	ItpGrpId:	UDINT := 4;
+
+	MAX_NUMBER_OF_TABLE_LINES:UINT:=100;
+	MAX_NUMBER_OF_PROGRAMS:UINT:=10;
+
+END_VAR
+]]></Declaration>
+  </GVL>
+</TcPlcObject>

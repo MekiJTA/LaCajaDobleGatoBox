@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
+  <DUT Name="E_ACTIONTYPE" Id="{295c1edf-6dac-4df3-8e92-d5e13c2083ec}">
+    <Declaration><![CDATA[TYPE E_ACTIONTYPE :
+(
+	NONE,
+	MOVE_X,
+	MOVE_Y,
+	MOVE_XY,
+	MOVE_CIRCULAR,
+	HOME,
+	END
+);
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>

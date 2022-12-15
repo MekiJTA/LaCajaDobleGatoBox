@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
+  <DUT Name="E_PROGRAM_STATE" Id="{431ea838-5646-44b5-afd6-0898a4eb722e}">
+    <Declaration><![CDATA[TYPE E_PROGRAM_STATE :
+(
+	E_PROGRAMSTATE_NONE,
+	E_PROGRAMSTATE_READY,
+	E_PROGRAMSTATE_RESETTED,
+	E_PROGRAMSTATE_RUNNING,
+	E_PROGRAMSTATE_STOPPED,
+	E_PROGRAMSTATE_ERROR
+);
+END_TYPE]]></Declaration>
+  </DUT>
+</TcPlcObject>
