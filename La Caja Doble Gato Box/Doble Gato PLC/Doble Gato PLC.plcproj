@@ -17,6 +17,12 @@
     <LibraryReferences>{3f3e6834-53fc-41ad-9188-2785eed20540}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="CopyPastedExamples\etc\F_Sample.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CopyPastedExamples\etc\P_BlockPad.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="CopyPastedExamples\General_Control.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -32,7 +38,13 @@
     <Compile Include="DUTs\E_NappienNumerointi.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="F\F_Sample.TcPOU">
+    <Compile Include="FBs\FB_ButtonBox.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FBs\FB_MotorControl.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="F\F_TemperatureMethod.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="GVLs\General.TcGVL">
@@ -54,19 +66,7 @@
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\etc\P_BlockPad.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="POUs\OVERVIEW_FBD.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\FB_ButtonBox.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\FB_MotorControl.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="POUs\FB_Temperature.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\GENERAL\P_WritePersistentData.TcPOU">
@@ -89,13 +89,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="CopyPastedExamples\etc" />
     <Folder Include="DUTs" />
     <Folder Include="F" />
     <Folder Include="GVLs" />
     <Folder Include="CopyPastedExamples" />
     <Folder Include="GVLs\IO" />
     <Folder Include="GVLs\SAFETY" />
-    <Folder Include="POUs\etc" />
+    <Folder Include="FBs" />
     <Folder Include="POUs\GENERAL" />
     <Folder Include="POUs" />
   </ItemGroup>

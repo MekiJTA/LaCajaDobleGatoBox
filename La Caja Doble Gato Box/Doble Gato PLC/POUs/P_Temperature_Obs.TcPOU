@@ -3,13 +3,43 @@
   <POU Name="P_Temperature_Obs" Id="{62b7f54b-59f2-4e90-8e41-9f44922b00b4}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM P_Temperature_Obs
 VAR
+	SA_BoxTemperature: REAL;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[]]></ST>
+      <ST><![CDATA[// Analogue Temperature sensor inside box
+SA_BoxTemperature := IN.BOX_ANALOG_IN[1];
+//=======================================
+
+//Presenting conversions to display in HMI
+F_TemperatureMethod(
+InputTemperature:= SA_BoxTemperature, 
+Celsius=> , 
+Fahrenheit=> , 
+Kelvin=> )
+
+]]></ST>
     </Implementation>
+    <Action Name="A_SensorHandling" Id="{2493585f-fa30-4f12-8084-d829e573cb1d}">
+      <Implementation>
+        <ST><![CDATA[
+
+]]></ST>
+      </Implementation>
+    </Action>
     <LineIds Name="P_Temperature_Obs">
+      <LineId Id="11" Count="2" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="20" Count="0" />
       <LineId Id="5" Count="0" />
+      <LineId Id="14" Count="3" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="18" Count="0" />
+    </LineIds>
+    <LineIds Name="P_Temperature_Obs.A_SensorHandling">
+      <LineId Id="2" Count="0" />
+      <LineId Id="5" Count="0" />
+      <LineId Id="3" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
+  <POU Name="F_TemperatureMethod" Id="{263ee18c-b0ce-433b-8548-28f5957fbdb5}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION F_TemperatureMethod : REAL
+VAR_INPUT
+	InputTemperature:	REAL;
+END_VAR
+VAR_OUTPUT
+	Celsius : 		REAL;
+	Fahrenheit : 	REAL;
+	Kelvin : 		REAL;
+END_VAR
+VAR
+	K: REAL;
+	C: REAL;
+	F: REAL;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+C := InputTemperature; 
+
+K := C + 273.15;
+F := C * 1.8 +32;
+
+Celsius 		:= C;
+Fahrenheit 		:= F;
+Kelvin 			:= K;]]></ST>
+    </Implementation>
+    <LineIds Name="F_TemperatureMethod">
+      <LineId Id="9" Count="0" />
+      <LineId Id="7" Count="0" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="23" Count="1" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -1,10 +1,25 @@
 <?xml version="1.0"?>
 <TcLicenseInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2011/11/TcLicenseInfo">
 	<LicenseInfo>
-		<SystemId>{B85B63B7-8D2A-D81F-03F1-997766E43C83}</SystemId>
-		<IssueTime>2022-12-13T05:23:00</IssueTime>
-		<ExpireTime>2022-12-21T00:00:00</ExpireTime>
-		<LicenseKey>c0dcc4a1de464da80217ae3f875ebc571e608e8913a5cdb0ac67d337467574cc5960c48af5d5e82d76f8474b95d2d71e082a9dab78840f0126d417a7cabe0b1fdcad010739260e7d71fe4ef039f3b39dcba3fd1c00b8438e809f1820a417236bfeaf9d7df0c501c6d18cfbfdfad29f376092227dbabf157d92cea91e884896e1ef008e181841be29194bba2aa36c3c1b01b909e42d4fd6e55440d1a1fe8128733741dad566ff432380ffea0642f4433edc221a5dd272a96ec035c9c26b0a917a81f7a9267bb31f388a160299a0d09feb836e88e3d1e7da48e0b3c9f8e043effd747623422e159f4789acf7384aa9b39d9f7fa7a338883ddbdfd1fafb517f287d</LicenseKey>
+		<SystemId>{2AACAB6D-69A3-861A-CE4F-C8EB5D94BCA6}</SystemId>
+		<IssueTime>2022-12-15T12:43:00</IssueTime>
+		<ExpireTime>2022-12-23T00:00:00</ExpireTime>
+		<LicenseKey>c7f488bda26d04d348f9400f276a19bb77cff223d7ecbd14f9b64005766b8f5dfe11181d873ddc573036880dd9bf569016e0f04855c166f9ec5fa194bf7617b3491b4c218ec5c869f1adbbd72869a01d0b2232850ee1edd40d2de0db3a699a012c891ff204f05822901c7d2dc4a75ad25abe4b3ddda7e3a50d83e75e401eae4c0d5b76f3aeea2e9252d75df246bb6a44167f7c1235209e9d9da32de07c564f911b0bd07221b51050242e7fbfc5925920f156008133057bba9a954bbb8e2df6774a31dc96d08ca0abc858a0b7420011387f8b69f6d03d22109ee1a902ef9d8db187824cd56b0cab57354123c72ecca30a03b4e72ce92ae91a45d004a7beab4fe6</LicenseKey>
+		<License>
+			<LicenseId>{4C256767-E6E6-4AF5-BD68-9F7ABAD0C200}</LicenseId>
+			<Name>TC3 ADS</Name>
+			<OrderNo>TC1000</OrderNo>
+		</License>
+		<License>
+			<LicenseId>{3FF18E97-7754-401B-93FB-70544DE28A13}</LicenseId>
+			<Name>TC3 IO</Name>
+			<OrderNo>TC1100</OrderNo>
+		</License>
+		<License>
+			<LicenseId>{66689887-CCBD-452C-AC9A-039D997C6E66}</LicenseId>
+			<Name>TC3 PLC</Name>
+			<OrderNo>TC1200</OrderNo>
+		</License>
 		<License>
 			<LicenseId>{B27B051A-CA6A-42EA-833E-82CC92903D83}</LicenseId>
 			<Name>TC3 UML</Name>

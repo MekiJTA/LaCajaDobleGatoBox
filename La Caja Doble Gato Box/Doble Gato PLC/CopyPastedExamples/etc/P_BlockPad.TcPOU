@@ -32,8 +32,6 @@ P_BlockPad(NappiNumero:= Numero);
 
 P_BlockPad(NappiNumero := NappiOhje);
 
-
-
 Numero := NappiNumero;
 n1 := 44; 
 n2 := 4;
@@ -61,7 +59,6 @@ END_IF
     </Implementation>
     <LineIds Name="P_BlockPad">
       <LineId Id="171" Count="5" />
-      <LineId Id="148" Count="1" />
       <LineId Id="105" Count="0" />
       <LineId Id="50" Count="3" />
       <LineId Id="55" Count="1" />
