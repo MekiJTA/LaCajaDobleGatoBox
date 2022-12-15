@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Refactors>
+  <Renames>
+    <RenamedType>
+      <Type guid="31e58434-104c-4f87-a55e-e4db7b3ddc8a">A_PERMISSIONS</Type>
+      <From>A_Permissions</From>
+      <To>A_Checks</To>
+    </RenamedType>
+    <RenamedSymbol>
+      <Type guid="4a2af581-3054-4755-8b59-c878439b7ede">P_Safety</Type>
+      <From>Door_Box</From>
+      <To>Door1_Box</To>
+    </RenamedSymbol>
+  </Renames>
+</Refactors>

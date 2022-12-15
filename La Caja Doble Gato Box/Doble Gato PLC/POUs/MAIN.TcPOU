@@ -14,6 +14,7 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
+P_Safety();
 P_General_Control();		// Using buttons, handling sensors
 P_WritePersistentData();	// Writes persistent variables to memory every 10 seconds
 OVERVIEW_FBD();				// FBD View of all FB's. Useful visualization of whats happening
@@ -22,6 +23,7 @@ OVERVIEW_FBD();				// FBD View of all FB's. Useful visualization of whats happen
 ]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
+      <LineId Id="113" Count="0" />
       <LineId Id="59" Count="0" />
       <LineId Id="16" Count="0" />
       <LineId Id="47" Count="0" />

@@ -3,6 +3,7 @@
   <POU Name="FB_ButtonBox" Id="{718ab21c-a86f-42b1-ad84-7eea86241524}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_ButtonBox
 VAR_INPUT
+	RUN		: BOOL;
 	iInput1 : BOOL;
 	iInput2 : BOOL;
 	iInput3 : BOOL;
@@ -31,7 +32,8 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[A_ButtonPressHandling();
+      <ST><![CDATA[
+A_ButtonPressHandling();
 A_Switch();
 
 // FB_MotorControl hoitais itse statet ja varmistukset, täällä ohjattais vain valojen vilkuttelua ja nappien kontrollointia
@@ -554,6 +556,7 @@ END_IF]]></ST>
       </Implementation>
     </Action>
     <LineIds Name="FB_ButtonBox">
+      <LineId Id="411" Count="0" />
       <LineId Id="255" Count="1" />
       <LineId Id="352" Count="0" />
       <LineId Id="277" Count="0" />
