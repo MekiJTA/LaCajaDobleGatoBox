@@ -145,18 +145,6 @@
 					</TaskPouOids>
 				</Instance>
 			</Project>
-			<Project GUID="{073A024C-5F04-41BE-B79E-3859353619FE}" Name="TestiPurkkiPLC" PrjFilePath="TestiPurkkiPLC\TestiPurkkiPLC.plcproj" TmcFilePath="TestiPurkkiPLC\TestiPurkkiPLC.tmc" ReloadTmc="true" AmsPort="851" TargetArchiveSettings="#x0001" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="TestiPurkkiPLC\TestiPurkkiPLC.tmc">
-					<Name>TestiPurkkiPLC Instance</Name>
-					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
-					<Contexts>
-						<Context>
-							<Id>1</Id>
-							<Name>Default</Name>
-						</Context>
-					</Contexts>
-				</Instance>
-			</Project>
 		</Plc>
 		<Io>
 			<Device Id="1" DevType="111" DevFlags="#x0003" AmsPort="28673" AmsNetId="5.62.144.216.2.1" RemoteName="Device 1 (EtherCAT)" InfoImageId="2">
@@ -716,8 +704,6 @@
 		</Io>
 	</Project>
 	<Mappings>
-		<MappingInfo Identifier="{00000000-2041-0850-4020-500810000403}" Id="#x02030020"/>
-		<MappingInfo Identifier="{00000000-2041-0850-4020-500840000403}" Id="#x02030010"/>
 		<OwnerA Name="TIPC^Doble Gato PLC^Doble Gato PLC Instance">
 			<OwnerB Name="TIID^Device 1 (EtherCAT)">
 				<Link VarA="PlcTask Inputs^General.EthercatDev1" VarB="Inputs^DevState"/>
