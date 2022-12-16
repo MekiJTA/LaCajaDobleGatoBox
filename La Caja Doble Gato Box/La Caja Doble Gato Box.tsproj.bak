@@ -2,7 +2,25 @@
 <TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.25">
 	<DataTypes>
 		<DataType>
-			<Name GUID="{D357FB21-5D3C-BB03-4B85-9030B0584D51}" AutoDeleteType="true">INPUT_LABELS</Name>
+			<Name GUID="{47A960A5-FA27-00CE-C256-D1FBA2A9645A}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..4] OF INT</Name>
+			<BitSize>64</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
+			<ArrayInfo>
+				<LBound>1</LBound>
+				<Elements>4</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{71B58F72-0E49-50EB-B8E4-1CCD027538EC}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..8] OF BOOL</Name>
+			<BitSize>64</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+			<ArrayInfo>
+				<LBound>1</LBound>
+				<Elements>8</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{414A361D-36F2-7FCC-64E7-F312EEE5CB62}" AutoDeleteType="true">INPUT_LABELS</Name>
 			<BitSize>192</BitSize>
 			<SubItem>
 				<Name>bInput1</Name>
@@ -61,7 +79,7 @@
 				<BitOffs>64</BitOffs>
 			</SubItem>
 			<SubItem>
-				<Name>bInput10</Name>
+				<Name>Wheel_RotationCount</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
 				<BitSize>8</BitSize>
 				<BitOffs>72</BitOffs>
@@ -152,42 +170,24 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{59F5D408-47A4-A51E-F25B-BBE0D336CBA3}" AutoDeleteType="true">U_IN_BOX_IO_Translate</Name>
-			<BitSize>200</BitSize>
-			<SubItem>
-				<Name>_Label</Name>
-				<Type GUID="{D357FB21-5D3C-BB03-4B85-9030B0584D51}">INPUT_LABELS</Type>
-				<BitSize>192</BitSize>
-				<BitOffs>0</BitOffs>
-			</SubItem>
+			<Name GUID="{7B89F2F5-94F4-5E87-D92C-05135C85ED99}" AutoDeleteType="true">U_IN_BOX_IO_Translate</Name>
+			<BitSize>192</BitSize>
 			<SubItem>
 				<Name>bArray</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
 				<ArrayInfo>
-					<LBound>0</LBound>
-					<Elements>25</Elements>
+					<LBound>1</LBound>
+					<Elements>24</Elements>
 				</ArrayInfo>
-				<BitSize>200</BitSize>
+				<BitSize>192</BitSize>
 				<BitOffs>0</BitOffs>
 			</SubItem>
-		</DataType>
-		<DataType>
-			<Name GUID="{27309956-790C-165B-9452-FE8C4B2C982E}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..4] OF UINT</Name>
-			<BitSize>64</BitSize>
-			<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
-			<ArrayInfo>
-				<LBound>1</LBound>
-				<Elements>4</Elements>
-			</ArrayInfo>
-		</DataType>
-		<DataType>
-			<Name GUID="{71B58F72-0E49-50EB-B8E4-1CCD027538EC}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..8] OF BOOL</Name>
-			<BitSize>64</BitSize>
-			<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
-			<ArrayInfo>
-				<LBound>1</LBound>
-				<Elements>8</Elements>
-			</ArrayInfo>
+			<SubItem>
+				<Name>_Label</Name>
+				<Type GUID="{414A361D-36F2-7FCC-64E7-F312EEE5CB62}">INPUT_LABELS</Type>
+				<BitSize>192</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
 		</DataType>
 		<DataType>
 			<Name GUID="{5DE14B18-F75D-7A9F-6350-CDFA8BA14AC5}" AutoDeleteType="true">OUTPUT_LABELS</Name>
@@ -340,22 +340,22 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{70B2EF4A-4F0A-8C85-8ED5-D7626C78B287}" AutoDeleteType="true">U_OUT_BOX_IO_Translate</Name>
-			<BitSize>200</BitSize>
-			<SubItem>
-				<Name>_Label</Name>
-				<Type GUID="{5DE14B18-F75D-7A9F-6350-CDFA8BA14AC5}">OUTPUT_LABELS</Type>
-				<BitSize>192</BitSize>
-				<BitOffs>0</BitOffs>
-			</SubItem>
+			<Name GUID="{A4DF8211-C645-C033-4939-0988C9AF4C02}" AutoDeleteType="true">U_OUT_BOX_IO_Translate</Name>
+			<BitSize>192</BitSize>
 			<SubItem>
 				<Name>bArray</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
 				<ArrayInfo>
-					<LBound>0</LBound>
-					<Elements>25</Elements>
+					<LBound>1</LBound>
+					<Elements>24</Elements>
 				</ArrayInfo>
-				<BitSize>200</BitSize>
+				<BitSize>192</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>_Label</Name>
+				<Type GUID="{5DE14B18-F75D-7A9F-6350-CDFA8BA14AC5}">OUTPUT_LABELS</Type>
+				<BitSize>192</BitSize>
 				<BitOffs>0</BitOffs>
 			</SubItem>
 		</DataType>
@@ -417,20 +417,20 @@
 							<Type>UINT</Type>
 						</Var>
 						<Var>
-							<Name>IN.BOX_IO</Name>
-							<Type GUID="{59F5D408-47A4-A51E-F25B-BBE0D336CBA3}">U_IN_BOX_IO_Translate</Type>
-						</Var>
-						<Var>
 							<Name>SAFETY.Safety_OK</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>IN.BOX_ANALOG</Name>
-							<Type GUID="{27309956-790C-165B-9452-FE8C4B2C982E}">ARRAY [1..4] OF UINT</Type>
+							<Type GUID="{47A960A5-FA27-00CE-C256-D1FBA2A9645A}">ARRAY [1..4] OF INT</Type>
 						</Var>
 						<Var>
 							<Name>IN.EK_IN</Name>
 							<Type GUID="{71B58F72-0E49-50EB-B8E4-1CCD027538EC}">ARRAY [1..8] OF BOOL</Type>
+						</Var>
+						<Var>
+							<Name>IN.BOX_IO</Name>
+							<Type GUID="{7B89F2F5-94F4-5E87-D92C-05135C85ED99}">U_IN_BOX_IO_Translate</Type>
 						</Var>
 						<Var>
 							<Name>SAFETY.Doors_OK</Name>
@@ -448,12 +448,12 @@
 							<Type>UINT</Type>
 						</Var>
 						<Var>
-							<Name>OUT.BOX_IO</Name>
-							<Type GUID="{70B2EF4A-4F0A-8C85-8ED5-D7626C78B287}">U_OUT_BOX_IO_Translate</Type>
-						</Var>
-						<Var>
 							<Name>OUT.EK1100_IO</Name>
 							<Type GUID="{71B58F72-0E49-50EB-B8E4-1CCD027538EC}">ARRAY [1..8] OF BOOL</Type>
+						</Var>
+						<Var>
+							<Name>OUT.BOX_IO</Name>
+							<Type GUID="{A4DF8211-C645-C033-4939-0988C9AF4C02}">U_OUT_BOX_IO_Translate</Type>
 						</Var>
 					</Vars>
 					<Contexts>
@@ -1031,10 +1031,18 @@
 		</Io>
 	</Project>
 	<Mappings>
+		<MappingInfo Identifier="{00000000-2041-0850-4020-500810000403}" Id="#x02030020"/>
+		<MappingInfo Identifier="{00000000-2041-0850-4020-500821000403}" Id="#x02030030"/>
 		<MappingInfo Identifier="{00000000-2041-0850-4020-500840000403}" Id="#x02030010"/>
 		<OwnerA Name="TIPC^Doble Gato PLC^Doble Gato PLC Instance">
 			<OwnerB Name="TIID^Device 1 (EtherCAT)">
 				<Link VarA="PlcTask Inputs^General.EthercatDevState" VarB="Inputs^DevState"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 2 (EL3204)">
+				<Link VarA="PlcTask Inputs^IN.BOX_ANALOG[1]" VarB="RTD Inputs Channel 1^Value"/>
+				<Link VarA="PlcTask Inputs^IN.BOX_ANALOG[2]" VarB="RTD Inputs Channel 2^Value"/>
+				<Link VarA="PlcTask Inputs^IN.BOX_ANALOG[3]" VarB="RTD Inputs Channel 3^Value"/>
+				<Link VarA="PlcTask Inputs^IN.BOX_ANALOG[4]" VarB="RTD Inputs Channel 4^Value"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 3 (EL1008)">
 				<Link VarA="PlcTask Inputs^IN.BOX_IO^_Label^bInput1" VarB="Channel 1^Input"/>
@@ -1057,7 +1065,6 @@
 				<Link VarA="PlcTask Outputs^OUT.BOX_IO^_Label^bOutput8" VarB="Channel 8^Output"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EL1809)">
-				<Link VarA="PlcTask Inputs^IN.BOX_IO^_Label^bInput10" VarB="Channel 2^Input"/>
 				<Link VarA="PlcTask Inputs^IN.BOX_IO^_Label^bInput11" VarB="Channel 3^Input"/>
 				<Link VarA="PlcTask Inputs^IN.BOX_IO^_Label^bInput12" VarB="Channel 4^Input"/>
 				<Link VarA="PlcTask Inputs^IN.BOX_IO^_Label^bInput13" VarB="Channel 5^Input"/>

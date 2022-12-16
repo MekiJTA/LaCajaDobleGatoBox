@@ -14,7 +14,7 @@ bInput7		:		BOOL;
 bInput8		:		BOOL;
 //===== 	Box EL1809
 bInput9		:		BOOL;
-bInput10		:		BOOL;
+Wheel_RotationCount		:		BOOL;
 bInput11		:		BOOL;
 bInput12		:		BOOL;
 bInput13		:		BOOL;
