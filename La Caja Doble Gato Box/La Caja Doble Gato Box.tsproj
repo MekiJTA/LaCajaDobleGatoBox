@@ -2,6 +2,15 @@
 <TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.25">
 	<DataTypes>
 		<DataType>
+			<Name GUID="{27309956-790C-165B-9452-FE8C4B2C982E}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..4] OF UINT</Name>
+			<BitSize>64</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+			<ArrayInfo>
+				<LBound>1</LBound>
+				<Elements>4</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
 			<Name GUID="{71B58F72-0E49-50EB-B8E4-1CCD027538EC}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..8] OF BOOL</Name>
 			<BitSize>64</BitSize>
 			<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
@@ -11,22 +20,344 @@
 			</ArrayInfo>
 		</DataType>
 		<DataType>
-			<Name GUID="{46C950DA-5D6E-6516-D69B-F24F38546D38}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..16] OF BOOL</Name>
-			<BitSize>128</BitSize>
-			<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
-			<ArrayInfo>
-				<LBound>1</LBound>
-				<Elements>16</Elements>
-			</ArrayInfo>
+			<Name GUID="{D357FB21-5D3C-BB03-4B85-9030B0584D51}" AutoDeleteType="true">INPUT_LABELS</Name>
+			<BitSize>192</BitSize>
+			<SubItem>
+				<Name>bInput1</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[===== 	Box EL1008			]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bInput2</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bInput3</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bInput4</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>24</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bInput5</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bInput6</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>40</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bInput7</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>48</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bInput8</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>56</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bInput9</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[===== 	Box EL1809]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bInput10</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>72</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bInput11</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>80</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bInput12</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>88</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bInput13</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>96</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bInput14</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>104</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bInput15</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>112</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bInput16</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>120</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bInput17</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>128</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bInput18</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>136</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bInput19</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>144</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bInput20</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>152</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bInput21</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>160</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bInput22</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>168</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bInput23</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>176</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bInput24</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>184</BitOffs>
+			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{27309956-790C-165B-9452-FE8C4B2C982E}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..4] OF UINT</Name>
-			<BitSize>64</BitSize>
-			<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
-			<ArrayInfo>
-				<LBound>1</LBound>
-				<Elements>4</Elements>
-			</ArrayInfo>
+			<Name GUID="{59F5D408-47A4-A51E-F25B-BBE0D336CBA3}" AutoDeleteType="true">U_IN_BOX_IO_Translate</Name>
+			<BitSize>200</BitSize>
+			<SubItem>
+				<Name>_Label</Name>
+				<Type GUID="{D357FB21-5D3C-BB03-4B85-9030B0584D51}">INPUT_LABELS</Type>
+				<BitSize>192</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bArray</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<ArrayInfo>
+					<LBound>0</LBound>
+					<Elements>25</Elements>
+				</ArrayInfo>
+				<BitSize>200</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{5DE14B18-F75D-7A9F-6350-CDFA8BA14AC5}" AutoDeleteType="true">OUTPUT_LABELS</Name>
+			<BitSize>192</BitSize>
+			<SubItem>
+				<Name>bOutput1</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[===== 	Box EL2008			]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bOutput2</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bOutput3</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bOutput4</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>24</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bOutput5</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bOutput6</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>40</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bOutput7</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>48</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bOutput8</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>56</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bOutput9</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<Comment><![CDATA[===== 	Box EL2809]]></Comment>
+				<BitSize>8</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bOutput10</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>72</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bOutput11</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>80</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bOutput12</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>88</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bOutput13</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>96</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bOutput14</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>104</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bOutput15</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>112</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bOutput16</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>120</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bOutput17</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>128</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bOutput18</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>136</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bOutput19</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>144</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bOutput20</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>152</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bOutput21</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>160</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bOutput22</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>168</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bOutput23</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>176</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bOutput24</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>184</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{70B2EF4A-4F0A-8C85-8ED5-D7626C78B287}" AutoDeleteType="true">U_OUT_BOX_IO_Translate</Name>
+			<BitSize>200</BitSize>
+			<SubItem>
+				<Name>_Label</Name>
+				<Type GUID="{5DE14B18-F75D-7A9F-6350-CDFA8BA14AC5}">OUTPUT_LABELS</Type>
+				<BitSize>192</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>bArray</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<ArrayInfo>
+					<LBound>0</LBound>
+					<Elements>25</Elements>
+				</ArrayInfo>
+				<BitSize>200</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
 		</DataType>
 		<DataType>
 			<Name GUID="{18071995-0000-0000-0000-002000000007}" IecBaseType="true" BitType="true" AutoDeleteType="true" HideSubItems="true">ARRAY [0..6] OF BIT</Name>
@@ -67,36 +398,6 @@
 				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Doble Gato PLC\Doble Gato PLC.tmc">
 					<Name>Doble Gato PLC Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
-					<Vars VarGrpType="1">
-						<Name>PlcTask Inputs</Name>
-						<Var>
-							<Name>IN.BOX_IN</Name>
-							<Type GUID="{71B58F72-0E49-50EB-B8E4-1CCD027538EC}">ARRAY [1..8] OF BOOL</Type>
-						</Var>
-						<Var>
-							<Name>SAFETY.Safety_OK</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>SAFETY.Doors_OK</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>SAFETY.Safety_to_robot</Name>
-							<Type>BOOL</Type>
-						</Var>
-					</Vars>
-					<Vars VarGrpType="2" AreaNo="1">
-						<Name>PlcTask Outputs</Name>
-						<Var>
-							<Name>OUT.BOX_OUT</Name>
-							<Type GUID="{71B58F72-0E49-50EB-B8E4-1CCD027538EC}">ARRAY [1..8] OF BOOL</Type>
-						</Var>
-						<Var>
-							<Name>OUT.EK_OUT</Name>
-							<Type GUID="{71B58F72-0E49-50EB-B8E4-1CCD027538EC}">ARRAY [1..8] OF BOOL</Type>
-						</Var>
-					</Vars>
 					<Vars VarGrpType="1" ContextId="1" AreaNo="16">
 						<Name>SlowTask Inputs</Name>
 						<Var>
@@ -116,16 +417,28 @@
 							<Type>UINT</Type>
 						</Var>
 						<Var>
-							<Name>IN.BOX_1809_IN</Name>
-							<Type GUID="{46C950DA-5D6E-6516-D69B-F24F38546D38}">ARRAY [1..16] OF BOOL</Type>
+							<Name>SAFETY.Safety_OK</Name>
+							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>IN.BOX_ANALOG_IN</Name>
+							<Name>IN.BOX_ANALOG</Name>
 							<Type GUID="{27309956-790C-165B-9452-FE8C4B2C982E}">ARRAY [1..4] OF UINT</Type>
 						</Var>
 						<Var>
 							<Name>IN.EK_IN</Name>
 							<Type GUID="{71B58F72-0E49-50EB-B8E4-1CCD027538EC}">ARRAY [1..8] OF BOOL</Type>
+						</Var>
+						<Var>
+							<Name>SAFETY.Doors_OK</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>SAFETY.Safety_to_robot</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>IN.BOX_IO</Name>
+							<Type GUID="{59F5D408-47A4-A51E-F25B-BBE0D336CBA3}">U_IN_BOX_IO_Translate</Type>
 						</Var>
 					</Vars>
 					<Vars VarGrpType="2" ContextId="1" AreaNo="17">
@@ -135,12 +448,12 @@
 							<Type>UINT</Type>
 						</Var>
 						<Var>
-							<Name>OUT.BOX_2809_OUT</Name>
+							<Name>OUT.EK1100_IO</Name>
 							<Type GUID="{71B58F72-0E49-50EB-B8E4-1CCD027538EC}">ARRAY [1..8] OF BOOL</Type>
 						</Var>
 						<Var>
-							<Name>OUT.BOX_ANALOG_OUT</Name>
-							<Type GUID="{27309956-790C-165B-9452-FE8C4B2C982E}">ARRAY [1..4] OF UINT</Type>
+							<Name>OUT.BOX_IO</Name>
+							<Type GUID="{70B2EF4A-4F0A-8C85-8ED5-D7626C78B287}">U_OUT_BOX_IO_Translate</Type>
 						</Var>
 					</Vars>
 					<Contexts>
@@ -185,9 +498,6 @@
 				</AddressInfo>
 				<Image Id="1" AddrType="9" ImageType="3">
 					<Name>Image</Name>
-				</Image>
-				<Image Id="3" AddrType="10" ImageType="3">
-					<Name>Image-2</Name>
 				</Image>
 				<Box Id="1" BoxType="9099">
 					<Name>Term 1 (EK1200)</Name>
@@ -731,69 +1041,27 @@
 		</Io>
 	</Project>
 	<Mappings>
+		<MappingInfo Identifier="{00000000-2042-0850-4120-500810000403}" Id="#x02030020"/>
+		<MappingInfo Identifier="{00000000-2042-0850-4120-500840000403}" Id="#x02030010"/>
 		<OwnerA Name="TIPC^Doble Gato PLC^Doble Gato PLC Instance">
 			<OwnerB Name="TIID^Device 1 (EtherCAT)">
 				<Link VarA="SlowTask Inputs^General.EthercatDev1" VarB="Inputs^DevState"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 2 (EL3204)">
-				<Link VarA="SlowTask Inputs^IN.BOX_ANALOG_IN[1]" VarB="RTD Inputs Channel 1^IN.BOX_ANALOG_IN[1]"/>
-				<Link VarA="SlowTask Inputs^IN.BOX_ANALOG_IN[2]" VarB="RTD Inputs Channel 2^IN.BOX_ANALOG_IN[2]"/>
-				<Link VarA="SlowTask Inputs^IN.BOX_ANALOG_IN[3]" VarB="RTD Inputs Channel 3^IN.BOX_ANALOG_IN[3]"/>
-				<Link VarA="SlowTask Inputs^IN.BOX_ANALOG_IN[4]" VarB="RTD Inputs Channel 4^IN.BOX_ANALOG_IN[4]"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 3 (EL1008)">
-				<Link VarA="PlcTask Inputs^IN.BOX_IN[1]" VarB="Channel 1^Input"/>
-				<Link VarA="PlcTask Inputs^IN.BOX_IN[2]" VarB="Channel 2^Input"/>
-				<Link VarA="PlcTask Inputs^IN.BOX_IN[3]" VarB="Channel 3^Input"/>
-				<Link VarA="PlcTask Inputs^IN.BOX_IN[4]" VarB="Channel 4^Input"/>
-				<Link VarA="PlcTask Inputs^IN.BOX_IN[5]" VarB="Channel 5^Input"/>
-				<Link VarA="PlcTask Inputs^IN.BOX_IN[6]" VarB="Channel 6^Input"/>
-				<Link VarA="PlcTask Inputs^IN.BOX_IN[7]" VarB="Channel 7^Input"/>
-				<Link VarA="PlcTask Inputs^IN.BOX_IN[8]" VarB="Channel 8^Input"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 4 (EL2008)">
-				<Link VarA="PlcTask Outputs^OUT.BOX_OUT[1]" VarB="Channel 1^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.BOX_OUT[2]" VarB="Channel 2^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.BOX_OUT[3]" VarB="Channel 3^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.BOX_OUT[4]" VarB="Channel 4^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.BOX_OUT[5]" VarB="Channel 5^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.BOX_OUT[6]" VarB="Channel 6^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.BOX_OUT[7]" VarB="Channel 7^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.BOX_OUT[8]" VarB="Channel 8^Output"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EL1809)">
-				<Link VarA="SlowTask Inputs^IN.BOX_1809_IN[10]" VarB="Channel 10^IN.BOX_1809_IN[10]"/>
-				<Link VarA="SlowTask Inputs^IN.BOX_1809_IN[11]" VarB="Channel 11^IN.BOX_1809_IN[11]"/>
-				<Link VarA="SlowTask Inputs^IN.BOX_1809_IN[12]" VarB="Channel 12^IN.BOX_1809_IN[12]"/>
-				<Link VarA="SlowTask Inputs^IN.BOX_1809_IN[13]" VarB="Channel 13^IN.BOX_1809_IN[13]"/>
-				<Link VarA="SlowTask Inputs^IN.BOX_1809_IN[14]" VarB="Channel 14^IN.BOX_1809_IN[14]"/>
-				<Link VarA="SlowTask Inputs^IN.BOX_1809_IN[15]" VarB="Channel 15^IN.BOX_1809_IN[15]"/>
-				<Link VarA="SlowTask Inputs^IN.BOX_1809_IN[16]" VarB="Channel 16^IN.BOX_1809_IN[16]"/>
-				<Link VarA="SlowTask Inputs^IN.BOX_1809_IN[1]" VarB="Channel 1^IN.BOX_1809_IN[1]"/>
-				<Link VarA="SlowTask Inputs^IN.BOX_1809_IN[2]" VarB="Channel 2^IN.BOX_1809_IN[2]"/>
-				<Link VarA="SlowTask Inputs^IN.BOX_1809_IN[3]" VarB="Channel 3^IN.BOX_1809_IN[3]"/>
-				<Link VarA="SlowTask Inputs^IN.BOX_1809_IN[4]" VarB="Channel 4^IN.BOX_1809_IN[4]"/>
-				<Link VarA="SlowTask Inputs^IN.BOX_1809_IN[5]" VarB="Channel 5^IN.BOX_1809_IN[5]"/>
-				<Link VarA="SlowTask Inputs^IN.BOX_1809_IN[6]" VarB="Channel 6^IN.BOX_1809_IN[6]"/>
-				<Link VarA="SlowTask Inputs^IN.BOX_1809_IN[7]" VarB="Channel 7^IN.BOX_1809_IN[7]"/>
-				<Link VarA="SlowTask Inputs^IN.BOX_1809_IN[8]" VarB="Channel 8^IN.BOX_1809_IN[8]"/>
-				<Link VarA="SlowTask Inputs^IN.BOX_1809_IN[9]" VarB="Channel 9^IN.BOX_1809_IN[9]"/>
-			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 6 (EL2809)">
-				<Link VarA="SlowTask Outputs^OUT.BOX_2809_OUT[1]" VarB="Channel 1^OUT.BOX_2809_OUT[1]"/>
-				<Link VarA="SlowTask Outputs^OUT.BOX_2809_OUT[2]" VarB="Channel 2^OUT.BOX_2809_OUT[2]"/>
-				<Link VarA="SlowTask Outputs^OUT.BOX_2809_OUT[3]" VarB="Channel 3^OUT.BOX_2809_OUT[3]"/>
-				<Link VarA="SlowTask Outputs^OUT.BOX_2809_OUT[4]" VarB="Channel 4^OUT.BOX_2809_OUT[4]"/>
+				<Link VarA="SlowTask Inputs^IN.BOX_ANALOG[1]" VarB="RTD Inputs Channel 1^IN.BOX_ANALOG_IN[1]"/>
+				<Link VarA="SlowTask Inputs^IN.BOX_ANALOG[2]" VarB="RTD Inputs Channel 2^IN.BOX_ANALOG_IN[2]"/>
+				<Link VarA="SlowTask Inputs^IN.BOX_ANALOG[3]" VarB="RTD Inputs Channel 3^IN.BOX_ANALOG_IN[3]"/>
+				<Link VarA="SlowTask Inputs^IN.BOX_ANALOG[4]" VarB="RTD Inputs Channel 4^IN.BOX_ANALOG_IN[4]"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 7 (EK1122)^Term 8 (EK1100)^Term 10 (EL2008)">
-				<Link VarA="PlcTask Outputs^OUT.EK_OUT[1]" VarB="Channel 1^OUT.EK_OUT[1]"/>
-				<Link VarA="PlcTask Outputs^OUT.EK_OUT[2]" VarB="Channel 2^OUT.EK_OUT[2]"/>
-				<Link VarA="PlcTask Outputs^OUT.EK_OUT[3]" VarB="Channel 3^OUT.EK_OUT[3]"/>
-				<Link VarA="PlcTask Outputs^OUT.EK_OUT[4]" VarB="Channel 4^OUT.EK_OUT[4]"/>
-				<Link VarA="PlcTask Outputs^OUT.EK_OUT[5]" VarB="Channel 5^OUT.EK_OUT[5]"/>
-				<Link VarA="PlcTask Outputs^OUT.EK_OUT[6]" VarB="Channel 6^OUT.EK_OUT[6]"/>
-				<Link VarA="PlcTask Outputs^OUT.EK_OUT[7]" VarB="Channel 7^OUT.EK_OUT[7]"/>
-				<Link VarA="PlcTask Outputs^OUT.EK_OUT[8]" VarB="Channel 8^OUT.EK_OUT[8]"/>
+				<Link VarA="SlowTask Outputs^OUT.EK1100_IO[1]" VarB="Channel 1^OUT.EK_OUT[1]"/>
+				<Link VarA="SlowTask Outputs^OUT.EK1100_IO[2]" VarB="Channel 2^OUT.EK_OUT[2]"/>
+				<Link VarA="SlowTask Outputs^OUT.EK1100_IO[3]" VarB="Channel 3^OUT.EK_OUT[3]"/>
+				<Link VarA="SlowTask Outputs^OUT.EK1100_IO[4]" VarB="Channel 4^OUT.EK_OUT[4]"/>
+				<Link VarA="SlowTask Outputs^OUT.EK1100_IO[5]" VarB="Channel 5^OUT.EK_OUT[5]"/>
+				<Link VarA="SlowTask Outputs^OUT.EK1100_IO[6]" VarB="Channel 6^OUT.EK_OUT[6]"/>
+				<Link VarA="SlowTask Outputs^OUT.EK1100_IO[7]" VarB="Channel 7^OUT.EK_OUT[7]"/>
+				<Link VarA="SlowTask Outputs^OUT.EK1100_IO[8]" VarB="Channel 8^OUT.EK_OUT[8]"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 7 (EK1122)^Term 8 (EK1100)^Term 9 (EL1008)">
 				<Link VarA="SlowTask Inputs^IN.EK_IN[1]" VarB="Channel 1^Input"/>

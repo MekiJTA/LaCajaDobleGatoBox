@@ -3,8 +3,32 @@
   <DUT Name="OUTPUT_LABELS" Id="{72724973-3877-4a9e-b847-23589dbf07b0}">
     <Declaration><![CDATA[TYPE OUTPUT_LABELS :
 STRUCT
-	oOutput1		:		BOOL;
-	oOutput2		:		BOOL;
+//===== 	Box EL2008			
+bOutput1		:		BOOL;
+bOutput2		:		BOOL;
+bOutput3		:		BOOL;
+bOutput4		:		BOOL;
+bOutput5		:		BOOL;
+bOutput6		:		BOOL;
+bOutput7		:		BOOL;
+bOutput8		:		BOOL;
+//===== 	Box EL2809
+bOutput9		:		BOOL;
+bOutput10		:		BOOL;
+bOutput11		:		BOOL;
+bOutput12		:		BOOL;
+bOutput13		:		BOOL;
+bOutput14		:		BOOL;
+bOutput15		:		BOOL;
+bOutput16		:		BOOL;
+bOutput17		:		BOOL;
+bOutput18		:		BOOL;
+bOutput19		:		BOOL;
+bOutput20		:		BOOL;
+bOutput21		:		BOOL;
+bOutput22		:		BOOL;
+bOutput23		:		BOOL;
+bOutput24		:		BOOL;
 END_STRUCT
 END_TYPE
 ]]></Declaration>

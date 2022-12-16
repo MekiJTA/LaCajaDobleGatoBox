@@ -13,7 +13,7 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[
+      <ST><![CDATA[(*
 P_Safety();
 IF General.ReadyForAction THEN 
 P_CONTROL();					// Using buttons, handling sensors
@@ -21,7 +21,7 @@ P_WritePersistentData();		// Writes persistent variables to memory every 10 seco
 OVERVIEW_FBD();					// FBD View of all FB's. Useful visualization of whats happening
 // P_Environment_Control 		-> Is a separate slow task, not to be called from MAIN
 END_IF
-
+*)
 
 (*IF IN = TRUE AND Run_It = FALSE THEN
 	Run_It := IN;

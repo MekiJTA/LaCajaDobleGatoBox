@@ -3,10 +3,32 @@
   <DUT Name="INPUT_LABELS" Id="{10b55a17-4a8f-4d8b-8964-89e19b084daa}">
     <Declaration><![CDATA[TYPE INPUT_LABELS :
 STRUCT
-//===== 	BYTE	0
-iInput0		:		BOOL;
-iInput1		:		BOOL;
-iInput2		:		BOOL;
+//===== 	Box EL1008			
+bInput1		:		BOOL;
+bInput2		:		BOOL;
+bInput3		:		BOOL;
+bInput4		:		BOOL;
+bInput5		:		BOOL;
+bInput6		:		BOOL;
+bInput7		:		BOOL;
+bInput8		:		BOOL;
+//===== 	Box EL1809
+bInput9		:		BOOL;
+bInput10		:		BOOL;
+bInput11		:		BOOL;
+bInput12		:		BOOL;
+bInput13		:		BOOL;
+bInput14		:		BOOL;
+bInput15		:		BOOL;
+bInput16		:		BOOL;
+bInput17		:		BOOL;
+bInput18		:		BOOL;
+bInput19		:		BOOL;
+bInput20		:		BOOL;
+bInput21		:		BOOL;
+bInput22		:		BOOL;
+bInput23		:		BOOL;
+bInput24		:		BOOL;
 END_STRUCT
 END_TYPE
 ]]></Declaration>
