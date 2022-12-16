@@ -36,13 +36,13 @@ END_VAR
                   <v n="Comment">""</v>
                   <v n="Title">""</v>
                   <v n="Label">""</v>
-                  <v n="OutCommented">false</v>
+                  <v n="OutCommented">true</v>
                   <l2 n="NetworkItems" cet="BoxTreeBox">
                     <o>
                       <v n="BoxType">"FB_BeltControl"</v>
                       <o n="Instance" t="Operand">
                         <v n="Operand">"fbMotorControl"</v>
-                        <v n="Type">"FB_MotorControl"</v>
+                        <v n="Type">"FB_BeltControl"</v>
                         <v n="Comment">""</v>
                         <v n="SymbolComment">""</v>
                         <v n="Address">""</v>
@@ -266,7 +266,7 @@ END_VAR
                             <l2 n="OutputItems" cet="Operand">
                               <n />
                               <o>
-                                <v n="Operand">"OUT.BOX_IO[1]"</v>
+                                <v n="Operand">"OUT.BOX_IO._Label.oOutput1"</v>
                                 <v n="Type">"BOOL"</v>
                                 <v n="Comment">""</v>
                                 <v n="SymbolComment">""</v>

@@ -81,5 +81,10 @@
       <From>EK_OUT</From>
       <To>EK1100_IO</To>
     </RenamedSymbol>
+    <RenamedType>
+      <Type guid="3c93ff02-0eab-4dfe-bdea-6020103f9083">A_DOORSENSORS</Type>
+      <From>A_DoorSensors</From>
+      <To>A_Doors</To>
+    </RenamedType>
   </Renames>
 </Refactors>

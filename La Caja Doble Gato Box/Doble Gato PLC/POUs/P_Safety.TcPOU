@@ -13,10 +13,8 @@ END_VAR
       <ST><![CDATA[// hyppylanka oli jossain kortissa tätä varten. Ehtisköhän vielä asentamaan sensorin boxin sisälle? Ei ehkä mahdotonta
 
 SAFETY.Doors_OK := Door1_Box := Door2_Fence := Door3_Workbench;
-
+A_Doors();	// Checking if doors are open
 A_Checks(); // Acting on sensor inputs
-
-
 ]]></ST>
     </Implementation>
     <Action Name="A_Checks" Id="{31e58434-104c-4f87-a55e-e4db7b3ddc8a}">
@@ -465,12 +463,22 @@ A_Checks(); // Acting on sensor inputs
         </NWL>
       </Implementation>
     </Action>
-    <Action Name="A_DoorSensors" Id="{3c93ff02-0eab-4dfe-bdea-6020103f9083}">
+    <Action Name="A_Doors" Id="{3c93ff02-0eab-4dfe-bdea-6020103f9083}">
       <Implementation>
         <ST><![CDATA[
 Door1_Box 		:= IN.BOX_IN[1];
 Door2_Fence 	:= NOT IN.BOX_IN[2];
 Door3_Workbench := NOT IN.BOX_IN[3];
+
+
+//"Ovisensori" hyppää outputista inputtiin, jos on päällä niin ohjelma saa käydä
+OUT.BOX_IO[8] := TRUE;
+
+SAFETY.Doors_OK := IN.BOX_IN[8];
+
+//Virtuaaliset kytkimet
+SAFETY.Safety_to_robot 	:= TRUE;
+General.Manual 			:= TRUE;
 ]]></ST>
       </Implementation>
     </Action>
@@ -478,14 +486,15 @@ Door3_Workbench := NOT IN.BOX_IN[3];
       <LineId Id="28" Count="2" />
       <LineId Id="40" Count="0" />
       <LineId Id="33" Count="0" />
-      <LineId Id="35" Count="1" />
-      <LineId Id="14" Count="0" />
+      <LineId Id="35" Count="0" />
     </LineIds>
-    <LineIds Name="P_SAFETY.A_DoorSensors">
+    <LineIds Name="P_SAFETY.A_Doors">
       <LineId Id="2" Count="0" />
       <LineId Id="1" Count="0" />
       <LineId Id="4" Count="0" />
-      <LineId Id="6" Count="1" />
+      <LineId Id="6" Count="0" />
+      <LineId Id="8" Count="9" />
+      <LineId Id="7" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

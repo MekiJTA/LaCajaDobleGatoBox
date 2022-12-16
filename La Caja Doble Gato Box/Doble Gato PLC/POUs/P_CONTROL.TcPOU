@@ -43,7 +43,6 @@ END_VAR
       <ST><![CDATA[// OUT.BOX_OUT[7] := General.SpecialBlinkOn;
 
 OVERVIEW_FBD();
-	A_Doors();
 //	A_ButtonBoxes();
 //	A_FeedButton();
 	Blink();
@@ -53,6 +52,7 @@ OVERVIEW_FBD();
     </Implementation>
     <Folder Name="Blinkers" Id="{5c25f4da-2386-4bfa-a3e5-3fe24506dcb7}" />
     <Folder Name="Buttons" Id="{71ed4705-df05-4341-9724-6438c1a3eb09}" />
+    <Folder Name="etc" Id="{562d0cfd-f644-4d82-88ea-586f7c38fe9c}" />
     <Action Name="A_Beacons" Id="{9f0f4f38-0331-4251-b759-68adeace686f}">
       <Implementation>
         <ST><![CDATA[]]></ST>
@@ -73,24 +73,6 @@ IF Input2_RTRIG.Q THEN
 END_IF
 
 ]]></ST>
-      </Implementation>
-    </Action>
-    <Action Name="A_DoorLocks" Id="{b70c1c85-1e32-47fe-a80f-a4fd648c58be}">
-      <Implementation>
-        <ST><![CDATA[]]></ST>
-      </Implementation>
-    </Action>
-    <Action Name="A_Doors" Id="{223db38c-ab74-4269-818b-d4d0b7d3de82}">
-      <Implementation>
-        <ST><![CDATA[
-//"Ovisensori" hyppää outputista inputtiin, jos on päällä niin ohjelma saa käydä
-OUT.BOX_IO[8] := TRUE;
-
-SAFETY.Doors_OK := IN.BOX_IN[8];
-
-//Virtuaaliset kytkimet
-SAFETY.Safety_to_robot 	:= TRUE;
-General.Manual 			:= TRUE;]]></ST>
       </Implementation>
     </Action>
     <Action Name="A_FeedButton" Id="{fd10e9fd-470d-417b-922d-3e15328c9f03}" FolderPath="Buttons\">
@@ -144,25 +126,6 @@ END_IF
 ]]></ST>
       </Implementation>
     </Action>
-    <Action Name="Blink_Faster" Id="{4c379a4c-fd1e-485d-be50-2df9c3314d57}" FolderPath="Blinkers\">
-      <Implementation>
-        <ST><![CDATA[
-
-BlinkTimer_FAST_ON(IN:= T_FAST_ON , PT:= TIME_FAST_ON , Q=> , ET=> );
-IF BlinkTimer_FAST_ON.Q THEN
-	T_FAST_ON	:= General.BlinkFAST_On:= FALSE;
-	T_FAST_OFF 	:= TRUE;	
-END_IF
-
-BlinkTimer_FAST_OFF(IN:= T_FAST_OFF , PT:= TIME_FAST_OFF , Q=> , ET=> );
-IF BlinkTimer_FAST_OFF.Q THEN
-	T_FAST_ON 	:= General.BlinkFAST_On := TRUE;
-	T_FAST_OFF	:= FALSE;
-END_IF
-
-]]></ST>
-      </Implementation>
-    </Action>
     <Action Name="Blink_Special" Id="{ba255915-c92f-459f-ac44-5943878c9a83}" FolderPath="Blinkers\">
       <Implementation>
         <ST><![CDATA[
@@ -212,7 +175,7 @@ END_CASE
     </Action>
     <LineIds Name="P_CONTROL">
       <LineId Id="88" Count="1" />
-      <LineId Id="76" Count="1" />
+      <LineId Id="76" Count="0" />
       <LineId Id="313" Count="0" />
       <LineId Id="312" Count="0" />
       <LineId Id="156" Count="2" />
@@ -229,19 +192,6 @@ END_CASE
       <LineId Id="18" Count="2" />
       <LineId Id="8" Count="0" />
       <LineId Id="13" Count="0" />
-    </LineIds>
-    <LineIds Name="P_CONTROL.A_DoorLocks">
-      <LineId Id="1" Count="0" />
-    </LineIds>
-    <LineIds Name="P_CONTROL.A_Doors">
-      <LineId Id="2" Count="0" />
-      <LineId Id="1" Count="0" />
-      <LineId Id="3" Count="0" />
-      <LineId Id="12" Count="0" />
-      <LineId Id="7" Count="0" />
-      <LineId Id="15" Count="0" />
-      <LineId Id="14" Count="0" />
-      <LineId Id="9" Count="1" />
     </LineIds>
     <LineIds Name="P_CONTROL.A_FeedButton">
       <LineId Id="69" Count="0" />
@@ -268,13 +218,6 @@ END_CASE
     <LineIds Name="P_CONTROL.Blink">
       <LineId Id="16" Count="0" />
       <LineId Id="4" Count="10" />
-      <LineId Id="1" Count="0" />
-    </LineIds>
-    <LineIds Name="P_CONTROL.Blink_Faster">
-      <LineId Id="19" Count="0" />
-      <LineId Id="16" Count="0" />
-      <LineId Id="4" Count="10" />
-      <LineId Id="18" Count="0" />
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="P_CONTROL.Blink_Special">

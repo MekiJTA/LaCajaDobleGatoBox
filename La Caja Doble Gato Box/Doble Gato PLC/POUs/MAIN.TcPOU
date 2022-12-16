@@ -13,18 +13,36 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[IF General.ReadyForAction THEN //fiksumpi järjestely tälle pitäis olla
-	
+      <ST><![CDATA[
 P_Safety();
-P_CONTROL();		// Using buttons, handling sensors
-P_WritePersistentData();	// Writes persistent variables to memory every 10 seconds
-OVERVIEW_FBD();				// FBD View of all FB's. Useful visualization of whats happening
-// P_Environment_Control -> Is a separate slow task, not to be called from MAIN
+IF General.ReadyForAction THEN 
+P_CONTROL();					// Using buttons, handling sensors
+P_WritePersistentData();		// Writes persistent variables to memory every 10 seconds
+OVERVIEW_FBD();					// FBD View of all FB's. Useful visualization of whats happening
+// P_Environment_Control 		-> Is a separate slow task, not to be called from MAIN
 END_IF
+
+
+(*IF IN = TRUE AND Run_It = FALSE THEN
+	Run_It := IN;
+END_IF
+
+IF Run_It THEN
+	PWR_LIGHT1 := 	TRUE;
+	Q := 			TRUE;
+	Emitter1 :=		TRUE;
+END_IF
+*)
+	
 ]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
-      <LineId Id="139" Count="7" />
+      <LineId Id="164" Count="0" />
+      <LineId Id="163" Count="0" />
+      <LineId Id="139" Count="0" />
+      <LineId Id="142" Count="4" />
+      <LineId Id="158" Count="0" />
+      <LineId Id="165" Count="11" />
       <LineId Id="127" Count="0" />
     </LineIds>
   </POU>

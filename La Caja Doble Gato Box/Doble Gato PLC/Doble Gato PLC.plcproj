@@ -29,16 +29,6 @@
     <Compile Include="CopyPastedExamples\P_Palletizing.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="CopyPastedExamples\S_NAMES_IN.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="CopyPastedExamples\TIO.TcGVL">
-      <SubType>Code</SubType>
-      <LinkAlways>true</LinkAlways>
-    </Compile>
-    <Compile Include="CopyPastedExamples\U_TRANSLATE_IN.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="CopyPastedExamples\WritePersistentData_1.TcPOU">
       <SubType>Code</SubType>
     </Compile>
