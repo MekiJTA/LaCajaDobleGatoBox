@@ -105,9 +105,6 @@
     <Compile Include="POUs\README.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="SlowTask.TcTTO">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CopyPastedExamples\etc" />

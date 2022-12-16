@@ -22,6 +22,8 @@ NAMING:
 	
 	
 *)
+IN.BOX_IO._Label.bInput1;
+IN.BOX_IO.bArray[1];
 ]]></ST>
     </Implementation>
     <LineIds Name="README">
@@ -38,6 +40,7 @@ NAMING:
       <LineId Id="9" Count="0" />
       <LineId Id="6" Count="0" />
       <LineId Id="15" Count="0" />
+      <LineId Id="28" Count="1" />
     </LineIds>
   </POU>
 </TcPlcObject>
