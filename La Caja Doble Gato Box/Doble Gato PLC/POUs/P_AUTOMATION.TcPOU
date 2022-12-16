@@ -8,34 +8,8 @@ END_VAR
     <Implementation>
       <ST><![CDATA[]]></ST>
     </Implementation>
-    <Action Name="Blink_Faster" Id="{4c379a4c-fd1e-485d-be50-2df9c3314d57}">
-      <Implementation>
-        <ST><![CDATA[
-
-BlinkTimer_FAST_ON(IN:= T_FAST_ON , PT:= TIME_FAST_ON , Q=> , ET=> );
-IF BlinkTimer_FAST_ON.Q THEN
-	T_FAST_ON	:= General.BlinkFAST_On:= FALSE;
-	T_FAST_OFF 	:= TRUE;	
-END_IF
-
-BlinkTimer_FAST_OFF(IN:= T_FAST_OFF , PT:= TIME_FAST_OFF , Q=> , ET=> );
-IF BlinkTimer_FAST_OFF.Q THEN
-	T_FAST_ON 	:= General.BlinkFAST_On := TRUE;
-	T_FAST_OFF	:= FALSE;
-END_IF
-
-]]></ST>
-      </Implementation>
-    </Action>
     <LineIds Name="P_AUTOMATION">
       <LineId Id="5" Count="0" />
-    </LineIds>
-    <LineIds Name="P_AUTOMATION.Blink_Faster">
-      <LineId Id="19" Count="0" />
-      <LineId Id="16" Count="0" />
-      <LineId Id="4" Count="10" />
-      <LineId Id="18" Count="0" />
-      <LineId Id="1" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
