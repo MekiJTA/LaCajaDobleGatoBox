@@ -4,9 +4,9 @@
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
 	//Turvapiirien tilatiedot
-	Safety_OK							AT%I*	:BOOL;	//
-	Doors_OK							AT%I*	:BOOL;	//
-	Safety_to_robot						AT%I*	:BOOL;	//
+	Safety_OK							AT%Q*	:BOOL;	//
+	Doors_OK							AT%Q*	:BOOL;	//
+	E_STOP_OK							AT%Q*	:BOOL;	//
 	
 END_VAR]]></Declaration>
   </GVL>

@@ -263,7 +263,7 @@ A_Checks(); // Acting on sensor inputs
                             </o>
                             <o>
                               <o n="Operand" t="Operand">
-                                <v n="Operand">"SAFETY.Safety_to_robot"</v>
+                                <v n="Operand">"SAFETY.E_STOP_OK"</v>
                                 <v n="Type">"BOOL"</v>
                                 <v n="Comment">""</v>
                                 <v n="SymbolComment">""</v>
@@ -477,7 +477,7 @@ OUT.O[8] := TRUE;
 SAFETY.Doors_OK := IN.BOX_IN[8];
 
 //Virtuaaliset kytkimet
-SAFETY.Safety_to_robot 	:= TRUE;
+SAFETY.E_STOP_OK 	:= TRUE;
 General.Manual 			:= TRUE;
 ]]></ST>
       </Implementation>

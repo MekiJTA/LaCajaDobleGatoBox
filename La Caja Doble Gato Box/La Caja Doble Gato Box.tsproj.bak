@@ -2,32 +2,23 @@
 <TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.25">
 	<DataTypes>
 		<DataType>
-			<Name GUID="{47A960A5-FA27-00CE-C256-D1FBA2A9645A}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..4] OF INT</Name>
-			<BitSize>64</BitSize>
-			<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
-			<ArrayInfo>
-				<LBound>1</LBound>
-				<Elements>4</Elements>
-			</ArrayInfo>
-		</DataType>
-		<DataType>
-			<Name GUID="{5766604E-B1E4-B5B1-BFCD-59FBC6D522A6}" AutoDeleteType="true">INPUT_LABELS</Name>
+			<Name GUID="{08719057-B16F-2EF0-15AB-6183EFFF6C10}" AutoDeleteType="true">INPUT_LABELS</Name>
 			<BitSize>256</BitSize>
 			<SubItem>
-				<Name>bInput1</Name>
+				<Name>BTN_Feed</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
 				<Comment><![CDATA[===== 	Box EL1008			]]></Comment>
 				<BitSize>8</BitSize>
 				<BitOffs>0</BitOffs>
 			</SubItem>
 			<SubItem>
-				<Name>bInput2</Name>
+				<Name>SWITCH_Right</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
 				<BitSize>8</BitSize>
 				<BitOffs>8</BitOffs>
 			</SubItem>
 			<SubItem>
-				<Name>bInput3</Name>
+				<Name>SWITCH_Left</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
 				<BitSize>8</BitSize>
 				<BitOffs>16</BitOffs>
@@ -57,7 +48,7 @@
 				<BitOffs>48</BitOffs>
 			</SubItem>
 			<SubItem>
-				<Name>bInput8</Name>
+				<Name>i_Door_Sensor1</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
 				<BitSize>8</BitSize>
 				<BitOffs>56</BitOffs>
@@ -82,7 +73,7 @@
 				<BitOffs>80</BitOffs>
 			</SubItem>
 			<SubItem>
-				<Name>bInput12</Name>
+				<Name>SL_GatoPerro_Object</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
 				<BitSize>8</BitSize>
 				<BitOffs>88</BitOffs>
@@ -160,7 +151,7 @@
 				<BitOffs>184</BitOffs>
 			</SubItem>
 			<SubItem>
-				<Name>bInput25</Name>
+				<Name>VFD_20</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
 				<Comment><![CDATA[====		EL1100 -> EL1008]]></Comment>
 				<BitSize>8</BitSize>
@@ -173,7 +164,7 @@
 				<BitOffs>200</BitOffs>
 			</SubItem>
 			<SubItem>
-				<Name>bInput27</Name>
+				<Name>VFD_24</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
 				<BitSize>8</BitSize>
 				<BitOffs>208</BitOffs>
@@ -185,7 +176,7 @@
 				<BitOffs>216</BitOffs>
 			</SubItem>
 			<SubItem>
-				<Name>bInput29</Name>
+				<Name>VFD_26</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
 				<BitSize>8</BitSize>
 				<BitOffs>224</BitOffs>
@@ -203,14 +194,14 @@
 				<BitOffs>240</BitOffs>
 			</SubItem>
 			<SubItem>
-				<Name>bInput32</Name>
+				<Name>SM_Gato_Indicator</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
 				<BitSize>8</BitSize>
 				<BitOffs>248</BitOffs>
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{8B4F9D08-CDC9-04A5-A0D1-4FC1DF7464CB}" AutoDeleteType="true">U_IN_IO_Translate</Name>
+			<Name GUID="{B4237C82-413B-4C3A-829F-EA605BA5806D}" AutoDeleteType="true">U_IN_IO_Translate</Name>
 			<BitSize>256</BitSize>
 			<SubItem>
 				<Name>bArray</Name>
@@ -224,13 +215,22 @@
 			</SubItem>
 			<SubItem>
 				<Name>_Label</Name>
-				<Type GUID="{5766604E-B1E4-B5B1-BFCD-59FBC6D522A6}">INPUT_LABELS</Type>
+				<Type GUID="{08719057-B16F-2EF0-15AB-6183EFFF6C10}">INPUT_LABELS</Type>
 				<BitSize>256</BitSize>
 				<BitOffs>0</BitOffs>
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{D0FF1A65-BA9B-EBE4-9B60-194356A7A3E0}" AutoDeleteType="true">OUTPUT_LABELS</Name>
+			<Name GUID="{47A960A5-FA27-00CE-C256-D1FBA2A9645A}" IecBaseType="true" AutoDeleteType="true">ARRAY [1..4] OF INT</Name>
+			<BitSize>64</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
+			<ArrayInfo>
+				<LBound>1</LBound>
+				<Elements>4</Elements>
+			</ArrayInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{A4515A98-790F-5765-59D2-C9EC4F0FAC0E}" AutoDeleteType="true">OUTPUT_LABELS</Name>
 			<BitSize>256</BitSize>
 			<SubItem>
 				<Name>bOutput1</Name>
@@ -276,7 +276,7 @@
 				<BitOffs>48</BitOffs>
 			</SubItem>
 			<SubItem>
-				<Name>bOutput8</Name>
+				<Name>o_DoorSensor_Activator</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
 				<BitSize>8</BitSize>
 				<BitOffs>56</BitOffs>
@@ -379,32 +379,32 @@
 				<BitOffs>184</BitOffs>
 			</SubItem>
 			<SubItem>
-				<Name>bOutput25</Name>
+				<Name>VFD_14</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
 				<Comment><![CDATA[===== 	EK1100 EL2008]]></Comment>
 				<BitSize>8</BitSize>
 				<BitOffs>192</BitOffs>
 			</SubItem>
 			<SubItem>
-				<Name>bOutput26</Name>
+				<Name>VFD_15</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
 				<BitSize>8</BitSize>
 				<BitOffs>200</BitOffs>
 			</SubItem>
 			<SubItem>
-				<Name>bOutput27</Name>
+				<Name>VFD_16</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
 				<BitSize>8</BitSize>
 				<BitOffs>208</BitOffs>
 			</SubItem>
 			<SubItem>
-				<Name>bOutput28</Name>
+				<Name>LIGHT_White</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
 				<BitSize>8</BitSize>
 				<BitOffs>216</BitOffs>
 			</SubItem>
 			<SubItem>
-				<Name>bOutput29</Name>
+				<Name>LIGHT_Green</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
 				<BitSize>8</BitSize>
 				<BitOffs>224</BitOffs>
@@ -429,7 +429,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{087ECBD9-DD57-A9F5-0DF3-5767E66186E8}" AutoDeleteType="true">U_OUT_IO_Translate</Name>
+			<Name GUID="{5D52C91D-766D-336D-8E6E-32978D437643}" AutoDeleteType="true">U_OUT_IO_Translate</Name>
 			<BitSize>256</BitSize>
 			<SubItem>
 				<Name>bArray</Name>
@@ -443,7 +443,7 @@
 			</SubItem>
 			<SubItem>
 				<Name>_Label</Name>
-				<Type GUID="{D0FF1A65-BA9B-EBE4-9B60-194356A7A3E0}">OUTPUT_LABELS</Type>
+				<Type GUID="{A4515A98-790F-5765-59D2-C9EC4F0FAC0E}">OUTPUT_LABELS</Type>
 				<BitSize>256</BitSize>
 				<BitOffs>0</BitOffs>
 			</SubItem>
@@ -487,8 +487,8 @@
 				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Doble Gato PLC\Doble Gato PLC.tmc">
 					<Name>Doble Gato PLC Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
-					<Vars VarGrpType="1">
-						<Name>PlcTask Inputs</Name>
+					<Vars VarGrpType="1" ContextId="1" AreaNo="16">
+						<Name>SlowTask Inputs</Name>
 						<Var>
 							<Name>General.EthercatDevState</Name>
 							<Type>UINT</Type>
@@ -506,6 +506,26 @@
 							<Type>UINT</Type>
 						</Var>
 						<Var>
+							<Name>IN.I</Name>
+							<Type GUID="{B4237C82-413B-4C3A-829F-EA605BA5806D}">U_IN_IO_Translate</Type>
+						</Var>
+						<Var>
+							<Name>IN.BOX_ANALOG</Name>
+							<Comment><![CDATA[ Temperature module]]></Comment>
+							<Type GUID="{47A960A5-FA27-00CE-C256-D1FBA2A9645A}">ARRAY [1..4] OF INT</Type>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="2" ContextId="1" AreaNo="17">
+						<Name>SlowTask Outputs</Name>
+						<Var>
+							<Name>General.EthercatDevCtrl</Name>
+							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>OUT.O</Name>
+							<Type GUID="{5D52C91D-766D-336D-8E6E-32978D437643}">U_OUT_IO_Translate</Type>
+						</Var>
+						<Var>
 							<Name>SAFETY.Safety_OK</Name>
 							<Type>BOOL</Type>
 						</Var>
@@ -514,27 +534,8 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>SAFETY.Safety_to_robot</Name>
+							<Name>SAFETY.E_STOP_OK</Name>
 							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>IN.BOX_ANALOG</Name>
-							<Type GUID="{47A960A5-FA27-00CE-C256-D1FBA2A9645A}">ARRAY [1..4] OF INT</Type>
-						</Var>
-						<Var>
-							<Name>IN.I</Name>
-							<Type GUID="{8B4F9D08-CDC9-04A5-A0D1-4FC1DF7464CB}">U_IN_IO_Translate</Type>
-						</Var>
-					</Vars>
-					<Vars VarGrpType="2" AreaNo="1">
-						<Name>PlcTask Outputs</Name>
-						<Var>
-							<Name>General.EthercatDevCtrl</Name>
-							<Type>UINT</Type>
-						</Var>
-						<Var>
-							<Name>OUT.O</Name>
-							<Type GUID="{087ECBD9-DD57-A9F5-0DF3-5767E66186E8}">U_OUT_IO_Translate</Type>
 						</Var>
 					</Vars>
 					<UnrestoredVarLinks ImportTime="2022-12-16T13:07:02">
@@ -575,9 +576,19 @@
 							<Priority>20</Priority>
 							<CycleTime>10000000</CycleTime>
 						</Context>
+						<Context>
+							<Id NeedCalleeCall="true">1</Id>
+							<Name>SlowTask</Name>
+							<ManualConfig>
+								<OTCID>#x02010040</OTCID>
+							</ManualConfig>
+							<Priority>30</Priority>
+							<CycleTime>50000000</CycleTime>
+						</Context>
 					</Contexts>
 					<TaskPouOids>
 						<TaskPouOid Prio="20" OTCID="#x08502041"/>
+						<TaskPouOid Prio="30" OTCID="#x08502042"/>
 					</TaskPouOids>
 				</Instance>
 			</Project>
@@ -1145,95 +1156,95 @@
 		<MappingInfo Identifier="{00000000-2041-0850-4020-500840000403}" Id="#x02030010"/>
 		<OwnerA Name="TIPC^Doble Gato PLC^Doble Gato PLC Instance">
 			<OwnerB Name="TIID^Device 1 (EtherCAT)">
-				<Link VarA="PlcTask Inputs^General.EthercatDevState" VarB="Inputs^DevState"/>
+				<Link VarA="SlowTask Inputs^General.EthercatDevState" VarB="Inputs^DevState"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 2 (EL3204)">
-				<Link VarA="PlcTask Inputs^IN.BOX_ANALOG[1]" VarB="RTD Inputs Channel 1^Value"/>
-				<Link VarA="PlcTask Inputs^IN.BOX_ANALOG[2]" VarB="RTD Inputs Channel 2^Value"/>
-				<Link VarA="PlcTask Inputs^IN.BOX_ANALOG[3]" VarB="RTD Inputs Channel 3^Value"/>
-				<Link VarA="PlcTask Inputs^IN.BOX_ANALOG[4]" VarB="RTD Inputs Channel 4^Value"/>
+				<Link VarA="SlowTask Inputs^IN.BOX_ANALOG[1]" VarB="RTD Inputs Channel 1^Value"/>
+				<Link VarA="SlowTask Inputs^IN.BOX_ANALOG[2]" VarB="RTD Inputs Channel 2^Value"/>
+				<Link VarA="SlowTask Inputs^IN.BOX_ANALOG[3]" VarB="RTD Inputs Channel 3^Value"/>
+				<Link VarA="SlowTask Inputs^IN.BOX_ANALOG[4]" VarB="RTD Inputs Channel 4^Value"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 3 (EL1008)">
-				<Link VarA="PlcTask Inputs^IN.I^bArray[1]" VarB="Channel 1^Input"/>
-				<Link VarA="PlcTask Inputs^IN.I^bArray[2]" VarB="Channel 2^Input"/>
-				<Link VarA="PlcTask Inputs^IN.I^bArray[3]" VarB="Channel 3^Input"/>
-				<Link VarA="PlcTask Inputs^IN.I^bArray[4]" VarB="Channel 4^Input"/>
-				<Link VarA="PlcTask Inputs^IN.I^bArray[5]" VarB="Channel 5^Input"/>
-				<Link VarA="PlcTask Inputs^IN.I^bArray[6]" VarB="Channel 6^Input"/>
-				<Link VarA="PlcTask Inputs^IN.I^bArray[7]" VarB="Channel 7^Input"/>
-				<Link VarA="PlcTask Inputs^IN.I^bArray[8]" VarB="Channel 8^Input"/>
+				<Link VarA="SlowTask Inputs^IN.I^bArray[1]" VarB="Channel 1^Input"/>
+				<Link VarA="SlowTask Inputs^IN.I^bArray[2]" VarB="Channel 2^Input"/>
+				<Link VarA="SlowTask Inputs^IN.I^bArray[3]" VarB="Channel 3^Input"/>
+				<Link VarA="SlowTask Inputs^IN.I^bArray[4]" VarB="Channel 4^Input"/>
+				<Link VarA="SlowTask Inputs^IN.I^bArray[5]" VarB="Channel 5^Input"/>
+				<Link VarA="SlowTask Inputs^IN.I^bArray[6]" VarB="Channel 6^Input"/>
+				<Link VarA="SlowTask Inputs^IN.I^bArray[7]" VarB="Channel 7^Input"/>
+				<Link VarA="SlowTask Inputs^IN.I^bArray[8]" VarB="Channel 8^Input"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 4 (EL2008)">
-				<Link VarA="PlcTask Outputs^OUT.O^bArray[1]" VarB="Channel 1^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.O^bArray[2]" VarB="Channel 2^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.O^bArray[3]" VarB="Channel 3^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.O^bArray[4]" VarB="Channel 4^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.O^bArray[5]" VarB="Channel 5^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.O^bArray[6]" VarB="Channel 6^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.O^bArray[7]" VarB="Channel 7^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.O^bArray[8]" VarB="Channel 8^Output"/>
+				<Link VarA="SlowTask Outputs^OUT.O^bArray[1]" VarB="Channel 1^Output"/>
+				<Link VarA="SlowTask Outputs^OUT.O^bArray[2]" VarB="Channel 2^Output"/>
+				<Link VarA="SlowTask Outputs^OUT.O^bArray[3]" VarB="Channel 3^Output"/>
+				<Link VarA="SlowTask Outputs^OUT.O^bArray[4]" VarB="Channel 4^Output"/>
+				<Link VarA="SlowTask Outputs^OUT.O^bArray[5]" VarB="Channel 5^Output"/>
+				<Link VarA="SlowTask Outputs^OUT.O^bArray[6]" VarB="Channel 6^Output"/>
+				<Link VarA="SlowTask Outputs^OUT.O^bArray[7]" VarB="Channel 7^Output"/>
+				<Link VarA="SlowTask Outputs^OUT.O^bArray[8]" VarB="Channel 8^Output"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 5 (EL1809)">
-				<Link VarA="PlcTask Inputs^IN.I^bArray[10]" VarB="Channel 2^Input"/>
-				<Link VarA="PlcTask Inputs^IN.I^bArray[11]" VarB="Channel 3^Input"/>
-				<Link VarA="PlcTask Inputs^IN.I^bArray[12]" VarB="Channel 4^Input"/>
-				<Link VarA="PlcTask Inputs^IN.I^bArray[13]" VarB="Channel 5^Input"/>
-				<Link VarA="PlcTask Inputs^IN.I^bArray[14]" VarB="Channel 6^Input"/>
-				<Link VarA="PlcTask Inputs^IN.I^bArray[15]" VarB="Channel 7^Input"/>
-				<Link VarA="PlcTask Inputs^IN.I^bArray[16]" VarB="Channel 8^Input"/>
-				<Link VarA="PlcTask Inputs^IN.I^bArray[17]" VarB="Channel 9^Input"/>
-				<Link VarA="PlcTask Inputs^IN.I^bArray[18]" VarB="Channel 10^Input"/>
-				<Link VarA="PlcTask Inputs^IN.I^bArray[19]" VarB="Channel 11^Input"/>
-				<Link VarA="PlcTask Inputs^IN.I^bArray[20]" VarB="Channel 12^Input"/>
-				<Link VarA="PlcTask Inputs^IN.I^bArray[21]" VarB="Channel 13^Input"/>
-				<Link VarA="PlcTask Inputs^IN.I^bArray[22]" VarB="Channel 14^Input"/>
-				<Link VarA="PlcTask Inputs^IN.I^bArray[23]" VarB="Channel 15^Input"/>
-				<Link VarA="PlcTask Inputs^IN.I^bArray[24]" VarB="Channel 16^Input"/>
-				<Link VarA="PlcTask Inputs^IN.I^bArray[9]" VarB="Channel 1^Input"/>
+				<Link VarA="SlowTask Inputs^IN.I^bArray[10]" VarB="Channel 2^Input"/>
+				<Link VarA="SlowTask Inputs^IN.I^bArray[11]" VarB="Channel 3^Input"/>
+				<Link VarA="SlowTask Inputs^IN.I^bArray[12]" VarB="Channel 4^Input"/>
+				<Link VarA="SlowTask Inputs^IN.I^bArray[13]" VarB="Channel 5^Input"/>
+				<Link VarA="SlowTask Inputs^IN.I^bArray[14]" VarB="Channel 6^Input"/>
+				<Link VarA="SlowTask Inputs^IN.I^bArray[15]" VarB="Channel 7^Input"/>
+				<Link VarA="SlowTask Inputs^IN.I^bArray[16]" VarB="Channel 8^Input"/>
+				<Link VarA="SlowTask Inputs^IN.I^bArray[17]" VarB="Channel 9^Input"/>
+				<Link VarA="SlowTask Inputs^IN.I^bArray[18]" VarB="Channel 10^Input"/>
+				<Link VarA="SlowTask Inputs^IN.I^bArray[19]" VarB="Channel 11^Input"/>
+				<Link VarA="SlowTask Inputs^IN.I^bArray[20]" VarB="Channel 12^Input"/>
+				<Link VarA="SlowTask Inputs^IN.I^bArray[21]" VarB="Channel 13^Input"/>
+				<Link VarA="SlowTask Inputs^IN.I^bArray[22]" VarB="Channel 14^Input"/>
+				<Link VarA="SlowTask Inputs^IN.I^bArray[23]" VarB="Channel 15^Input"/>
+				<Link VarA="SlowTask Inputs^IN.I^bArray[24]" VarB="Channel 16^Input"/>
+				<Link VarA="SlowTask Inputs^IN.I^bArray[9]" VarB="Channel 1^Input"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 6 (EL2809)">
-				<Link VarA="PlcTask Outputs^OUT.O^bArray[10]" VarB="Channel 2^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.O^bArray[11]" VarB="Channel 3^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.O^bArray[12]" VarB="Channel 4^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.O^bArray[13]" VarB="Channel 5^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.O^bArray[14]" VarB="Channel 6^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.O^bArray[15]" VarB="Channel 7^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.O^bArray[16]" VarB="Channel 8^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.O^bArray[17]" VarB="Channel 9^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.O^bArray[18]" VarB="Channel 10^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.O^bArray[19]" VarB="Channel 11^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.O^bArray[20]" VarB="Channel 12^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.O^bArray[21]" VarB="Channel 13^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.O^bArray[22]" VarB="Channel 14^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.O^bArray[23]" VarB="Channel 15^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.O^bArray[24]" VarB="Channel 16^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.O^bArray[9]" VarB="Channel 1^Output"/>
+				<Link VarA="SlowTask Outputs^OUT.O^bArray[10]" VarB="Channel 2^Output"/>
+				<Link VarA="SlowTask Outputs^OUT.O^bArray[11]" VarB="Channel 3^Output"/>
+				<Link VarA="SlowTask Outputs^OUT.O^bArray[12]" VarB="Channel 4^Output"/>
+				<Link VarA="SlowTask Outputs^OUT.O^bArray[13]" VarB="Channel 5^Output"/>
+				<Link VarA="SlowTask Outputs^OUT.O^bArray[14]" VarB="Channel 6^Output"/>
+				<Link VarA="SlowTask Outputs^OUT.O^bArray[15]" VarB="Channel 7^Output"/>
+				<Link VarA="SlowTask Outputs^OUT.O^bArray[16]" VarB="Channel 8^Output"/>
+				<Link VarA="SlowTask Outputs^OUT.O^bArray[17]" VarB="Channel 9^Output"/>
+				<Link VarA="SlowTask Outputs^OUT.O^bArray[18]" VarB="Channel 10^Output"/>
+				<Link VarA="SlowTask Outputs^OUT.O^bArray[19]" VarB="Channel 11^Output"/>
+				<Link VarA="SlowTask Outputs^OUT.O^bArray[20]" VarB="Channel 12^Output"/>
+				<Link VarA="SlowTask Outputs^OUT.O^bArray[21]" VarB="Channel 13^Output"/>
+				<Link VarA="SlowTask Outputs^OUT.O^bArray[22]" VarB="Channel 14^Output"/>
+				<Link VarA="SlowTask Outputs^OUT.O^bArray[23]" VarB="Channel 15^Output"/>
+				<Link VarA="SlowTask Outputs^OUT.O^bArray[24]" VarB="Channel 16^Output"/>
+				<Link VarA="SlowTask Outputs^OUT.O^bArray[9]" VarB="Channel 1^Output"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 7 (EK1122)^Term 8 (EK1100)">
-				<Link VarA="PlcTask Inputs^General.Term2DevState" VarB="InfoData^State"/>
+				<Link VarA="SlowTask Inputs^General.Term2DevState" VarB="InfoData^State"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 7 (EK1122)^Term 8 (EK1100)^Term 10 (EL2008)">
-				<Link VarA="PlcTask Outputs^OUT.O^bArray[25]" VarB="Channel 1^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.O^bArray[26]" VarB="Channel 2^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.O^bArray[27]" VarB="Channel 3^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.O^bArray[28]" VarB="Channel 4^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.O^bArray[29]" VarB="Channel 5^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.O^bArray[30]" VarB="Channel 6^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.O^bArray[31]" VarB="Channel 7^Output"/>
-				<Link VarA="PlcTask Outputs^OUT.O^bArray[32]" VarB="Channel 8^Output"/>
+				<Link VarA="SlowTask Outputs^OUT.O^bArray[25]" VarB="Channel 1^Output"/>
+				<Link VarA="SlowTask Outputs^OUT.O^bArray[26]" VarB="Channel 2^Output"/>
+				<Link VarA="SlowTask Outputs^OUT.O^bArray[27]" VarB="Channel 3^Output"/>
+				<Link VarA="SlowTask Outputs^OUT.O^bArray[28]" VarB="Channel 4^Output"/>
+				<Link VarA="SlowTask Outputs^OUT.O^bArray[29]" VarB="Channel 5^Output"/>
+				<Link VarA="SlowTask Outputs^OUT.O^bArray[30]" VarB="Channel 6^Output"/>
+				<Link VarA="SlowTask Outputs^OUT.O^bArray[31]" VarB="Channel 7^Output"/>
+				<Link VarA="SlowTask Outputs^OUT.O^bArray[32]" VarB="Channel 8^Output"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 7 (EK1122)^Term 8 (EK1100)^Term 9 (EL1008)">
-				<Link VarA="PlcTask Inputs^IN.I^bArray[25]" VarB="Channel 1^Input"/>
-				<Link VarA="PlcTask Inputs^IN.I^bArray[26]" VarB="Channel 2^Input"/>
-				<Link VarA="PlcTask Inputs^IN.I^bArray[27]" VarB="Channel 3^Input"/>
-				<Link VarA="PlcTask Inputs^IN.I^bArray[28]" VarB="Channel 4^Input"/>
-				<Link VarA="PlcTask Inputs^IN.I^bArray[29]" VarB="Channel 5^Input"/>
-				<Link VarA="PlcTask Inputs^IN.I^bArray[30]" VarB="Channel 6^Input"/>
-				<Link VarA="PlcTask Inputs^IN.I^bArray[31]" VarB="Channel 7^Input"/>
-				<Link VarA="PlcTask Inputs^IN.I^bArray[32]" VarB="Channel 8^Input"/>
+				<Link VarA="SlowTask Inputs^IN.I^bArray[25]" VarB="Channel 1^Input"/>
+				<Link VarA="SlowTask Inputs^IN.I^bArray[26]" VarB="Channel 2^Input"/>
+				<Link VarA="SlowTask Inputs^IN.I^bArray[27]" VarB="Channel 3^Input"/>
+				<Link VarA="SlowTask Inputs^IN.I^bArray[28]" VarB="Channel 4^Input"/>
+				<Link VarA="SlowTask Inputs^IN.I^bArray[29]" VarB="Channel 5^Input"/>
+				<Link VarA="SlowTask Inputs^IN.I^bArray[30]" VarB="Channel 6^Input"/>
+				<Link VarA="SlowTask Inputs^IN.I^bArray[31]" VarB="Channel 7^Input"/>
+				<Link VarA="SlowTask Inputs^IN.I^bArray[32]" VarB="Channel 8^Input"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 3 (EtherCAT Automation Protocol)">
-				<Link VarA="PlcTask Inputs^General.EthercatDev3" VarB="Inputs^DevState"/>
+				<Link VarA="SlowTask Inputs^General.EthercatDev3" VarB="Inputs^DevState"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>

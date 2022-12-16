@@ -11,14 +11,20 @@ VAR_GLOBAL
 	PowerOK				: BOOL;
 	Manual				: BOOL;
 	Auto				: BOOL;
-	
 
+// General information	
+	sCelsius: STRING(16);
+	sFahrenheit: STRING(16);
+	sCosine: STRING(16);
+	sKelvin: STRING(16);	
+	
+// Linked 'useless' variables to IO
 	EthercatDevState 	AT%I*: UINT;
 	Term2DevState 		AT%I*: UINT;
 	EthercatDevCtrl 	AT%Q*: UINT;
 	EthercatDev1		AT%I*: UINT;
 	EthercatDev3		AT%I*: UINT;
-	
+
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
-  <Task Name="SlowTask" Id="{55c0e620-9031-467b-b836-91ce1c8bc05c}">
+  <Task Name="SlowTask" Id="{e441675f-71f0-4de9-8fbd-90253d40b67b}">
     <!--CycleTime in micro seconds.-->
     <CycleTime>50000</CycleTime>
     <Priority>30</Priority>
     <PouCall>
       <Name>P_Temperature_Obs</Name>
     </PouCall>
-    <TaskFBGuid>{1a1d45ee-a584-4980-a4af-ba6bac0c8bc6}</TaskFBGuid>
-    <Fb_init>{c0a6e95f-3df9-4a5d-9767-f3ae7bfc5513}</Fb_init>
-    <Fb_exit>{1ca4bf1d-2d54-4af1-a7d7-ca199632c638}</Fb_exit>
-    <CycleUpdate>{08eb247a-748e-4fc5-919a-8c50bfa68be8}</CycleUpdate>
-    <PostCycleUpdate>{323f9f9f-f436-4653-b4cc-b3af30c733bb}</PostCycleUpdate>
+    <TaskFBGuid>{c7f5b41b-5cc9-4dbb-ac86-9999ebfadf18}</TaskFBGuid>
+    <Fb_init>{82dd0250-54c0-4f45-9ea3-d0a4ecf55d41}</Fb_init>
+    <Fb_exit>{c2bd317c-decb-4793-b725-aa71238e4eb4}</Fb_exit>
+    <CycleUpdate>{aad6cb54-7a97-492e-8f00-04864894aa55}</CycleUpdate>
+    <PostCycleUpdate>{494fab37-77be-4a68-8845-54882d1a2659}</PostCycleUpdate>
   </Task>
 </TcPlcObject>
