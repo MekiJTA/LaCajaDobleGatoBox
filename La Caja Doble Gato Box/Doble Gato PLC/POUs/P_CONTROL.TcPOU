@@ -78,7 +78,7 @@ END_IF
     <Action Name="A_FeedButton" Id="{fd10e9fd-470d-417b-922d-3e15328c9f03}" FolderPath="Buttons\">
       <Implementation>
         <ST><![CDATA[
-OUT.BOX_IO[1] := TRUE;	
+OUT.O[1] := TRUE;	
 tempCounter := tempCounter+1;
 
 (*
@@ -105,7 +105,7 @@ IF IN.BOX_IN[3] THEN
 bSwitchToggle := FALSE;
 END_IF
 
-OUT.BOX_IO[1] := bSwitchToggle;
+OUT.O[1] := bSwitchToggle;
 ]]></ST>
       </Implementation>
     </Action>

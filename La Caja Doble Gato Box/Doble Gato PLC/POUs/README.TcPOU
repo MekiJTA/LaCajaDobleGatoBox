@@ -22,8 +22,8 @@ NAMING:
 	
 	
 *)
-IN.BOX_IO._Label.bInput1;
-IN.BOX_IO.bArray[1];
+IN.I._Label.bInput1;
+IN.I.bArray[1];
 ]]></ST>
     </Implementation>
     <LineIds Name="README">

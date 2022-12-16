@@ -44,10 +44,10 @@
     <Compile Include="DUTs\INPUT_LABELS.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DUTs\U_IN_BOX_IO_Translate.TcDUT">
+    <Compile Include="DUTs\U_IN_IO_Translate.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DUTs\U_OUT_BOX_IO_Translate.TcDUT">
+    <Compile Include="DUTs\U_OUT_IO_Translate.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="FBs\FB_ButtonBox.TcPOU">

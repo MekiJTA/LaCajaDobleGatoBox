@@ -3,8 +3,8 @@
   <GVL Name="OUT" Id="{9e393b40-1de7-49b3-9092-6de105c0fc74}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
-	BOX_IO 			AT%Q*:		U_OUT_BOX_IO_Translate;
-	EK1100_IO		AT%Q*:		ARRAY[1..8] OF BOOL;
+	O 			AT%Q*:		U_OUT_IO_Translate;
+//	EK1100_IO		AT%Q*:		ARRAY[1..8] OF BOOL;
 	
 (*
 	BOX_OUT 	AT%Q*:		ARRAY[1..8] OF BOOL;

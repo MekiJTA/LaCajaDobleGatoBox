@@ -472,7 +472,7 @@ Door3_Workbench := NOT IN.BOX_IN[3];
 
 
 //"Ovisensori" hyppää outputista inputtiin, jos on päällä niin ohjelma saa käydä
-OUT.BOX_IO[8] := TRUE;
+OUT.O[8] := TRUE;
 
 SAFETY.Doors_OK := IN.BOX_IN[8];
 

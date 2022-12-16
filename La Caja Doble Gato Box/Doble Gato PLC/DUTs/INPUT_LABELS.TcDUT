@@ -4,19 +4,19 @@
     <Declaration><![CDATA[TYPE INPUT_LABELS :
 STRUCT
 //===== 	Box EL1008			
-bInput1		:		BOOL;
-bInput2		:		BOOL;
-bInput3		:		BOOL;
+BTN_Feed		:		BOOL;
+SWITCH_Right		:		BOOL;
+SWITCH_Left		:		BOOL;
 bInput4		:		BOOL;
 bInput5		:		BOOL;
 bInput6		:		BOOL;
 bInput7		:		BOOL;
-bInput8		:		BOOL;
+i_Door_Sensor1		:		BOOL;
 //===== 	Box EL1809
 bInput9		:		BOOL;
 Wheel_RotationCount		:		BOOL;
 bInput11		:		BOOL;
-bInput12		:		BOOL;
+SL_GatoPerro_Object		:		BOOL;
 bInput13		:		BOOL;
 bInput14		:		BOOL;
 bInput15		:		BOOL;
@@ -29,6 +29,16 @@ bInput21		:		BOOL;
 bInput22		:		BOOL;
 bInput23		:		BOOL;
 bInput24		:		BOOL;
+//====		EL1100 -> EL1008
+VFD_20		:		BOOL;
+bInput26		:		BOOL;
+VFD_24		:		BOOL;
+bInput28		:		BOOL;
+VFD_26		:		BOOL;
+bInput30		:		BOOL;
+bInput31		:		BOOL;
+SM_Gato_Indicator		:		BOOL;
+
 END_STRUCT
 END_TYPE
 ]]></Declaration>

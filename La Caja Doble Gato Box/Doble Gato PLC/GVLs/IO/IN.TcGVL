@@ -3,9 +3,9 @@
   <GVL Name="IN" Id="{c44d48c9-f66f-4539-acb1-5e7a1a17ef6b}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
-	BOX_IO 			AT %I*: 	U_IN_BOX_IO_Translate;
+	I 			AT %I*: 	U_IN_IO_Translate;
 	BOX_ANALOG		AT %I*:		ARRAY[1..4] OF INT;
-	EK_IN			AT %I*:		ARRAY[1..8] OF BOOL;
+	//EK_IN			AT %I*:		ARRAY[1..8] OF BOOL;
 	
 
 (*

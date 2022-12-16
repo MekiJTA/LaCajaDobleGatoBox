@@ -11,7 +11,7 @@ bOutput4		:		BOOL;
 bOutput5		:		BOOL;
 bOutput6		:		BOOL;
 bOutput7		:		BOOL;
-bOutput8		:		BOOL;
+o_DoorSensor_Activator		:		BOOL;
 //===== 	Box EL2809
 bOutput9		:		BOOL;
 bOutput10		:		BOOL;
@@ -29,6 +29,16 @@ bOutput21		:		BOOL;
 bOutput22		:		BOOL;
 bOutput23		:		BOOL;
 bOutput24		:		BOOL;
+//===== 	EK1100 EL2008
+VFD_14		:		BOOL;
+VFD_15		:		BOOL;
+VFD_16		:		BOOL;
+LIGHT_White		:		BOOL;
+LIGHT_Green		:		BOOL;
+bOutput30		:		BOOL;
+bOutput31		:		BOOL;
+bOutput32		:		BOOL;
+
 END_STRUCT
 END_TYPE
 ]]></Declaration>
