@@ -36,6 +36,11 @@ SM_WheelRotationSensor := IN.EK_IN[3];
 ]]></ST>
       </Implementation>
     </Action>
+    <Action Name="A_SignalLights" Id="{3702fc04-dc87-4f5a-8553-8d8da3b39a96}">
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Action>
     <LineIds Name="FB_GatoPerro">
       <LineId Id="11" Count="0" />
       <LineId Id="49" Count="0" />
@@ -55,6 +60,9 @@ SM_WheelRotationSensor := IN.EK_IN[3];
       <LineId Id="3" Count="1" />
       <LineId Id="6" Count="0" />
       <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_GatoPerro.A_SignalLights">
+      <LineId Id="1" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

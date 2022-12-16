@@ -11,6 +11,10 @@
       },
       {
         "publishServerExtension": true,
+        "name": "TcHmiSqliteHistorize"
+      },
+      {
+        "publishServerExtension": true,
         "name": "TcHmiSqliteLogger"
       },
       {
@@ -39,7 +43,7 @@
     "createPublishLog": false,
     "userName": "",
     "encryptedPassword": "",
-    "encryptedTcHmiServerPassword": "",
+    "encryptedTcHmiServerPassword": "B3AmvMFoPqBNBjMAzoKrwA==",
     "tcHmiServerHost": "169.254.89.33",
     "tcHmiServerPort": "1020",
     "socketTimeout": "60",

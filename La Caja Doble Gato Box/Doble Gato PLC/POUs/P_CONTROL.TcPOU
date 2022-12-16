@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
-  <POU Name="P_General_Control" Id="{27560784-429a-4cb9-b530-4b903427c533}" SpecialFunc="None">
-    <Declaration><![CDATA[PROGRAM P_General_Control
+  <POU Name="P_CONTROL" Id="{27560784-429a-4cb9-b530-4b903427c533}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM P_CONTROL
 VAR
 	bDoors : BOOL;
 	State: INT;
@@ -210,7 +210,7 @@ END_CASE
 ]]></ST>
       </Implementation>
     </Action>
-    <LineIds Name="P_General_Control">
+    <LineIds Name="P_CONTROL">
       <LineId Id="88" Count="1" />
       <LineId Id="76" Count="1" />
       <LineId Id="313" Count="0" />
@@ -218,10 +218,10 @@ END_CASE
       <LineId Id="156" Count="2" />
       <LineId Id="83" Count="0" />
     </LineIds>
-    <LineIds Name="P_General_Control.A_Beacons">
+    <LineIds Name="P_CONTROL.A_Beacons">
       <LineId Id="1" Count="0" />
     </LineIds>
-    <LineIds Name="P_General_Control.A_ButtonBoxes">
+    <LineIds Name="P_CONTROL.A_ButtonBoxes">
       <LineId Id="25" Count="1" />
       <LineId Id="21" Count="3" />
       <LineId Id="3" Count="0" />
@@ -230,10 +230,10 @@ END_CASE
       <LineId Id="8" Count="0" />
       <LineId Id="13" Count="0" />
     </LineIds>
-    <LineIds Name="P_General_Control.A_DoorLocks">
+    <LineIds Name="P_CONTROL.A_DoorLocks">
       <LineId Id="1" Count="0" />
     </LineIds>
-    <LineIds Name="P_General_Control.A_Doors">
+    <LineIds Name="P_CONTROL.A_Doors">
       <LineId Id="2" Count="0" />
       <LineId Id="1" Count="0" />
       <LineId Id="3" Count="0" />
@@ -243,7 +243,7 @@ END_CASE
       <LineId Id="14" Count="0" />
       <LineId Id="9" Count="1" />
     </LineIds>
-    <LineIds Name="P_General_Control.A_FeedButton">
+    <LineIds Name="P_CONTROL.A_FeedButton">
       <LineId Id="69" Count="0" />
       <LineId Id="65" Count="0" />
       <LineId Id="67" Count="1" />
@@ -253,7 +253,7 @@ END_CASE
       <LineId Id="1" Count="0" />
       <LineId Id="66" Count="0" />
     </LineIds>
-    <LineIds Name="P_General_Control.A_Switch">
+    <LineIds Name="P_CONTROL.A_Switch">
       <LineId Id="19" Count="0" />
       <LineId Id="7" Count="0" />
       <LineId Id="5" Count="0" />
@@ -265,19 +265,19 @@ END_CASE
       <LineId Id="30" Count="0" />
       <LineId Id="37" Count="0" />
     </LineIds>
-    <LineIds Name="P_General_Control.Blink">
+    <LineIds Name="P_CONTROL.Blink">
       <LineId Id="16" Count="0" />
       <LineId Id="4" Count="10" />
       <LineId Id="1" Count="0" />
     </LineIds>
-    <LineIds Name="P_General_Control.Blink_Faster">
+    <LineIds Name="P_CONTROL.Blink_Faster">
       <LineId Id="19" Count="0" />
       <LineId Id="16" Count="0" />
       <LineId Id="4" Count="10" />
       <LineId Id="18" Count="0" />
       <LineId Id="1" Count="0" />
     </LineIds>
-    <LineIds Name="P_General_Control.Blink_Special">
+    <LineIds Name="P_CONTROL.Blink_Special">
       <LineId Id="19" Count="0" />
       <LineId Id="16" Count="0" />
       <LineId Id="20" Count="0" />

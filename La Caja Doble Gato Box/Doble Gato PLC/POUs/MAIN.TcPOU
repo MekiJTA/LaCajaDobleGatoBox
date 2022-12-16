@@ -13,24 +13,19 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[
+      <ST><![CDATA[IF General.ReadyForAction THEN //fiksumpi järjestely tälle pitäis olla
+	
 P_Safety();
-P_General_Control();		// Using buttons, handling sensors
+P_CONTROL();		// Using buttons, handling sensors
 P_WritePersistentData();	// Writes persistent variables to memory every 10 seconds
 OVERVIEW_FBD();				// FBD View of all FB's. Useful visualization of whats happening
-
 // P_Environment_Control -> Is a separate slow task, not to be called from MAIN
+END_IF
 ]]></ST>
     </Implementation>
     <LineIds Name="MAIN">
-      <LineId Id="113" Count="0" />
-      <LineId Id="59" Count="0" />
-      <LineId Id="16" Count="0" />
-      <LineId Id="47" Count="0" />
-      <LineId Id="79" Count="0" />
-      <LineId Id="102" Count="0" />
-      <LineId Id="90" Count="0" />
-      <LineId Id="101" Count="0" />
+      <LineId Id="139" Count="7" />
+      <LineId Id="127" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

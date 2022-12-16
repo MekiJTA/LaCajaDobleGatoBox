@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
-  <POU Name="P_Safety" Id="{4a2af581-3054-4755-8b59-c878439b7ede}" SpecialFunc="None">
-    <Declaration><![CDATA[PROGRAM P_Safety
+  <POU Name="P_SAFETY" Id="{4a2af581-3054-4755-8b59-c878439b7ede}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM P_SAFETY
 VAR
 	Door1_Box: BOOL;
 	Door2_Fence : BOOL;
@@ -10,9 +10,7 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[// If door is closed (Magnetic sensor) environmental security is well
-
-// hyppylanka oli jossain kortissa tätä varten. Ehtisköhän vielä asentamaan sensorin boxin sisälle? Ei ehkä mahdotonta
+      <ST><![CDATA[// hyppylanka oli jossain kortissa tätä varten. Ehtisköhän vielä asentamaan sensorin boxin sisälle? Ei ehkä mahdotonta
 
 SAFETY.Doors_OK := Door1_Box := Door2_Fence := Door3_Workbench;
 
@@ -398,7 +396,7 @@ A_Checks(); // Acting on sensor inputs
                             </o>
                             <o>
                               <o n="Operand" t="Operand">
-                                <v n="Operand">"General.Manual"</v>
+                                <v n="Operand">"General.PowerOK"</v>
                                 <v n="Type">"BOOL"</v>
                                 <v n="Comment">""</v>
                                 <v n="SymbolComment">""</v>
@@ -476,14 +474,14 @@ Door3_Workbench := NOT IN.BOX_IN[3];
 ]]></ST>
       </Implementation>
     </Action>
-    <LineIds Name="P_Safety">
-      <LineId Id="26" Count="4" />
+    <LineIds Name="P_SAFETY">
+      <LineId Id="28" Count="2" />
       <LineId Id="40" Count="0" />
       <LineId Id="33" Count="0" />
       <LineId Id="35" Count="1" />
       <LineId Id="14" Count="0" />
     </LineIds>
-    <LineIds Name="P_Safety.A_DoorSensors">
+    <LineIds Name="P_SAFETY.A_DoorSensors">
       <LineId Id="2" Count="0" />
       <LineId Id="1" Count="0" />
       <LineId Id="4" Count="0" />

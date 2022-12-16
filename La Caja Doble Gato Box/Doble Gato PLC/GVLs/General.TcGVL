@@ -8,6 +8,7 @@ VAR_GLOBAL
 	BlinkFAST_On			: BOOL;
 	BlinkSpecial_On		: BOOL;
 	
+	PowerOK				: BOOL;
 	Manual				: BOOL;
 	Auto				: BOOL;
 	

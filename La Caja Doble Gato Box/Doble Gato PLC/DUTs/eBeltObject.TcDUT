@@ -1,13 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
-  <DUT Name="E_NappienNumerointi" Id="{317754fe-34bc-4148-abf0-4f663ed440cf}">
+  <DUT Name="eBeltObject" Id="{2bbc16ef-bc8b-453a-9b00-8cdd4b4915b7}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 {attribute 'strict'}
-TYPE E_NappienNumerointi :
+TYPE eBeltObject :
 (
-	Vipu1,
-	Vipu2,
-	Nappi1
+	EMPTY := 0,
+	GATO := 1,
+	PERRO := 2,
+	MAGIC := 3
 );
 END_TYPE
 ]]></Declaration>

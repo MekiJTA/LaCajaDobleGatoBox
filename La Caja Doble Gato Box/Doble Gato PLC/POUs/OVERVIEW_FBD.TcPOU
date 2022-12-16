@@ -4,7 +4,7 @@
     <Declaration><![CDATA[PROGRAM OVERVIEW_FBD
 VAR
 	fbButtonBox: FB_ButtonBox;
-	fbMotorControl: FB_MotorControl;
+	fbMotorControl: FB_BeltControl;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -39,7 +39,7 @@ END_VAR
                   <v n="OutCommented">false</v>
                   <l2 n="NetworkItems" cet="BoxTreeBox">
                     <o>
-                      <v n="BoxType">"FB_MotorControl"</v>
+                      <v n="BoxType">"FB_BeltControl"</v>
                       <o n="Instance" t="Operand">
                         <v n="Operand">"fbMotorControl"</v>
                         <v n="Type">"FB_MotorControl"</v>

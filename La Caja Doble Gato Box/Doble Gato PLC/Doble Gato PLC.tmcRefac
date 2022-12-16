@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Refactors>
+  <Renames>
+    <RenamedType>
+      <Type guid="da1577ed-8fa5-451c-b384-ecb49194f3dd">FB_MOTORCONTROL</Type>
+      <From>FB_MotorControl</From>
+      <To>FB_BeltControl</To>
+    </RenamedType>
+  </Renames>
+</Refactors>

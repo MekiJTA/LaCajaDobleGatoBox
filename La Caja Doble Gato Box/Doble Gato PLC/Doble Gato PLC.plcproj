@@ -29,13 +29,23 @@
     <Compile Include="CopyPastedExamples\P_Palletizing.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="CopyPastedExamples\S_NAMES_IN.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CopyPastedExamples\TIO.TcGVL">
+      <SubType>Code</SubType>
+      <LinkAlways>true</LinkAlways>
+    </Compile>
+    <Compile Include="CopyPastedExamples\U_TRANSLATE_IN.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="CopyPastedExamples\WritePersistentData_1.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DUTs\eFeed.TcDUT">
+    <Compile Include="DUTs\eBeltObject.TcDUT">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DUTs\E_NappienNumerointi.TcDUT">
+    <Compile Include="DUTs\eFeed.TcDUT">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="FBs\FB_ButtonBox.TcPOU">
@@ -44,7 +54,7 @@
     <Compile Include="FBs\FB_GatoPerro.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="FBs\FB_MotorControl.TcPOU">
+    <Compile Include="FBs\FB_BeltControl.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="F\F_TemperatureMethod.TcPOU">
@@ -78,13 +88,16 @@
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\P_AUTOMATION.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\P_Temperature_Obs.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\P_General_Control.TcPOU">
+    <Compile Include="POUs\P_CONTROL.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\P_Safety.TcPOU">
+    <Compile Include="POUs\P_SAFETY.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="SlowTask.TcTTO">
