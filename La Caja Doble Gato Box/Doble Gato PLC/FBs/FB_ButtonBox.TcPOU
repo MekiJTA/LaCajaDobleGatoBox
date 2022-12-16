@@ -32,14 +32,12 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[
-A_ButtonPressHandling();
+      <ST><![CDATA[Q := RUN;
+
+A_InputHandling();
 A_Switch();
 
 // FB_MotorControl hoitais itse statet ja varmistukset, täällä ohjattais vain valojen vilkuttelua ja nappien kontrollointia
-
-Q := Button1_trig.Q;
-
 
 CASE nState OF
 		
@@ -57,7 +55,7 @@ CASE nState OF
 
 END_CASE]]></ST>
     </Implementation>
-    <Action Name="A_ButtonPressHandling" Id="{3b6590fa-f99a-41e5-8828-c964d473a0f6}">
+    <Action Name="A_InputHandling" Id="{3b6590fa-f99a-41e5-8828-c964d473a0f6}">
       <Implementation>
         <NWL>
           <XmlArchive>
@@ -520,27 +518,6 @@ END_CASE]]></ST>
         </NWL>
       </Implementation>
     </Action>
-    <Action Name="A_FeedButton" Id="{bbc46cfd-fa01-479f-b17d-06698f531804}">
-      <Implementation>
-        <ST><![CDATA[]]></ST>
-      </Implementation>
-    </Action>
-    <Action Name="A_LightsControl" Id="{ecf7e6c8-58fa-467f-969c-76164dc251f4}">
-      <Implementation>
-        <ST><![CDATA[(*
-CASE nLightsState OF
-	1: 
-		oLight1 := General.BlinkOn;
-		Fast 	:= TRUE;		// elegantimpi ratkaisu tähän olisi hyvä, jokin missä ei käydä kaikkia muita muuttujia ehkä läpi
-		Faster 	:= FALSE;
-	2:
-		oLight1 := General.BlinkFAST_On;
-		Fast 	:= FALSE;
-		Faster 	:= TRUE;
-END_CASE 
-*)]]></ST>
-      </Implementation>
-    </Action>
     <Action Name="A_Switch" Id="{ab8781ab-cba4-40f4-9111-ef8f6611efbe}">
       <Implementation>
         <ST><![CDATA[IF General.ReadyForAction THEN
@@ -556,37 +533,10 @@ END_IF]]></ST>
       </Implementation>
     </Action>
     <LineIds Name="FB_ButtonBox">
-      <LineId Id="411" Count="0" />
-      <LineId Id="255" Count="1" />
-      <LineId Id="352" Count="0" />
-      <LineId Id="277" Count="0" />
-      <LineId Id="368" Count="0" />
-      <LineId Id="367" Count="0" />
-      <LineId Id="369" Count="0" />
-      <LineId Id="356" Count="3" />
-      <LineId Id="264" Count="0" />
-      <LineId Id="360" Count="5" />
-      <LineId Id="373" Count="0" />
-      <LineId Id="376" Count="0" />
-      <LineId Id="380" Count="0" />
-      <LineId Id="379" Count="0" />
+      <LineId Id="463" Count="1" />
+      <LineId Id="441" Count="3" />
+      <LineId Id="448" Count="14" />
       <LineId Id="355" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_ButtonBox.A_FeedButton">
-      <LineId Id="1" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_ButtonBox.A_LightsControl">
-      <LineId Id="2" Count="0" />
-      <LineId Id="1" Count="0" />
-      <LineId Id="3" Count="0" />
-      <LineId Id="10" Count="0" />
-      <LineId Id="5" Count="0" />
-      <LineId Id="7" Count="0" />
-      <LineId Id="6" Count="0" />
-      <LineId Id="11" Count="0" />
-      <LineId Id="8" Count="1" />
-      <LineId Id="4" Count="0" />
-      <LineId Id="12" Count="0" />
     </LineIds>
     <LineIds Name="FB_ButtonBox.A_Switch">
       <LineId Id="2" Count="0" />

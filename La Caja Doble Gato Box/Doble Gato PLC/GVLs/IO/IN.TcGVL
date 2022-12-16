@@ -3,7 +3,7 @@
   <GVL Name="IN" Id="{c44d48c9-f66f-4539-acb1-5e7a1a17ef6b}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
-	I 				AT %I*: 	U_IN_IO_Translate;
+	_I 				AT %I*: 	U_IN_IO_Translate;
 	BOX_ANALOG		AT %I*:		ARRAY[1..4] OF INT;	// Temperature module
 	//EK_IN			AT %I*:		ARRAY[1..8] OF BOOL;
 	

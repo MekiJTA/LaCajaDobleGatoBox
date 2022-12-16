@@ -11,7 +11,7 @@ bInput4		:		BOOL;
 bInput5		:		BOOL;
 bInput6		:		BOOL;
 bInput7		:		BOOL;
-i_Door_Sensor1		:		BOOL;
+Door_Sensor1		:		BOOL;
 //===== 	Box EL1809
 bInput9		:		BOOL;
 Wheel_RotationCount		:		BOOL;

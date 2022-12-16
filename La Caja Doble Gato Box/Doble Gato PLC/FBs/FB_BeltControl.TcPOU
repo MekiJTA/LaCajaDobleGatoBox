@@ -17,15 +17,10 @@ VAR_OUTPUT
 	Faster_VFD		: BOOL;
 	iRounds 	: INT;
 	iRoundsMinute : INT;
-	Gato 		: BOOL;
-	Perro 		: BOOL;
-	GatoCount 	: INT;
-	PerroCount 	: INT;
 	iStatus		: INT;
 	iFault		: INT;
 END_VAR
 VAR
-	
 	Run_TRIG: R_TRIG;
 	nMotorState: (NOT_READY, ALL_READY, RUNNING, STOP, ERROR);	//Local ENUM
 	SwitchLeft_TRIG: R_TRIG;
@@ -88,14 +83,14 @@ CASE nMotorState OF
 			nMotorState := 3;
 		END_IF
 	STOP:
+		iStatus := BeltStatus.Idle;
 		Stopping_TON(IN:=TRUE , PT:=T#1S , Q=> , ET=> );
 		IF Stopping_TON.Q THEN
 			Stopping_TON(IN:=FALSE);
 				nMotorState := 0;
 		END_IF
 	
-	ERROR:
-	
+	ERROR:		
 		
 END_CASE
 
@@ -245,8 +240,11 @@ iFault 		:= 0;
       <LineId Id="382" Count="0" />
       <LineId Id="385" Count="4" />
       <LineId Id="383" Count="0" />
-      <LineId Id="305" Count="38" />
-      <LineId Id="390" Count="0" />
+      <LineId Id="305" Count="28" />
+      <LineId Id="425" Count="0" />
+      <LineId Id="334" Count="6" />
+      <LineId Id="342" Count="1" />
+      <LineId Id="428" Count="0" />
       <LineId Id="120" Count="0" />
       <LineId Id="391" Count="0" />
     </LineIds>

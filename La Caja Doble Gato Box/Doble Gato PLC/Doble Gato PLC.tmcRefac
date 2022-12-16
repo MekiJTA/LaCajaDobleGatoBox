@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Refactors>
+  <Renames>
+    <RenamedSymbol>
+      <Type guid="10b55a17-4a8f-4d8b-8964-89e19b084daa">INPUT_LABELS</Type>
+      <From>i_Door_Sensor1</From>
+      <To>Door_Sensor1</To>
+    </RenamedSymbol>
+    <RenamedSymbol>
+      <Type guid="c44d48c9-f66f-4539-acb1-5e7a1a17ef6b">IN</Type>
+      <From>I</From>
+      <To>_I</To>
+    </RenamedSymbol>
+    <RenamedSymbol>
+      <Type guid="72724973-3877-4a9e-b847-23589dbf07b0">OUTPUT_LABELS</Type>
+      <From>o_DoorSensor_Activator</From>
+      <To>DoorSensor_Activator</To>
+    </RenamedSymbol>
+    <RenamedType>
+      <Type guid="d0701094-8e51-4d3f-a929-936374f938fe">ESTATUSMESSAGE</Type>
+      <From>eStatusMessage</From>
+      <To>BeltStatus</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="3b6590fa-f99a-41e5-8828-c964d473a0f6">A_BUTTONPRESSHANDLING</Type>
+      <From>A_ButtonPressHandling</From>
+      <To>A_InputHandling</To>
+    </RenamedType>
+  </Renames>
+</Refactors>

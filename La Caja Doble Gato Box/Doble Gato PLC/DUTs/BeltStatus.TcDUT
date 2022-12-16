@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
+  <DUT Name="BeltStatus" Id="{d0701094-8e51-4d3f-a929-936374f938fe}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+{attribute 'strict'}
+TYPE BeltStatus :
+(
+	Idle := 0,
+	Ready,
+	Running,
+	Error_status := 100
+
+);
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

@@ -491,6 +491,7 @@
 						<Name>SlowTask Inputs</Name>
 						<Var>
 							<Name>General.EthercatDevState</Name>
+							<Comment><![CDATA[ Linked 'useless' variables to IO]]></Comment>
 							<Type>UINT</Type>
 						</Var>
 						<Var>
@@ -1151,9 +1152,9 @@
 		</Io>
 	</Project>
 	<Mappings>
-		<MappingInfo Identifier="{00000000-2041-0850-4020-500810000403}" Id="#x02030020"/>
-		<MappingInfo Identifier="{00000000-2041-0850-4020-500821000403}" Id="#x02030030"/>
-		<MappingInfo Identifier="{00000000-2041-0850-4020-500840000403}" Id="#x02030010"/>
+		<MappingInfo Identifier="{00000000-2042-0850-4120-500810000403}" Id="#x02030020"/>
+		<MappingInfo Identifier="{00000000-2042-0850-4120-500821000403}" Id="#x02030030"/>
+		<MappingInfo Identifier="{00000000-2042-0850-4120-500840000403}" Id="#x02030010"/>
 		<OwnerA Name="TIPC^Doble Gato PLC^Doble Gato PLC Instance">
 			<OwnerB Name="TIID^Device 1 (EtherCAT)">
 				<Link VarA="SlowTask Inputs^General.EthercatDevState" VarB="Inputs^DevState"/>

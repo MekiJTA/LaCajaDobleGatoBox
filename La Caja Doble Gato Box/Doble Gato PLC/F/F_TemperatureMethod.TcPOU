@@ -18,7 +18,7 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[C := InputTemperature; 
+      <ST><![CDATA[C := InputTemperature/10; 
 
 K := C + 273.15;
 F := C * 1.8 +32;

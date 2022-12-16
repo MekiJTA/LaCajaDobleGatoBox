@@ -22,8 +22,8 @@ NAMING:
 	
 	
 *)
-IN.I._Label.bInput1;
-IN.I.bArray[1];
+IN._I._Label.bInput1;
+IN._I.bArray[1];
 ]]></ST>
     </Implementation>
     <LineIds Name="README">

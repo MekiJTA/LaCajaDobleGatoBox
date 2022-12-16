@@ -5,11 +5,13 @@
 VAR_INPUT
 END_VAR
 VAR_OUTPUT
+	Gato 		: BOOL;
+	Perro 		: BOOL;
+	GatoCount 	: INT;
+	PerroCount 	: INT;
+
 END_VAR
 VAR
-	SM_BeltMagnetSensor: BOOL;
-	SM_WheelRotationSensor : BOOL;
-	SL_BeltLightSensor: BOOL;
 	
 END_VAR
 ]]></Declaration>
@@ -29,9 +31,6 @@ END_VAR
     <Action Name="A_SensorHandling" Id="{386bec3c-e6c8-43fa-a72f-e87306b77bbe}">
       <Implementation>
         <ST><![CDATA[
-SM_BeltMagnetSensor := IN.EK_IN[1];
-SL_BeltLightSensor := IN.EK_IN[2];
-SM_WheelRotationSensor := IN.EK_IN[3];
 
 ]]></ST>
       </Implementation>
@@ -49,8 +48,6 @@ SM_WheelRotationSensor := IN.EK_IN[3];
     </LineIds>
     <LineIds Name="FB_GatoPerro.A_SensorHandling">
       <LineId Id="2" Count="0" />
-      <LineId Id="1" Count="0" />
-      <LineId Id="3" Count="1" />
       <LineId Id="6" Count="0" />
       <LineId Id="5" Count="0" />
     </LineIds>

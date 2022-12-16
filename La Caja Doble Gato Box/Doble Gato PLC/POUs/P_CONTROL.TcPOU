@@ -40,9 +40,7 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[// OUT.BOX_OUT[7] := General.SpecialBlinkOn;
-
-OVERVIEW_FBD();
+      <ST><![CDATA[
 //	A_ButtonBoxes();
 //	A_FeedButton();
 	Blink();
@@ -52,7 +50,6 @@ OVERVIEW_FBD();
     </Implementation>
     <Folder Name="Blinkers" Id="{5c25f4da-2386-4bfa-a3e5-3fe24506dcb7}" />
     <Folder Name="Buttons" Id="{71ed4705-df05-4341-9724-6438c1a3eb09}" />
-    <Folder Name="etc" Id="{562d0cfd-f644-4d82-88ea-586f7c38fe9c}" />
     <Action Name="A_Beacons" Id="{9f0f4f38-0331-4251-b759-68adeace686f}">
       <Implementation>
         <ST><![CDATA[]]></ST>
@@ -62,12 +59,12 @@ OVERVIEW_FBD();
       <Implementation>
         <ST><![CDATA[
 
-Input1_RTRIG(CLK:= IN.BOX_IN[1]);
+Input1_RTRIG(CLK:= IN._I._Label.BTN_Feed);
 IF Input1_RTRIG.Q THEN
-	A_FeedButton(); 	
+	A_FeedButton();
 END_IF
 	
-Input2_RTRIG(CLK:= (IN.BOX_IN[2] OR IN.BOX_IN[3]), Q=> );
+Input2_RTRIG(CLK:= (IN._I._Label.SWITCH_Left OR IN._I._Label.SWITCH_Right), Q=> );
 IF Input2_RTRIG.Q THEN
 	A_Switch();
 END_IF
@@ -81,15 +78,6 @@ END_IF
 OUT.O[1] := TRUE;	
 tempCounter := tempCounter+1;
 
-(*
-IF 	IN.BOX_IN[1]AND
-	(General.BlinkOn AND
-	General.ReadyForAction AND 
-	SAFETY.Safety_OK )
-THEN
-	OUT.BOX_OUT[1] := TRUE;	
-END_IF
-*)
 ]]></ST>
       </Implementation>
     </Action>
@@ -97,15 +85,15 @@ END_IF
       <Implementation>
         <ST><![CDATA[tempCounter2 := tempCounter2+1;
 
-IF IN.BOX_IN[2] THEN
+IF IN._I._Label.SWITCH_Left THEN
 bSwitchToggle := TRUE;
 END_IF
  
-IF IN.BOX_IN[3] THEN
+IF IN._I._Label.SWITCH_Right THEN
 bSwitchToggle := FALSE;
 END_IF
 
-OUT.O[1] := bSwitchToggle;
+OUT.O._Label.bOutput1 := bSwitchToggle; // PLACEHOLDER OUTPUT waiting for VFD actions
 ]]></ST>
       </Implementation>
     </Action>
@@ -193,8 +181,7 @@ END_CASE
       </Implementation>
     </Action>
     <LineIds Name="P_CONTROL">
-      <LineId Id="88" Count="1" />
-      <LineId Id="76" Count="0" />
+      <LineId Id="89" Count="0" />
       <LineId Id="313" Count="0" />
       <LineId Id="312" Count="0" />
       <LineId Id="156" Count="2" />
@@ -216,10 +203,6 @@ END_CASE
       <LineId Id="69" Count="0" />
       <LineId Id="65" Count="0" />
       <LineId Id="67" Count="1" />
-      <LineId Id="28" Count="0" />
-      <LineId Id="61" Count="3" />
-      <LineId Id="58" Count="2" />
-      <LineId Id="1" Count="0" />
       <LineId Id="66" Count="0" />
     </LineIds>
     <LineIds Name="P_CONTROL.A_Switch">

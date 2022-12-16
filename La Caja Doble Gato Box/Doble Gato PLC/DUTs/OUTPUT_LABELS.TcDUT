@@ -11,7 +11,7 @@ bOutput4		:		BOOL;
 bOutput5		:		BOOL;
 bOutput6		:		BOOL;
 bOutput7		:		BOOL;
-o_DoorSensor_Activator		:		BOOL;
+DoorSensor_Activator		:		BOOL;
 //===== 	Box EL2809
 bOutput9		:		BOOL;
 bOutput10		:		BOOL;

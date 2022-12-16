@@ -3,18 +3,23 @@
   <POU Name="P_SAFETY" Id="{4a2af581-3054-4755-8b59-c878439b7ede}" SpecialFunc="None">
     <Declaration><![CDATA[PROGRAM P_SAFETY
 VAR
-	Door1_Box: BOOL;
+	Door1_Box	: BOOL;
 	Door2_Fence : BOOL;
 	Door3_Workbench : BOOL;
 	
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[// hyppylanka oli jossain kortissa tätä varten. Ehtisköhän vielä asentamaan sensorin boxin sisälle? Ei ehkä mahdotonta
-
-SAFETY.Doors_OK := Door1_Box := Door2_Fence := Door3_Workbench;
+      <ST><![CDATA[
 A_Doors();	// Checking if doors are open
 A_Checks(); // Acting on sensor inputs
+	//Virtual switches waiting for physical ones
+	SAFETY.E_STOP_OK 		:= TRUE;
+
+//============
+IF General.PowerOK AND SAFETY.Safety_OK THEN
+General.ReadyForAction := TRUE;
+END_IF
 ]]></ST>
     </Implementation>
     <Action Name="A_Checks" Id="{31e58434-104c-4f87-a55e-e4db7b3ddc8a}">
@@ -94,7 +99,7 @@ A_Checks(); // Acting on sensor inputs
                           <l2 n="InputItems" cet="BoxTreeOperand">
                             <o>
                               <o n="Operand" t="Operand">
-                                <v n="Operand">"Door1_Box"</v>
+                                <v n="Operand">"IN._I._Label.Door_Sensor1"</v>
                                 <v n="Type">"BOOL"</v>
                                 <v n="Comment">""</v>
                                 <v n="SymbolComment">""</v>
@@ -307,137 +312,6 @@ A_Checks(); // Acting on sensor inputs
                     <l2 n="Connectors" />
                     <v n="Id">17L</v>
                   </o>
-                  <o>
-                    <v n="ILActive">false</v>
-                    <v n="FBDValid">false</v>
-                    <v n="ILValid">false</v>
-                    <l2 n="ILLines" />
-                    <v n="Comment">""</v>
-                    <v n="Title">""</v>
-                    <v n="Label">""</v>
-                    <v n="OutCommented">false</v>
-                    <l2 n="NetworkItems" cet="BoxTreeAssign">
-                      <o>
-                        <o n="OutputItems" t="OutputItemList">
-                          <l2 n="OutputItems" cet="Operand">
-                            <o>
-                              <v n="Operand">"General.ReadyForAction"</v>
-                              <v n="Type">"BOOL"</v>
-                              <v n="Comment">""</v>
-                              <v n="SymbolComment">""</v>
-                              <v n="Address">""</v>
-                              <o n="Flags" t="Flags">
-                                <v n="Flags">0</v>
-                                <v n="Fixed">false</v>
-                                <v n="Extensible">false</v>
-                              </o>
-                              <v n="LValue">true</v>
-                              <v n="Boolean">false</v>
-                              <v n="IsInstance">false</v>
-                              <v n="Id">8L</v>
-                            </o>
-                          </l2>
-                        </o>
-                        <o n="Flags" t="Flags">
-                          <v n="Flags">0</v>
-                          <v n="Fixed">false</v>
-                          <v n="Extensible">false</v>
-                        </o>
-                        <o n="RValue" t="BoxTreeBox">
-                          <v n="BoxType">"AND"</v>
-                          <o n="Instance" t="Operand">
-                            <n n="Operand" />
-                            <v n="Type">""</v>
-                            <v n="Comment">""</v>
-                            <v n="SymbolComment">""</v>
-                            <v n="Address">""</v>
-                            <o n="Flags" t="Flags">
-                              <v n="Flags">0</v>
-                              <v n="Fixed">false</v>
-                              <v n="Extensible">false</v>
-                            </o>
-                            <v n="LValue">false</v>
-                            <v n="Boolean">false</v>
-                            <v n="IsInstance">true</v>
-                            <v n="Id">2L</v>
-                          </o>
-                          <o n="OutputItems" t="OutputItemList">
-                            <l2 n="OutputItems">
-                              <n />
-                            </l2>
-                          </o>
-                          <o n="Flags" t="Flags">
-                            <v n="Flags">0</v>
-                            <v n="Fixed">false</v>
-                            <v n="Extensible">false</v>
-                          </o>
-                          <n n="InputFlags" />
-                          <l2 n="InputItems" cet="BoxTreeOperand">
-                            <o>
-                              <o n="Operand" t="Operand">
-                                <v n="Operand">"SAFETY.Safety_OK"</v>
-                                <v n="Type">"BOOL"</v>
-                                <v n="Comment">""</v>
-                                <v n="SymbolComment">""</v>
-                                <v n="Address">""</v>
-                                <o n="Flags" t="Flags">
-                                  <v n="Flags">0</v>
-                                  <v n="Fixed">false</v>
-                                  <v n="Extensible">false</v>
-                                </o>
-                                <v n="LValue">false</v>
-                                <v n="Boolean">false</v>
-                                <v n="IsInstance">false</v>
-                                <v n="Id">5L</v>
-                              </o>
-                              <v n="Id">4L</v>
-                            </o>
-                            <o>
-                              <o n="Operand" t="Operand">
-                                <v n="Operand">"General.PowerOK"</v>
-                                <v n="Type">"BOOL"</v>
-                                <v n="Comment">""</v>
-                                <v n="SymbolComment">""</v>
-                                <v n="Address">""</v>
-                                <o n="Flags" t="Flags">
-                                  <v n="Flags">0</v>
-                                  <v n="Fixed">false</v>
-                                  <v n="Extensible">false</v>
-                                </o>
-                                <v n="LValue">false</v>
-                                <v n="Boolean">false</v>
-                                <v n="IsInstance">false</v>
-                                <v n="Id">7L</v>
-                              </o>
-                              <v n="Id">6L</v>
-                            </o>
-                          </l2>
-                          <o n="InputParam" t="ParamList">
-                            <l2 n="Names" />
-                            <l2 n="Types" />
-                          </o>
-                          <o n="OutputParam" t="ParamList">
-                            <l2 n="Names" cet="String">
-                              <v></v>
-                            </l2>
-                            <l2 n="Types" cet="String">
-                              <v>BOOL</v>
-                            </l2>
-                          </o>
-                          <v n="CallType" t="Operator">And</v>
-                          <v n="EN">false</v>
-                          <v n="ENO">false</v>
-                          <n n="STSnippet" />
-                          <v n="ContainsExtensibleInputs">false</v>
-                          <v n="ProvidesSTSnippet">false</v>
-                          <v n="Id">3L</v>
-                        </o>
-                        <v n="Id">9L</v>
-                      </o>
-                    </l2>
-                    <l2 n="Connectors" />
-                    <v n="Id">1L</v>
-                  </o>
                 </l2>
                 <v n="BranchCounter">0</v>
                 <v n="ValidIds">true</v>
@@ -466,34 +340,43 @@ A_Checks(); // Acting on sensor inputs
     <Action Name="A_Doors" Id="{3c93ff02-0eab-4dfe-bdea-6020103f9083}">
       <Implementation>
         <ST><![CDATA[
-Door1_Box 		:= IN.BOX_IN[1];
-Door2_Fence 	:= NOT IN.BOX_IN[2];
-Door3_Workbench := NOT IN.BOX_IN[3];
+Door1_Box 		:= IN._I._Label.Door_Sensor1;
+Door2_Fence 	:= NOT IN._I._Label.bInput23;
+Door3_Workbench := NOT IN._I._Label.bInput24;
 
+IF  Door1_Box AND Door2_Fence AND Door3_Workbench := TRUE THEN
+	SAFETY.Doors_OK := TRUE;
+END_IF
 
 //"Ovisensori" hyppää outputista inputtiin, jos on päällä niin ohjelma saa käydä
-OUT.O[8] := TRUE;
+OUT.O._Label.DoorSensor_Activator := TRUE;
 
-SAFETY.Doors_OK := IN.BOX_IN[8];
-
-//Virtuaaliset kytkimet
-SAFETY.E_STOP_OK 	:= TRUE;
-General.Manual 			:= TRUE;
 ]]></ST>
       </Implementation>
     </Action>
     <LineIds Name="P_SAFETY">
-      <LineId Id="28" Count="2" />
+      <LineId Id="62" Count="0" />
       <LineId Id="40" Count="0" />
       <LineId Id="33" Count="0" />
+      <LineId Id="74" Count="1" />
+      <LineId Id="59" Count="0" />
+      <LineId Id="70" Count="0" />
+      <LineId Id="64" Count="0" />
+      <LineId Id="73" Count="0" />
       <LineId Id="35" Count="0" />
+      <LineId Id="77" Count="0" />
     </LineIds>
     <LineIds Name="P_SAFETY.A_Doors">
       <LineId Id="2" Count="0" />
       <LineId Id="1" Count="0" />
       <LineId Id="4" Count="0" />
       <LineId Id="6" Count="0" />
-      <LineId Id="8" Count="9" />
+      <LineId Id="8" Count="0" />
+      <LineId Id="18" Count="1" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="10" Count="1" />
+      <LineId Id="14" Count="0" />
       <LineId Id="7" Count="0" />
     </LineIds>
   </POU>
