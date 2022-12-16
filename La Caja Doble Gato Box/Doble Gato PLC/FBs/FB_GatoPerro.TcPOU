@@ -42,16 +42,9 @@ SM_WheelRotationSensor := IN.EK_IN[3];
       </Implementation>
     </Action>
     <LineIds Name="FB_GatoPerro">
-      <LineId Id="11" Count="0" />
-      <LineId Id="49" Count="0" />
-      <LineId Id="10" Count="0" />
-      <LineId Id="12" Count="0" />
-      <LineId Id="9" Count="0" />
-      <LineId Id="14" Count="0" />
-      <LineId Id="13" Count="0" />
-      <LineId Id="16" Count="0" />
-      <LineId Id="15" Count="0" />
-      <LineId Id="18" Count="0" />
+      <LineId Id="61" Count="2" />
+      <LineId Id="73" Count="0" />
+      <LineId Id="65" Count="5" />
       <LineId Id="17" Count="0" />
     </LineIds>
     <LineIds Name="FB_GatoPerro.A_SensorHandling">

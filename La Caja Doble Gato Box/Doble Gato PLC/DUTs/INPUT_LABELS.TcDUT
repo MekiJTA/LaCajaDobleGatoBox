@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
+  <DUT Name="INPUT_LABELS" Id="{10b55a17-4a8f-4d8b-8964-89e19b084daa}">
+    <Declaration><![CDATA[TYPE INPUT_LABELS :
+STRUCT
+//===== 	BYTE	0
+iInput0		:		BOOL;
+iInput1		:		BOOL;
+iInput2		:		BOOL;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

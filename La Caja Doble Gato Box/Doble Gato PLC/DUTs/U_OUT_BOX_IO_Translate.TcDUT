@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
+  <DUT Name="U_OUT_BOX_IO_Translate" Id="{2be7334c-18e8-47e6-91e2-0b0f98c4eb5e}">
+    <Declaration><![CDATA[TYPE U_OUT_BOX_IO_Translate :
+UNION
+	bArray :	ARRAY[0..24] OF BOOL;
+	_Label :		OUTPUT_LABELS;
+END_UNION
+END_TYPE 
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

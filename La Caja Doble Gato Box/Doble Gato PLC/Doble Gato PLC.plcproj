@@ -48,6 +48,18 @@
     <Compile Include="DUTs\eFeed.TcDUT">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DUTs\OUTPUT_LABELS.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\INPUT_LABELS.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\U_IN_BOX_IO_Translate.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\U_OUT_BOX_IO_Translate.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="FBs\FB_ButtonBox.TcPOU">
       <SubType>Code</SubType>
     </Compile>
@@ -98,6 +110,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\P_SAFETY.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="POUs\README.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="SlowTask.TcTTO">

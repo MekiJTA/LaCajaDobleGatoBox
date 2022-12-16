@@ -6,5 +6,80 @@
       <From>FB_MotorControl</From>
       <To>FB_BeltControl</To>
     </RenamedType>
+    <RenamedType>
+      <Type guid="2823f938-3980-4098-91dc-b41be54b908e">U_BOX_IO_TRANSLATE_1</Type>
+      <From>U_BOX_IO_Translate_1</From>
+      <To>U_EK_1100_IO_Translate</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="696a8959-8391-4850-a3b3-b2b5e52b1450">U_BOX_IO_TRANSLATE</Type>
+      <From>U_IO_Names</From>
+      <To>U_IN_BOX_IO_Translate</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="9cdcaf9a-8925-4dbf-99b7-3aa15884ea21">U_TRANSLATE_IN_1</Type>
+      <From>U_TRANSLATE_IN_1</From>
+      <To>U_TRANSLATE_OUT</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="0b221803-1dab-4f6b-9ccb-d4fe719a51c8">S_NAMES_IN_1</Type>
+      <From>S_NAMES_IN_1</From>
+      <To>S_NAMES_OUT</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="2be7334c-18e8-47e6-91e2-0b0f98c4eb5e">U_IN_BOX_IO_TRANSLATE_1</Type>
+      <From>U_IN_BOX_IO_Translate_1</From>
+      <To>U_OUT_BOX_IO_Translate</To>
+    </RenamedType>
+    <RenamedSymbol>
+      <Type guid="c44d48c9-f66f-4539-acb1-5e7a1a17ef6b">IN</Type>
+      <From>BOX_IO_in</From>
+      <To>BOX_IO</To>
+    </RenamedSymbol>
+    <RenamedSymbol>
+      <Type guid="c44d48c9-f66f-4539-acb1-5e7a1a17ef6b">IN</Type>
+      <From>BOX_ANALOG_IN</From>
+      <To>BOX_ANALOG</To>
+    </RenamedSymbol>
+    <RenamedSymbol>
+      <Type guid="696a8959-8391-4850-a3b3-b2b5e52b1450">U_IN_BOX_IO_Translate</Type>
+      <From>IO</From>
+      <To>Label</To>
+    </RenamedSymbol>
+    <RenamedSymbol>
+      <Type guid="2be7334c-18e8-47e6-91e2-0b0f98c4eb5e">U_OUT_BOX_IO_Translate</Type>
+      <From>IO</From>
+      <To>Label</To>
+    </RenamedSymbol>
+    <RenamedSymbol>
+      <Type guid="2be7334c-18e8-47e6-91e2-0b0f98c4eb5e">U_OUT_BOX_IO_Translate</Type>
+      <From>nArray</From>
+      <To>bArray</To>
+    </RenamedSymbol>
+    <RenamedSymbol>
+      <Type guid="696a8959-8391-4850-a3b3-b2b5e52b1450">U_IN_BOX_IO_Translate</Type>
+      <From>nArray</From>
+      <To>bArray</To>
+    </RenamedSymbol>
+    <RenamedType>
+      <Type guid="72724973-3877-4a9e-b847-23589dbf07b0">S_OUT_IO_NAMES</Type>
+      <From>S_IO_Names</From>
+      <To>OUTPUT_LABELS</To>
+    </RenamedType>
+    <RenamedType>
+      <Type guid="10b55a17-4a8f-4d8b-8964-89e19b084daa">S_IN_IO_NAMES</Type>
+      <From>S_IO_Names_1</From>
+      <To>INPUT_LABELS</To>
+    </RenamedType>
+    <RenamedSymbol>
+      <Type guid="9e393b40-1de7-49b3-9092-6de105c0fc74">OUT</Type>
+      <From>BOX_OUT</From>
+      <To>BOX_IO</To>
+    </RenamedSymbol>
+    <RenamedSymbol>
+      <Type guid="9e393b40-1de7-49b3-9092-6de105c0fc74">OUT</Type>
+      <From>EK_OUT</From>
+      <To>EK1100_IO</To>
+    </RenamedSymbol>
   </Renames>
 </Refactors>

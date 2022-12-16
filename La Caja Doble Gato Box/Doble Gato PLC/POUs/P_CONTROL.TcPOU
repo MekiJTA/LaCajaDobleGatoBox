@@ -84,7 +84,7 @@ END_IF
       <Implementation>
         <ST><![CDATA[
 //"Ovisensori" hyppää outputista inputtiin, jos on päällä niin ohjelma saa käydä
-OUT.BOX_OUT[8] := TRUE;
+OUT.BOX_IO[8] := TRUE;
 
 SAFETY.Doors_OK := IN.BOX_IN[8];
 
@@ -96,7 +96,7 @@ General.Manual 			:= TRUE;]]></ST>
     <Action Name="A_FeedButton" Id="{fd10e9fd-470d-417b-922d-3e15328c9f03}" FolderPath="Buttons\">
       <Implementation>
         <ST><![CDATA[
-OUT.BOX_OUT[1] := TRUE;	
+OUT.BOX_IO[1] := TRUE;	
 tempCounter := tempCounter+1;
 
 (*
@@ -123,7 +123,7 @@ IF IN.BOX_IN[3] THEN
 bSwitchToggle := FALSE;
 END_IF
 
-OUT.BOX_OUT[1] := bSwitchToggle;
+OUT.BOX_IO[1] := bSwitchToggle;
 ]]></ST>
       </Implementation>
     </Action>

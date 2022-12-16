@@ -60,7 +60,7 @@ END_VAR
                         <l2 n="OutputItems" cet="Operand">
                           <n />
                           <o>
-                            <v n="Operand">"OUT.EK_OUT[1]"</v>
+                            <v n="Operand">"OUT.EK1100_IO[1]"</v>
                             <v n="Type">"BOOL"</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>
@@ -76,7 +76,7 @@ END_VAR
                             <v n="Id">180L</v>
                           </o>
                           <o>
-                            <v n="Operand">"OUT.EK_OUT[3]"</v>
+                            <v n="Operand">"OUT.EK1100_IO[3]"</v>
                             <v n="Type">"BOOL"</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>
@@ -92,7 +92,7 @@ END_VAR
                             <v n="Id">181L</v>
                           </o>
                           <o>
-                            <v n="Operand">"OUT.EK_OUT[4]"</v>
+                            <v n="Operand">"OUT.EK1100_IO[4]"</v>
                             <v n="Type">"BOOL"</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>
@@ -266,7 +266,7 @@ END_VAR
                             <l2 n="OutputItems" cet="Operand">
                               <n />
                               <o>
-                                <v n="Operand">"OUT.BOX_OUT[1]"</v>
+                                <v n="Operand">"OUT.BOX_IO[1]"</v>
                                 <v n="Type">"BOOL"</v>
                                 <v n="Comment">""</v>
                                 <v n="SymbolComment">""</v>

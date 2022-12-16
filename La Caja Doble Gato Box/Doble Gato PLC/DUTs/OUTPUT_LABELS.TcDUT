@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
+  <DUT Name="OUTPUT_LABELS" Id="{72724973-3877-4a9e-b847-23589dbf07b0}">
+    <Declaration><![CDATA[TYPE OUTPUT_LABELS :
+STRUCT
+	oOutput1		:		BOOL;
+	oOutput2		:		BOOL;
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
+  <POU Name="README" Id="{21aadffe-44b8-4b9a-bc6a-db6fda072069}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM README
+VAR
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[(*
+NAMING:
+	Give Inputs/Outputs Specific Labels In: 
+		DUT/INPUT_LABELS
+		DUT/OUTPUT_LABELS
+	
+	Thus inputs have clear names:  
+		IN.BOX_IO.Label.DoorSensor_Front
+		
+	IO is received into Array, and every input is then given a specific Label through Union. 
+	IO can still be referenced in array form: IN.BOX_IO.bArray[1]
+	
+=====================
+	
+	
+*)
+]]></ST>
+    </Implementation>
+    <LineIds Name="README">
+      <LineId Id="5" Count="0" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="10" Count="4" />
+      <LineId Id="17" Count="0" />
+      <LineId Id="19" Count="0" />
+      <LineId Id="8" Count="0" />
+      <LineId Id="21" Count="0" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="23" Count="0" />
+      <LineId Id="9" Count="0" />
+      <LineId Id="6" Count="0" />
+      <LineId Id="15" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
