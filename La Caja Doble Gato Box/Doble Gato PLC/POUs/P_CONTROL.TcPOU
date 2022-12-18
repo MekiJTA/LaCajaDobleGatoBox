@@ -59,12 +59,12 @@ END_VAR
       <Implementation>
         <ST><![CDATA[
 
-Input1_RTRIG(CLK:= IN._I._Label.BTN_Feed);
+Input1_RTRIG(CLK:= IN._DI._Label.BTN_Feed);
 IF Input1_RTRIG.Q THEN
 	A_FeedButton();
 END_IF
 	
-Input2_RTRIG(CLK:= (IN._I._Label.SWITCH_Left OR IN._I._Label.SWITCH_Right), Q=> );
+Input2_RTRIG(CLK:= (IN._DI._Label.SWITCH_Left OR IN._DI._Label.SWITCH_Right), Q=> );
 IF Input2_RTRIG.Q THEN
 	A_Switch();
 END_IF
@@ -74,26 +74,26 @@ END_IF
     </Action>
     <Action Name="A_FeedButton" Id="{fd10e9fd-470d-417b-922d-3e15328c9f03}" FolderPath="Buttons\">
       <Implementation>
-        <ST><![CDATA[
+        <ST><![CDATA[(*
 OUT.O[1] := TRUE;	
 tempCounter := tempCounter+1;
 
-]]></ST>
+*)]]></ST>
       </Implementation>
     </Action>
     <Action Name="A_Switch" Id="{474615ab-9ca6-406f-b563-0fddc5938d75}" FolderPath="Buttons\">
       <Implementation>
         <ST><![CDATA[tempCounter2 := tempCounter2+1;
 
-IF IN._I._Label.SWITCH_Left THEN
+IF IN._DI._Label.SWITCH_Left THEN
 bSwitchToggle := TRUE;
 END_IF
  
-IF IN._I._Label.SWITCH_Right THEN
+IF IN._DI._Label.SWITCH_Right THEN
 bSwitchToggle := FALSE;
 END_IF
 
-OUT.O._Label.bOutput1 := bSwitchToggle; // PLACEHOLDER OUTPUT waiting for VFD actions
+OUT._DO._Label.bOutput1 := bSwitchToggle; // PLACEHOLDER OUTPUT waiting for VFD actions
 ]]></ST>
       </Implementation>
     </Action>

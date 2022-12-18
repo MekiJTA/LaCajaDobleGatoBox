@@ -7,40 +7,80 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[(*
+//============
 NAMING:
 	Give Inputs/Outputs Specific Labels In: 
 		DUT/INPUT_LABELS
 		DUT/OUTPUT_LABELS
 	
-	Thus inputs have clear names:  
-		IN.BOX_IO.Label.DoorSensor_Front
+	Thus inputs have clear names and address:  
+		IN._I._Label.Door_Sensor1
 		
 	IO is received into Array, and every input is then given a specific Label through Union. 
-	IO can still be referenced in array form: IN.BOX_IO.bArray[1]
+	IO can still be referenced in array form:
+		IN._I.bArray[1];
+	Because DUT/Union simply slaps a label on top of bArray[1..32], Door_Sensor1 and bArray[8] are the same thing and thus activate simultaneously.
+
+//============
+GATO E PERRO 
+	Original idea of this demo project is to showcase and test different inputs, outputs and controls of PLC. Some features are needlessly complicated 
+	considering the task, but are used for learning purposes. Several components are scavenged and repurposed, thus giving a but amateurish
+	and hacky look to the project, but I still made an effort for professional finish.	
+
+	Name is in Spanish to clearly distinguish test project from actual customer project. Future database names et al continue the same namoing
+	convention to make it easier to copy/paste and change variables and names.
 	
+	End result of project is a cat figure running from dog figure, with magnetic and light sensor observing them.
+	Distinguishing cat from a dog can be achieved in many ways, and I chose a middle ground between practicality, budget and reliability.
+	Cat figure has a magnet glued behind it, thus "priming" the light sensor 
+	-> next time a figure passes light sensor, its a cat. 
+	-> If light sensor is not primed, its a dog.
+	
+	Inside the cabinet exists analog temperature sensor, a multiple port relay and green signal light.
+ 
+	Cat and dog are running on electric motor, which is controlled by Vacon VFD.
+	Due to availability, budget and preference, Vacon doesnt have any fancy input modules and is controlled with simple IO-pins. 
+	Future learning potential is definitely there.
+
+	 
 =====================
 	
 	
+
 *)
-IN._I._Label.bInput1;
-IN._I.bArray[1];
 ]]></ST>
     </Implementation>
     <LineIds Name="README">
       <LineId Id="5" Count="0" />
+      <LineId Id="46" Count="0" />
       <LineId Id="22" Count="0" />
       <LineId Id="10" Count="4" />
       <LineId Id="17" Count="0" />
       <LineId Id="19" Count="0" />
       <LineId Id="8" Count="0" />
       <LineId Id="21" Count="0" />
+      <LineId Id="38" Count="1" />
+      <LineId Id="44" Count="0" />
+      <LineId Id="42" Count="0" />
+      <LineId Id="52" Count="0" />
+      <LineId Id="47" Count="1" />
+      <LineId Id="59" Count="0" />
+      <LineId Id="51" Count="0" />
       <LineId Id="25" Count="0" />
+      <LineId Id="53" Count="4" />
+      <LineId Id="62" Count="0" />
+      <LineId Id="61" Count="0" />
+      <LineId Id="69" Count="1" />
+      <LineId Id="60" Count="0" />
+      <LineId Id="64" Count="2" />
+      <LineId Id="68" Count="0" />
+      <LineId Id="67" Count="0" />
       <LineId Id="20" Count="0" />
       <LineId Id="23" Count="0" />
       <LineId Id="9" Count="0" />
+      <LineId Id="63" Count="0" />
       <LineId Id="6" Count="0" />
-      <LineId Id="15" Count="0" />
-      <LineId Id="28" Count="1" />
+      <LineId Id="36" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

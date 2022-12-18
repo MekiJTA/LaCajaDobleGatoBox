@@ -99,7 +99,7 @@ END_IF
                           <l2 n="InputItems" cet="BoxTreeOperand">
                             <o>
                               <o n="Operand" t="Operand">
-                                <v n="Operand">"IN._I._Label.Door_Sensor1"</v>
+                                <v n="Operand">"IN._DI._Label.Door_Sensor1"</v>
                                 <v n="Type">"BOOL"</v>
                                 <v n="Comment">""</v>
                                 <v n="SymbolComment">""</v>
@@ -339,17 +339,21 @@ END_IF
     </Action>
     <Action Name="A_Doors" Id="{3c93ff02-0eab-4dfe-bdea-6020103f9083}">
       <Implementation>
-        <ST><![CDATA[
-Door1_Box 		:= IN._I._Label.Door_Sensor1;
-Door2_Fence 	:= NOT IN._I._Label.bInput23;
-Door3_Workbench := NOT IN._I._Label.bInput24;
+        <ST><![CDATA[//"Ovisensori" hyppää outputista inputtiin, jos on päällä niin ohjelma saa käydä
+OUT._DO._Label.DoorSensor_Activator := TRUE;
 
-IF  Door1_Box AND Door2_Fence AND Door3_Workbench := TRUE THEN
+//========================
+
+Door1_Box 		:= IN._DI._Label.Door_Sensor1;
+Door2_Fence 	:= TRUE;
+Door3_Workbench := TRUE;
+
+IF (Door1_Box AND Door2_Fence AND Door3_Workbench) = TRUE THEN
 	SAFETY.Doors_OK := TRUE;
+	ELSE
+		SAFETY.Doors_OK := FALSE;
 END_IF
 
-//"Ovisensori" hyppää outputista inputtiin, jos on päällä niin ohjelma saa käydä
-OUT.O._Label.DoorSensor_Activator := TRUE;
 
 ]]></ST>
       </Implementation>
@@ -367,15 +371,17 @@ OUT.O._Label.DoorSensor_Activator := TRUE;
       <LineId Id="77" Count="0" />
     </LineIds>
     <LineIds Name="P_SAFETY.A_Doors">
+      <LineId Id="24" Count="2" />
       <LineId Id="2" Count="0" />
+      <LineId Id="27" Count="0" />
       <LineId Id="1" Count="0" />
       <LineId Id="4" Count="0" />
       <LineId Id="6" Count="0" />
       <LineId Id="8" Count="0" />
       <LineId Id="18" Count="1" />
+      <LineId Id="21" Count="1" />
       <LineId Id="9" Count="0" />
       <LineId Id="20" Count="0" />
-      <LineId Id="10" Count="1" />
       <LineId Id="14" Count="0" />
       <LineId Id="7" Count="0" />
     </LineIds>

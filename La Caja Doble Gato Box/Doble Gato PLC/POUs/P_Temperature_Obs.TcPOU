@@ -14,7 +14,7 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[// Analogue Temperature sensor inside box
-SA_BoxTemperature := IN.BOX_ANALOG[1];
+SA_BoxTemperature := IN.ANALOG[1];
 //=======================================
 
 //Presenting conversions to display in HMI

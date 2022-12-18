@@ -3,8 +3,11 @@
   <POU Name="FB_GatoPerro" Id="{907c9889-847a-48a2-b378-14a1b7bf9287}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_GatoPerro
 VAR_INPUT
+	RUN 		: BOOL;
+	
 END_VAR
 VAR_OUTPUT
+	Q			: BOOL;
 	Gato 		: BOOL;
 	Perro 		: BOOL;
 	GatoCount 	: INT;
@@ -16,7 +19,9 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[A_SensorHandling();
+      <ST><![CDATA[Q := RUN;
+
+A_SensorHandling();
 
 // Kierroslaskuri
 
@@ -41,6 +46,7 @@ END_VAR
       </Implementation>
     </Action>
     <LineIds Name="FB_GatoPerro">
+      <LineId Id="93" Count="1" />
       <LineId Id="61" Count="2" />
       <LineId Id="73" Count="0" />
       <LineId Id="65" Count="5" />
