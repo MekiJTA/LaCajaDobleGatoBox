@@ -7,7 +7,7 @@ VAR_INPUT
 	iInput1 : BOOL;
 	iInput2 : BOOL;
 	iInput3 : BOOL;
-	nState 	: INT;
+	nState 	: (IDLE, RUN_FAST, RUN_FASTER, ERROR);
 	
 END_VAR
 VAR_OUTPUT
@@ -17,8 +17,6 @@ VAR_OUTPUT
 	Faster 	: BOOL;
 END_VAR
 VAR
-//	nState: eFeed;
-	eTextWriteState : (OPEN_FILE, WRITE_TO_FILE, CLOSE_FILE, ERROR);
 	Button1_trig: R_TRIG;
 	Switch1_trig: R_TRIG;
 	Switch2_trig: R_TRIG;
@@ -41,17 +39,17 @@ A_Switch();
 
 CASE nState OF
 		
-	0:
-		oLight1 := FALSE;
 	
-	1:
-		oLight1 := General.BlinkOn;
+	IDLE:	oLight1 := FALSE;
+	
+	RUN_FAST:
+		oLight1 := GENERAL.BlinkOn;
 
-	2:
+	RUN_FASTER:
 		oLight1 := TRUE;		
 
-	3:
-		oLight1 := General.BlinkFAST_On;
+	ERROR:
+		oLight1 := GENERAL.BlinkFAST_On;
 
 END_CASE]]></ST>
     </Implementation>
@@ -520,7 +518,7 @@ END_CASE]]></ST>
     </Action>
     <Action Name="A_Switch" Id="{ab8781ab-cba4-40f4-9111-ef8f6611efbe}">
       <Implementation>
-        <ST><![CDATA[IF General.ReadyForAction THEN
+        <ST><![CDATA[IF GENERAL.ReadyForAction THEN
 	IF Switch1_trig.Q THEN
 		nLightsState := 1;
 	tempCount2 := tempCount2+1;

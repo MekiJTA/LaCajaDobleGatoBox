@@ -22,14 +22,17 @@ END_VAR
 
 K := C + 273.15;
 F := C * 1.8 +32;
-Cosine := COS(C);
+Cosine		 	:= COS(C);
+
 Celsius 		:= C;
 Fahrenheit 		:= F;
 Kelvin 			:= K;
 ]]></ST>
     </Implementation>
     <LineIds Name="F_TemperatureMethod">
-      <LineId Id="55" Count="6" />
+      <LineId Id="55" Count="4" />
+      <LineId Id="79" Count="0" />
+      <LineId Id="60" Count="1" />
       <LineId Id="24" Count="0" />
       <LineId Id="62" Count="0" />
     </LineIds>

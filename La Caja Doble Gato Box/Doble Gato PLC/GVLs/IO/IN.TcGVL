@@ -5,15 +5,7 @@
 VAR_GLOBAL
 	_DI				AT %I*: 	U_IN_IO_Translate;
 	ANALOG			AT %I*:		ARRAY[1..4] OF INT;	// Temperature module
-	//EK_IN			AT %I*:		ARRAY[1..8] OF BOOL;
 	
-
-(*
-	BOX_IN 		AT%I*: 		ARRAY[1..8] OF BOOL;
-	BOX_1809_IN	AT%I*:		ARRAY[1..16] OF BOOL;
-	BOX_ANALOG_IN	AT%I*:	ARRAY[1..4] OF UINT;
-	EK_IN		AT%I*:		ARRAY[1..8] OF BOOL;
-	*)
 END_VAR]]></Declaration>
   </GVL>
 </TcPlcObject>

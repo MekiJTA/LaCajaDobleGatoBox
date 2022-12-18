@@ -102,13 +102,13 @@ OUT._DO._Label.bOutput1 := bSwitchToggle; // PLACEHOLDER OUTPUT waiting for VFD 
         <ST><![CDATA[
 BlinkTimer_ON(IN:= T_ON , PT:= TIME_ON , Q=> , ET=> );
 IF BlinkTimer_ON.Q THEN
-	T_ON 	:= General.BlinkOn:= FALSE;
+	T_ON 	:= GENERAL.BlinkOn:= FALSE;
 	T_OFF 	:= TRUE;	
 END_IF
 
 BlinkTimer_OFF(IN:= T_OFF , PT:= TIME_OFF , Q=> , ET=> );
 IF BlinkTimer_OFF.Q THEN
-	T_ON 	:= General.BlinkOn := TRUE;
+	T_ON 	:= GENERAL.BlinkOn := TRUE;
 	T_OFF	:= FALSE;
 END_IF
 ]]></ST>
@@ -120,13 +120,13 @@ END_IF
 
 BlinkTimer_FAST_ON(IN:= T_FAST_ON , PT:= TIME_FAST_ON , Q=> , ET=> );
 IF BlinkTimer_FAST_ON.Q THEN
-	T_FAST_ON	:= General.BlinkFAST_On:= FALSE;
+	T_FAST_ON	:= GENERAL.BlinkFAST_On:= FALSE;
 	T_FAST_OFF 	:= TRUE;	
 END_IF
 
 BlinkTimer_FAST_OFF(IN:= T_FAST_OFF , PT:= TIME_FAST_OFF , Q=> , ET=> );
 IF BlinkTimer_FAST_OFF.Q THEN
-	T_FAST_ON 	:= General.BlinkFAST_On := TRUE;
+	T_FAST_ON 	:= GENERAL.BlinkFAST_On := TRUE;
 	T_FAST_OFF	:= FALSE;
 END_IF
 
@@ -145,13 +145,13 @@ CASE StateSpecial OF
 		ELSE
 		BlinkTimer_SPEC_ON(IN:= T_SPEC_ON , PT:= (TIME_SPECIAL_ON*5) , Q=> , ET=> );
 		IF BlinkTimer_SPEC_ON.Q THEN
-			T_SPEC_ON 	:= General.BlinkSpecial_ON:= FALSE;
+			T_SPEC_ON 	:= GENERAL.BlinkSpecial_ON:= FALSE;
 			T_SPEC_OFF 	:= TRUE;	
 		END_IF
 		
 		BlinkTimer_SPEC_OFF(IN:= T_SPEC_OFF , PT:= (TIME_SPECIAL_OFF*5) , Q=> , ET=> );
 		IF BlinkTimer_SPEC_OFF.Q THEN
-			T_SPEC_ON 	:= General.BlinkSpecial_ON := TRUE;
+			T_SPEC_ON 	:= GENERAL.BlinkSpecial_ON := TRUE;
 			T_SPEC_OFF	:= FALSE;
 		i:= i+1;
 		END_IF
@@ -165,13 +165,13 @@ CASE StateSpecial OF
 		ELSE
 		BlinkTimer_SPEC_ON(IN:= T_SPEC_ON , PT:= (TIME_SPECIAL_ON*10) , Q=> , ET=> );
 		IF BlinkTimer_SPEC_ON.Q THEN
-			T_SPEC_ON 	:= General.BlinkSpecial_ON:= FALSE;
+			T_SPEC_ON 	:= GENERAL.BlinkSpecial_ON:= FALSE;
 			T_SPEC_OFF 	:= TRUE;	
 		END_IF
 		
 		BlinkTimer_SPEC_OFF(IN:= T_SPEC_OFF , PT:= (TIME_SPECIAL_OFF*10) , Q=> , ET=> );
 		IF BlinkTimer_SPEC_OFF.Q THEN
-			T_SPEC_ON 	:= General.BlinkSpecial_ON := TRUE;
+			T_SPEC_ON 	:= GENERAL.BlinkSpecial_ON := TRUE;
 			T_SPEC_OFF	:= FALSE;
 			i:= i+1;
 		END_IF

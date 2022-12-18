@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
-  <GVL Name="General" Id="{0e0fd3b6-c327-4461-9f96-883d01dd86e0}">
+  <GVL Name="GENERAL" Id="{0e0fd3b6-c327-4461-9f96-883d01dd86e0}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
 	ReadyForAction		: BOOL;
@@ -16,7 +16,7 @@ VAR_GLOBAL
 	sCelsius: STRING(16);
 	sFahrenheit: STRING(16);
 	sCosine: STRING(16);
-	sKelvin: STRING(16);	
+	sKelvin: STRING(16);
 	
 // Linked 'useless' variables to IO
 	EthercatDevState 	AT%I*: UINT;

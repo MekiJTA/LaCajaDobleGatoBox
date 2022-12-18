@@ -17,8 +17,8 @@ A_Checks(); // Acting on sensor inputs
 	SAFETY.E_STOP_OK 		:= TRUE;
 
 //============
-IF General.PowerOK AND SAFETY.Safety_OK THEN
-General.ReadyForAction := TRUE;
+IF GENERAL.PowerOK AND SAFETY.Safety_OK THEN
+GENERAL.ReadyForAction := TRUE;
 END_IF
 ]]></ST>
     </Implementation>

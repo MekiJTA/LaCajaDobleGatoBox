@@ -25,10 +25,11 @@ Fahrenheit=> rFahrenheit,
 Kelvin=> rKelvin,
 Cosine => rCosine);
 
-General.sCelsius := LREAL_TO_FMTSTR(in:= rCelsius, iPrecision:= 3, bRound:= 1);
-General.sFahrenheit := LREAL_TO_FMTSTR(in:= rFahrenheit, iPrecision:= 3, bRound:= 1);
-General.sKelvin := LREAL_TO_FMTSTR(in:= rKelvin, iPrecision:= 3, bRound:= 1);
-General.sCosine := LREAL_TO_FMTSTR(in:= rCosine, iPrecision:= 10, bRound:= 1);
+// Turning temperature Reals to Global strings.
+GENERAL.sCelsius := LREAL_TO_FMTSTR(in:= rCelsius, iPrecision:= 2, bRound:= 1);
+GENERAL.sFahrenheit := LREAL_TO_FMTSTR(in:= rFahrenheit, iPrecision:= 2, bRound:= 1);
+GENERAL.sKelvin := LREAL_TO_FMTSTR(in:= rKelvin, iPrecision:= 2, bRound:= 1);
+GENERAL.sCosine := LREAL_TO_FMTSTR(in:= rCosine, iPrecision:= 5, bRound:= 1);
 ]]></ST>
     </Implementation>
     <Action Name="A_SensorHandling" Id="{2493585f-fa30-4f12-8084-d829e573cb1d}">
@@ -45,6 +46,7 @@ General.sCosine := LREAL_TO_FMTSTR(in:= rCosine, iPrecision:= 10, bRound:= 1);
       <LineId Id="5" Count="0" />
       <LineId Id="14" Count="3" />
       <LineId Id="38" Count="0" />
+      <LineId Id="53" Count="0" />
       <LineId Id="33" Count="0" />
       <LineId Id="27" Count="0" />
       <LineId Id="40" Count="2" />

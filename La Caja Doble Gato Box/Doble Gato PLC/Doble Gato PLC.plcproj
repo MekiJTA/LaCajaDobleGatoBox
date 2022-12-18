@@ -65,7 +65,7 @@
     <Compile Include="F\F_TemperatureMethod.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="GVLs\General.TcGVL">
+    <Compile Include="GVLs\GENERAL.TcGVL">
       <SubType>Code</SubType>
       <LinkAlways>true</LinkAlways>
     </Compile>

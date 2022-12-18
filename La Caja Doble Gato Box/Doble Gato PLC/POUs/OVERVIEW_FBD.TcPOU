@@ -316,7 +316,7 @@ END_VAR
                                 </o>
                                 <o>
                                   <o n="Operand" t="Operand">
-                                    <v n="Operand">"General.ReadyForAction"</v>
+                                    <v n="Operand">"GENERAL.ReadyForAction"</v>
                                     <v n="Type">"BOOL"</v>
                                     <v n="Comment">""</v>
                                     <v n="SymbolComment">""</v>
@@ -471,7 +471,7 @@ END_VAR
                         </o>
                         <o t="BoxTreeOperand">
                           <o n="Operand" t="Operand">
-                            <v n="Operand">"General.ReadyForAction"</v>
+                            <v n="Operand">"GENERAL.ReadyForAction"</v>
                             <v n="Type">"BOOL"</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>

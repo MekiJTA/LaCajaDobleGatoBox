@@ -68,8 +68,8 @@ END_VAR
       <ST><![CDATA[//Oerlikon projektista kopioitu esimerkkisuoritus
 
 //	Solun modet
-	General.AUTO	:=	HMI.MANUAL_Mode_AUTO;
-	General.MANUAL	:=	HMI.MANUAL_Mode_MANUAL;
+	GENERAL.AUTO	:=	HMI.MANUAL_Mode_AUTO;
+	GENERAL.MANUAL	:=	HMI.MANUAL_Mode_MANUAL;
 
 //	Programs
 	Beacons();
@@ -3867,7 +3867,7 @@ BlinkQ :=tempON;]]></ST>
                                     </o>
                                     <o>
                                       <o n="Operand" t="Operand">
-                                        <v n="Operand">"General.MANUAL"</v>
+                                        <v n="Operand">"GENERAL.MANUAL"</v>
                                         <v n="Type">"BOOL"</v>
                                         <v n="Comment">""</v>
                                         <v n="SymbolComment">""</v>
@@ -4332,7 +4332,7 @@ BlinkQ :=tempON;]]></ST>
                                     </o>
                                     <o>
                                       <o n="Operand" t="Operand">
-                                        <v n="Operand">"General.MANUAL"</v>
+                                        <v n="Operand">"GENERAL.MANUAL"</v>
                                         <v n="Type">"BOOL"</v>
                                         <v n="Comment">""</v>
                                         <v n="SymbolComment">""</v>
@@ -4797,7 +4797,7 @@ BlinkQ :=tempON;]]></ST>
                                     </o>
                                     <o>
                                       <o n="Operand" t="Operand">
-                                        <v n="Operand">"General.MANUAL"</v>
+                                        <v n="Operand">"GENERAL.MANUAL"</v>
                                         <v n="Type">"BOOL"</v>
                                         <v n="Comment">""</v>
                                         <v n="SymbolComment">""</v>
@@ -5157,7 +5157,7 @@ BlinkQ :=tempON;]]></ST>
                                     </o>
                                     <o t="BoxTreeOperand">
                                       <o n="Operand" t="Operand">
-                                        <v n="Operand">"General.MANUAL"</v>
+                                        <v n="Operand">"GENERAL.MANUAL"</v>
                                         <v n="Type">"BOOL"</v>
                                         <v n="Comment">""</v>
                                         <v n="SymbolComment">""</v>
@@ -5243,7 +5243,7 @@ BlinkQ :=tempON;]]></ST>
                                   <l2 n="InputItems" cet="BoxTreeOperand">
                                     <o>
                                       <o n="Operand" t="Operand">
-                                        <v n="Operand">"General.AUTO"</v>
+                                        <v n="Operand">"GENERAL.AUTO"</v>
                                         <v n="Type">"BOOL"</v>
                                         <v n="Comment">""</v>
                                         <v n="SymbolComment">""</v>
@@ -5515,7 +5515,7 @@ BlinkQ :=tempON;]]></ST>
                                     </o>
                                     <o t="BoxTreeOperand">
                                       <o n="Operand" t="Operand">
-                                        <v n="Operand">"General.MANUAL"</v>
+                                        <v n="Operand">"GENERAL.MANUAL"</v>
                                         <v n="Type">"BOOL"</v>
                                         <v n="Comment">""</v>
                                         <v n="SymbolComment">""</v>
@@ -5585,7 +5585,7 @@ BlinkQ :=tempON;]]></ST>
                                   <l2 n="InputItems" cet="BoxTreeOperand">
                                     <o>
                                       <o n="Operand" t="Operand">
-                                        <v n="Operand">"General.AUTO"</v>
+                                        <v n="Operand">"GENERAL.AUTO"</v>
                                         <v n="Type">"BOOL"</v>
                                         <v n="Comment">""</v>
                                         <v n="SymbolComment">""</v>
@@ -5956,7 +5956,7 @@ BlinkQ :=tempON;]]></ST>
                                     </o>
                                     <o t="BoxTreeOperand">
                                       <o n="Operand" t="Operand">
-                                        <v n="Operand">"General.MANUAL"</v>
+                                        <v n="Operand">"GENERAL.MANUAL"</v>
                                         <v n="Type">"BOOL"</v>
                                         <v n="Comment">""</v>
                                         <v n="SymbolComment">""</v>
@@ -6042,7 +6042,7 @@ BlinkQ :=tempON;]]></ST>
                                   <l2 n="InputItems" cet="BoxTreeOperand">
                                     <o>
                                       <o n="Operand" t="Operand">
-                                        <v n="Operand">"General.AUTO"</v>
+                                        <v n="Operand">"GENERAL.AUTO"</v>
                                         <v n="Type">"BOOL"</v>
                                         <v n="Comment">""</v>
                                         <v n="SymbolComment">""</v>
@@ -6314,7 +6314,7 @@ BlinkQ :=tempON;]]></ST>
                                     </o>
                                     <o t="BoxTreeOperand">
                                       <o n="Operand" t="Operand">
-                                        <v n="Operand">"General.MANUAL"</v>
+                                        <v n="Operand">"GENERAL.MANUAL"</v>
                                         <v n="Type">"BOOL"</v>
                                         <v n="Comment">""</v>
                                         <v n="SymbolComment">""</v>
@@ -6384,7 +6384,7 @@ BlinkQ :=tempON;]]></ST>
                                   <l2 n="InputItems" cet="BoxTreeOperand">
                                     <o>
                                       <o n="Operand" t="Operand">
-                                        <v n="Operand">"General.AUTO"</v>
+                                        <v n="Operand">"GENERAL.AUTO"</v>
                                         <v n="Type">"BOOL"</v>
                                         <v n="Comment">""</v>
                                         <v n="SymbolComment">""</v>
@@ -6755,7 +6755,7 @@ BlinkQ :=tempON;]]></ST>
                                     </o>
                                     <o t="BoxTreeOperand">
                                       <o n="Operand" t="Operand">
-                                        <v n="Operand">"General.MANUAL"</v>
+                                        <v n="Operand">"GENERAL.MANUAL"</v>
                                         <v n="Type">"BOOL"</v>
                                         <v n="Comment">""</v>
                                         <v n="SymbolComment">""</v>
@@ -6860,7 +6860,7 @@ BlinkQ :=tempON;]]></ST>
                                   <l2 n="InputItems" cet="BoxTreeOperand">
                                     <o>
                                       <o n="Operand" t="Operand">
-                                        <v n="Operand">"General.AUTO"</v>
+                                        <v n="Operand">"GENERAL.AUTO"</v>
                                         <v n="Type">"BOOL"</v>
                                         <v n="Comment">""</v>
                                         <v n="SymbolComment">""</v>
@@ -7132,7 +7132,7 @@ BlinkQ :=tempON;]]></ST>
                                     </o>
                                     <o t="BoxTreeOperand">
                                       <o n="Operand" t="Operand">
-                                        <v n="Operand">"General.MANUAL"</v>
+                                        <v n="Operand">"GENERAL.MANUAL"</v>
                                         <v n="Type">"BOOL"</v>
                                         <v n="Comment">""</v>
                                         <v n="SymbolComment">""</v>
@@ -7202,7 +7202,7 @@ BlinkQ :=tempON;]]></ST>
                                   <l2 n="InputItems" cet="BoxTreeOperand">
                                     <o>
                                       <o n="Operand" t="Operand">
-                                        <v n="Operand">"General.AUTO"</v>
+                                        <v n="Operand">"GENERAL.AUTO"</v>
                                         <v n="Type">"BOOL"</v>
                                         <v n="Comment">""</v>
                                         <v n="SymbolComment">""</v>
@@ -7827,16 +7827,7 @@ BlinkQ_FAST :=tempON_FAST;]]></ST>
       </Implementation>
     </Action>
     <LineIds Name="General_Control">
-      <LineId Id="319" Count="1" />
-      <LineId Id="252" Count="0" />
-      <LineId Id="255" Count="1" />
-      <LineId Id="254" Count="0" />
-      <LineId Id="251" Count="0" />
-      <LineId Id="117" Count="0" />
-      <LineId Id="187" Count="1" />
-      <LineId Id="118" Count="0" />
-      <LineId Id="124" Count="0" />
-      <LineId Id="121" Count="2" />
+      <LineId Id="398" Count="14" />
       <LineId Id="54" Count="0" />
     </LineIds>
     <LineIds Name="General_Control.BLINK">
