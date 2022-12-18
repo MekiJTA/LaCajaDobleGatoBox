@@ -41,6 +41,9 @@
     <Compile Include="DUTs\BeltStatus.TcDUT">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DUTs\eVFD.TcTLEO">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DUTs\OUTPUT_LABELS.TcDUT">
       <SubType>Code</SubType>
     </Compile>
