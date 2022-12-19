@@ -3,13 +3,13 @@
   <POU Name="FB_BeltControl" Id="{da1577ed-8fa5-451c-b384-ecb49194f3dd}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_BeltControl
 VAR_INPUT
-	Run 			: BOOL; // Order to start running
-	Ready			: BOOL; // Safety ok, system ok, doors ok
-	Fast 			: BOOL;
-	Faster			: BOOL;
+	IN				: BOOL;
+	IN_Run 			: BOOL; // Order to start running
+	IN_Ready			: BOOL; // Safety ok, system ok, doors ok
+	IN_Fast 			: BOOL;
+	IN_Faster			: BOOL;
 	VFD_Running		: BOOL;
 	VFD_Ready		: BOOL;
-	sStatusMessage	: STRING;
 	
 END_VAR
 VAR_OUTPUT
@@ -17,24 +17,75 @@ VAR_OUTPUT
 	RUN_Order_VFD 	: BOOL;
 	Fast_VFD		: BOOL;
 	Faster_VFD		: BOOL;
-	iRounds 	: INT;
-	iRoundsMinute : INT;
 	iStatus		: INT;
 	iFault		: INT;
+	sStatusMessage	: STRING;
 END_VAR
 VAR
-	Run_TRIG: R_TRIG;
 	nMotorState: (NOT_READY, ALL_READY, RUNNING, STOP, ERROR);	//Local ENUM
-	SwitchLeft_TRIG: R_TRIG;
-	SwitchRight_TRIG: R_TRIG;
 	Stopping_TON: TON;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[// Rough outline:
+      <ST><![CDATA[
+M_VariableChanges();
+
+IF NOT IN_Ready THEN
+	nMotorState :=0;
+END_IF
+
+CASE nMotorState OF
+	NOT_READY:	
+		IF IN_Ready THEN
+		nMotorState := 1;
+		END_IF
+
+	ALL_READY:
+		IF IN_Run THEN
+			nMotorState := 2;
+		END_IF
+		
+	RUNNING:
+		RUN_Order_VFD := TRUE;
+		IF NOT IN_Run THEN
+			nMotorState := 3;
+		END_IF
+
+	STOP:
+		RUN_Order_VFD := FALSE;
+		Stopping_TON(IN:=TRUE , PT:=T#1S , Q=> , ET=> );
+			IF Stopping_TON.Q THEN
+				Stopping_TON(IN:=FALSE);
+				nMotorState := 0;
+			END_IF
+		
+	ERROR:
+		sStatusMessage := 'Error state';
+	
+		
+END_CASE
+]]></ST>
+    </Implementation>
+    <Method Name="M_VariableChanges" Id="{25e58fda-e379-4634-b5e8-87a1ef140024}">
+      <Declaration><![CDATA[METHOD M_VariableChanges : BOOL
+VAR_INPUT
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[
+IN 			:= Q;
+Fast_VFD 	:= IN_Fast;
+Faster_VFD 	:= IN_Faster;
+iStatus 	:= nMotorState;
+iFault 		:= 0;
+]]></ST>
+      </Implementation>
+    </Method>
+    <Action Name="VFD_Pins" Id="{7acdc153-e752-42e2-a23d-6585918198f1}">
+      <Implementation>
+        <ST><![CDATA[// Rough outline:
 // INPUT 24V: DIB 4 5 6 eli paikat 14 15 16
 // 4 käy/seis, 5 vakionopeus 1, 6 vakionopeus 2
-// Taajarilta viestiä että joko on käynnissä tai valmis, ei tiedä vielä
 
 // OUTPUT: 20, 24 25 26
 // 20 = DO1, VALMIS-signaali
@@ -62,116 +113,35 @@ END_VAR
 	IN_SPEED_2	:= 16,
 	OUT_READY 	:= 20,
 	OUT_24		:= 24,
-	OUT_26		:= 26 *)
-
-CASE nMotorState OF
-	NOT_READY:	
-		Q := FALSE;
-		IF Ready THEN
-		nMotorState := 1;
-		END_IF
-
-	ALL_READY:
-		IF NOT Ready THEN
-			nMotorState := 0;
-		END_IF 
-
-		IF Run_TRIG.Q THEN
-			Q := TRUE;
-			nMotorState := 2;		
-		END_IF
-		
-	RUNNING:
-		IF NOT Ready THEN
-			nMotorState := 0;
-		END_IF 
-		
-		IF Run_TRIG.Q THEN
-			Q := FALSE;
-			nMotorState := 3;
-		END_IF
-	STOP:
-		iStatus := BeltStatus.Idle;
-		Stopping_TON(IN:=TRUE , PT:=T#1S , Q=> , ET=> );
-		IF Stopping_TON.Q THEN
-			Stopping_TON(IN:=FALSE);
-				nMotorState := 0;
-		END_IF
-	
-	ERROR:
-		sStatusMessage := 'Error state';
-	
-		
-END_CASE
-
-M_VariableChanges();
-]]></ST>
-    </Implementation>
-    <Action Name="A_StateHandling" Id="{ad832a53-6fda-4bf5-b46c-498c656b9ea5}">
-      <Implementation>
-        <ST><![CDATA[(*	IF NOT SAFETY.Safety_OK THEN
-		nState := ERROR;
-	END_IF
-	
-	
-	IF NOT GENERAL.ReadyForAction THEN
-		nState := IDLE;
-		ELSE
-			IF Fast THEN
-				nState := RUN_FAST;				
-			END_IF
-			IF Faster THEN
-				nState := RUN_FASTER;
-			END_IF 
-	END_IF
-*)
-]]></ST>
+	OUT_26		:= 26 *)]]></ST>
       </Implementation>
     </Action>
-    <Method Name="M_VariableChanges" Id="{25e58fda-e379-4634-b5e8-87a1ef140024}">
-      <Declaration><![CDATA[METHOD M_VariableChanges : BOOL
-VAR_INPUT
-END_VAR
-]]></Declaration>
-      <Implementation>
-        <ST><![CDATA[
-RUN_Order_VFD := Q;
-Fast_VFD 	:= Fast;
-Faster_VFD 	:= Faster;
-iStatus 	:= nMotorState;
-iFault 		:= 0;
-]]></ST>
-      </Implementation>
-    </Method>
     <LineIds Name="FB_BeltControl">
-      <LineId Id="287" Count="15" />
-      <LineId Id="304" Count="0" />
-      <LineId Id="384" Count="0" />
-      <LineId Id="382" Count="0" />
-      <LineId Id="385" Count="3" />
-      <LineId Id="461" Count="1" />
-      <LineId Id="465" Count="5" />
-      <LineId Id="463" Count="0" />
-      <LineId Id="306" Count="27" />
-      <LineId Id="425" Count="0" />
-      <LineId Id="334" Count="6" />
-      <LineId Id="459" Count="0" />
-      <LineId Id="456" Count="0" />
-      <LineId Id="342" Count="1" />
-      <LineId Id="428" Count="0" />
-      <LineId Id="120" Count="0" />
+      <LineId Id="794" Count="1" />
+      <LineId Id="793" Count="0" />
+      <LineId Id="648" Count="0" />
+      <LineId Id="780" Count="1" />
+      <LineId Id="649" Count="2" />
+      <LineId Id="653" Count="4" />
+      <LineId Id="662" Count="0" />
+      <LineId Id="664" Count="3" />
+      <LineId Id="671" Count="1" />
+      <LineId Id="674" Count="1" />
+      <LineId Id="784" Count="0" />
+      <LineId Id="676" Count="0" />
+      <LineId Id="792" Count="0" />
+      <LineId Id="678" Count="10" />
       <LineId Id="391" Count="0" />
     </LineIds>
-    <LineIds Name="FB_BeltControl.A_StateHandling">
-      <LineId Id="2" Count="2" />
-      <LineId Id="16" Count="0" />
-      <LineId Id="23" Count="10" />
-      <LineId Id="20" Count="0" />
-      <LineId Id="34" Count="0" />
-    </LineIds>
     <LineIds Name="FB_BeltControl.M_VariableChanges">
-      <LineId Id="6" Count="5" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="6" Count="0" />
+      <LineId Id="8" Count="3" />
       <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_BeltControl.VFD_Pins">
+      <LineId Id="2" Count="29" />
+      <LineId Id="1" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

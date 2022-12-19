@@ -3,9 +3,9 @@
   <POU Name="FB_ButtonBox" Id="{718ab21c-a86f-42b1-ad84-7eea86241524}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK FB_ButtonBox
 VAR_INPUT
-	Button1		: BOOL;
+	IN			: BOOL;
 	State 	: (IDLE, RUN_FAST, RUN_FASTER, ERROR);
-	Feed	: BOOL;
+	Button1		: BOOL;
 	SwitchLeft 	: BOOL;
 	SwitchRight : BOOL;
 END_VAR
@@ -33,21 +33,20 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[Q := Button1;
+      <ST><![CDATA[Q := IN;
 A_InputHandling();
 	
 CASE State OF
 	
 	IDLE:
-		oLight1 := FALSE;
+		oLight1 := GENERAL.BlinkOn;
 
 	RUN_FAST:
-
-		oLight1 := GENERAL.BlinkOn;
+		oLight1 := TRUE;
 		A_SwitchControl();
 		
 	RUN_FASTER:
-		oLight1 := GENERAL.BlinkFAST_On;		
+		oLight1 := TRUE;		
 		A_SwitchControl();
 		
 	ERROR:
@@ -132,7 +131,7 @@ END_CASE]]></ST>
                           <l2 n="InputItems" cet="BoxTreeOperand">
                             <o>
                               <o n="Operand" t="Operand">
-                                <v n="Operand">"Feed"</v>
+                                <v n="Operand">"Button1"</v>
                                 <v n="Type">"BOOL"</v>
                                 <v n="Comment">""</v>
                                 <v n="SymbolComment">""</v>
@@ -802,7 +801,8 @@ END_CASE]]></ST>
     </Action>
     <LineIds Name="FB_ButtonBox">
       <LineId Id="876" Count="1" />
-      <LineId Id="879" Count="17" />
+      <LineId Id="879" Count="6" />
+      <LineId Id="887" Count="9" />
       <LineId Id="355" Count="0" />
     </LineIds>
     <LineIds Name="FB_ButtonBox.A_SwitchControl">
