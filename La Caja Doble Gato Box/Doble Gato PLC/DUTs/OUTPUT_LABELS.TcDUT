@@ -4,7 +4,7 @@
     <Declaration><![CDATA[TYPE OUTPUT_LABELS :
 STRUCT
 //===== 	Box EL2008			
-bOutput1		:		BOOL;
+ButtonBox_Light	:		BOOL;
 bOutput2		:		BOOL;
 bOutput3		:		BOOL;
 bOutput4		:		BOOL;

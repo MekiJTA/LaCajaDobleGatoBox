@@ -107,6 +107,27 @@ END_CASE
 M_VariableChanges();
 ]]></ST>
     </Implementation>
+    <Action Name="A_StateHandling" Id="{ad832a53-6fda-4bf5-b46c-498c656b9ea5}">
+      <Implementation>
+        <ST><![CDATA[(*	IF NOT SAFETY.Safety_OK THEN
+		nState := ERROR;
+	END_IF
+	
+	
+	IF NOT GENERAL.ReadyForAction THEN
+		nState := IDLE;
+		ELSE
+			IF Fast THEN
+				nState := RUN_FAST;				
+			END_IF
+			IF Faster THEN
+				nState := RUN_FASTER;
+			END_IF 
+	END_IF
+*)
+]]></ST>
+      </Implementation>
+    </Action>
     <Method Name="M_VariableChanges" Id="{25e58fda-e379-4634-b5e8-87a1ef140024}">
       <Declaration><![CDATA[METHOD M_VariableChanges : BOOL
 VAR_INPUT
@@ -140,6 +161,13 @@ iFault 		:= 0;
       <LineId Id="428" Count="0" />
       <LineId Id="120" Count="0" />
       <LineId Id="391" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_BeltControl.A_StateHandling">
+      <LineId Id="2" Count="2" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="23" Count="10" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="34" Count="0" />
     </LineIds>
     <LineIds Name="FB_BeltControl.M_VariableChanges">
       <LineId Id="6" Count="5" />

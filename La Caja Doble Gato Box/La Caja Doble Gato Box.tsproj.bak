@@ -221,10 +221,10 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{79B9E11F-64E5-400A-BB68-48D03DB8A94E}" AutoDeleteType="true">OUTPUT_LABELS</Name>
+			<Name GUID="{28CA809F-5E10-63AC-B744-2DA7DD6034F0}" AutoDeleteType="true">OUTPUT_LABELS</Name>
 			<BitSize>256</BitSize>
 			<SubItem>
-				<Name>bOutput1</Name>
+				<Name>ButtonBox_Light</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
 				<Comment><![CDATA[===== 	Box EL2008			]]></Comment>
 				<BitSize>8</BitSize>
@@ -420,7 +420,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{1417CEEE-25A1-7EBA-DEF9-CE53C77C68F6}" AutoDeleteType="true">U_OUT_IO_Translate</Name>
+			<Name GUID="{0FC02F8D-8B4C-8341-ECE8-12229841C576}" AutoDeleteType="true">U_OUT_IO_Translate</Name>
 			<BitSize>256</BitSize>
 			<SubItem>
 				<Name>bArray</Name>
@@ -434,7 +434,7 @@
 			</SubItem>
 			<SubItem>
 				<Name>_Label</Name>
-				<Type GUID="{79B9E11F-64E5-400A-BB68-48D03DB8A94E}">OUTPUT_LABELS</Type>
+				<Type GUID="{28CA809F-5E10-63AC-B744-2DA7DD6034F0}">OUTPUT_LABELS</Type>
 				<BitSize>256</BitSize>
 				<BitOffs>0</BitOffs>
 			</SubItem>
@@ -501,16 +501,16 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>OUT._DO</Name>
-							<Type GUID="{1417CEEE-25A1-7EBA-DEF9-CE53C77C68F6}">U_OUT_IO_Translate</Type>
-						</Var>
-						<Var>
 							<Name>SAFETY.Doors_OK</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>SAFETY.E_STOP_OK</Name>
 							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>OUT._DO</Name>
+							<Type GUID="{0FC02F8D-8B4C-8341-ECE8-12229841C576}">U_OUT_IO_Translate</Type>
 						</Var>
 					</Vars>
 					<Vars VarGrpType="1" ContextId="1" AreaNo="16">
@@ -1161,14 +1161,15 @@
 		</Io>
 	</Project>
 	<Mappings>
+		<MappingInfo Identifier="{00000000-2041-0850-4020-500810000403}" Id="#x02030020"/>
+		<MappingInfo Identifier="{00000000-2042-0850-4120-500831000403}" Id="#x02030040"/>
+		<MappingInfo Identifier="{00000000-2042-0850-4120-500840000403}" Id="#x02030010"/>
 		<OwnerA Name="TIPC^Doble Gato PLC^Doble Gato PLC Instance">
 			<OwnerB Name="TIID^Device 1 (EtherCAT)">
-				<Link VarA="SlowTask Inputs^GENERAL.EthercatDev3" VarB="Inputs^Frm0State"/>
 				<Link VarA="SlowTask Inputs^GENERAL.EthercatDevState" VarB="Inputs^DevState"/>
 				<Link VarA="SlowTask Outputs^GENERAL.EthercatDevCtrl" VarB="Outputs^DevCtrl"/>
 			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 2 (EL3204)">
-				<Link VarA="SlowTask Inputs^GENERAL.Term2DevState" VarB="InfoData^State"/>
 				<Link VarA="SlowTask Inputs^IN.ANALOG[1]" VarB="RTD Inputs Channel 1^Value"/>
 				<Link VarA="SlowTask Inputs^IN.ANALOG[2]" VarB="RTD Inputs Channel 2^Value"/>
 				<Link VarA="SlowTask Inputs^IN.ANALOG[3]" VarB="RTD Inputs Channel 3^Value"/>
@@ -1230,9 +1231,6 @@
 				<Link VarA="PlcTask Outputs^OUT._DO^bArray[24]" VarB="Channel 16^Output"/>
 				<Link VarA="PlcTask Outputs^OUT._DO^bArray[9]" VarB="Channel 1^Output"/>
 			</OwnerB>
-			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 7 (EK1122)^Term 8 (EK1100)">
-				<Link VarA="SlowTask Inputs^GENERAL.Term2DevState" VarB="InfoData^State"/>
-			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 7 (EK1122)^Term 8 (EK1100)^Term 10 (EL2008)">
 				<Link VarA="PlcTask Outputs^OUT._DO^bArray[25]" VarB="Channel 1^Output"/>
 				<Link VarA="PlcTask Outputs^OUT._DO^bArray[26]" VarB="Channel 2^Output"/>
@@ -1255,7 +1253,6 @@
 			</OwnerB>
 			<OwnerB Name="TIID^Device 3 (EtherCAT Automation Protocol)">
 				<Link VarA="SlowTask Inputs^GENERAL.EthercatDev1" VarB="Inputs^DevState"/>
-				<Link VarA="SlowTask Inputs^GENERAL.EthercatDev3" VarB="Inputs^DevState"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>

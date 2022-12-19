@@ -49,7 +49,6 @@ END_VAR
 	]]></ST>
     </Implementation>
     <Folder Name="Blinkers" Id="{5c25f4da-2386-4bfa-a3e5-3fe24506dcb7}" />
-    <Folder Name="Buttons" Id="{71ed4705-df05-4341-9724-6438c1a3eb09}" />
     <Action Name="A_Beacons" Id="{9f0f4f38-0331-4251-b759-68adeace686f}">
       <Implementation>
         <ST><![CDATA[]]></ST>
@@ -58,7 +57,9 @@ END_VAR
     <Action Name="A_ButtonBoxes" Id="{78e610f5-06f1-42f9-a722-0082c1dc1f14}">
       <Implementation>
         <ST><![CDATA[
+// Pitäiskö sittenkin olla FBD lajitelma buttonboxien FB?
 
+(*
 Input1_RTRIG(CLK:= IN._DI._Label.BTN_Feed);
 IF Input1_RTRIG.Q THEN
 	A_FeedButton();
@@ -69,32 +70,7 @@ IF Input2_RTRIG.Q THEN
 	A_Switch();
 END_IF
 
-]]></ST>
-      </Implementation>
-    </Action>
-    <Action Name="A_FeedButton" Id="{fd10e9fd-470d-417b-922d-3e15328c9f03}" FolderPath="Buttons\">
-      <Implementation>
-        <ST><![CDATA[(*
-OUT.O[1] := TRUE;	
-tempCounter := tempCounter+1;
-
 *)]]></ST>
-      </Implementation>
-    </Action>
-    <Action Name="A_Switch" Id="{474615ab-9ca6-406f-b563-0fddc5938d75}" FolderPath="Buttons\">
-      <Implementation>
-        <ST><![CDATA[tempCounter2 := tempCounter2+1;
-
-IF IN._DI._Label.SWITCH_Left THEN
-bSwitchToggle := TRUE;
-END_IF
- 
-IF IN._DI._Label.SWITCH_Right THEN
-bSwitchToggle := FALSE;
-END_IF
-
-OUT._DO._Label.bOutput1 := bSwitchToggle; // PLACEHOLDER OUTPUT waiting for VFD actions
-]]></ST>
       </Implementation>
     </Action>
     <Action Name="Blink" Id="{cf892607-1afc-45ec-8503-4003e9a74f1f}" FolderPath="Blinkers\">
@@ -191,31 +167,16 @@ END_CASE
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="P_CONTROL.A_ButtonBoxes">
-      <LineId Id="25" Count="1" />
+      <LineId Id="27" Count="0" />
+      <LineId Id="25" Count="0" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="26" Count="0" />
       <LineId Id="21" Count="3" />
       <LineId Id="3" Count="0" />
       <LineId Id="1" Count="0" />
       <LineId Id="18" Count="2" />
       <LineId Id="8" Count="0" />
       <LineId Id="13" Count="0" />
-    </LineIds>
-    <LineIds Name="P_CONTROL.A_FeedButton">
-      <LineId Id="69" Count="0" />
-      <LineId Id="65" Count="0" />
-      <LineId Id="67" Count="1" />
-      <LineId Id="66" Count="0" />
-    </LineIds>
-    <LineIds Name="P_CONTROL.A_Switch">
-      <LineId Id="19" Count="0" />
-      <LineId Id="7" Count="0" />
-      <LineId Id="5" Count="0" />
-      <LineId Id="14" Count="0" />
-      <LineId Id="13" Count="0" />
-      <LineId Id="10" Count="0" />
-      <LineId Id="16" Count="2" />
-      <LineId Id="28" Count="0" />
-      <LineId Id="30" Count="0" />
-      <LineId Id="37" Count="0" />
     </LineIds>
     <LineIds Name="P_CONTROL.Blink">
       <LineId Id="16" Count="0" />
