@@ -2,7 +2,7 @@
 <TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.25">
 	<DataTypes>
 		<DataType>
-			<Name GUID="{F4DE3751-A295-D792-ACF8-0824FDC35A08}" AutoDeleteType="true">INPUT_LABELS</Name>
+			<Name GUID="{325422AF-7955-8A94-87C8-D7C4B8B1AC88}" AutoDeleteType="true">INPUT_LABELS</Name>
 			<BitSize>256</BitSize>
 			<SubItem>
 				<Name>BTN_Feed</Name>
@@ -48,7 +48,7 @@
 				<BitOffs>48</BitOffs>
 			</SubItem>
 			<SubItem>
-				<Name>Door_Sensor1</Name>
+				<Name>SM_Door_Sensor1</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
 				<BitSize>8</BitSize>
 				<BitOffs>56</BitOffs>
@@ -61,7 +61,7 @@
 				<BitOffs>64</BitOffs>
 			</SubItem>
 			<SubItem>
-				<Name>Wheel_RotationCount</Name>
+				<Name>SM_Wheel_RotationCount</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
 				<BitSize>8</BitSize>
 				<BitOffs>72</BitOffs>
@@ -73,7 +73,7 @@
 				<BitOffs>80</BitOffs>
 			</SubItem>
 			<SubItem>
-				<Name>SL_GatoPerro_Object</Name>
+				<Name>SL_Wheel_LightSensor1</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
 				<BitSize>8</BitSize>
 				<BitOffs>88</BitOffs>
@@ -151,7 +151,7 @@
 				<BitOffs>184</BitOffs>
 			</SubItem>
 			<SubItem>
-				<Name>VFD_20</Name>
+				<Name>VFD_READY_20</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
 				<Comment><![CDATA[====		EL1100 -> EL1008]]></Comment>
 				<BitSize>8</BitSize>
@@ -194,14 +194,14 @@
 				<BitOffs>240</BitOffs>
 			</SubItem>
 			<SubItem>
-				<Name>SM_Gato_Indicator</Name>
+				<Name>SM_Gato_MagnetSensor</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
 				<BitSize>8</BitSize>
 				<BitOffs>248</BitOffs>
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{2980A5F7-3A54-365B-C60D-5AFDBBAEF008}" AutoDeleteType="true">U_IN_IO_Translate</Name>
+			<Name GUID="{2F105557-D970-F0CB-BA8A-4578C7641862}" AutoDeleteType="true">U_IN_IO_Translate</Name>
 			<BitSize>256</BitSize>
 			<SubItem>
 				<Name>bArray</Name>
@@ -215,13 +215,13 @@
 			</SubItem>
 			<SubItem>
 				<Name>_Label</Name>
-				<Type GUID="{F4DE3751-A295-D792-ACF8-0824FDC35A08}">INPUT_LABELS</Type>
+				<Type GUID="{325422AF-7955-8A94-87C8-D7C4B8B1AC88}">INPUT_LABELS</Type>
 				<BitSize>256</BitSize>
 				<BitOffs>0</BitOffs>
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{C9DBB54B-A955-DBD6-10F5-31CD71FFEC52}" AutoDeleteType="true">OUTPUT_LABELS</Name>
+			<Name GUID="{79B9E11F-64E5-400A-BB68-48D03DB8A94E}" AutoDeleteType="true">OUTPUT_LABELS</Name>
 			<BitSize>256</BitSize>
 			<SubItem>
 				<Name>bOutput1</Name>
@@ -370,20 +370,20 @@
 				<BitOffs>184</BitOffs>
 			</SubItem>
 			<SubItem>
-				<Name>VFD_14</Name>
+				<Name>VFD_START_STOP_14</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
 				<Comment><![CDATA[===== 	EK1100 EL2008]]></Comment>
 				<BitSize>8</BitSize>
 				<BitOffs>192</BitOffs>
 			</SubItem>
 			<SubItem>
-				<Name>VFD_15</Name>
+				<Name>VFD_SPEED_1_15</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
 				<BitSize>8</BitSize>
 				<BitOffs>200</BitOffs>
 			</SubItem>
 			<SubItem>
-				<Name>VFD_16</Name>
+				<Name>VFD_SPEED_2_16</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
 				<BitSize>8</BitSize>
 				<BitOffs>208</BitOffs>
@@ -420,7 +420,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{668D0450-A13E-0A9B-B131-7E2E2F07384C}" AutoDeleteType="true">U_OUT_IO_Translate</Name>
+			<Name GUID="{1417CEEE-25A1-7EBA-DEF9-CE53C77C68F6}" AutoDeleteType="true">U_OUT_IO_Translate</Name>
 			<BitSize>256</BitSize>
 			<SubItem>
 				<Name>bArray</Name>
@@ -434,7 +434,7 @@
 			</SubItem>
 			<SubItem>
 				<Name>_Label</Name>
-				<Type GUID="{C9DBB54B-A955-DBD6-10F5-31CD71FFEC52}">OUTPUT_LABELS</Type>
+				<Type GUID="{79B9E11F-64E5-400A-BB68-48D03DB8A94E}">OUTPUT_LABELS</Type>
 				<BitSize>256</BitSize>
 				<BitOffs>0</BitOffs>
 			</SubItem>
@@ -466,11 +466,8 @@
 		<ImageData Id="1004">424dd6020000000000003600000028000000100000000e0000000100180000000000a0020000c40e0000c40e00000000000000000000ff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080808080808080808080808080808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000bfff00bfffc0c0c0808080c0c0c000ffffc0c0c000ffff808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000bfff00bfffc0c0c0808080c0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000bfff00bfffc0c0c0808080c0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0ff0000c0c0c0ff0000808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000bfff00bfffc0c0c0808080c0c0c00000ffc0c0c00000ff808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000bfff00bfffc0c0c0808080c0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c000bfff00bfffc0c0c0808080c0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0008000c0c0c0008000808080ff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0c0c0c0c0c0c0808080c0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff</ImageData>
 		<ImageData Id="1005">424dd6020000000000003600000028000000100000000e0000000100180000000000a0020000c40e0000c40e00000000000000000000ff00ffff00ffff00ffff00ffff00ffff00ff808080808080808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ff007fff007fff007fff007fff007fff007fffc0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ff</ImageData>
 	</ImageDatas>
-	<Project ProjectGUID="{3BF0EBC3-147B-4B53-A6F0-B3CF83AE9995}" Target64Bit="true" ShowHideConfigurations="#x106">
+	<Project ProjectGUID="{3BF0EBC3-147B-4B53-A6F0-B3CF83AE9995}" TargetNetId="5.62.144.216.1.1" ShowHideConfigurations="#x106">
 		<System>
-			<Settings MaxCpus="8" NonWinCpus="1">
-				<Cpu CpuId="7"/>
-			</Settings>
 			<Licenses>
 				<Target>
 					<ManualSelect>{648F394E-7DD1-499C-8112-7C38E161A94C}</ManualSelect>
@@ -494,18 +491,18 @@
 						<Name>PlcTask Inputs</Name>
 						<Var>
 							<Name>IN._DI</Name>
-							<Type GUID="{2980A5F7-3A54-365B-C60D-5AFDBBAEF008}">U_IN_IO_Translate</Type>
+							<Type GUID="{2F105557-D970-F0CB-BA8A-4578C7641862}">U_IN_IO_Translate</Type>
 						</Var>
 					</Vars>
 					<Vars VarGrpType="2" AreaNo="1">
 						<Name>PlcTask Outputs</Name>
 						<Var>
-							<Name>OUT._DO</Name>
-							<Type GUID="{668D0450-A13E-0A9B-B131-7E2E2F07384C}">U_OUT_IO_Translate</Type>
-						</Var>
-						<Var>
 							<Name>SAFETY.Safety_OK</Name>
 							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>OUT._DO</Name>
+							<Type GUID="{1417CEEE-25A1-7EBA-DEF9-CE53C77C68F6}">U_OUT_IO_Translate</Type>
 						</Var>
 						<Var>
 							<Name>SAFETY.Doors_OK</Name>
@@ -518,11 +515,6 @@
 					</Vars>
 					<Vars VarGrpType="1" ContextId="1" AreaNo="16">
 						<Name>SlowTask Inputs</Name>
-						<Var>
-							<Name>IN.ANALOG</Name>
-							<Comment><![CDATA[ Temperature module]]></Comment>
-							<Type GUID="{47A960A5-FA27-00CE-C256-D1FBA2A9645A}">ARRAY [1..4] OF INT</Type>
-						</Var>
 						<Var>
 							<Name>GENERAL.EthercatDevState</Name>
 							<Comment><![CDATA[ Linked 'useless' variables to IO]]></Comment>
@@ -539,6 +531,11 @@
 						<Var>
 							<Name>GENERAL.EthercatDev3</Name>
 							<Type>UINT</Type>
+						</Var>
+						<Var>
+							<Name>IN.ANALOG</Name>
+							<Comment><![CDATA[ Temperature module]]></Comment>
+							<Type GUID="{47A960A5-FA27-00CE-C256-D1FBA2A9645A}">ARRAY [1..4] OF INT</Type>
 						</Var>
 					</Vars>
 					<Vars VarGrpType="2" ContextId="1" AreaNo="17">
@@ -576,19 +573,6 @@
 							</OwnerB>
 						</OwnerA>
 					</UnrestoredVarLinks>
-					<UnrestoredVarLinks ImportTime="2022-12-18T14:02:25">
-						<OwnerA Name="InputDst" Prefix="TIPC^Doble Gato PLC^Doble Gato PLC Instance" Type="1">
-							<OwnerB Name="TIID^Device 1 (EtherCAT)">
-								<Link VarA="General.EthercatDevState" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Inputs^DevState" RestoreInfo="ANotFound"/>
-							</OwnerB>
-							<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 7 (EK1122)^Term 8 (EK1100)">
-								<Link VarA="General.Term2DevState" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="InfoData^State" RestoreInfo="ANotFound"/>
-							</OwnerB>
-							<OwnerB Name="TIID^Device 3 (EtherCAT Automation Protocol)">
-								<Link VarA="General.EthercatDev3" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Inputs^DevState" RestoreInfo="ANotFound"/>
-							</OwnerB>
-						</OwnerA>
-					</UnrestoredVarLinks>
 					<Contexts>
 						<Context>
 							<Id NeedCalleeCall="true">0</Id>
@@ -617,7 +601,7 @@
 			</Project>
 		</Plc>
 		<Io>
-			<Device Id="3" Disabled="true" DevType="112" AmsPort="28675" AmsNetId="192.168.188.162.4.1" RemoteName="Device 3 (EtherCAT Automation Protocol)">
+			<Device Id="3" DevType="112" AmsPort="28675" AmsNetId="5.62.144.216.4.1" RemoteName="Device 3 (EtherCAT Automation Protocol)">
 				<Name>Device 3 (EtherCAT Automation Protocol)</Name>
 				<AddressInfo>
 					<Pnp>
@@ -632,7 +616,7 @@
 				<Ethernet DeviceDesc="FEC1"/>
 				<Eap EapDeviceGuid="{D82A79A6-3567-4A82-9D92-2DDC1FB03E7E}"/>
 			</Device>
-			<Device Id="1" Disabled="true" DevType="111" DevFlags="#x0003" AmsPort="28673" AmsNetId="192.168.188.162.2.1" RemoteName="Device 1 (EtherCAT)" InfoImageId="2">
+			<Device Id="1" DevType="111" DevFlags="#x0003" AmsPort="28673" AmsNetId="5.62.144.216.2.1" RemoteName="Device 1 (EtherCAT)" InfoImageId="2">
 				<Name>Device 1 (EtherCAT)</Name>
 				<AddressInfo>
 					<Ccat>
@@ -1178,7 +1162,13 @@
 	</Project>
 	<Mappings>
 		<OwnerA Name="TIPC^Doble Gato PLC^Doble Gato PLC Instance">
+			<OwnerB Name="TIID^Device 1 (EtherCAT)">
+				<Link VarA="SlowTask Inputs^GENERAL.EthercatDev3" VarB="Inputs^Frm0State"/>
+				<Link VarA="SlowTask Inputs^GENERAL.EthercatDevState" VarB="Inputs^DevState"/>
+				<Link VarA="SlowTask Outputs^GENERAL.EthercatDevCtrl" VarB="Outputs^DevCtrl"/>
+			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 2 (EL3204)">
+				<Link VarA="SlowTask Inputs^GENERAL.Term2DevState" VarB="InfoData^State"/>
 				<Link VarA="SlowTask Inputs^IN.ANALOG[1]" VarB="RTD Inputs Channel 1^Value"/>
 				<Link VarA="SlowTask Inputs^IN.ANALOG[2]" VarB="RTD Inputs Channel 2^Value"/>
 				<Link VarA="SlowTask Inputs^IN.ANALOG[3]" VarB="RTD Inputs Channel 3^Value"/>
@@ -1240,6 +1230,9 @@
 				<Link VarA="PlcTask Outputs^OUT._DO^bArray[24]" VarB="Channel 16^Output"/>
 				<Link VarA="PlcTask Outputs^OUT._DO^bArray[9]" VarB="Channel 1^Output"/>
 			</OwnerB>
+			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 7 (EK1122)^Term 8 (EK1100)">
+				<Link VarA="SlowTask Inputs^GENERAL.Term2DevState" VarB="InfoData^State"/>
+			</OwnerB>
 			<OwnerB Name="TIID^Device 1 (EtherCAT)^Term 1 (EK1200)^Term 7 (EK1122)^Term 8 (EK1100)^Term 10 (EL2008)">
 				<Link VarA="PlcTask Outputs^OUT._DO^bArray[25]" VarB="Channel 1^Output"/>
 				<Link VarA="PlcTask Outputs^OUT._DO^bArray[26]" VarB="Channel 2^Output"/>
@@ -1259,6 +1252,10 @@
 				<Link VarA="PlcTask Inputs^IN._DI^bArray[30]" VarB="Channel 6^Input"/>
 				<Link VarA="PlcTask Inputs^IN._DI^bArray[31]" VarB="Channel 7^Input"/>
 				<Link VarA="PlcTask Inputs^IN._DI^bArray[32]" VarB="Channel 8^Input"/>
+			</OwnerB>
+			<OwnerB Name="TIID^Device 3 (EtherCAT Automation Protocol)">
+				<Link VarA="SlowTask Inputs^GENERAL.EthercatDev1" VarB="Inputs^DevState"/>
+				<Link VarA="SlowTask Inputs^GENERAL.EthercatDev3" VarB="Inputs^DevState"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>

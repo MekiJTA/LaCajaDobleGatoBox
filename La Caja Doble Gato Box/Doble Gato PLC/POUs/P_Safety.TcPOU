@@ -99,7 +99,7 @@ END_IF
                           <l2 n="InputItems" cet="BoxTreeOperand">
                             <o>
                               <o n="Operand" t="Operand">
-                                <v n="Operand">"IN._DI._Label.Door_Sensor1"</v>
+                                <v n="Operand">"IN._DI._Label.SM_Door_Sensor1"</v>
                                 <v n="Type">"BOOL"</v>
                                 <v n="Comment">""</v>
                                 <v n="SymbolComment">""</v>
@@ -344,7 +344,7 @@ OUT._DO._Label.DoorSensor_Activator := TRUE;
 
 //========================
 
-Door1_Box 		:= IN._DI._Label.Door_Sensor1;
+Door1_Box 		:= IN._DI._Label.SM_Door_Sensor1;
 Door2_Fence 	:= TRUE;
 Door3_Workbench := TRUE;
 

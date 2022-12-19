@@ -11,12 +11,12 @@ bInput4		:		BOOL;
 bInput5		:		BOOL;
 bInput6		:		BOOL;
 bInput7		:		BOOL;
-Door_Sensor1		:		BOOL;
+SM_Door_Sensor1		:		BOOL;
 //===== 	Box EL1809
 bInput9		:		BOOL;
-Wheel_RotationCount		:		BOOL;
+SM_Wheel_RotationCount		:		BOOL;
 bInput11		:		BOOL;
-SL_GatoPerro_Object		:		BOOL;
+SL_Wheel_LightSensor1		:		BOOL;
 bInput13		:		BOOL;
 bInput14		:		BOOL;
 bInput15		:		BOOL;
@@ -30,14 +30,14 @@ bInput22		:		BOOL;
 bInput23		:		BOOL;
 bInput24		:		BOOL;
 //====		EL1100 -> EL1008
-VFD_20		:		BOOL;
+VFD_READY_20		:		BOOL;
 bInput26		:		BOOL;
 VFD_24		:		BOOL;
 bInput28		:		BOOL;
 VFD_26		:		BOOL;
 bInput30		:		BOOL;
 bInput31		:		BOOL;
-SM_Gato_Indicator		:		BOOL;
+SM_Gato_MagnetSensor		:		BOOL;
 
 END_STRUCT
 END_TYPE

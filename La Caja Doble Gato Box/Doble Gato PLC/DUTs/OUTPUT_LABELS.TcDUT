@@ -30,9 +30,9 @@ bOutput22		:		BOOL;
 bOutput23		:		BOOL;
 bOutput24		:		BOOL;
 //===== 	EK1100 EL2008
-VFD_14		:		BOOL;
-VFD_15		:		BOOL;
-VFD_16		:		BOOL;
+VFD_START_STOP_14		:		BOOL;
+VFD_SPEED_1_15		:		BOOL;
+VFD_SPEED_2_16		:		BOOL;
 LIGHT_White		:		BOOL;
 LIGHT_Green		:		BOOL;
 bOutput30		:		BOOL;
