@@ -221,7 +221,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{28CA809F-5E10-63AC-B744-2DA7DD6034F0}" AutoDeleteType="true">OUTPUT_LABELS</Name>
+			<Name GUID="{FCBE5D46-97B7-0078-0017-BEAC5822AE5B}" AutoDeleteType="true">OUTPUT_LABELS</Name>
 			<BitSize>256</BitSize>
 			<SubItem>
 				<Name>ButtonBox_Light</Name>
@@ -370,20 +370,20 @@
 				<BitOffs>184</BitOffs>
 			</SubItem>
 			<SubItem>
-				<Name>VFD_START_STOP_14</Name>
+				<Name>VFD_RUN_14</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
 				<Comment><![CDATA[===== 	EK1100 EL2008]]></Comment>
 				<BitSize>8</BitSize>
 				<BitOffs>192</BitOffs>
 			</SubItem>
 			<SubItem>
-				<Name>VFD_SPEED_1_15</Name>
+				<Name>VFD_BACKWARD_15</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
 				<BitSize>8</BitSize>
 				<BitOffs>200</BitOffs>
 			</SubItem>
 			<SubItem>
-				<Name>VFD_SPEED_2_16</Name>
+				<Name>VFD_FORWARD_16</Name>
 				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
 				<BitSize>8</BitSize>
 				<BitOffs>208</BitOffs>
@@ -420,7 +420,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{0FC02F8D-8B4C-8341-ECE8-12229841C576}" AutoDeleteType="true">U_OUT_IO_Translate</Name>
+			<Name GUID="{2FCB4DAC-A4CA-C44E-CEE2-09EC6850C2FF}" AutoDeleteType="true">U_OUT_IO_Translate</Name>
 			<BitSize>256</BitSize>
 			<SubItem>
 				<Name>bArray</Name>
@@ -434,7 +434,7 @@
 			</SubItem>
 			<SubItem>
 				<Name>_Label</Name>
-				<Type GUID="{28CA809F-5E10-63AC-B744-2DA7DD6034F0}">OUTPUT_LABELS</Type>
+				<Type GUID="{FCBE5D46-97B7-0078-0017-BEAC5822AE5B}">OUTPUT_LABELS</Type>
 				<BitSize>256</BitSize>
 				<BitOffs>0</BitOffs>
 			</SubItem>
@@ -510,7 +510,7 @@
 						</Var>
 						<Var>
 							<Name>OUT._DO</Name>
-							<Type GUID="{0FC02F8D-8B4C-8341-ECE8-12229841C576}">U_OUT_IO_Translate</Type>
+							<Type GUID="{2FCB4DAC-A4CA-C44E-CEE2-09EC6850C2FF}">U_OUT_IO_Translate</Type>
 						</Var>
 					</Vars>
 					<Vars VarGrpType="1" ContextId="1" AreaNo="16">

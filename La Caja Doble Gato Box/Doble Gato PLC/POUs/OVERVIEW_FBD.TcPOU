@@ -48,7 +48,7 @@ END_VAR
                         <l2 n="OutputItems" cet="Operand">
                           <n />
                           <o>
-                            <v n="Operand">"OUT._DO._Label.VFD_START_STOP_14"</v>
+                            <v n="Operand">"OUT._DO._Label.VFD_RUN_14"</v>
                             <v n="Type">"BOOL"</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>
@@ -64,7 +64,7 @@ END_VAR
                             <v n="Id">180L</v>
                           </o>
                           <o>
-                            <v n="Operand">"OUT._DO._Label.VFD_SPEED_1_15"</v>
+                            <v n="Operand">"OUT._DO._Label.VFD_BACKWARD_15"</v>
                             <v n="Type">"BOOL"</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>
@@ -80,7 +80,7 @@ END_VAR
                             <v n="Id">181L</v>
                           </o>
                           <o>
-                            <v n="Operand">"OUT._DO._Label.VFD_SPEED_2_16"</v>
+                            <v n="Operand">"OUT._DO._Label.VFD_FORWARD_16"</v>
                             <v n="Type">"BOOL"</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>
@@ -452,8 +452,8 @@ END_VAR
                               <v>Q</v>
                               <v>RUN</v>
                               <v>oLight1</v>
-                              <v>Fast</v>
-                              <v>Faster</v>
+                              <v>Forward</v>
+                              <v>Backward</v>
                             </l2>
                             <l2 n="Types" cet="String">
                               <v>BOOL</v>
@@ -511,7 +511,7 @@ END_VAR
                         </o>
                         <o t="BoxTreeOperand">
                           <o n="Operand" t="Operand">
-                            <v n="Operand">"fbButtonBox.Fast"</v>
+                            <v n="Operand">"fbButtonBox.Forward"</v>
                             <v n="Type">"BOOL"</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>
@@ -530,7 +530,7 @@ END_VAR
                         </o>
                         <o t="BoxTreeOperand">
                           <o n="Operand" t="Operand">
-                            <v n="Operand">"fbButtonBox.Faster"</v>
+                            <v n="Operand">"fbButtonBox.Backward"</v>
                             <v n="Type">"BOOL"</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>
@@ -591,8 +591,8 @@ END_VAR
                           <v>IN</v>
                           <v>IN_Run</v>
                           <v>IN_Ready</v>
-                          <v>IN_Fast</v>
-                          <v>IN_Faster</v>
+                          <v>IN_Forward</v>
+                          <v>IN_Backward</v>
                           <v>VFD_Running</v>
                           <v>VFD_Ready</v>
                         </l2>

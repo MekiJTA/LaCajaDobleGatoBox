@@ -4,7 +4,7 @@
     <Declaration><![CDATA[FUNCTION_BLOCK FB_ButtonBox
 VAR_INPUT
 	IN			: BOOL;
-	State 	: (IDLE, RUN_FAST, RUN_FASTER, ERROR);
+	State 	: (IDLE, RUN_FORWARD, RUN_BACK, STOP);
 	Button1		: BOOL;
 	SwitchLeft 	: BOOL;
 	SwitchRight : BOOL;
@@ -13,8 +13,8 @@ VAR_OUTPUT
 	Q 		: BOOL;
 	RUN		: BOOL;
 	oLight1 : BOOL;	
-	Fast 	: BOOL;
-	Faster 	: BOOL;
+	Forward 	: BOOL;
+	Backward 	: BOOL;
 END_VAR
 VAR
 	BTN_Feed_TRIG: BOOL;
@@ -41,15 +41,15 @@ CASE State OF
 	IDLE:
 		oLight1 := GENERAL.BlinkOn;
 
-	RUN_FAST:
+	RUN_FORWARD:
 		oLight1 := TRUE;
 		A_SwitchControl();
 		
-	RUN_FASTER:
+	RUN_BACK:
 		oLight1 := TRUE;		
 		A_SwitchControl();
 		
-	ERROR:
+	STOP:
 		oLight1 := GENERAL.BlinkSpecial_On;
 
 END_CASE]]></ST>
@@ -794,8 +794,8 @@ END_CASE]]></ST>
     </Action>
     <Action Name="A_SwitchControl" Id="{75b4d7c1-722f-4386-a8e9-094699e0c8ae}">
       <Implementation>
-        <ST><![CDATA[	Fast := NOT SwitchLeftRight_RS;
-	Faster := SwitchLeftRight_RS;
+        <ST><![CDATA[	Forward := NOT SwitchLeftRight_RS;
+	Backward := SwitchLeftRight_RS;
 ]]></ST>
       </Implementation>
     </Action>

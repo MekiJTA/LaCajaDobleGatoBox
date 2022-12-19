@@ -6,17 +6,17 @@ VAR_INPUT
 	IN				: BOOL;
 	IN_Run 			: BOOL; // Order to start running
 	IN_Ready			: BOOL; // Safety ok, system ok, doors ok
-	IN_Fast 			: BOOL;
-	IN_Faster			: BOOL;
+	IN_Forward 			: BOOL;
+	IN_Backward			: BOOL;
 	VFD_Running		: BOOL;
 	VFD_Ready		: BOOL;
 	
 END_VAR
 VAR_OUTPUT
 	Q : BOOL;
-	RUN_Order_VFD 	: BOOL;
-	Fast_VFD		: BOOL;
-	Faster_VFD		: BOOL;
+	VFD_14_RUN 	: BOOL;
+	VFD_15_Forward		: BOOL;
+	VFD_16_Backward		: BOOL;
 	iStatus		: INT;
 	iFault		: INT;
 	sStatusMessage	: STRING;
@@ -27,8 +27,7 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[
-M_VariableChanges();
+      <ST><![CDATA[M_VariableChanges();
 
 IF NOT IN_Ready THEN
 	nMotorState :=0;
@@ -36,23 +35,26 @@ END_IF
 
 CASE nMotorState OF
 	NOT_READY:	
+	sStatusMessage := 'Not ready. Stopped';
 		IF IN_Ready THEN
 		nMotorState := 1;
 		END_IF
 
 	ALL_READY:
+	sStatusMessage := 'Ready to run. Motor Stopped';
 		IF IN_Run THEN
 			nMotorState := 2;
 		END_IF
 		
 	RUNNING:
-		RUN_Order_VFD := TRUE;
+	sStatusMessage := 'Motor running: Forward';
+		VFD_14_RUN := TRUE;
 		IF NOT IN_Run THEN
 			nMotorState := 3;
 		END_IF
 
 	STOP:
-		RUN_Order_VFD := FALSE;
+		VFD_14_RUN := FALSE;
 		Stopping_TON(IN:=TRUE , PT:=T#1S , Q=> , ET=> );
 			IF Stopping_TON.Q THEN
 				Stopping_TON(IN:=FALSE);
@@ -74,8 +76,8 @@ END_VAR
       <Implementation>
         <ST><![CDATA[
 IN 			:= Q;
-Fast_VFD 	:= IN_Fast;
-Faster_VFD 	:= IN_Faster;
+VFD_15_Forward 	:= IN_Forward;
+VFD_16_Backward 	:= IN_Backward;
 iStatus 	:= nMotorState;
 iFault 		:= 0;
 ]]></ST>
@@ -117,20 +119,7 @@ iFault 		:= 0;
       </Implementation>
     </Action>
     <LineIds Name="FB_BeltControl">
-      <LineId Id="794" Count="1" />
-      <LineId Id="793" Count="0" />
-      <LineId Id="648" Count="0" />
-      <LineId Id="780" Count="1" />
-      <LineId Id="649" Count="2" />
-      <LineId Id="653" Count="4" />
-      <LineId Id="662" Count="0" />
-      <LineId Id="664" Count="3" />
-      <LineId Id="671" Count="1" />
-      <LineId Id="674" Count="1" />
-      <LineId Id="784" Count="0" />
-      <LineId Id="676" Count="0" />
-      <LineId Id="792" Count="0" />
-      <LineId Id="678" Count="10" />
+      <LineId Id="919" Count="38" />
       <LineId Id="391" Count="0" />
     </LineIds>
     <LineIds Name="FB_BeltControl.M_VariableChanges">
