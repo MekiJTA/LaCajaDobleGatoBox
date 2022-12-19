@@ -24,6 +24,8 @@ END_VAR
 VAR
 	nMotorState: (NOT_READY, ALL_READY, RUNNING, STOP, ERROR);	//Local ENUM
 	Stopping_TON: TON;
+	sDirCase: (FORWARD, BACKWARD);
+	Frw_Bck: INT;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -42,20 +44,42 @@ CASE nMotorState OF
 
 	ALL_READY:
 	sStatusMessage := 'Ready to run. Motor Stopped';
+		VFD_14_RUN := FALSE;
+		VFD_15_Forward := FALSE;
+		VFD_16_Backward := TRUE;
+	
 		IF IN_Run THEN
 			nMotorState := 2;
 		END_IF
 		
 	RUNNING:
-	sStatusMessage := 'Motor running: Forward';
-		VFD_14_RUN := TRUE;
+
+		CASE sDirCase  OF			
+			BACKWARD: //14 15
+				VFD_14_RUN := FALSE;
+				VFD_15_Forward := TRUE;
+				VFD_16_Backward := FALSE;
+				sStatusMessage := 'Motor running: Backward';
+
+			FORWARD: //14 16
+				VFD_14_RUN := TRUE;
+				VFD_15_Forward := FALSE;
+				VFD_16_Backward := TRUE;
+				sStatusMessage := 'Motor running: Forward';
+			
+		END_CASE
+
 		IF NOT IN_Run THEN
 			nMotorState := 3;
 		END_IF
 
 	STOP:
+		sStatusMessage := 'Stopping...';
 		VFD_14_RUN := FALSE;
-		Stopping_TON(IN:=TRUE , PT:=T#1S , Q=> , ET=> );
+		VFD_15_Forward := FALSE;
+		VFD_16_Backward := TRUE;
+		
+		Stopping_TON(IN:=TRUE , PT:=T#2S , Q=> , ET=> );
 			IF Stopping_TON.Q THEN
 				Stopping_TON(IN:=FALSE);
 				nMotorState := 0;
@@ -80,7 +104,8 @@ VFD_15_Forward 	:= IN_Forward;
 VFD_16_Backward 	:= IN_Backward;
 iStatus 	:= nMotorState;
 iFault 		:= 0;
-]]></ST>
+Frw_Bck := BOOL_TO_INT( IN_Forward);
+sDirCase := Frw_Bck;]]></ST>
       </Implementation>
     </Method>
     <Action Name="VFD_Pins" Id="{7acdc153-e752-42e2-a23d-6585918198f1}">
@@ -119,7 +144,32 @@ iFault 		:= 0;
       </Implementation>
     </Action>
     <LineIds Name="FB_BeltControl">
-      <LineId Id="919" Count="38" />
+      <LineId Id="919" Count="14" />
+      <LineId Id="958" Count="0" />
+      <LineId Id="960" Count="1" />
+      <LineId Id="963" Count="0" />
+      <LineId Id="934" Count="4" />
+      <LineId Id="968" Count="0" />
+      <LineId Id="964" Count="0" />
+      <LineId Id="973" Count="0" />
+      <LineId Id="980" Count="1" />
+      <LineId Id="978" Count="0" />
+      <LineId Id="988" Count="0" />
+      <LineId Id="987" Count="0" />
+      <LineId Id="975" Count="0" />
+      <LineId Id="982" Count="1" />
+      <LineId Id="979" Count="0" />
+      <LineId Id="986" Count="0" />
+      <LineId Id="977" Count="0" />
+      <LineId Id="971" Count="0" />
+      <LineId Id="989" Count="0" />
+      <LineId Id="965" Count="0" />
+      <LineId Id="942" Count="3" />
+      <LineId Id="993" Count="0" />
+      <LineId Id="990" Count="1" />
+      <LineId Id="946" Count="0" />
+      <LineId Id="992" Count="0" />
+      <LineId Id="947" Count="10" />
       <LineId Id="391" Count="0" />
     </LineIds>
     <LineIds Name="FB_BeltControl.M_VariableChanges">
@@ -127,6 +177,7 @@ iFault 		:= 0;
       <LineId Id="6" Count="0" />
       <LineId Id="8" Count="3" />
       <LineId Id="5" Count="0" />
+      <LineId Id="16" Count="0" />
     </LineIds>
     <LineIds Name="FB_BeltControl.VFD_Pins">
       <LineId Id="2" Count="29" />

@@ -42,7 +42,7 @@ END_VAR
                         <v n="LValue">false</v>
                         <v n="Boolean">false</v>
                         <v n="IsInstance">true</v>
-                        <v n="Id">313L</v>
+                        <v n="Id">315L</v>
                       </o>
                       <o n="OutputItems" t="OutputItemList">
                         <l2 n="OutputItems" cet="Operand">
@@ -609,9 +609,9 @@ END_VAR
                       <o n="OutputParam" t="ParamList">
                         <l2 n="Names" cet="String">
                           <v>Q</v>
-                          <v>RUN_Order_VFD</v>
-                          <v>Fast_VFD</v>
-                          <v>Faster_VFD</v>
+                          <v>VFD_14_RUN</v>
+                          <v>VFD_15_Forward</v>
+                          <v>VFD_16_Backward</v>
                           <v>iStatus</v>
                           <v>iFault</v>
                           <v>sStatusMessage</v>
@@ -632,7 +632,7 @@ END_VAR
                       <n n="STSnippet" />
                       <v n="ContainsExtensibleInputs">false</v>
                       <v n="ProvidesSTSnippet">false</v>
-                      <v n="Id">314L</v>
+                      <v n="Id">316L</v>
                     </o>
                   </l2>
                   <l2 n="Connectors" />
