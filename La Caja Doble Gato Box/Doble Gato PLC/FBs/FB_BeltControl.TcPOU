@@ -25,7 +25,6 @@ VAR
 	nMotorState: (NOT_READY, ALL_READY, RUNNING, STOP, ERROR);	//Local ENUM
 	Stopping_TON: TON;
 	sDirCase: (FORWARD, BACKWARD);
-	Frw_Bck: INT;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -55,16 +54,16 @@ CASE nMotorState OF
 	RUNNING:
 
 		CASE sDirCase  OF			
-			BACKWARD: //14 15
-				VFD_14_RUN := FALSE;
-				VFD_15_Forward := TRUE;
-				VFD_16_Backward := FALSE;
-				sStatusMessage := 'Motor running: Backward';
-
-			FORWARD: //14 16
+			BACKWARD:
 				VFD_14_RUN := TRUE;
 				VFD_15_Forward := FALSE;
 				VFD_16_Backward := TRUE;
+				sStatusMessage := 'Motor running: Backward';
+
+			FORWARD: 
+				VFD_14_RUN := FALSE;
+				VFD_15_Forward := TRUE;
+				VFD_16_Backward := FALSE;				
 				sStatusMessage := 'Motor running: Forward';
 			
 		END_CASE
@@ -96,53 +95,22 @@ END_CASE
       <Declaration><![CDATA[METHOD M_VariableChanges : BOOL
 VAR_INPUT
 END_VAR
+VAR
+	Forward_OR_Backward: INT;
+END_VAR
 ]]></Declaration>
       <Implementation>
         <ST><![CDATA[
-IN 			:= Q;
-VFD_15_Forward 	:= IN_Forward;
+IN 					:= Q;
+VFD_15_Forward	 	:= IN_Forward;
 VFD_16_Backward 	:= IN_Backward;
-iStatus 	:= nMotorState;
-iFault 		:= 0;
-Frw_Bck := BOOL_TO_INT( IN_Forward);
-sDirCase := Frw_Bck;]]></ST>
+iStatus 			:= nMotorState;
+iFault 				:= 0;
+Forward_OR_Backward := BOOL_TO_INT( IN_Forward);
+sDirCase 			:= Forward_OR_Backward;
+]]></ST>
       </Implementation>
     </Method>
-    <Action Name="VFD_Pins" Id="{7acdc153-e752-42e2-a23d-6585918198f1}">
-      <Implementation>
-        <ST><![CDATA[// Rough outline:
-// INPUT 24V: DIB 4 5 6 eli paikat 14 15 16
-// 4 käy/seis, 5 vakionopeus 1, 6 vakionopeus 2
-
-// OUTPUT: 20, 24 25 26
-// 20 = DO1, VALMIS-signaali
-// 24-26 = rele, 25 vaihtaa paikkaa
-
-// Kaukosäätimellä napilla käynnistyy ja pysähtyy (valo syttyy tai sammuu)
-// Kytkimellä nopeus 1 tai 2 (vilkuttaa myös nopeammin tai hitaammin)
-
-// Yksi anturi olisi pyörässä kiinni laskemassa kierroksia
-// Valoanturi seuraamassa kun kissa tai koira menee ohi
-
-// Valmius ja moottori käy/ei käy keskustelu taajarin kanssa joko digitaalilähdön kautta (valmius ehkä?) ja relelähdön kautta (miten toimikaan? Pitiköhän syöttää virtaa keskelle)
-//Inputit vois Triguina yhä käsitellä, vaikka Buttonboxistakin tulee triguja. Mikäli jostain muusta lähteestä tulee käskyjä niin onpahan triguja yhä
-
-//==================
-// 7.10.22
-// Moottori pyörii, käskyjä liikkuu. nyt erikoiskäyttö -profiili taajarissa, mutta EEPROM vika unohtaa kaikki asetukset.
-// IN 1,2 on käy/suunta nyt, ei jaksa vaihtaa paremmaksi. 3 on Fast, mutta IN 4 ei ole taajarissa kytketty (sitten olisi Faster)
-// OUT (taajarista) ei nopeasti katsoen rekisteröidy PLC:ssä. Relelähtö varmaan vääri kytketty
-
-
-(*En käytäkään ENUMia taajarille, ei vaikuttanu hyödylliseltä. mutta numeroinnit:
-	IN_RUN_STOP := 14,
-	IN_SPEED_1	:= 15,
-	IN_SPEED_2	:= 16,
-	OUT_READY 	:= 20,
-	OUT_24		:= 24,
-	OUT_26		:= 26 *)]]></ST>
-      </Implementation>
-    </Action>
     <LineIds Name="FB_BeltControl">
       <LineId Id="919" Count="14" />
       <LineId Id="958" Count="0" />
@@ -152,13 +120,13 @@ sDirCase := Frw_Bck;]]></ST>
       <LineId Id="968" Count="0" />
       <LineId Id="964" Count="0" />
       <LineId Id="973" Count="0" />
-      <LineId Id="980" Count="1" />
+      <LineId Id="1026" Count="1" />
       <LineId Id="978" Count="0" />
       <LineId Id="988" Count="0" />
       <LineId Id="987" Count="0" />
       <LineId Id="975" Count="0" />
-      <LineId Id="982" Count="1" />
-      <LineId Id="979" Count="0" />
+      <LineId Id="1024" Count="1" />
+      <LineId Id="1023" Count="0" />
       <LineId Id="986" Count="0" />
       <LineId Id="977" Count="0" />
       <LineId Id="971" Count="0" />
@@ -177,11 +145,7 @@ sDirCase := Frw_Bck;]]></ST>
       <LineId Id="6" Count="0" />
       <LineId Id="8" Count="3" />
       <LineId Id="5" Count="0" />
-      <LineId Id="16" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_BeltControl.VFD_Pins">
-      <LineId Id="2" Count="29" />
-      <LineId Id="1" Count="0" />
+      <LineId Id="16" Count="1" />
     </LineIds>
   </POU>
 </TcPlcObject>

@@ -16,11 +16,13 @@ END_VAR
 VAR
 	
 	R_TRIG_0: R_TRIG;
-	R_TRIG_1: r_trig;
+	F_TRIG_1: r_trig;
 	GatoTrigger: BOOL;
 	WheelLightTrigger: BOOL;
 	R_TRIG_2: R_TRIG;
 	RotationTrigger: BOOL;
+	RotationCount: UINT;
+	ObjectCount: UINT;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -29,23 +31,21 @@ END_VAR
 A_SensorHandling();
 
 // Kierroslaskuri
-
+IF RotationTrigger THEN
+	RotationCount := RotationCount +1;	
+END_IF
 // Magneettisensori näkee Gaton
 
 // Valosensori näkee kumman vain
+IF WheelLightTrigger THEN
+	ObjectCount := ObjectCount +1;
+END_IF
 
 // Kumpi on kyseessä
 
 ]]></ST>
     </Implementation>
-    <Action Name="A_SensorHandling" Id="{386bec3c-e6c8-43fa-a72f-e87306b77bbe}">
-      <Implementation>
-        <ST><![CDATA[
-
-// IN._DI._Label.SM_Gato_MagnetSensor ]]></ST>
-      </Implementation>
-    </Action>
-    <Action Name="A_SensorHandling2" Id="{9ef9e040-638d-43a8-8a82-3aaf50f53409}">
+    <Action Name="A_SensorHandling" Id="{9ef9e040-638d-43a8-8a82-3aaf50f53409}">
       <Implementation>
         <NWL>
           <XmlArchive>
@@ -91,9 +91,9 @@ A_SensorHandling();
                           <v n="Extensible">false</v>
                         </o>
                         <o n="RValue" t="BoxTreeBox">
-                          <v n="BoxType">"r_trig"</v>
+                          <v n="BoxType">"F_trig"</v>
                           <o n="Instance" t="Operand">
-                            <v n="Operand">"R_TRIG_1"</v>
+                            <v n="Operand">"F_TRIG_1"</v>
                             <v n="Type">"r_trig"</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>
@@ -106,7 +106,7 @@ A_SensorHandling();
                             <v n="LValue">false</v>
                             <v n="Boolean">false</v>
                             <v n="IsInstance">true</v>
-                            <v n="Id">15L</v>
+                            <v n="Id">30L</v>
                           </o>
                           <o n="OutputItems" t="OutputItemList">
                             <l2 n="OutputItems">
@@ -162,7 +162,7 @@ A_SensorHandling();
                           <n n="STSnippet" />
                           <v n="ContainsExtensibleInputs">false</v>
                           <v n="ProvidesSTSnippet">false</v>
-                          <v n="Id">16L</v>
+                          <v n="Id">31L</v>
                         </o>
                         <v n="Id">20L</v>
                       </o>
@@ -436,12 +436,11 @@ A_SensorHandling();
       <LineId Id="93" Count="1" />
       <LineId Id="61" Count="2" />
       <LineId Id="73" Count="0" />
-      <LineId Id="65" Count="5" />
+      <LineId Id="117" Count="1" />
+      <LineId Id="65" Count="2" />
+      <LineId Id="143" Count="2" />
+      <LineId Id="68" Count="2" />
       <LineId Id="17" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_GatoPerro.A_SensorHandling">
-      <LineId Id="8" Count="1" />
-      <LineId Id="5" Count="0" />
     </LineIds>
     <LineIds Name="FB_GatoPerro.A_SignalLights">
       <LineId Id="1" Count="0" />

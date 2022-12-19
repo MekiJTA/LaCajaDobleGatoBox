@@ -4,7 +4,7 @@
     <Declaration><![CDATA[FUNCTION_BLOCK FB_ButtonBox
 VAR_INPUT
 	IN			: BOOL;
-	State 	: (IDLE, RUN_FORWARD, RUN_BACK, STOP);
+	State 	: (NOT_READY, ALL_READY, RUNNING, STOP, ERROR);
 	Button1		: BOOL;
 	SwitchLeft 	: BOOL;
 	SwitchRight : BOOL;
@@ -28,7 +28,6 @@ VAR
 	RS1: RS;
 	SwitchLeftRight_RS: BOOL;
 	rTrig1: R_TRIG;
-	RS_0: RS;
 	RS_2: RS;
 END_VAR
 ]]></Declaration>
@@ -38,14 +37,14 @@ A_InputHandling();
 	
 CASE State OF
 	
-	IDLE:
-		oLight1 := GENERAL.BlinkOn;
+	NOT_READY:
+		oLight1 := FALSE;
 
-	RUN_FORWARD:
-		oLight1 := TRUE;
+	ALL_READY:
+		oLight1 := GENERAL.BlinkOn;
 		A_SwitchControl();
 		
-	RUN_BACK:
+	RUNNING:
 		oLight1 := TRUE;		
 		A_SwitchControl();
 		
