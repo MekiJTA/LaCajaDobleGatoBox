@@ -501,16 +501,16 @@
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
-							<Name>OUT._DO</Name>
-							<Type GUID="{2FCB4DAC-A4CA-C44E-CEE2-09EC6850C2FF}">U_OUT_IO_Translate</Type>
-						</Var>
-						<Var>
 							<Name>SAFETY.Doors_OK</Name>
 							<Type>BOOL</Type>
 						</Var>
 						<Var>
 							<Name>SAFETY.E_STOP_OK</Name>
 							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>OUT._DO</Name>
+							<Type GUID="{2FCB4DAC-A4CA-C44E-CEE2-09EC6850C2FF}">U_OUT_IO_Translate</Type>
 						</Var>
 					</Vars>
 					<Vars VarGrpType="1" ContextId="1" AreaNo="16">
