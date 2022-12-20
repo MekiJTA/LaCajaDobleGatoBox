@@ -46,7 +46,7 @@ IF RotationTrigger THEN
 	// We need slight delay before Priming Gato. Perro could be just nearing the Light sensor and register as Gato
 	// Lets calculate rotations per minute, divide it to 3/4th rotation and then prime Gato just in time
 
-//	M_RotationMeasure(IN_TimeNow:= TIME());
+	M_RotationMeasure(IN_TimeNow:= TIME());
 
 END_IF
 
@@ -78,6 +78,11 @@ Perro 	:= NOT bGato_or_Perro;
 
 ]]></ST>
     </Implementation>
+    <Action Name="A_RotationMeasure" Id="{ed38b022-b882-45b8-9f6c-4ed93bed5869}">
+      <Implementation>
+        <ST><![CDATA[]]></ST>
+      </Implementation>
+    </Action>
     <Action Name="A_SensorHandling" Id="{9ef9e040-638d-43a8-8a82-3aaf50f53409}">
       <Implementation>
         <NWL>
@@ -533,6 +538,9 @@ TimeStop := IN_TimeNow;
       <LineId Id="280" Count="27" />
       <LineId Id="311" Count="0" />
       <LineId Id="17" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_GatoPerro.A_RotationMeasure">
+      <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="FB_GatoPerro.A_SignalLights">
       <LineId Id="1" Count="0" />
