@@ -4,13 +4,6 @@
     <Declaration><![CDATA[{attribute 'qualified_only'}
 VAR_GLOBAL
 	_DO 			AT%Q*:		U_OUT_IO_Translate;
-//	EK1100_IO		AT%Q*:		ARRAY[1..8] OF BOOL;
-	
-(*
-	BOX_OUT 	AT%Q*:		ARRAY[1..8] OF BOOL;
-	BOX_2809_OUT	AT%Q*:	ARRAY[1..8] OF BOOL;
-	EK_OUT		AT%Q*:		ARRAY[1..8] OF BOOL;
-	*)
 
 END_VAR]]></Declaration>
   </GVL>

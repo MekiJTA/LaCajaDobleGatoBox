@@ -8,7 +8,7 @@ END_VAR
     <Implementation>
       <ST><![CDATA[(*
 //============
-NAMING:
+NAMING INPUTS USING UNION:
 	Give Inputs/Outputs Specific Labels In: 
 		DUT/INPUT_LABELS
 		DUT/OUTPUT_LABELS

@@ -4,7 +4,7 @@
     <Declaration><![CDATA[FUNCTION_BLOCK FB_ButtonBox
 VAR_INPUT
 	IN			: BOOL;
-	State 	: (NOT_READY, ALL_READY, RUNNING, STOP, ERROR);
+	State : 	(NOT_READY, ALL_READY, RUNNING, STOP, ERROR);	//Local ENUM
 	Button1		: BOOL;
 	SwitchLeft 	: BOOL;
 	SwitchRight : BOOL;
@@ -33,24 +33,28 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[Q := IN;
+
+// Button press handling
 A_InputHandling();
-	
-CASE State OF
+
+// Button box light controls dictated by the state of Belt Control.
+CASE State OF		// State is an input of 1-5 from BeltControl FB
 	
 	NOT_READY:
 		oLight1 := FALSE;
 
 	ALL_READY:
 		oLight1 := GENERAL.BlinkOn;
-		A_SwitchControl();
 		
 	RUNNING:
 		oLight1 := TRUE;		
-		A_SwitchControl();
 		
 	STOP:
 		oLight1 := GENERAL.BlinkSpecial_On;
 
+	ERROR:
+		oLight1 := GENERAL.BlinkSpecial_On;
+		
 END_CASE]]></ST>
     </Implementation>
     <Action Name="A_InputHandling" Id="{3b6590fa-f99a-41e5-8828-c964d473a0f6}">
@@ -67,8 +71,8 @@ END_CASE]]></ST>
                     <v n="FBDValid">false</v>
                     <v n="ILValid">false</v>
                     <l2 n="ILLines" />
-                    <v n="Comment">""</v>
-                    <v n="Title">""</v>
+                    <v n="Comment">"First, simple press launches a trigger"</v>
+                    <v n="Title">"Buttonbox main button"</v>
                     <v n="Label">""</v>
                     <v n="OutCommented">false</v>
                     <l2 n="NetworkItems" cet="BoxTreeAssign">
@@ -183,7 +187,7 @@ END_CASE]]></ST>
                     <v n="FBDValid">false</v>
                     <v n="ILValid">false</v>
                     <l2 n="ILLines" />
-                    <v n="Comment">""</v>
+                    <v n="Comment">"...and said trigger switches RS state to and fro between run and not run"</v>
                     <v n="Title">""</v>
                     <v n="Label">""</v>
                     <v n="OutCommented">false</v>
@@ -511,38 +515,14 @@ END_CASE]]></ST>
                     <v n="FBDValid">false</v>
                     <v n="ILValid">false</v>
                     <l2 n="ILLines" />
-                    <v n="Comment">""</v>
-                    <v n="Title">""</v>
+                    <v n="Comment">"Switch alternates RS between forward and backward running motor"</v>
+                    <v n="Title">"Switch"</v>
                     <v n="Label">""</v>
                     <v n="OutCommented">false</v>
-                    <l2 n="NetworkItems" cet="BoxTreeAssign">
-                      <o>
-                        <o n="OutputItems" t="OutputItemList">
-                          <l2 n="OutputItems" cet="Operand">
-                            <o>
-                              <v n="Operand">"SwitchLeftRight_RS"</v>
-                              <v n="Type">"BOOL"</v>
-                              <v n="Comment">""</v>
-                              <v n="SymbolComment">""</v>
-                              <v n="Address">""</v>
-                              <o n="Flags" t="Flags">
-                                <v n="Flags">0</v>
-                                <v n="Fixed">false</v>
-                                <v n="Extensible">false</v>
-                              </o>
-                              <v n="LValue">true</v>
-                              <v n="Boolean">false</v>
-                              <v n="IsInstance">false</v>
-                              <v n="Id">57L</v>
-                            </o>
-                          </l2>
-                        </o>
-                        <o n="Flags" t="Flags">
-                          <v n="Flags">0</v>
-                          <v n="Fixed">false</v>
-                          <v n="Extensible">false</v>
-                        </o>
-                        <o n="RValue" t="BoxTreeBox">
+                    <l2 n="NetworkItems">
+                      <o t="BoxTreeDemux">
+                        <v n="VarId">4</v>
+                        <o n="Input" t="BoxTreeBox">
                           <v n="BoxType">"RS"</v>
                           <o n="Instance" t="Operand">
                             <v n="Operand">"RS1"</v>
@@ -558,7 +538,7 @@ END_CASE]]></ST>
                             <v n="LValue">false</v>
                             <v n="Boolean">false</v>
                             <v n="IsInstance">true</v>
-                            <v n="Id">16L</v>
+                            <v n="Id">103L</v>
                           </o>
                           <o n="OutputItems" t="OutputItemList">
                             <l2 n="OutputItems">
@@ -588,7 +568,7 @@ END_CASE]]></ST>
                                 <v n="LValue">false</v>
                                 <v n="Boolean">false</v>
                                 <v n="IsInstance">true</v>
-                                <v n="Id">7L</v>
+                                <v n="Id">105L</v>
                               </o>
                               <o n="OutputItems" t="OutputItemList">
                                 <l2 n="OutputItems">
@@ -617,9 +597,9 @@ END_CASE]]></ST>
                                     <v n="LValue">false</v>
                                     <v n="Boolean">false</v>
                                     <v n="IsInstance">false</v>
-                                    <v n="Id">10L</v>
+                                    <v n="Id">108L</v>
                                   </o>
-                                  <v n="Id">9L</v>
+                                  <v n="Id">107L</v>
                                 </o>
                               </l2>
                               <o n="InputParam" t="ParamList">
@@ -644,7 +624,7 @@ END_CASE]]></ST>
                               <n n="STSnippet" />
                               <v n="ContainsExtensibleInputs">false</v>
                               <v n="ProvidesSTSnippet">false</v>
-                              <v n="Id">8L</v>
+                              <v n="Id">106L</v>
                             </o>
                             <o>
                               <v n="BoxType">"R_TRIG"</v>
@@ -662,7 +642,7 @@ END_CASE]]></ST>
                                 <v n="LValue">false</v>
                                 <v n="Boolean">false</v>
                                 <v n="IsInstance">true</v>
-                                <v n="Id">20L</v>
+                                <v n="Id">109L</v>
                               </o>
                               <o n="OutputItems" t="OutputItemList">
                                 <l2 n="OutputItems">
@@ -691,9 +671,9 @@ END_CASE]]></ST>
                                     <v n="LValue">false</v>
                                     <v n="Boolean">false</v>
                                     <v n="IsInstance">false</v>
-                                    <v n="Id">23L</v>
+                                    <v n="Id">112L</v>
                                   </o>
-                                  <v n="Id">22L</v>
+                                  <v n="Id">111L</v>
                                 </o>
                               </l2>
                               <o n="InputParam" t="ParamList">
@@ -718,7 +698,7 @@ END_CASE]]></ST>
                               <n n="STSnippet" />
                               <v n="ContainsExtensibleInputs">false</v>
                               <v n="ProvidesSTSnippet">false</v>
-                              <v n="Id">21L</v>
+                              <v n="Id">110L</v>
                             </o>
                           </l2>
                           <o n="InputParam" t="ParamList">
@@ -745,29 +725,133 @@ END_CASE]]></ST>
                           <n n="STSnippet" />
                           <v n="ContainsExtensibleInputs">false</v>
                           <v n="ProvidesSTSnippet">false</v>
-                          <v n="Id">17L</v>
+                          <v n="Id">104L</v>
                         </o>
-                        <v n="Id">58L</v>
+                        <v n="Id">115L</v>
+                      </o>
+                      <o t="BoxTreeAssign">
+                        <o n="OutputItems" t="OutputItemList">
+                          <l2 n="OutputItems" cet="Operand">
+                            <o>
+                              <v n="Operand">"Forward"</v>
+                              <v n="Type">"BOOL"</v>
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">true</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">124L</v>
+                            </o>
+                          </l2>
+                        </o>
+                        <o n="Flags" t="Flags">
+                          <v n="Flags">0</v>
+                          <v n="Fixed">false</v>
+                          <v n="Extensible">false</v>
+                        </o>
+                        <o n="RValue" t="BoxTreeDemux">
+                          <v n="VarId">4</v>
+                          <n n="Input" />
+                          <v n="Id">116L</v>
+                        </o>
+                        <v n="Id">125L</v>
+                      </o>
+                      <o t="BoxTreeAssign">
+                        <o n="OutputItems" t="OutputItemList">
+                          <l2 n="OutputItems" cet="Operand">
+                            <o>
+                              <v n="Operand">"Backward"</v>
+                              <v n="Type">"BOOL"</v>
+                              <v n="Comment">""</v>
+                              <v n="SymbolComment">""</v>
+                              <v n="Address">""</v>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">false</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <v n="LValue">true</v>
+                              <v n="Boolean">false</v>
+                              <v n="IsInstance">false</v>
+                              <v n="Id">126L</v>
+                            </o>
+                          </l2>
+                        </o>
+                        <o n="Flags" t="Flags">
+                          <v n="Flags">0</v>
+                          <v n="Fixed">false</v>
+                          <v n="Extensible">false</v>
+                        </o>
+                        <o n="RValue" t="BoxTreeBox">
+                          <v n="BoxType">"NOT"</v>
+                          <o n="Instance" t="Operand">
+                            <n n="Operand" />
+                            <v n="Type">""</v>
+                            <v n="Comment">""</v>
+                            <v n="SymbolComment">""</v>
+                            <v n="Address">""</v>
+                            <o n="Flags" t="Flags">
+                              <v n="Flags">0</v>
+                              <v n="Fixed">false</v>
+                              <v n="Extensible">false</v>
+                            </o>
+                            <v n="LValue">false</v>
+                            <v n="Boolean">false</v>
+                            <v n="IsInstance">true</v>
+                            <v n="Id">122L</v>
+                          </o>
+                          <o n="OutputItems" t="OutputItemList">
+                            <l2 n="OutputItems">
+                              <n />
+                            </l2>
+                          </o>
+                          <o n="Flags" t="Flags">
+                            <v n="Flags">0</v>
+                            <v n="Fixed">true</v>
+                            <v n="Extensible">false</v>
+                          </o>
+                          <n n="InputFlags" />
+                          <l2 n="InputItems" cet="BoxTreeDemux">
+                            <o>
+                              <v n="VarId">4</v>
+                              <n n="Input" />
+                              <v n="Id">117L</v>
+                            </o>
+                          </l2>
+                          <o n="InputParam" t="ParamList">
+                            <l2 n="Names" />
+                            <l2 n="Types" />
+                          </o>
+                          <o n="OutputParam" t="ParamList">
+                            <l2 n="Names" cet="String">
+                              <v></v>
+                            </l2>
+                            <l2 n="Types" cet="String">
+                              <v>BOOL</v>
+                            </l2>
+                          </o>
+                          <v n="CallType" t="Operator">Not</v>
+                          <v n="EN">false</v>
+                          <v n="ENO">false</v>
+                          <n n="STSnippet" />
+                          <v n="ContainsExtensibleInputs">false</v>
+                          <v n="ProvidesSTSnippet">false</v>
+                          <v n="Id">123L</v>
+                        </o>
+                        <v n="Id">127L</v>
                       </o>
                     </l2>
                     <l2 n="Connectors" />
-                    <v n="Id">6L</v>
-                  </o>
-                  <o>
-                    <v n="ILActive">false</v>
-                    <v n="FBDValid">false</v>
-                    <v n="ILValid">false</v>
-                    <l2 n="ILLines" />
-                    <v n="Comment">""</v>
-                    <v n="Title">""</v>
-                    <v n="Label">""</v>
-                    <v n="OutCommented">false</v>
-                    <l2 n="NetworkItems" />
-                    <l2 n="Connectors" />
-                    <v n="Id">50L</v>
+                    <v n="Id">102L</v>
                   </o>
                 </l2>
-                <v n="BranchCounter">0</v>
+                <v n="BranchCounter">4</v>
                 <v n="ValidIds">true</v>
               </o>
             </Data>
@@ -775,6 +859,7 @@ END_CASE]]></ST>
               <Type n="Boolean">System.Boolean</Type>
               <Type n="BoxTreeAssign">{9873c309-1f09-4ebf-9078-42d8057ef11b}</Type>
               <Type n="BoxTreeBox">{acfc6f68-8e3a-4af5-bf81-3dd512095a46}</Type>
+              <Type n="BoxTreeDemux">{b1d55618-017c-4bc5-990a-55c2f27d9d3a}</Type>
               <Type n="BoxTreeOperand">{9de7f100-1b87-424c-a62e-45b0cfc85ed2}</Type>
               <Type n="Flags">{668066f2-6069-46b3-8962-8db8d13d7db2}</Type>
               <Type n="Int32">System.Int32</Type>
@@ -791,22 +876,20 @@ END_CASE]]></ST>
         </NWL>
       </Implementation>
     </Action>
-    <Action Name="A_SwitchControl" Id="{75b4d7c1-722f-4386-a8e9-094699e0c8ae}">
-      <Implementation>
-        <ST><![CDATA[	Forward := NOT SwitchLeftRight_RS;
-	Backward := SwitchLeftRight_RS;
-]]></ST>
-      </Implementation>
-    </Action>
     <LineIds Name="FB_ButtonBox">
-      <LineId Id="876" Count="1" />
+      <LineId Id="876" Count="0" />
+      <LineId Id="934" Count="0" />
+      <LineId Id="933" Count="0" />
+      <LineId Id="877" Count="0" />
+      <LineId Id="926" Count="0" />
       <LineId Id="879" Count="6" />
-      <LineId Id="887" Count="9" />
+      <LineId Id="887" Count="0" />
+      <LineId Id="889" Count="2" />
+      <LineId Id="893" Count="2" />
+      <LineId Id="927" Count="0" />
+      <LineId Id="896" Count="0" />
+      <LineId Id="928" Count="1" />
       <LineId Id="355" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_ButtonBox.A_SwitchControl">
-      <LineId Id="2" Count="1" />
-      <LineId Id="1" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

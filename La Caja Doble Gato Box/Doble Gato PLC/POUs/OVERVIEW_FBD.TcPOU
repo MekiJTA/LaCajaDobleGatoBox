@@ -22,7 +22,7 @@ END_VAR
                   <v n="ILValid">false</v>
                   <l2 n="ILLines" />
                   <v n="Comment">""</v>
-                  <v n="Title">""</v>
+                  <v n="Title">"Physical devices"</v>
                   <v n="Label">""</v>
                   <v n="OutCommented">false</v>
                   <l2 n="NetworkItems" cet="BoxTreeBox">
@@ -702,8 +702,8 @@ END_VAR
                             <v n="Id">234L</v>
                           </o>
                           <o>
-                            <v n="Operand">""</v>
-                            <n n="Type" />
+                            <v n="Operand">"GENERAL.GatoCount"</v>
+                            <v n="Type">"UINT"</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>
                             <v n="Address">""</v>
@@ -718,8 +718,8 @@ END_VAR
                             <v n="Id">235L</v>
                           </o>
                           <o>
-                            <v n="Operand">""</v>
-                            <n n="Type" />
+                            <v n="Operand">"GENERAL.PerroCount"</v>
+                            <v n="Type">"UINT"</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>
                             <v n="Address">""</v>
@@ -782,8 +782,8 @@ END_VAR
                           <v>BOOL</v>
                           <v>BOOL</v>
                           <v>BOOL</v>
-                          <v>INT</v>
-                          <v>INT</v>
+                          <v>UINT</v>
+                          <v>UINT</v>
                         </l2>
                       </o>
                       <v n="CallType" t="Operator">FunctionBlock</v>

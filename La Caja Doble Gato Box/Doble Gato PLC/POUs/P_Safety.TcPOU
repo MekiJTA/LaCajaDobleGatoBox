@@ -13,13 +13,15 @@ END_VAR
       <ST><![CDATA[
 A_Doors();	// Checking if doors are open
 A_Checks(); // Acting on sensor inputs
+
 	//Virtual switches waiting for physical ones
 	SAFETY.E_STOP_OK 		:= TRUE;
 	GENERAL.Motor_OK		:= TRUE;
 	
 //============
+// If VFD is ready and Security is satisfactory, global "Good To Go"-signal is given
 IF GENERAL.Motor_OK AND SAFETY.Safety_OK THEN
-GENERAL.ReadyForAction := TRUE;
+	GENERAL.ReadyForAction := TRUE;
 END_IF
 ]]></ST>
     </Implementation>
@@ -37,8 +39,8 @@ END_IF
                     <v n="FBDValid">false</v>
                     <v n="ILValid">false</v>
                     <l2 n="ILLines" />
-                    <v n="Comment">""</v>
-                    <v n="Title">""</v>
+                    <v n="Comment">"Doors and fences"</v>
+                    <v n="Title">"Safety logical checks"</v>
                     <v n="Label">""</v>
                     <v n="OutCommented">false</v>
                     <l2 n="NetworkItems" cet="BoxTreeAssign">
@@ -187,10 +189,10 @@ END_IF
                     <v n="FBDValid">false</v>
                     <v n="ILValid">false</v>
                     <l2 n="ILLines" />
-                    <v n="Comment">""</v>
+                    <v n="Comment">"VFD signalling motor is ready"</v>
                     <v n="Title">""</v>
                     <v n="Label">""</v>
-                    <v n="OutCommented">false</v>
+                    <v n="OutCommented">true</v>
                     <l2 n="NetworkItems" cet="BoxTreeAssign">
                       <o>
                         <o n="OutputItems" t="OutputItemList">
@@ -248,7 +250,7 @@ END_IF
                     <v n="FBDValid">false</v>
                     <v n="ILValid">false</v>
                     <l2 n="ILLines" />
-                    <v n="Comment">""</v>
+                    <v n="Comment">"If all checks are OK, global "Safety is OK" is given"</v>
                     <v n="Title">""</v>
                     <v n="Label">""</v>
                     <v n="OutCommented">false</v>
@@ -401,16 +403,16 @@ END_IF
     </Action>
     <Action Name="A_Doors" Id="{3c93ff02-0eab-4dfe-bdea-6020103f9083}">
       <Implementation>
-        <ST><![CDATA[//"Ovisensori" hyppää outputista inputtiin, jos on päällä niin ohjelma saa käydä
+        <ST><![CDATA[//"Door sensor" is active Output running to magnet sensor in door
 OUT._DO._Label.DoorSensor_Activator := TRUE;
 
 //========================
 
-Door1_Box 		:= IN._DI._Label.SM_Door_Sensor1;
-Door2_Fence 	:= TRUE;
-Door3_Workbench := TRUE;
+Door1_Box 		:= IN._DI._Label.SM_Door_Sensor1;	// Previously activated door sensor output is listened here
+Door2_Fence 	:= TRUE;							// Not implemented physically	
+Door3_Workbench := TRUE;							// Not implemented physically
 
-IF (Door1_Box AND Door2_Fence AND Door3_Workbench) = TRUE THEN
+IF (Door1_Box AND Door2_Fence AND Door3_Workbench) = TRUE THEN	// Checking through all doors and fences
 	SAFETY.Doors_OK := TRUE;
 	ELSE
 		SAFETY.Doors_OK := FALSE;
@@ -424,10 +426,12 @@ END_IF
       <LineId Id="62" Count="0" />
       <LineId Id="40" Count="0" />
       <LineId Id="33" Count="0" />
+      <LineId Id="94" Count="0" />
       <LineId Id="74" Count="1" />
       <LineId Id="59" Count="0" />
       <LineId Id="85" Count="0" />
       <LineId Id="70" Count="0" />
+      <LineId Id="93" Count="0" />
       <LineId Id="64" Count="0" />
       <LineId Id="73" Count="0" />
       <LineId Id="35" Count="0" />

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
-  <POU Name="P_CONTROL" Id="{27560784-429a-4cb9-b530-4b903427c533}" SpecialFunc="None">
-    <Declaration><![CDATA[PROGRAM P_CONTROL
+  <POU Name="P_BACKGROUND" Id="{27560784-429a-4cb9-b530-4b903427c533}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM P_BACKGROUND
 VAR
 	bDoors : BOOL;
 	State: INT;
@@ -52,25 +52,6 @@ END_VAR
     <Action Name="A_Beacons" Id="{9f0f4f38-0331-4251-b759-68adeace686f}">
       <Implementation>
         <ST><![CDATA[]]></ST>
-      </Implementation>
-    </Action>
-    <Action Name="A_ButtonBoxes" Id="{78e610f5-06f1-42f9-a722-0082c1dc1f14}">
-      <Implementation>
-        <ST><![CDATA[
-// Pitäiskö sittenkin olla FBD lajitelma buttonboxien FB?
-
-(*
-Input1_RTRIG(CLK:= IN._DI._Label.BTN_Feed);
-IF Input1_RTRIG.Q THEN
-	A_FeedButton();
-END_IF
-	
-Input2_RTRIG(CLK:= (IN._DI._Label.SWITCH_Left OR IN._DI._Label.SWITCH_Right), Q=> );
-IF Input2_RTRIG.Q THEN
-	A_Switch();
-END_IF
-
-*)]]></ST>
       </Implementation>
     </Action>
     <Action Name="Blink" Id="{cf892607-1afc-45ec-8503-4003e9a74f1f}" FolderPath="Blinkers\">
@@ -156,41 +137,29 @@ END_CASE
 ]]></ST>
       </Implementation>
     </Action>
-    <LineIds Name="P_CONTROL">
+    <LineIds Name="P_BACKGROUND">
       <LineId Id="89" Count="0" />
       <LineId Id="313" Count="0" />
       <LineId Id="312" Count="0" />
       <LineId Id="156" Count="2" />
       <LineId Id="83" Count="0" />
     </LineIds>
-    <LineIds Name="P_CONTROL.A_Beacons">
+    <LineIds Name="P_BACKGROUND.A_Beacons">
       <LineId Id="1" Count="0" />
     </LineIds>
-    <LineIds Name="P_CONTROL.A_ButtonBoxes">
-      <LineId Id="27" Count="0" />
-      <LineId Id="25" Count="0" />
-      <LineId Id="28" Count="0" />
-      <LineId Id="26" Count="0" />
-      <LineId Id="21" Count="3" />
-      <LineId Id="3" Count="0" />
-      <LineId Id="1" Count="0" />
-      <LineId Id="18" Count="2" />
-      <LineId Id="8" Count="0" />
-      <LineId Id="13" Count="0" />
-    </LineIds>
-    <LineIds Name="P_CONTROL.Blink">
+    <LineIds Name="P_BACKGROUND.Blink">
       <LineId Id="16" Count="0" />
       <LineId Id="4" Count="10" />
       <LineId Id="1" Count="0" />
     </LineIds>
-    <LineIds Name="P_CONTROL.Blink_Faster">
+    <LineIds Name="P_BACKGROUND.Blink_Faster">
       <LineId Id="19" Count="0" />
       <LineId Id="16" Count="0" />
       <LineId Id="4" Count="10" />
       <LineId Id="18" Count="0" />
       <LineId Id="1" Count="0" />
     </LineIds>
-    <LineIds Name="P_CONTROL.Blink_Special">
+    <LineIds Name="P_BACKGROUND.Blink_Special">
       <LineId Id="19" Count="0" />
       <LineId Id="16" Count="0" />
       <LineId Id="20" Count="0" />

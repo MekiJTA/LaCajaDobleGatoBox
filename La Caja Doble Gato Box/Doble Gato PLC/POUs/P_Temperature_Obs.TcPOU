@@ -19,11 +19,11 @@ SA_BoxTemperature := IN.ANALOG[1];
 
 //Presenting conversions to display in HMI
 F_TemperatureMethod(
-InputTemperature:= SA_BoxTemperature, 
-Celsius=> rCelsius, 
-Fahrenheit=> rFahrenheit, 
-Kelvin=> rKelvin,
-Cosine => rCosine);
+	InputTemperature:= SA_BoxTemperature, 
+	Celsius=> rCelsius, 
+	Fahrenheit=> rFahrenheit, 
+	Kelvin=> rKelvin,
+	Cosine => rCosine);
 
 // Turning temperature Reals to Global strings.
 GENERAL.sCelsius := LREAL_TO_FMTSTR(in:= rCelsius, iPrecision:= 2, bRound:= 1);
@@ -32,13 +32,6 @@ GENERAL.sKelvin := LREAL_TO_FMTSTR(in:= rKelvin, iPrecision:= 2, bRound:= 1);
 GENERAL.sCosine := LREAL_TO_FMTSTR(in:= rCosine, iPrecision:= 5, bRound:= 1);
 ]]></ST>
     </Implementation>
-    <Action Name="A_SensorHandling" Id="{2493585f-fa30-4f12-8084-d829e573cb1d}">
-      <Implementation>
-        <ST><![CDATA[
-
-]]></ST>
-      </Implementation>
-    </Action>
     <LineIds Name="P_Temperature_Obs">
       <LineId Id="11" Count="2" />
       <LineId Id="21" Count="0" />
@@ -51,11 +44,6 @@ GENERAL.sCosine := LREAL_TO_FMTSTR(in:= rCosine, iPrecision:= 5, bRound:= 1);
       <LineId Id="27" Count="0" />
       <LineId Id="40" Count="2" />
       <LineId Id="34" Count="0" />
-    </LineIds>
-    <LineIds Name="P_Temperature_Obs.A_SensorHandling">
-      <LineId Id="2" Count="0" />
-      <LineId Id="5" Count="0" />
-      <LineId Id="3" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>

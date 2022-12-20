@@ -93,13 +93,10 @@
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\P_AUTOMATION.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="POUs\P_Temperature_Obs.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\P_CONTROL.TcPOU">
+    <Compile Include="POUs\P_BACKGROUND.TcPOU">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="POUs\P_SAFETY.TcPOU">

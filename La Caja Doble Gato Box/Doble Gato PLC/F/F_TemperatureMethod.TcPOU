@@ -18,21 +18,23 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[C := InputTemperature/10; 
-
+      <ST><![CDATA[// Function handling analog temperature measurement 
+C := InputTemperature/10; 
 K := C + 273.15;
 F := C * 1.8 +32;
-Cosine		 	:= COS(C);
 
+Cosine		 	:= COS(C);
 Celsius 		:= C;
 Fahrenheit 		:= F;
 Kelvin 			:= K;
 ]]></ST>
     </Implementation>
     <LineIds Name="F_TemperatureMethod">
-      <LineId Id="55" Count="4" />
-      <LineId Id="79" Count="0" />
-      <LineId Id="60" Count="1" />
+      <LineId Id="96" Count="0" />
+      <LineId Id="55" Count="0" />
+      <LineId Id="57" Count="1" />
+      <LineId Id="98" Count="0" />
+      <LineId Id="59" Count="2" />
       <LineId Id="24" Count="0" />
       <LineId Id="62" Count="0" />
     </LineIds>

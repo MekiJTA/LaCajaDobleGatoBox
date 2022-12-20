@@ -48,7 +48,6 @@ END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[Q := RUN;
-
 A_SensorHandling();
 
 // Rotation counter
@@ -59,21 +58,20 @@ IF RotationTrigger THEN
 	// Lets calculate rotations per minute, divide it to 3/4th rotation and use these later on to prime Gato just in time
 	A_RotationMeasure();
 		tRotationTime;			// Informational
-		iRotations_In_Minute;	// Informational
-		
+		iRotations_In_Minute;	// Informational		
 END_IF
 
 // Magnet sensor sees Gato
-// Lets add slight delay to avoid mixing with other object on wheel
-TON_PrimeDelay(IN:= Prime_Start, PT:= tOne_Fourth_Rotations_Time, Q=> , ET=> );
-	IF GatoTrigger THEN
-		Prime_Start := TRUE;
-	END_IF
-// When timer is done, Gato is primed and will register in light sensor
- 	IF TON_PrimeDelay.Q THEN
-		GatoPrime := TRUE;
-		Prime_Start := FALSE;
-	END_IF
+	// Lets add slight delay to avoid mixing with other object on wheel
+	TON_PrimeDelay(IN:= Prime_Start, PT:= tOne_Fourth_Rotations_Time, Q=> , ET=> );
+		IF GatoTrigger THEN
+			Prime_Start := TRUE;
+		END_IF
+	// When timer is done, Gato is primed and will register in light sensor
+		IF TON_PrimeDelay.Q THEN
+			GatoPrime := TRUE;
+			Prime_Start := FALSE;
+		END_IF
 
 // Light sensor sees an object
 IF WheelLightTrigger THEN
@@ -92,8 +90,6 @@ END_IF
 // Which one was it
 Gato 	:= bGato_or_Perro;
 Perro 	:= NOT bGato_or_Perro;
-
-
 // Finally, lit up a light for whichever object it was
 A_SignalLights();
 ]]></ST>
@@ -404,9 +400,9 @@ tTenth_Of_Rotations_Time := DWORD_TO_TIME( iTenth_Of_Rotations_Time :=
                     <v n="FBDValid">false</v>
                     <v n="ILValid">false</v>
                     <l2 n="ILLines" />
-                    <v n="Comment">""</v>
+                    <v n="Comment">"Magnet sensor sensing Gato object:"</v>
                     <v n="Title">""</v>
-                    <v n="Label">"// Magnet sensor sensing Gato object"</v>
+                    <v n="Label">""</v>
                     <v n="OutCommented">false</v>
                     <l2 n="NetworkItems" cet="BoxTreeAssign">
                       <o>
@@ -520,7 +516,7 @@ tTenth_Of_Rotations_Time := DWORD_TO_TIME( iTenth_Of_Rotations_Time :=
                     <v n="FBDValid">false</v>
                     <v n="ILValid">false</v>
                     <l2 n="ILLines" />
-                    <v n="Comment">""</v>
+                    <v n="Comment">"Rotation counter magnet sensor on wheel"</v>
                     <v n="Title">""</v>
                     <v n="Label">""</v>
                     <v n="OutCommented">false</v>
@@ -658,13 +654,16 @@ tTenth_Of_Rotations_Time := DWORD_TO_TIME( iTenth_Of_Rotations_Time :=
     </Action>
     <Action Name="A_SignalLights" Id="{3702fc04-dc87-4f5a-8553-8d8da3b39a96}">
       <Implementation>
-        <ST><![CDATA[OUT._DO._Label.LIGHT_White := Gato;
+        <ST><![CDATA[// Lights signalling which object passed sensor
+OUT._DO._Label.LIGHT_White := Gato;
 OUT._DO._Label.LIGHT_Green := Perro;
 ]]></ST>
       </Implementation>
     </Action>
     <LineIds Name="FB_GatoPerro">
-      <LineId Id="742" Count="16" />
+      <LineId Id="742" Count="0" />
+      <LineId Id="744" Count="10" />
+      <LineId Id="756" Count="2" />
       <LineId Id="843" Count="0" />
       <LineId Id="840" Count="0" />
       <LineId Id="759" Count="0" />
@@ -675,8 +674,6 @@ OUT._DO._Label.LIGHT_Green := Perro;
       <LineId Id="842" Count="0" />
       <LineId Id="839" Count="0" />
       <LineId Id="767" Count="17" />
-      <LineId Id="849" Count="0" />
-      <LineId Id="854" Count="0" />
       <LineId Id="847" Count="0" />
       <LineId Id="850" Count="1" />
     </LineIds>
@@ -699,6 +696,7 @@ OUT._DO._Label.LIGHT_Green := Perro;
       <LineId Id="27" Count="0" />
     </LineIds>
     <LineIds Name="FB_GatoPerro.A_SignalLights">
+      <LineId Id="4" Count="0" />
       <LineId Id="1" Count="2" />
     </LineIds>
   </POU>
