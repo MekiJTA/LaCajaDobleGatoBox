@@ -32,7 +32,8 @@ VAR
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[Q := IN;
+      <ST><![CDATA[// Tämä on kommmentti
+Q := IN;
 A_InputHandling();
 	
 CASE State OF
@@ -41,7 +42,7 @@ CASE State OF
 		oLight1 := FALSE;
 
 	ALL_READY:
-		oLight1 := GENERAL.BlinkOn;
+		oLight1 := GENERAL.BlinkOn;		// GENERAL kirjastoksi? Sitten voisi käyttää globaalimuuttujia
 		A_SwitchControl();
 		
 	RUNNING:
@@ -67,7 +68,7 @@ END_CASE]]></ST>
                     <v n="FBDValid">false</v>
                     <v n="ILValid">false</v>
                     <l2 n="ILLines" />
-                    <v n="Comment">""</v>
+                    <v n="Comment">"Button box button press trigger"</v>
                     <v n="Title">""</v>
                     <v n="Label">""</v>
                     <v n="OutCommented">false</v>
@@ -183,8 +184,8 @@ END_CASE]]></ST>
                     <v n="FBDValid">false</v>
                     <v n="ILValid">false</v>
                     <l2 n="ILLines" />
-                    <v n="Comment">""</v>
-                    <v n="Title">""</v>
+                    <v n="Comment">"Button is pressed and switch is flipped between run/stop"</v>
+                    <v n="Title">"Run command"</v>
                     <v n="Label">""</v>
                     <v n="OutCommented">false</v>
                     <l2 n="NetworkItems" cet="BoxTreeAssign">
@@ -511,8 +512,8 @@ END_CASE]]></ST>
                     <v n="FBDValid">false</v>
                     <v n="ILValid">false</v>
                     <l2 n="ILLines" />
-                    <v n="Comment">""</v>
-                    <v n="Title">""</v>
+                    <v n="Comment">"Button box switch is alternating between left and right"</v>
+                    <v n="Title">"Switch flip"</v>
                     <v n="Label">""</v>
                     <v n="OutCommented">false</v>
                     <l2 n="NetworkItems" cet="BoxTreeAssign">
@@ -799,6 +800,7 @@ END_CASE]]></ST>
       </Implementation>
     </Action>
     <LineIds Name="FB_ButtonBox">
+      <LineId Id="989" Count="0" />
       <LineId Id="876" Count="1" />
       <LineId Id="879" Count="6" />
       <LineId Id="887" Count="9" />
