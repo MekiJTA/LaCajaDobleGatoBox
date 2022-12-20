@@ -17,21 +17,6 @@
     <LibraryReferences>{3f3e6834-53fc-41ad-9188-2785eed20540}</LibraryReferences>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="CopyPastedExamples\etc\F_Sample.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="CopyPastedExamples\etc\P_BlockPad.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="CopyPastedExamples\General_Control.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="CopyPastedExamples\P_Palletizing.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="CopyPastedExamples\WritePersistentData_1.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="DUTs\eBeltObject.TcDUT">
       <SubType>Code</SubType>
     </Compile>
@@ -110,11 +95,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="CopyPastedExamples\etc" />
     <Folder Include="DUTs" />
     <Folder Include="F" />
     <Folder Include="GVLs" />
-    <Folder Include="CopyPastedExamples" />
     <Folder Include="GVLs\IO" />
     <Folder Include="GVLs\SAFETY" />
     <Folder Include="FBs" />
