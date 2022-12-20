@@ -37,13 +37,14 @@ VAR
 		iTimenow: DWORD;
 		iOneMinute: DWORD;
 		iRotationTime: DWORD;
-		iThree_Fourth_Rotations_Time: DWORD;
+		iOne_Fourth_Rotations_Time: DWORD;
 		iTenth_Of_Rotations_Time: DWORD;
-		tThree_Fourth_Rotations_Time: TIME;
+		tOne_Fourth_Rotations_Time: TIME;
 		tTenth_Of_Rotations_Time: TIME;
 	tonLightSDelay: TON;
 	ObjectDetectionTime: TIME := T#50MS;
 
+	Prime_Start: BOOL;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -56,29 +57,32 @@ IF RotationTrigger THEN
 	RotationCount := RotationCount +1;
 
 	// We need slight delay before Priming Gato. Perro could be just nearing the Light sensor and register as Gato
-	// Lets calculate rotations per minute, divide it to 3/4th rotation and then prime Gato just in time
+	// Lets calculate rotations per minute, divide it to 3/4th rotation and use these later on to prime Gato just in time
 	A_RotationMeasure();
-	
-	
+		tRotationTime;			// Informational
+		iRotations_In_Minute;	// Informational
+		
 END_IF
 
 // Magnet sensor sees Gato
-IF GatoTrigger THEN
-	// Delay priming by 3/4th rotation to evade other objects halfway
-	TON_PrimeDelay(IN:= TRUE, PT:= tThree_Fourth_Rotations_Time, Q=> , ET=> );
+// Lets add slight delay to avoid mixing with other object on wheel
+TON_PrimeDelay(IN:= Prime_Start, PT:= tOne_Fourth_Rotations_Time, Q=> , ET=> );
+	IF GatoTrigger THEN
+		Prime_Start := TRUE;
+	END_IF
+// When timer is done, Gato is primed and will register in light sensor
  	IF TON_PrimeDelay.Q THEN
 		GatoPrime := TRUE;
-		TON_PrimeDelay(IN:= FALSE);
+		Prime_Start := FALSE;
 	END_IF
-END_IF
 
 // Light sensor sees an object
 IF WheelLightTrigger THEN
 	ObjectCount := ObjectCount +1;
-	IF NOT GatoPrime THEN
+	IF NOT GatoPrime THEN			// IF Gato is not primed, its Perro
 		PerroCount := PerroCount +1;
 		bGato_or_Perro := FALSE;
-	ELSE
+	ELSE							// If Gato is primed in previous steps, its Gato
 		GatoPrime := FALSE;
 		GatoCount := GatoCount +1;
 		bGato_or_Perro := TRUE;
@@ -94,7 +98,7 @@ Perro 	:= NOT bGato_or_Perro;
     </Implementation>
     <Action Name="A_RotationMeasure" Id="{ed38b022-b882-45b8-9f6c-4ed93bed5869}">
       <Implementation>
-        <ST><![CDATA[// Calculate RPM from RotationTime, divide it to 3/4th rotation
+        <ST><![CDATA[// Calculate RPM from RotationTime, divide it to 1/4th rotation
 // Also 1/10th rotation to filter light sensor input
 // If rotation time is slowing too much, or stops, reset to 0.2s
 
@@ -113,9 +117,9 @@ Perro 	:= NOT bGato_or_Perro;
 iRotations_In_Minute :=
 	iOneMinute/iRotationTime;
 	
-// 3/4 and 1/10th rotation times
-tThree_Fourth_Rotations_Time := DWORD_TO_TIME( iThree_Fourth_Rotations_Time :=
-	iRotationTime - (iRotationTime/4));
+// 1/4 and 1/10th rotation times
+tOne_Fourth_Rotations_Time := DWORD_TO_TIME( iOne_Fourth_Rotations_Time :=
+	iRotationTime/4);
 tTenth_Of_Rotations_Time := DWORD_TO_TIME( iTenth_Of_Rotations_Time :=
 	iRotationTime/10);
 	
@@ -656,9 +660,17 @@ tTenth_Of_Rotations_Time := DWORD_TO_TIME( iTenth_Of_Rotations_Time :=
       </Implementation>
     </Action>
     <LineIds Name="FB_GatoPerro">
-      <LineId Id="648" Count="16" />
-      <LineId Id="690" Count="0" />
-      <LineId Id="665" Count="24" />
+      <LineId Id="742" Count="16" />
+      <LineId Id="843" Count="0" />
+      <LineId Id="840" Count="0" />
+      <LineId Id="759" Count="0" />
+      <LineId Id="834" Count="0" />
+      <LineId Id="766" Count="0" />
+      <LineId Id="845" Count="0" />
+      <LineId Id="836" Count="1" />
+      <LineId Id="842" Count="0" />
+      <LineId Id="839" Count="0" />
+      <LineId Id="767" Count="18" />
       <LineId Id="17" Count="0" />
     </LineIds>
     <LineIds Name="FB_GatoPerro.A_RotationMeasure">
