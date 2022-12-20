@@ -15,7 +15,7 @@ VAR_OUTPUT
 END_VAR
 VAR
 	R_TRIG_0: R_TRIG;
-	F_TRIG_1: F_trig;
+	R_TRIG_1: R_trig;
 	GatoTrigger: BOOL;
 	WheelLightTrigger: BOOL;
 	R_TRIG_2: R_TRIG;
@@ -24,26 +24,26 @@ VAR
 	ObjectCount: UINT;
 	GatoPrime: BOOL;
 	bGato_or_Perro: BOOL;
-	TON_GatoPrime: TON;
-	TON_0: TON;
-	ObjectDetectionTime: TIME := T#20MS;
+	TON_PrimeDelay: TON;
 	WheelTime1: TIME;
 	WheelTime3: TIME;
 	WheelTime2: TIME;
 	GP_Check: UINT;
-	//A_RotationMeasure VARs
-	
-	tTimeNow: TIME;
-	tRotationTime: TIME;
-	tTimeStop: TIME;
-	iRotations_In_Minute: DWORD;
-	iTimenow: DWORD;
-	iOneMinute: DWORD;
-	iRotationTime: DWORD;
-	iThree_Fourth_Rotations_Time: DWORD;
-	iTenth_Of_Rotations_Time: DWORD;
-	tThree_Fourth_Rotations_Time: TIME;
-	tTenth_Of_Rotations_Time: TIME;
+	//A_RotationMeasure VARs	
+		tTimeNow: TIME;
+		tRotationTime: TIME;
+		tTimeStop: TIME;
+		iRotations_In_Minute: DWORD;
+		iTimenow: DWORD;
+		iOneMinute: DWORD;
+		iRotationTime: DWORD;
+		iThree_Fourth_Rotations_Time: DWORD;
+		iTenth_Of_Rotations_Time: DWORD;
+		tThree_Fourth_Rotations_Time: TIME;
+		tTenth_Of_Rotations_Time: TIME;
+	tonLightSDelay: TON;
+	ObjectDetectionTime: TIME := T#2000MS;
+
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -64,10 +64,12 @@ END_IF
 
 // Magnet sensor sees Gato
 IF GatoTrigger THEN
-//	TON_GatoPrime(IN:= TRUE, PT:= tTenthRotation, Q=> , ET=> ); 	IF TON_GatoPrime.Q THEN
+	// Delay priming by 3/4th rotation to evade other objects halfway
+	TON_PrimeDelay(IN:= TRUE, PT:= tThree_Fourth_Rotations_Time, Q=> , ET=> );
+ 	IF TON_PrimeDelay.Q THEN
 		GatoPrime := TRUE;
-//		TON_GatoPrime(IN:= FALSE);
-//	END_IF
+		TON_PrimeDelay(IN:= FALSE);
+	END_IF
 END_IF
 
 // Light sensor sees an object
@@ -135,8 +137,8 @@ tTenth_Of_Rotations_Time := DWORD_TO_TIME( iTenth_Of_Rotations_Time :=
                     <v n="FBDValid">false</v>
                     <v n="ILValid">false</v>
                     <l2 n="ILLines" />
-                    <v n="Comment">""</v>
-                    <v n="Title">""</v>
+                    <v n="Comment">"Slight delay is set to filter out small erroneous hits. Now light sensor has to be active for set amount of milliseconds to register as hit"</v>
+                    <v n="Title">"Light sensor detecting any objects on wheel"</v>
                     <v n="Label">""</v>
                     <v n="OutCommented">false</v>
                     <l2 n="NetworkItems" cet="BoxTreeAssign">
@@ -167,10 +169,10 @@ tTenth_Of_Rotations_Time := DWORD_TO_TIME( iTenth_Of_Rotations_Time :=
                           <v n="Extensible">false</v>
                         </o>
                         <o n="RValue" t="BoxTreeBox">
-                          <v n="BoxType">"F_trig"</v>
+                          <v n="BoxType">"R_trig"</v>
                           <o n="Instance" t="Operand">
-                            <v n="Operand">"F_TRIG_1"</v>
-                            <v n="Type">"F_trig"</v>
+                            <v n="Operand">"R_TRIG_1"</v>
+                            <v n="Type">"R_trig"</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>
                             <v n="Address">""</v>
@@ -182,7 +184,7 @@ tTenth_Of_Rotations_Time := DWORD_TO_TIME( iTenth_Of_Rotations_Time :=
                             <v n="LValue">false</v>
                             <v n="Boolean">false</v>
                             <v n="IsInstance">true</v>
-                            <v n="Id">30L</v>
+                            <v n="Id">47L</v>
                           </o>
                           <o n="OutputItems" t="OutputItemList">
                             <l2 n="OutputItems">
@@ -195,11 +197,12 @@ tTenth_Of_Rotations_Time := DWORD_TO_TIME( iTenth_Of_Rotations_Time :=
                             <v n="Extensible">false</v>
                           </o>
                           <n n="InputFlags" />
-                          <l2 n="InputItems" cet="BoxTreeOperand">
+                          <l2 n="InputItems" cet="BoxTreeBox">
                             <o>
-                              <o n="Operand" t="Operand">
-                                <v n="Operand">"in._DI._Label.SL_Wheel_LightSensor1"</v>
-                                <v n="Type">"BOOL"</v>
+                              <v n="BoxType">"TON"</v>
+                              <o n="Instance" t="Operand">
+                                <v n="Operand">"tonLightSDelay"</v>
+                                <v n="Type">"TON"</v>
                                 <v n="Comment">""</v>
                                 <v n="SymbolComment">""</v>
                                 <v n="Address">""</v>
@@ -210,10 +213,154 @@ tTenth_Of_Rotations_Time := DWORD_TO_TIME( iTenth_Of_Rotations_Time :=
                                 </o>
                                 <v n="LValue">false</v>
                                 <v n="Boolean">false</v>
-                                <v n="IsInstance">false</v>
-                                <v n="Id">10L</v>
+                                <v n="IsInstance">true</v>
+                                <v n="Id">39L</v>
                               </o>
-                              <v n="Id">9L</v>
+                              <o n="OutputItems" t="OutputItemList">
+                                <l2 n="OutputItems" cet="Operand">
+                                  <n />
+                                  <o>
+                                    <v n="Operand">""</v>
+                                    <n n="Type" />
+                                    <v n="Comment">""</v>
+                                    <v n="SymbolComment">""</v>
+                                    <v n="Address">""</v>
+                                    <o n="Flags" t="Flags">
+                                      <v n="Flags">0</v>
+                                      <v n="Fixed">false</v>
+                                      <v n="Extensible">false</v>
+                                    </o>
+                                    <v n="LValue">true</v>
+                                    <v n="Boolean">false</v>
+                                    <v n="IsInstance">false</v>
+                                    <v n="Id">34L</v>
+                                  </o>
+                                </l2>
+                              </o>
+                              <o n="Flags" t="Flags">
+                                <v n="Flags">0</v>
+                                <v n="Fixed">true</v>
+                                <v n="Extensible">false</v>
+                              </o>
+                              <n n="InputFlags" />
+                              <l2 n="InputItems">
+                                <o t="BoxTreeBox">
+                                  <v n="BoxType">"NOT"</v>
+                                  <o n="Instance" t="Operand">
+                                    <n n="Operand" />
+                                    <v n="Type">""</v>
+                                    <v n="Comment">""</v>
+                                    <v n="SymbolComment">""</v>
+                                    <v n="Address">""</v>
+                                    <o n="Flags" t="Flags">
+                                      <v n="Flags">0</v>
+                                      <v n="Fixed">false</v>
+                                      <v n="Extensible">false</v>
+                                    </o>
+                                    <v n="LValue">false</v>
+                                    <v n="Boolean">false</v>
+                                    <v n="IsInstance">true</v>
+                                    <v n="Id">45L</v>
+                                  </o>
+                                  <o n="OutputItems" t="OutputItemList">
+                                    <l2 n="OutputItems">
+                                      <n />
+                                    </l2>
+                                  </o>
+                                  <o n="Flags" t="Flags">
+                                    <v n="Flags">0</v>
+                                    <v n="Fixed">true</v>
+                                    <v n="Extensible">false</v>
+                                  </o>
+                                  <n n="InputFlags" />
+                                  <l2 n="InputItems" cet="BoxTreeOperand">
+                                    <o>
+                                      <o n="Operand" t="Operand">
+                                        <v n="Operand">"in._DI._Label.SL_Wheel_LightSensor1"</v>
+                                        <v n="Type">"BOOL"</v>
+                                        <v n="Comment">""</v>
+                                        <v n="SymbolComment">""</v>
+                                        <v n="Address">""</v>
+                                        <o n="Flags" t="Flags">
+                                          <v n="Flags">0</v>
+                                          <v n="Fixed">false</v>
+                                          <v n="Extensible">false</v>
+                                        </o>
+                                        <v n="LValue">false</v>
+                                        <v n="Boolean">false</v>
+                                        <v n="IsInstance">false</v>
+                                        <v n="Id">10L</v>
+                                      </o>
+                                      <v n="Id">9L</v>
+                                    </o>
+                                  </l2>
+                                  <o n="InputParam" t="ParamList">
+                                    <l2 n="Names" />
+                                    <l2 n="Types" />
+                                  </o>
+                                  <o n="OutputParam" t="ParamList">
+                                    <l2 n="Names" cet="String">
+                                      <v></v>
+                                    </l2>
+                                    <l2 n="Types" cet="String">
+                                      <v>BOOL</v>
+                                    </l2>
+                                  </o>
+                                  <v n="CallType" t="Operator">Not</v>
+                                  <v n="EN">false</v>
+                                  <v n="ENO">false</v>
+                                  <n n="STSnippet" />
+                                  <v n="ContainsExtensibleInputs">false</v>
+                                  <v n="ProvidesSTSnippet">false</v>
+                                  <v n="Id">46L</v>
+                                </o>
+                                <o t="BoxTreeOperand">
+                                  <o n="Operand" t="Operand">
+                                    <v n="Operand">"ObjectDetectionTime"</v>
+                                    <v n="Type">"TIME"</v>
+                                    <v n="Comment">""</v>
+                                    <v n="SymbolComment">""</v>
+                                    <v n="Address">""</v>
+                                    <o n="Flags" t="Flags">
+                                      <v n="Flags">0</v>
+                                      <v n="Fixed">false</v>
+                                      <v n="Extensible">false</v>
+                                    </o>
+                                    <v n="LValue">false</v>
+                                    <v n="Boolean">false</v>
+                                    <v n="IsInstance">false</v>
+                                    <v n="Id">36L</v>
+                                  </o>
+                                  <v n="Id">35L</v>
+                                </o>
+                              </l2>
+                              <o n="InputParam" t="ParamList">
+                                <l2 n="Names" cet="String">
+                                  <v>IN</v>
+                                  <v>PT</v>
+                                </l2>
+                                <l2 n="Types" cet="String">
+                                  <v>BOOL</v>
+                                  <v>TIME</v>
+                                </l2>
+                              </o>
+                              <o n="OutputParam" t="ParamList">
+                                <l2 n="Names" cet="String">
+                                  <v>Q</v>
+                                  <v>ET</v>
+                                </l2>
+                                <l2 n="Types" cet="String">
+                                  <v>BOOL</v>
+                                  <v>TIME</v>
+                                </l2>
+                              </o>
+                              <v n="CallType" t="Operator">FunctionBlock</v>
+                              <v n="EN">false</v>
+                              <v n="ENO">false</v>
+                              <n n="STSnippet" />
+                              <v n="ContainsExtensibleInputs">false</v>
+                              <v n="ProvidesSTSnippet">false</v>
+                              <v n="Id">40L</v>
                             </o>
                           </l2>
                           <o n="InputParam" t="ParamList">
@@ -238,7 +385,7 @@ tTenth_Of_Rotations_Time := DWORD_TO_TIME( iTenth_Of_Rotations_Time :=
                           <n n="STSnippet" />
                           <v n="ContainsExtensibleInputs">false</v>
                           <v n="ProvidesSTSnippet">false</v>
-                          <v n="Id">31L</v>
+                          <v n="Id">48L</v>
                         </o>
                         <v n="Id">20L</v>
                       </o>
@@ -508,51 +655,10 @@ tTenth_Of_Rotations_Time := DWORD_TO_TIME( iTenth_Of_Rotations_Time :=
         <ST><![CDATA[]]></ST>
       </Implementation>
     </Action>
-    <Method Name="Broken_M_RotationsPerMinute" Id="{2ef12f41-d4b1-439a-bc0c-e261206c4b22}">
-      <Declaration><![CDATA[METHOD Broken_M_RotationsPerMinute : DWORD
-VAR_INPUT
-	IN_TimeNow : TIME;
-END_VAR
-VAR_OUTPUT
-	Rotations_Time				: TIME;
-	Rotations_In_Minute 		: DWORD;
-	Three_Fourth_Rotations_Time 	: TIME;
-	Tenth_Of_Rotations_Time	: TIME;
-END_VAR
-VAR
-	tTimeStart 	: TIME;
-	rRotTime: DWORD;
-	rMinute: DWORD;
-	TimeNow: TIME;
-END_VAR]]></Declaration>
-      <Implementation>
-        <ST><![CDATA[// Calculate RPM from RotationTime, divide it to 3/4th rotation
-// Also 1/10th rotation to filter light sensor input
-// If rotation time is slowing too much, or stops, reset to 0.2s
-
-Rotations_Time := TimeNow - tTimeStart;
-	rRotTime := TIME_TO_DWORD(Rotations_Time);
-	rMinute := TIME_TO_DWORD(T#1M);
-
-Rotations_In_Minute := 
-	rMinute / rRotTime;
-
-Three_Fourth_Rotations_Time :=
-	DWORD_TO_TIME( rRotTime - (rRotTime/4));
-
-Tenth_Of_Rotations_Time :=
-	DWORD_TO_TIME( rRotTime/10);
-	
-tTimeStart := TimeNow;]]></ST>
-      </Implementation>
-    </Method>
     <LineIds Name="FB_GatoPerro">
-      <LineId Id="263" Count="9" />
-      <LineId Id="347" Count="1" />
-      <LineId Id="280" Count="6" />
-      <LineId Id="602" Count="0" />
-      <LineId Id="288" Count="19" />
-      <LineId Id="311" Count="0" />
+      <LineId Id="648" Count="16" />
+      <LineId Id="690" Count="0" />
+      <LineId Id="665" Count="24" />
       <LineId Id="17" Count="0" />
     </LineIds>
     <LineIds Name="FB_GatoPerro.A_RotationMeasure">
@@ -575,10 +681,6 @@ tTimeStart := TimeNow;]]></ST>
     </LineIds>
     <LineIds Name="FB_GatoPerro.A_SignalLights">
       <LineId Id="1" Count="0" />
-    </LineIds>
-    <LineIds Name="FB_GatoPerro.Broken_M_RotationsPerMinute">
-      <LineId Id="116" Count="16" />
-      <LineId Id="5" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
