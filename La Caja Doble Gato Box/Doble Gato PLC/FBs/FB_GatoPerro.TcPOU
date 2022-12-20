@@ -16,7 +16,7 @@ END_VAR
 VAR
 	
 	R_TRIG_0: R_TRIG;
-	F_TRIG_1: r_trig;
+	F_TRIG_1: F_trig;
 	GatoTrigger: BOOL;
 	WheelLightTrigger: BOOL;
 	R_TRIG_2: R_TRIG;
