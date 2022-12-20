@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.10">
+  <POU Name="FB_RotationCalc" Id="{9982f28c-3c5c-49cf-92a0-3f540ea0fbd8}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_RotationCalc
+VAR_INPUT
+	StopTime : TIME;
+END_VAR
+VAR_OUTPUT
+	Rotations_Time				: TIME;
+	Rotations_In_Minute 		: DWORD;
+	Three_Fourth_Rotations_Time 	: TIME;
+	Tenth_Of_Rotations_Time	: TIME;
+END_VAR
+VAR
+	StartTime 	: TIME;
+	rRotTime: DWORD;
+	rMinute: DWORD;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[// Calculate RPM from RotationTime, divide it to 3/4th rotation
+// Also 1/10th rotation to filter light sensor input
+// If rotation time is slowing too much, or stops, reset to 0.2s
+
+Rotations_Time := StopTime - StartTime;
+	rRotTime := TIME_TO_DWORD(Rotations_Time);
+	rMinute := TIME_TO_DWORD(T#1M);
+
+Rotations_In_Minute := 
+	rMinute / rRotTime;
+
+Three_Fourth_Rotations_Time :=
+	DWORD_TO_TIME( rRotTime - (rRotTime/4));
+
+Tenth_Of_Rotations_Time :=
+	DWORD_TO_TIME( rRotTime/10);
+	
+IF Rotations_Time >= T#3S THEN
+	Three_Fourth_Rotations_Time := T#200MS;
+END_IF
+
+StartTime := StopTime;
+
+]]></ST>
+    </Implementation>
+    <LineIds Name="FB_RotationCalc">
+      <LineId Id="25" Count="19" />
+      <LineId Id="48" Count="1" />
+      <LineId Id="52" Count="0" />
+      <LineId Id="9" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
