@@ -33,9 +33,17 @@ VAR
 	GP_Check: UINT;
 	//A_RotationMeasure VARs
 	
-	TimeNow: TIME;
-	RotationTime: TIME;
-	TimeStop: TIME;
+	tTimeNow: TIME;
+	tRotationTime: TIME;
+	tTimeStop: TIME;
+	iRotations_In_Minute: DWORD;
+	iTimenow: DWORD;
+	iOneMinute: DWORD;
+	iRotationTime: DWORD;
+	iThree_Fourth_Rotations_Time: DWORD;
+	iTenth_Of_Rotations_Time: DWORD;
+	tThree_Fourth_Rotations_Time: TIME;
+	tTenth_Of_Rotations_Time: TIME;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -88,9 +96,27 @@ Perro 	:= NOT bGato_or_Perro;
 // Also 1/10th rotation to filter light sensor input
 // If rotation time is slowing too much, or stops, reset to 0.2s
 
-TimeNow := TIME();
-RotationTime := TimeNow - TimeStop;
-TimeStop := TimeNow;
+
+// How long does one rotation take
+	tTimeNow := TIME();
+	tRotationTime := tTimeNow - tTimeStop;
+	tTimeStop := tTimeNow;
+
+//Some conversions:
+	iTimenow := TIME_TO_DWORD(tTimeNow);
+	iOneMinute := TIME_TO_DWORD(T#1M);
+	iRotationTime := TIME_TO_DWORD(tRotationTime);
+
+// Rotations_In_Minute
+iRotations_In_Minute :=
+	iOneMinute/iRotationTime;
+	
+// 3/4 and 1/10th rotation times
+tThree_Fourth_Rotations_Time := DWORD_TO_TIME( iThree_Fourth_Rotations_Time :=
+	iRotationTime - (iRotationTime/4));
+tTenth_Of_Rotations_Time := DWORD_TO_TIME( iTenth_Of_Rotations_Time :=
+	iRotationTime/10);
+	
 
 ]]></ST>
       </Implementation>
@@ -494,7 +520,7 @@ VAR_OUTPUT
 	Tenth_Of_Rotations_Time	: TIME;
 END_VAR
 VAR
-	TimeStart 	: TIME;
+	tTimeStart 	: TIME;
 	rRotTime: DWORD;
 	rMinute: DWORD;
 	TimeNow: TIME;
@@ -504,7 +530,7 @@ END_VAR]]></Declaration>
 // Also 1/10th rotation to filter light sensor input
 // If rotation time is slowing too much, or stops, reset to 0.2s
 
-Rotations_Time := TimeNow - TimeStart;
+Rotations_Time := TimeNow - tTimeStart;
 	rRotTime := TIME_TO_DWORD(Rotations_Time);
 	rMinute := TIME_TO_DWORD(T#1M);
 
@@ -517,30 +543,41 @@ Three_Fourth_Rotations_Time :=
 Tenth_Of_Rotations_Time :=
 	DWORD_TO_TIME( rRotTime/10);
 	
-TimeStart := TimeNow;]]></ST>
+tTimeStart := TimeNow;]]></ST>
       </Implementation>
     </Method>
     <LineIds Name="FB_GatoPerro">
       <LineId Id="263" Count="9" />
       <LineId Id="347" Count="1" />
-      <LineId Id="280" Count="27" />
+      <LineId Id="280" Count="6" />
+      <LineId Id="602" Count="0" />
+      <LineId Id="288" Count="19" />
       <LineId Id="311" Count="0" />
       <LineId Id="17" Count="0" />
     </LineIds>
     <LineIds Name="FB_GatoPerro.A_RotationMeasure">
       <LineId Id="3" Count="1" />
       <LineId Id="1" Count="0" />
+      <LineId Id="15" Count="0" />
+      <LineId Id="11" Count="0" />
       <LineId Id="6" Count="0" />
       <LineId Id="5" Count="0" />
       <LineId Id="7" Count="1" />
+      <LineId Id="16" Count="4" />
       <LineId Id="10" Count="0" />
       <LineId Id="9" Count="0" />
+      <LineId Id="12" Count="0" />
+      <LineId Id="22" Count="3" />
+      <LineId Id="28" Count="0" />
+      <LineId Id="26" Count="0" />
+      <LineId Id="29" Count="2" />
+      <LineId Id="27" Count="0" />
     </LineIds>
     <LineIds Name="FB_GatoPerro.A_SignalLights">
       <LineId Id="1" Count="0" />
     </LineIds>
     <LineIds Name="FB_GatoPerro.Broken_M_RotationsPerMinute">
-      <LineId Id="69" Count="16" />
+      <LineId Id="116" Count="16" />
       <LineId Id="5" Count="0" />
     </LineIds>
   </POU>
