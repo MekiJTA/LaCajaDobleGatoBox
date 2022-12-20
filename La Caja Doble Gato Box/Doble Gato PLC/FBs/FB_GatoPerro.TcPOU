@@ -32,12 +32,10 @@ VAR
 	WheelTime3: TIME;
 	WheelTime2: TIME;
 	GP_Check: UINT;
-	fbRotationCalc: FB_RotationCalc;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[
-Q := RUN;
+      <ST><![CDATA[Q := RUN;
 
 A_SensorHandling();
 
@@ -47,14 +45,9 @@ IF RotationTrigger THEN
 
 	// We need slight delay before Priming Gato. Perro could be just nearing the Light sensor and register as Gato
 	// Lets calculate rotations per minute, divide it to 3/4th rotation and then prime Gato just in time
-	F_RotationsPerMinute(
-		StartTime:= PreviousRotationTimeStamp, 
-		StopTime:= CurrentRotationTimeStamp, 
-		
-		Rotations_Time=> tRotationTime, 
-		Rotations_In_Minute=> iRotationsPerMinute, 
-		Three_Fourth_Rotations_Time=> tThreeFourthRotation, 
-		Tenth_Of_Rotations_Time=> tTenthRotation);
+
+//	M_RotationMeasure(IN_TimeNow:= TIME());
+
 END_IF
 
 // Magnet sensor sees Gato
@@ -73,25 +66,15 @@ IF WheelLightTrigger THEN
 		bGato_or_Perro := FALSE;
 	ELSE
 		GatoPrime := FALSE;
-			GatoCount := GatoCount +1;
-			bGato_or_Perro := TRUE;
+		GatoCount := GatoCount +1;
+		bGato_or_Perro := TRUE;
 	END_IF
-	
-//Extra checks to make sure sensors detect with correct timing
-	WheelTime2 := WheelTime1;
-	WheelTime1 := TIME();
-	WheelTime3 := WheelTime1-WheelTime2 ;
-	GP_Check 	:= PerroCount/GatoCount;
-	
 
 END_IF
 
 // Which one was it
 Gato 	:= bGato_or_Perro;
 Perro 	:= NOT bGato_or_Perro;
-
-
-// Kumpi on kyseessä
 
 ]]></ST>
     </Implementation>
@@ -482,18 +465,89 @@ Perro 	:= NOT bGato_or_Perro;
         <ST><![CDATA[]]></ST>
       </Implementation>
     </Action>
+    <Method Name="Broken_M_RotationsPerMinute" Id="{2ef12f41-d4b1-439a-bc0c-e261206c4b22}">
+      <Declaration><![CDATA[METHOD Broken_M_RotationsPerMinute : UDINT
+VAR_INPUT
+	IN_TimeNow : TIME;
+END_VAR
+VAR_OUTPUT
+	Rotations_Time				: TIME;
+	Rotations_In_Minute 		: DWORD;
+	Three_Fourth_Rotations_Time 	: TIME;
+	Tenth_Of_Rotations_Time	: TIME;
+END_VAR
+VAR
+	TimeStart 	: TIME;
+	rRotTime: DWORD;
+	rMinute: DWORD;
+	TimeNow: TIME;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[// Calculate RPM from RotationTime, divide it to 3/4th rotation
+// Also 1/10th rotation to filter light sensor input
+// If rotation time is slowing too much, or stops, reset to 0.2s
+
+Rotations_Time := TimeNow - TimeStart;
+	rRotTime := TIME_TO_DWORD(Rotations_Time);
+	rMinute := TIME_TO_DWORD(T#1M);
+
+Rotations_In_Minute := 
+	rMinute / rRotTime;
+
+Three_Fourth_Rotations_Time :=
+	DWORD_TO_TIME( rRotTime - (rRotTime/4));
+
+Tenth_Of_Rotations_Time :=
+	DWORD_TO_TIME( rRotTime/10);
+	
+TimeStart := TimeNow;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="M_RotationMeasure" Id="{ebb1cd37-b25f-4a20-baf9-64da0e9675e3}">
+      <Declaration><![CDATA[METHOD M_RotationMeasure : DWORD
+VAR_INPUT
+	IN_TimeNow : TIME;
+	
+END_VAR
+
+VAR
+	iTimeNow: DWORD;
+	iTimeStart: TIME;
+	TimeStop: TIME;
+	
+	RoundTime: TIME;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[iTimeNow := TIME_TO_DWORD(IN_TimeNow);
+
+RoundTime := IN_TimeNow - TimeStop;
+TimeStop := IN_TimeNow;
+
+]]></ST>
+      </Implementation>
+    </Method>
     <LineIds Name="FB_GatoPerro">
-      <LineId Id="169" Count="10" />
-      <LineId Id="181" Count="6" />
-      <LineId Id="180" Count="0" />
-      <LineId Id="118" Count="0" />
-      <LineId Id="188" Count="32" />
-      <LineId Id="145" Count="0" />
-      <LineId Id="68" Count="2" />
+      <LineId Id="263" Count="9" />
+      <LineId Id="313" Count="0" />
+      <LineId Id="312" Count="0" />
+      <LineId Id="280" Count="27" />
+      <LineId Id="311" Count="0" />
       <LineId Id="17" Count="0" />
     </LineIds>
     <LineIds Name="FB_GatoPerro.A_SignalLights">
       <LineId Id="1" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_GatoPerro.Broken_M_RotationsPerMinute">
+      <LineId Id="69" Count="16" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+    <LineIds Name="FB_GatoPerro.M_RotationMeasure">
+      <LineId Id="5" Count="0" />
+      <LineId Id="20" Count="0" />
+      <LineId Id="16" Count="0" />
+      <LineId Id="13" Count="0" />
+      <LineId Id="22" Count="0" />
+      <LineId Id="17" Count="0" />
     </LineIds>
   </POU>
 </TcPlcObject>
