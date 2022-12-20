@@ -62,6 +62,9 @@
     <Compile Include="FBs\FB_BeltControl.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="FBs\FB_RotationCalc.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="F\F_TemperatureMethod.TcPOU">
       <SubType>Code</SubType>
     </Compile>
