@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Refactors>
+  <Renames>
+    <RenamedSymbol>
+      <Type guid="907c9889-847a-48a2-b378-14a1b7bf9287">FB_GatoPerro</Type>
+      <From>R_TRIG_1</From>
+      <To>F_TRIG_1</To>
+    </RenamedSymbol>
+  </Renames>
+</Refactors>

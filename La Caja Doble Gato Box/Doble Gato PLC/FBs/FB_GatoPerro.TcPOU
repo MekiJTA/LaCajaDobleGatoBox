@@ -9,30 +9,20 @@ VAR_OUTPUT
 	Q			: BOOL;
 	Gato 		: BOOL;
 	Perro 		: BOOL;
-	GatoCount 	: UINT;
-	PerroCount 	: UINT;
+	GatoCount 	: INT;
+	PerroCount 	: INT;
 
 END_VAR
 VAR
 	
 	R_TRIG_0: R_TRIG;
-	R_TRIG_1: R_trig;
+	F_TRIG_1: r_trig;
 	GatoTrigger: BOOL;
 	WheelLightTrigger: BOOL;
 	R_TRIG_2: R_TRIG;
 	RotationTrigger: BOOL;
 	RotationCount: UINT;
 	ObjectCount: UINT;
-	GatoPrime: BOOL;
-	bGato_or_Perro: BOOL;
-	TON_GatoPrime: TON;
-	TON_0: TON;
-	ObjectDetectionTime: TIME := T#20MS;
-	WheelTime1: TIME;
-	WheelTime3: TIME;
-	WheelTime2: TIME;
-	GP_Check: UINT;
-	fbRotationCalc: FB_RotationCalc;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -40,64 +30,19 @@ END_VAR
 
 A_SensorHandling();
 
-// Rotation counter
+// Kierroslaskuri
 IF RotationTrigger THEN
-	RotationCount := RotationCount +1;
-
-	// We need slight delay before Priming Gato. Perro could be just nearing the Light sensor and register as Gato
-	// Lets calculate rotations per minute, divide it to 3/4th rotation and then prime Gato just in time	
-
-fbRotationCalc(
-	StopTime:= TIME(), 
-	Rotations_Time=> , 
-	Rotations_In_Minute=> , 
-	Three_Fourth_Rotations_Time=> , 
-	Tenth_Of_Rotations_Time=> );
-	(*
-	F_RotationsPerMinute(
-		StartTime:= PreviousRotationTimeStamp, 
-		StopTime:= CurrentRotationTimeStamp, 
-		
-		Rotations_Time=> tRotationTime, 
-		Rotations_In_Minute=> iRotationsPerMinute, 
-		Three_Fourth_Rotations_Time=> tThreeFourthRotation, 
-		Tenth_Of_Rotations_Time=> tTenthRotation);
-	*)
+	RotationCount := RotationCount +1;	
 END_IF
+// Magneettisensori näkee Gaton
 
-// Magnet sensor sees Gato
-IF GatoTrigger THEN
-//	TON_GatoPrime(IN:= TRUE, PT:= tTenthRotation, Q=> , ET=> ); 	IF TON_GatoPrime.Q THEN
-		GatoPrime := TRUE;
-//		TON_GatoPrime(IN:= FALSE);
-//	END_IF
-END_IF
-
-// Light sensor sees an object
+// Valosensori näkee kumman vain
 IF WheelLightTrigger THEN
 	ObjectCount := ObjectCount +1;
-	IF GatoPrime THEN		
-	GatoPrime := FALSE;
-		GatoCount := GatoCount +1;
-		bGato_or_Perro := TRUE;
-	END_IF
-	IF NOT GatoPrime THEN
-		PerroCount := PerroCount +1;
-		bGato_or_Perro := FALSE;
-	END_IF
-	
-//Extra checks to make sure sensors detect with correct timing
-	WheelTime2 := WheelTime1;
-	WheelTime1 := TIME();
-	WheelTime3 := WheelTime1-WheelTime2 ;
-	GP_Check 	:= PerroCount/GatoCount;
-	
-
 END_IF
 
-// Which one was it
-Gato 	:= bGato_or_Perro;
-Perro 	:= NOT bGato_or_Perro;
+// Kumpi on kyseessä
+
 ]]></ST>
     </Implementation>
     <Action Name="A_SensorHandling" Id="{9ef9e040-638d-43a8-8a82-3aaf50f53409}">
@@ -114,7 +59,7 @@ Perro 	:= NOT bGato_or_Perro;
                     <v n="FBDValid">false</v>
                     <v n="ILValid">false</v>
                     <l2 n="ILLines" />
-                    <v n="Comment">"Light sensor detects an object. wait a while to filter from too small specks and register as hit"</v>
+                    <v n="Comment">""</v>
                     <v n="Title">""</v>
                     <v n="Label">""</v>
                     <v n="OutCommented">false</v>
@@ -146,10 +91,10 @@ Perro 	:= NOT bGato_or_Perro;
                           <v n="Extensible">false</v>
                         </o>
                         <o n="RValue" t="BoxTreeBox">
-                          <v n="BoxType">"R_trig"</v>
+                          <v n="BoxType">"F_trig"</v>
                           <o n="Instance" t="Operand">
-                            <v n="Operand">"R_TRIG_1"</v>
-                            <v n="Type">"R_trig"</v>
+                            <v n="Operand">"F_TRIG_1"</v>
+                            <v n="Type">"r_trig"</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>
                             <v n="Address">""</v>
@@ -161,7 +106,7 @@ Perro 	:= NOT bGato_or_Perro;
                             <v n="LValue">false</v>
                             <v n="Boolean">false</v>
                             <v n="IsInstance">true</v>
-                            <v n="Id">37L</v>
+                            <v n="Id">30L</v>
                           </o>
                           <o n="OutputItems" t="OutputItemList">
                             <l2 n="OutputItems">
@@ -174,12 +119,11 @@ Perro 	:= NOT bGato_or_Perro;
                             <v n="Extensible">false</v>
                           </o>
                           <n n="InputFlags" />
-                          <l2 n="InputItems" cet="BoxTreeBox">
+                          <l2 n="InputItems" cet="BoxTreeOperand">
                             <o>
-                              <v n="BoxType">"TON"</v>
-                              <o n="Instance" t="Operand">
-                                <v n="Operand">"TON_0"</v>
-                                <v n="Type">"TON"</v>
+                              <o n="Operand" t="Operand">
+                                <v n="Operand">"in._DI._Label.SL_Wheel_LightSensor1"</v>
+                                <v n="Type">"BOOL"</v>
                                 <v n="Comment">""</v>
                                 <v n="SymbolComment">""</v>
                                 <v n="Address">""</v>
@@ -190,154 +134,10 @@ Perro 	:= NOT bGato_or_Perro;
                                 </o>
                                 <v n="LValue">false</v>
                                 <v n="Boolean">false</v>
-                                <v n="IsInstance">true</v>
-                                <v n="Id">32L</v>
+                                <v n="IsInstance">false</v>
+                                <v n="Id">10L</v>
                               </o>
-                              <o n="OutputItems" t="OutputItemList">
-                                <l2 n="OutputItems" cet="Operand">
-                                  <n />
-                                  <o>
-                                    <v n="Operand">""</v>
-                                    <n n="Type" />
-                                    <v n="Comment">""</v>
-                                    <v n="SymbolComment">""</v>
-                                    <v n="Address">""</v>
-                                    <o n="Flags" t="Flags">
-                                      <v n="Flags">0</v>
-                                      <v n="Fixed">false</v>
-                                      <v n="Extensible">false</v>
-                                    </o>
-                                    <v n="LValue">true</v>
-                                    <v n="Boolean">false</v>
-                                    <v n="IsInstance">false</v>
-                                    <v n="Id">34L</v>
-                                  </o>
-                                </l2>
-                              </o>
-                              <o n="Flags" t="Flags">
-                                <v n="Flags">0</v>
-                                <v n="Fixed">false</v>
-                                <v n="Extensible">false</v>
-                              </o>
-                              <n n="InputFlags" />
-                              <l2 n="InputItems">
-                                <o t="BoxTreeBox">
-                                  <v n="BoxType">"NOT"</v>
-                                  <o n="Instance" t="Operand">
-                                    <n n="Operand" />
-                                    <v n="Type">""</v>
-                                    <v n="Comment">""</v>
-                                    <v n="SymbolComment">""</v>
-                                    <v n="Address">""</v>
-                                    <o n="Flags" t="Flags">
-                                      <v n="Flags">0</v>
-                                      <v n="Fixed">false</v>
-                                      <v n="Extensible">false</v>
-                                    </o>
-                                    <v n="LValue">false</v>
-                                    <v n="Boolean">false</v>
-                                    <v n="IsInstance">true</v>
-                                    <v n="Id">43L</v>
-                                  </o>
-                                  <o n="OutputItems" t="OutputItemList">
-                                    <l2 n="OutputItems">
-                                      <n />
-                                    </l2>
-                                  </o>
-                                  <o n="Flags" t="Flags">
-                                    <v n="Flags">0</v>
-                                    <v n="Fixed">true</v>
-                                    <v n="Extensible">false</v>
-                                  </o>
-                                  <n n="InputFlags" />
-                                  <l2 n="InputItems" cet="BoxTreeOperand">
-                                    <o>
-                                      <o n="Operand" t="Operand">
-                                        <v n="Operand">"in._DI._Label.SL_Wheel_LightSensor1"</v>
-                                        <v n="Type">"BOOL"</v>
-                                        <v n="Comment">""</v>
-                                        <v n="SymbolComment">""</v>
-                                        <v n="Address">""</v>
-                                        <o n="Flags" t="Flags">
-                                          <v n="Flags">0</v>
-                                          <v n="Fixed">false</v>
-                                          <v n="Extensible">false</v>
-                                        </o>
-                                        <v n="LValue">false</v>
-                                        <v n="Boolean">false</v>
-                                        <v n="IsInstance">false</v>
-                                        <v n="Id">10L</v>
-                                      </o>
-                                      <v n="Id">9L</v>
-                                    </o>
-                                  </l2>
-                                  <o n="InputParam" t="ParamList">
-                                    <l2 n="Names" />
-                                    <l2 n="Types" />
-                                  </o>
-                                  <o n="OutputParam" t="ParamList">
-                                    <l2 n="Names" cet="String">
-                                      <v></v>
-                                    </l2>
-                                    <l2 n="Types" cet="String">
-                                      <v>BOOL</v>
-                                    </l2>
-                                  </o>
-                                  <v n="CallType" t="Operator">Not</v>
-                                  <v n="EN">false</v>
-                                  <v n="ENO">false</v>
-                                  <n n="STSnippet" />
-                                  <v n="ContainsExtensibleInputs">false</v>
-                                  <v n="ProvidesSTSnippet">false</v>
-                                  <v n="Id">44L</v>
-                                </o>
-                                <o t="BoxTreeOperand">
-                                  <o n="Operand" t="Operand">
-                                    <v n="Operand">"ObjectDetectionTime"</v>
-                                    <v n="Type">"TIME"</v>
-                                    <v n="Comment">""</v>
-                                    <v n="SymbolComment">""</v>
-                                    <v n="Address">""</v>
-                                    <o n="Flags" t="Flags">
-                                      <v n="Flags">0</v>
-                                      <v n="Fixed">false</v>
-                                      <v n="Extensible">false</v>
-                                    </o>
-                                    <v n="LValue">false</v>
-                                    <v n="Boolean">false</v>
-                                    <v n="IsInstance">false</v>
-                                    <v n="Id">36L</v>
-                                  </o>
-                                  <v n="Id">35L</v>
-                                </o>
-                              </l2>
-                              <o n="InputParam" t="ParamList">
-                                <l2 n="Names" cet="String">
-                                  <v>IN</v>
-                                  <v>PT</v>
-                                </l2>
-                                <l2 n="Types" cet="String">
-                                  <v>BOOL</v>
-                                  <v>TIME</v>
-                                </l2>
-                              </o>
-                              <o n="OutputParam" t="ParamList">
-                                <l2 n="Names" cet="String">
-                                  <v>Q</v>
-                                  <v>ET</v>
-                                </l2>
-                                <l2 n="Types" cet="String">
-                                  <v>BOOL</v>
-                                  <v>TIME</v>
-                                </l2>
-                              </o>
-                              <v n="CallType" t="Operator">FunctionBlock</v>
-                              <v n="EN">false</v>
-                              <v n="ENO">false</v>
-                              <n n="STSnippet" />
-                              <v n="ContainsExtensibleInputs">false</v>
-                              <v n="ProvidesSTSnippet">false</v>
-                              <v n="Id">33L</v>
+                              <v n="Id">9L</v>
                             </o>
                           </l2>
                           <o n="InputParam" t="ParamList">
@@ -362,7 +162,7 @@ Perro 	:= NOT bGato_or_Perro;
                           <n n="STSnippet" />
                           <v n="ContainsExtensibleInputs">false</v>
                           <v n="ProvidesSTSnippet">false</v>
-                          <v n="Id">38L</v>
+                          <v n="Id">31L</v>
                         </o>
                         <v n="Id">20L</v>
                       </o>
@@ -633,37 +433,14 @@ Perro 	:= NOT bGato_or_Perro;
       </Implementation>
     </Action>
     <LineIds Name="FB_GatoPerro">
-      <LineId Id="307" Count="6" />
-      <LineId Id="354" Count="2" />
-      <LineId Id="404" Count="0" />
-      <LineId Id="406" Count="1" />
-      <LineId Id="409" Count="2" />
-      <LineId Id="316" Count="0" />
-      <LineId Id="412" Count="0" />
-      <LineId Id="362" Count="0" />
-      <LineId Id="365" Count="0" />
-      <LineId Id="364" Count="0" />
-      <LineId Id="369" Count="0" />
-      <LineId Id="366" Count="2" />
-      <LineId Id="363" Count="0" />
-      <LineId Id="324" Count="4" />
-      <LineId Id="357" Count="0" />
-      <LineId Id="332" Count="0" />
-      <LineId Id="360" Count="1" />
-      <LineId Id="333" Count="8" />
-      <LineId Id="380" Count="0" />
-      <LineId Id="375" Count="0" />
-      <LineId Id="378" Count="1" />
-      <LineId Id="377" Count="0" />
-      <LineId Id="399" Count="0" />
-      <LineId Id="396" Count="2" />
-      <LineId Id="395" Count="0" />
-      <LineId Id="400" Count="0" />
-      <LineId Id="402" Count="0" />
-      <LineId Id="401" Count="0" />
-      <LineId Id="374" Count="0" />
-      <LineId Id="347" Count="3" />
-      <LineId Id="171" Count="0" />
+      <LineId Id="93" Count="1" />
+      <LineId Id="61" Count="2" />
+      <LineId Id="73" Count="0" />
+      <LineId Id="117" Count="1" />
+      <LineId Id="65" Count="2" />
+      <LineId Id="143" Count="2" />
+      <LineId Id="68" Count="2" />
+      <LineId Id="17" Count="0" />
     </LineIds>
     <LineIds Name="FB_GatoPerro.A_SignalLights">
       <LineId Id="1" Count="0" />
