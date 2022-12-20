@@ -43,7 +43,6 @@ VAR
 		tTenth_Of_Rotations_Time: TIME;
 	tonLightSDelay: TON;
 	ObjectDetectionTime: TIME := T#50MS;
-
 	Prime_Start: BOOL;
 END_VAR
 ]]></Declaration>
@@ -94,6 +93,9 @@ END_IF
 Gato 	:= bGato_or_Perro;
 Perro 	:= NOT bGato_or_Perro;
 
+
+// Finally, lit up a light for whichever object it was
+A_SignalLights();
 ]]></ST>
     </Implementation>
     <Action Name="A_RotationMeasure" Id="{ed38b022-b882-45b8-9f6c-4ed93bed5869}">
@@ -656,7 +658,9 @@ tTenth_Of_Rotations_Time := DWORD_TO_TIME( iTenth_Of_Rotations_Time :=
     </Action>
     <Action Name="A_SignalLights" Id="{3702fc04-dc87-4f5a-8553-8d8da3b39a96}">
       <Implementation>
-        <ST><![CDATA[]]></ST>
+        <ST><![CDATA[OUT._DO._Label.LIGHT_White := Gato;
+OUT._DO._Label.LIGHT_Green := Perro;
+]]></ST>
       </Implementation>
     </Action>
     <LineIds Name="FB_GatoPerro">
@@ -670,8 +674,11 @@ tTenth_Of_Rotations_Time := DWORD_TO_TIME( iTenth_Of_Rotations_Time :=
       <LineId Id="836" Count="1" />
       <LineId Id="842" Count="0" />
       <LineId Id="839" Count="0" />
-      <LineId Id="767" Count="18" />
-      <LineId Id="17" Count="0" />
+      <LineId Id="767" Count="17" />
+      <LineId Id="849" Count="0" />
+      <LineId Id="854" Count="0" />
+      <LineId Id="847" Count="0" />
+      <LineId Id="850" Count="1" />
     </LineIds>
     <LineIds Name="FB_GatoPerro.A_RotationMeasure">
       <LineId Id="3" Count="1" />
@@ -692,7 +699,7 @@ tTenth_Of_Rotations_Time := DWORD_TO_TIME( iTenth_Of_Rotations_Time :=
       <LineId Id="27" Count="0" />
     </LineIds>
     <LineIds Name="FB_GatoPerro.A_SignalLights">
-      <LineId Id="1" Count="0" />
+      <LineId Id="1" Count="2" />
     </LineIds>
   </POU>
 </TcPlcObject>
