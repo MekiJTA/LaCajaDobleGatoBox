@@ -42,7 +42,7 @@ VAR
 		tThree_Fourth_Rotations_Time: TIME;
 		tTenth_Of_Rotations_Time: TIME;
 	tonLightSDelay: TON;
-	ObjectDetectionTime: TIME := T#2000MS;
+	ObjectDetectionTime: TIME := T#50MS;
 
 END_VAR
 ]]></Declaration>
