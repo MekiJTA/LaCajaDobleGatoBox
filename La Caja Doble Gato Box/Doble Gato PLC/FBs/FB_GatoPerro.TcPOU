@@ -9,37 +9,87 @@ VAR_OUTPUT
 	Q			: BOOL;
 	Gato 		: BOOL;
 	Perro 		: BOOL;
-	GatoCount 	: INT;
-	PerroCount 	: INT;
+	GatoCount 	: UINT;
+	PerroCount 	: UINT;
 
 END_VAR
 VAR
 	
 	R_TRIG_0: R_TRIG;
-	F_TRIG_1: r_trig;
+	F_TRIG_1: F_trig;
 	GatoTrigger: BOOL;
 	WheelLightTrigger: BOOL;
 	R_TRIG_2: R_TRIG;
 	RotationTrigger: BOOL;
 	RotationCount: UINT;
 	ObjectCount: UINT;
+	GatoPrime: BOOL;
+	bGato_or_Perro: BOOL;
+	TON_GatoPrime: TON;
+	TON_0: TON;
+	ObjectDetectionTime: TIME := T#20MS;
+	WheelTime1: TIME;
+	WheelTime3: TIME;
+	WheelTime2: TIME;
+	GP_Check: UINT;
+	fbRotationCalc: FB_RotationCalc;
 END_VAR
 ]]></Declaration>
     <Implementation>
-      <ST><![CDATA[Q := RUN;
+      <ST><![CDATA[
+Q := RUN;
 
 A_SensorHandling();
 
-// Kierroslaskuri
+// Rotation counter
 IF RotationTrigger THEN
-	RotationCount := RotationCount +1;	
-END_IF
-// Magneettisensori näkee Gaton
+	RotationCount := RotationCount +1;
 
-// Valosensori näkee kumman vain
+	// We need slight delay before Priming Gato. Perro could be just nearing the Light sensor and register as Gato
+	// Lets calculate rotations per minute, divide it to 3/4th rotation and then prime Gato just in time
+	F_RotationsPerMinute(
+		StartTime:= PreviousRotationTimeStamp, 
+		StopTime:= CurrentRotationTimeStamp, 
+		
+		Rotations_Time=> tRotationTime, 
+		Rotations_In_Minute=> iRotationsPerMinute, 
+		Three_Fourth_Rotations_Time=> tThreeFourthRotation, 
+		Tenth_Of_Rotations_Time=> tTenthRotation);
+END_IF
+
+// Magnet sensor sees Gato
+IF GatoTrigger THEN
+//	TON_GatoPrime(IN:= TRUE, PT:= tTenthRotation, Q=> , ET=> ); 	IF TON_GatoPrime.Q THEN
+		GatoPrime := TRUE;
+//		TON_GatoPrime(IN:= FALSE);
+//	END_IF
+END_IF
+
+// Light sensor sees an object
 IF WheelLightTrigger THEN
 	ObjectCount := ObjectCount +1;
+	IF NOT GatoPrime THEN
+		PerroCount := PerroCount +1;
+		bGato_or_Perro := FALSE;
+	ELSE
+		GatoPrime := FALSE;
+			GatoCount := GatoCount +1;
+			bGato_or_Perro := TRUE;
+	END_IF
+	
+//Extra checks to make sure sensors detect with correct timing
+	WheelTime2 := WheelTime1;
+	WheelTime1 := TIME();
+	WheelTime3 := WheelTime1-WheelTime2 ;
+	GP_Check 	:= PerroCount/GatoCount;
+	
+
 END_IF
+
+// Which one was it
+Gato 	:= bGato_or_Perro;
+Perro 	:= NOT bGato_or_Perro;
+
 
 // Kumpi on kyseessä
 
@@ -94,7 +144,7 @@ END_IF
                           <v n="BoxType">"F_trig"</v>
                           <o n="Instance" t="Operand">
                             <v n="Operand">"F_TRIG_1"</v>
-                            <v n="Type">"r_trig"</v>
+                            <v n="Type">"F_trig"</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>
                             <v n="Address">""</v>
@@ -433,12 +483,12 @@ END_IF
       </Implementation>
     </Action>
     <LineIds Name="FB_GatoPerro">
-      <LineId Id="93" Count="1" />
-      <LineId Id="61" Count="2" />
-      <LineId Id="73" Count="0" />
-      <LineId Id="117" Count="1" />
-      <LineId Id="65" Count="2" />
-      <LineId Id="143" Count="2" />
+      <LineId Id="169" Count="10" />
+      <LineId Id="181" Count="6" />
+      <LineId Id="180" Count="0" />
+      <LineId Id="118" Count="0" />
+      <LineId Id="188" Count="32" />
+      <LineId Id="145" Count="0" />
       <LineId Id="68" Count="2" />
       <LineId Id="17" Count="0" />
     </LineIds>
