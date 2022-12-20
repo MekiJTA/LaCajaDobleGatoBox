@@ -46,14 +46,14 @@ IF RotationTrigger THEN
 
 	// We need slight delay before Priming Gato. Perro could be just nearing the Light sensor and register as Gato
 	// Lets calculate rotations per minute, divide it to 3/4th rotation and then prime Gato just in time	
-(*
+
 fbRotationCalc(
 	StopTime:= TIME(), 
 	Rotations_Time=> , 
 	Rotations_In_Minute=> , 
 	Three_Fourth_Rotations_Time=> , 
 	Tenth_Of_Rotations_Time=> );
-	
+	(*
 	F_RotationsPerMinute(
 		StartTime:= PreviousRotationTimeStamp, 
 		StopTime:= CurrentRotationTimeStamp, 
@@ -76,13 +76,14 @@ END_IF
 // Light sensor sees an object
 IF WheelLightTrigger THEN
 	ObjectCount := ObjectCount +1;
+	IF GatoPrime THEN		
+	GatoPrime := FALSE;
+		GatoCount := GatoCount +1;
+		bGato_or_Perro := TRUE;
+	END_IF
 	IF NOT GatoPrime THEN
 		PerroCount := PerroCount +1;
 		bGato_or_Perro := FALSE;
-	ELSE
-		GatoPrime := FALSE;
-			GatoCount := GatoCount +1;
-			bGato_or_Perro := TRUE;
 	END_IF
 	
 //Extra checks to make sure sensors detect with correct timing
@@ -649,11 +650,11 @@ Perro 	:= NOT bGato_or_Perro;
       <LineId Id="357" Count="0" />
       <LineId Id="332" Count="0" />
       <LineId Id="360" Count="1" />
-      <LineId Id="333" Count="4" />
-      <LineId Id="447" Count="2" />
-      <LineId Id="446" Count="0" />
-      <LineId Id="339" Count="2" />
+      <LineId Id="333" Count="8" />
       <LineId Id="380" Count="0" />
+      <LineId Id="375" Count="0" />
+      <LineId Id="378" Count="1" />
+      <LineId Id="377" Count="0" />
       <LineId Id="399" Count="0" />
       <LineId Id="396" Count="2" />
       <LineId Id="395" Count="0" />
