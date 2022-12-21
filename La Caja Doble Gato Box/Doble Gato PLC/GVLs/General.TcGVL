@@ -17,6 +17,8 @@ VAR_GLOBAL
 	sCosine: STRING(16);
 	sKelvin: STRING(16);
 
+	Gato : BOOL;
+	Perro : BOOL;
 	GatoCount: UINT;
 	PerroCount: UINT;	
 	

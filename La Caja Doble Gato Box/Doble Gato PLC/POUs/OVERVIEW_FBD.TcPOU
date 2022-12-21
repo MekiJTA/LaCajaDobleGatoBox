@@ -670,8 +670,8 @@ END_VAR
                         <l2 n="OutputItems" cet="Operand">
                           <n />
                           <o>
-                            <v n="Operand">""</v>
-                            <n n="Type" />
+                            <v n="Operand">"GENERAL.Gato"</v>
+                            <v n="Type">"BOOL"</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>
                             <v n="Address">""</v>
@@ -686,8 +686,8 @@ END_VAR
                             <v n="Id">233L</v>
                           </o>
                           <o>
-                            <v n="Operand">""</v>
-                            <n n="Type" />
+                            <v n="Operand">"GENERAL.Perro"</v>
+                            <v n="Type">"BOOL"</v>
                             <v n="Comment">""</v>
                             <v n="SymbolComment">""</v>
                             <v n="Address">""</v>

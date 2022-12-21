@@ -2414,6 +2414,84 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.GENERAL.Gato": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GENERAL::Gato",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GENERAL.GatoCount": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GENERAL::GatoCount",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/UINT"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GENERAL.Perro": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GENERAL::Perro",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GENERAL.PerroCount": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GENERAL::PerroCount",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/UINT"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GENERAL.sCelsius": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GENERAL::sCelsius",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "comment": "General information",
+                        "maxLength": 16
+                    },
+                    {
+                        "$ref": "tchmi:general#/definitions/String"
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.OVERVIEW_FBD.fbGatoPerro.Gato": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::OVERVIEW_FBD::fbGatoPerro::Gato",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.OVERVIEW_FBD.fbGatoPerro.Perro": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::OVERVIEW_FBD::fbGatoPerro::Perro",
+            "SCHEMA": {
+                "$ref": "tchmi:general#/definitions/BOOL"
+            },
+            "USEMAPPING": true
+        },
         "RefreshDefinitions": {
             "ACCESS": 3,
             "DOMAIN": "TcHmiSrv",
@@ -3558,6 +3636,13 @@
                 "LocalizeText": 3,
                 "Login": 3,
                 "Logout": 3,
+                "PLC1.GENERAL.Gato": 3,
+                "PLC1.GENERAL.GatoCount": 3,
+                "PLC1.GENERAL.Perro": 3,
+                "PLC1.GENERAL.PerroCount": 3,
+                "PLC1.GENERAL.sCelsius": 3,
+                "PLC1.OVERVIEW_FBD.fbGatoPerro.Gato": 3,
+                "PLC1.OVERVIEW_FBD.fbGatoPerro.Perro": 3,
                 "SetLocale": 3,
                 "SubscribeEvents": 3,
                 "TcHmiSqliteHistorize.DeleteDatabaseEntries": 3,

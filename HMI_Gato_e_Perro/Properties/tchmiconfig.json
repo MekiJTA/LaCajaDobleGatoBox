@@ -164,6 +164,12 @@
         "type": "tchmi:framework#/definitions/TcHmi.Functions.BaseTemplate.AffectedControlList",
         "persist": true,
         "readonly": true
+      },
+      "FontSizeRegular": {
+        "value": 20,
+        "type": "tchmi:general#/definitions/INT16",
+        "persist": false,
+        "readonly": false
       }
     },
     "themedResources": {
