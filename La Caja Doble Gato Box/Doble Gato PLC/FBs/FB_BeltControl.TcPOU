@@ -30,6 +30,7 @@ VAR
 		bIsInitialized : BOOL;
 		bSendMessage : BOOL;
 	
+	iTempCounter: INT;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -59,7 +60,7 @@ CASE nMotorState OF
 				IF bIsInitialized THEN
 					bIsInitialized := FALSE;
 					bSendMessage := TRUE;
-					fbTcMessage.CreateEx(TC_Events.GatoPerroEvents.Start, 0);
+			//		fbTcMessage.CreateEx(TC_Events.GatoPerroEvents.Start, 0);
 				END_IF
 			
 		END_IF
@@ -112,8 +113,10 @@ A_Messaging();
 
 IF bSendMessage THEN
 	bSendMessage := FALSE;
-	fbTcMessage.Send(0);	// 0 = current timestamp
+	iTempCounter := iTempCounter +1;
+//	fbTcMessage.Send(0);	// 0 = current timestamp
 END_IF
+
 ]]></ST>
       </Implementation>
     </Action>
@@ -144,10 +147,7 @@ sDirCase		 	:= Frw_Bck;
       <LineId Id="1069" Count="0" />
       <LineId Id="1020" Count="0" />
       <LineId Id="1067" Count="0" />
-      <LineId Id="1022" Count="0" />
-      <LineId Id="1029" Count="0" />
-      <LineId Id="1068" Count="0" />
-      <LineId Id="1031" Count="0" />
+      <LineId Id="1071" Count="3" />
       <LineId Id="1030" Count="0" />
       <LineId Id="1021" Count="0" />
       <LineId Id="936" Count="2" />
@@ -181,9 +181,10 @@ sDirCase		 	:= Frw_Bck;
       <LineId Id="4" Count="0" />
       <LineId Id="3" Count="0" />
       <LineId Id="5" Count="0" />
+      <LineId Id="11" Count="0" />
       <LineId Id="7" Count="0" />
       <LineId Id="6" Count="0" />
-      <LineId Id="9" Count="0" />
+      <LineId Id="9" Count="1" />
     </LineIds>
     <LineIds Name="FB_BeltControl.M_VariableChanges">
       <LineId Id="15" Count="0" />
