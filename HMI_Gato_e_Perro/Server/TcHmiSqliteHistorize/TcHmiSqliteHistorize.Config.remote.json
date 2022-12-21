@@ -1,6 +1,19 @@
 {
     "enableBackup": false,
-    "historizedSymbolList": {},
+    "historizedSymbolList": {
+        "PLC1.GENERAL.GatoCount": {
+            "interval": "PT1S",
+            "maxEntries": 10000,
+            "recordingEnabled": true,
+            "rowLimit": 10000
+        },
+        "PLC1.GENERAL.PerroCount": {
+            "interval": "PT1S",
+            "maxEntries": 10000,
+            "recordingEnabled": true,
+            "rowLimit": 10000
+        }
+    },
     "inMemory": false,
     "maxBackups": 1
 }

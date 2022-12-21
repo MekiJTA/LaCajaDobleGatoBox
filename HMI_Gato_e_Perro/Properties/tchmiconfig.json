@@ -1,11 +1,11 @@
 ﻿{
   "$schema": "./../../Packages/Beckhoff.TwinCAT.HMI.Framework.12.758.8/runtimes/native1.12-tchmi/Schema/TchmiConfig.Schema.json",
   "basePath": "./framework",
-  "scaleMode": "None",
+  "scaleMode": "ScaleToFitWidth",
   "startupView": "Desktop.view",
   "loginPage": "/Pages/LoginPage.html",
   "tcHmiServer": {
-    "websocketIntervalTime": 500,
+    "websocketIntervalTime": 200,
     "websocketTimeout": 20000,
     "websocketSystemTimeout": 60000,
     "websocketSubscriptionMode": "Change"

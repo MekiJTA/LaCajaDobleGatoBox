@@ -2472,6 +2472,57 @@
             },
             "USEMAPPING": true
         },
+        "PLC1.GENERAL.sCosine": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GENERAL::sCosine",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "maxLength": 16
+                    },
+                    {
+                        "$ref": "tchmi:general#/definitions/String"
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GENERAL.sFahrenheit": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GENERAL::sFahrenheit",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "maxLength": 16
+                    },
+                    {
+                        "$ref": "tchmi:general#/definitions/String"
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
+        "PLC1.GENERAL.sKelvin": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "MAPPING": "PLC1::GENERAL::sKelvin",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "maxLength": 16
+                    },
+                    {
+                        "$ref": "tchmi:general#/definitions/String"
+                    }
+                ]
+            },
+            "USEMAPPING": true
+        },
         "PLC1.OVERVIEW_FBD.fbGatoPerro.Gato": {
             "ACCESS": 3,
             "DOMAIN": "ADS",
@@ -3641,6 +3692,9 @@
                 "PLC1.GENERAL.Perro": 3,
                 "PLC1.GENERAL.PerroCount": 3,
                 "PLC1.GENERAL.sCelsius": 3,
+                "PLC1.GENERAL.sCosine": 3,
+                "PLC1.GENERAL.sFahrenheit": 3,
+                "PLC1.GENERAL.sKelvin": 3,
                 "PLC1.OVERVIEW_FBD.fbGatoPerro.Gato": 3,
                 "PLC1.OVERVIEW_FBD.fbGatoPerro.Perro": 3,
                 "SetLocale": 3,
