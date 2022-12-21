@@ -457,6 +457,18 @@
 				<Elements>7</Elements>
 			</ArrayInfo>
 		</DataType>
+		<DataType>
+			<Name GUID="{C83C3A98-4D96-4737-81C4-F0BE5C55730B}" PersistentType="true">GatoPerroEvents</Name>
+			<DisplayName TxtId=""><![CDATA[GatoPerro]]></DisplayName>
+			<EventId>
+				<Name Id="1">Start</Name>
+				<DisplayName TxtId=""><![CDATA[Process started]]></DisplayName>
+				<Severity>Info</Severity>
+			</EventId>
+			<Hides>
+				<Hide GUID="{3BAEA17C-007C-4FA2-8BD1-59AD2AE555A2}"/>
+			</Hides>
+		</DataType>
 	</DataTypes>
 	<ImageDatas>
 		<ImageData Id="1000">424dd6020000000000003600000028000000100000000e0000000100180000000000a0020000c40e0000c40e00000000000000000000ff00ffff00ffff00ff808080808080808080808080808080808080808080808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c000ffffc0c0c000ffff808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0ff0000c0c0c0ff0000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c00000ffc0c0c00000ff808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0000000c0c0c0000000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0008000c0c0c0008000808080ff00ffff00ffff00ffff00ffff00ffff00ffff00ffff00ff0000c00000c0ffffffc0c0c0c0c0c0c0c0c0c0c0c0808080ff00ffff00ffff00ffff00ffff00ff</ImageData>
@@ -497,12 +509,12 @@
 					<Vars VarGrpType="2" AreaNo="1">
 						<Name>PlcTask Outputs</Name>
 						<Var>
-							<Name>OUT._DO</Name>
-							<Type GUID="{2FCB4DAC-A4CA-C44E-CEE2-09EC6850C2FF}">U_OUT_IO_Translate</Type>
-						</Var>
-						<Var>
 							<Name>SAFETY.Safety_OK</Name>
 							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>OUT._DO</Name>
+							<Type GUID="{2FCB4DAC-A4CA-C44E-CEE2-09EC6850C2FF}">U_OUT_IO_Translate</Type>
 						</Var>
 						<Var>
 							<Name>SAFETY.Doors_OK</Name>
