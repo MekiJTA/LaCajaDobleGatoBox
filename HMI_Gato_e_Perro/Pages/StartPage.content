@@ -1,4 +1,4 @@
-﻿<div id="StartPage" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="100" data-tchmi-height="100" data-tchmi-width-unit="%" data-tchmi-height-unit="%">
+﻿<div id="StartPage" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="100" data-tchmi-height="100" data-tchmi-width-unit="%" data-tchmi-height-unit="%" data-tchmi-creator-viewport-width="1024">
 <div id="TcHmiGrid_StartPage" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-height="720" data-tchmi-height-unit="px" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="48" data-tchmi-top-unit="px" data-tchmi-width="70" data-tchmi-width-unit="%" data-tchmi-height-mode="Content" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-background-image-vertical-alignment="Center">
 <script data-tchmi-target-attribute="data-tchmi-column-options" type="application/json">
 [
@@ -23,8 +23,8 @@
   {
     "width": 1.0,
     "widthUnit": "factor",
-    "widthMode": "Value",
-    "maxWidth": 500.0,
+    "widthMode": "Content",
+    "maxWidth": 800.0,
     "maxWidthUnit": "px",
     "minWidth": 500.0,
     "minWidthUnit": "px",
@@ -455,7 +455,7 @@
 </div>
 </div>
 
-    <div data-tchmi-grid-column-index="2" id="TcHmiContainer_Settings_11" data-tchmi-type="TcHmi.Controls.System.TcHmiContainer" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width-unit="%" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-background-image-vertical-alignment="Center" data-tchmi-width-mode="Value" data-tchmi-height-mode="Value" data-tchmi-width="100" data-tchmi-height="100">
+    <div data-tchmi-grid-column-index="2" id="TcHmiContainer_Settings_11" data-tchmi-type="TcHmi.Controls.System.TcHmiContainer" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width-unit="px" data-tchmi-background-image-horizontal-alignment="Center" data-tchmi-background-image-vertical-alignment="Center" data-tchmi-width-mode="Value" data-tchmi-height-mode="Value" data-tchmi-width="700" data-tchmi-height="100">
 
 
       <script data-tchmi-target-attribute="data-tchmi-class-names" type="application/json">
@@ -463,7 +463,7 @@
         "background-container"
         ]
       </script>
-<div id="TcHmiTrendLineChart" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTrendLineChart" data-tchmi-end="Latest" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-start="%f%First%/f%" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-x-axis-name="x-axis 1" data-tchmi-x-sub-tick-steps="4" data-tchmi-y-sub-tick-steps="4" data-tchmi-show-x-axis-name="false" data-tchmi-interval="1000" data-tchmi-show-legend="true" data-tchmi-show-menu-bar="true" data-tchmi-zindex="1">
+<div id="TcHmiTrendLineChart" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTrendLineChart" data-tchmi-end="Latest" data-tchmi-height="100" data-tchmi-height-unit="%" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="%" data-tchmi-x-axis-name="x-axis 1" data-tchmi-x-sub-tick-steps="5" data-tchmi-y-sub-tick-steps="4" data-tchmi-show-x-axis-name="false" data-tchmi-interval="1000" data-tchmi-show-legend="true" data-tchmi-show-menu-bar="true" data-tchmi-zindex="1" data-tchmi-start="PT15M" data-tchmi-x-show-labels="true" data-tchmi-x-main-tick-steps="10" data-tchmi-show-x-axis="false" data-tchmi-y-main-tick-steps="5">
 <script data-tchmi-target-attribute="data-tchmi-y-axis" type="application/json">
 [
   {
@@ -471,7 +471,7 @@
     "showAxis": true,
     "position": "Left",
     "mainTickMinValue": 0.0,
-    "mainTickMaxValue": 100.0,
+    "mainTickMaxValue": 2000.0,
     "showLabels": true,
     "showAxisName": true,
     "axisName": "Number of hits",
@@ -479,7 +479,7 @@
     "axisNameFontSize": 15,
     "axisNameFontSizeUnit": "px",
     "axisNameFontWeight": "Bold",
-    "decimalPlaces": 2,
+    "decimalPlaces": 0,
     "unit": "",
     "autoScaling": false,
     "logarithmicScale": false,
