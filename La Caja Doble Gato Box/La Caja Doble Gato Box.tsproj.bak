@@ -495,7 +495,7 @@
 			</Tasks>
 		</System>
 		<Plc>
-			<Project GUID="{BBF44252-B26A-473F-ADB7-35F584680448}" Name="Doble Gato PLC" PrjFilePath="Doble Gato PLC\Doble Gato PLC.plcproj" TmcFilePath="Doble Gato PLC\Doble Gato PLC.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" SymbolicMapping="true">
+			<Project GUID="{BBF44252-B26A-473F-ADB7-35F584680448}" Name="Doble Gato PLC" PrjFilePath="Doble Gato PLC\Doble Gato PLC.plcproj" TmcFilePath="Doble Gato PLC\Doble Gato PLC.tmc" ReloadTmc="true" AmsPort="852" FileArchiveSettings="#x000e" CopyTmcToTarget="true" CopyTpyToTarget="false" SymbolicMapping="true">
 				<Instance Id="#x08502040" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="Doble Gato PLC\Doble Gato PLC.tmc">
 					<Name>Doble Gato PLC Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>

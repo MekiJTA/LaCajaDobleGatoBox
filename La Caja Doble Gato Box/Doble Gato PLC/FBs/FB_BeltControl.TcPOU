@@ -60,7 +60,7 @@ CASE nMotorState OF
 				IF bIsInitialized THEN
 					bIsInitialized := FALSE;
 					bSendMessage := TRUE;
-			//		fbTcMessage.CreateEx(TC_Events.GatoPerroEvents.Start, 0);
+					fbTcMessage.CreateEx(TC_Events.GatoPerroEvents.Start, 0);
 				END_IF
 			
 		END_IF
@@ -114,7 +114,7 @@ A_Messaging();
 IF bSendMessage THEN
 	bSendMessage := FALSE;
 	iTempCounter := iTempCounter +1;
-//	fbTcMessage.Send(0);	// 0 = current timestamp
+	fbTcMessage.Send(0);	// 0 = current timestamp
 END_IF
 
 ]]></ST>

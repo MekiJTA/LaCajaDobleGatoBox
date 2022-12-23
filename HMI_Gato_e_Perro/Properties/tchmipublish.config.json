@@ -7,6 +7,10 @@
       },
       {
         "publishServerExtension": true,
+        "name": "TcHmiEventLogger"
+      },
+      {
+        "publishServerExtension": true,
         "name": "TcHmiLua"
       },
       {
@@ -51,7 +55,7 @@
     "tcHmiUseTLS": true,
     "useClientCertificate": false,
     "launchBrowserAfterPublish": true,
-    "createVirtualDirectoriesOnTargetSystem": false,
+    "createVirtualDirectoriesOnTargetSystem": true,
     "tcHmiServerUserName": "__SystemAdministrator",
     "tcHmiDestinationUrl": "https://169.254.89.33:1020",
     "publishConfiguration": "remote",
